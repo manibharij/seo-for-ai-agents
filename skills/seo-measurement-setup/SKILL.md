@@ -3,7 +3,8 @@ name: seo-measurement-setup
 description: >-
   Set up the build-time PLUMBING for measuring SEO — install analytics (GA4)
   correctly, verify the site in Google Search Console, ensure the sitemap is
-  submittable, and add structured-data/Core-Web-Vitals measurement hooks. Use on
+  submittable, and add Core-Web-Vitals reporting hooks. (For adding schema itself,
+  that's 3-understand-schema, not this skill.) Use on
   "set up analytics", "install GA4", "verify Search Console", "add tracking", "is my
   analytics working", or "how do I measure SEO" tasks. This wires up measurement so
   you CAN see results — it does not analyse them (that's live data, on the other side

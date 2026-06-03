@@ -7,7 +7,8 @@ description: >-
   stack, platform, and site type; runs the Visibility Ladder as a repeatable AUDIT
   LIFECYCLE with persistent state in .seo/; fixes the lowest failing rung first; and
   on later runs re-verifies past fixes, catches regressions, and advances. Routes to
-  the specialist rung skills and protects existing sites from regressions.
+  the specialist rung skills and protects existing sites from regressions. (For a
+  content-only quality review with no technical audit, defer to seo-content-audit.)
 ---
 
 # SEO Orchestrator — the conductor
@@ -33,6 +34,10 @@ Specialist skills outside the ladder, dispatched when relevant:
 - **`seo-content-editing`** — improve existing copy (white-hat: edit real content, never generate fake).
 - **`seo-proposal-roadmap`** — turn the audit into a client-style proposal / prioritised roadmap.
 - **`seo-positioning-strategy`** — messaging, competitive positioning, topical-authority planning.
+- **`seo-automations`** — automate the audit in CI/CD (regression gate on deploy/PR, scheduled re-audits, hooks).
+- **`seo-media`** — image & video SEO (alt, formats, `VideoObject` schema, media sitemaps, transcripts).
+- **`seo-programmatic`** — generate pages at scale from data, white-hat (quality gate; no thin/doorway pages).
+- **`seo-log-analysis`** — advanced/large-site: server-log & crawl-budget analysis (what crawlers actually fetch).
 
 ---
 
@@ -81,6 +86,7 @@ Progression is what makes this a system: the second, fifth, twentieth run is nev
 - If the user's goal is a higher rung (e.g. AI citation), still resolve every lower failing rung first — then reach the goal rung legitimately.
 - Pull in **`seo-migrations`** whenever URLs change or the site moves, and **`seo-measurement-setup`** when analytics/Search Console plumbing is missing or broken.
 - Pull in the **content/marketing skills** when the work is about the content itself, not just its markup: **`seo-content-audit`** (assess), **`seo-content-editing`** (improve real copy), **`seo-positioning-strategy`** (messaging/competitive/topical planning), and **`seo-proposal-roadmap`** (package the findings as a proposal/roadmap deliverable). These read live data (demand/competitor) when it's connected, and say so honestly when it isn't.
+- Pull in the **advanced/automation skills** when relevant: **`seo-automations`** (set up CI/CD regression gates + scheduled re-audits — recommend this once a site is healthy, to keep it that way), **`seo-media`** (sites with significant image/video), **`seo-programmatic`** (data-driven pages at scale — apply its quality gate), **`seo-log-analysis`** (large/crawl-constrained sites with server logs).
 - **Enrich, don't gate.** When a live-data integration is present, use it to prioritise by real impact and ground content/positioning in real demand — but the audit and fixes never *require* it.
 - Apply the active **profile** (`references/profiles/<type>.md`) and **stack/platform adapter** so each rung's checks and fixes fit this specific site.
 - On an **existing site**, gate every change through `references/existing-site-safety.md`.

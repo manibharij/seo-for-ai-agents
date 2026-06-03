@@ -27,7 +27,9 @@ fix a rung until the ones below it pass:
 5. Cite (`skills/5-cite-aeo-geo/`) — owned-side AEO answer formatting + attribution
 Specialists: `skills/seo-migrations/` (URL changes/redirects), `skills/seo-measurement-setup/` (analytics/GSC),
 `skills/seo-content-audit/` (assess content), `skills/seo-content-editing/` (improve real copy — edit not generate),
-`skills/seo-positioning-strategy/` (topical authority/positioning), `skills/seo-proposal-roadmap/` (proposal/roadmap).
+`skills/seo-positioning-strategy/` (topical authority/positioning), `skills/seo-proposal-roadmap/` (proposal/roadmap),
+`skills/seo-automations/` (CI/CD regression gate + scheduled audits), `skills/seo-media/` (image/video SEO),
+`skills/seo-programmatic/` (white-hat pages-at-scale), `skills/seo-log-analysis/` (server-log/crawl-budget, large sites).
 Optional live-data tools (GSC/DataForSEO/Ahrefs, bring-your-own-key) enrich the audit — see `install/data-integrations.md`; never required.
 
 Start broad requests with `skills/seo-orchestrator/SKILL.md` — it runs an AUDIT LIFECYCLE:

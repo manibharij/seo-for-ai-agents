@@ -5,10 +5,12 @@ description: >-
   and a good page experience in the served HTML — a meaningful title, one clear H1,
   a sensible heading structure, substantive body copy, a good meta description,
   image alt text, a language attribute, plus mobile-friendliness and healthy Core
-  Web Vitals (page speed). Use this AFTER Reach passes, on any "thin content",
-  "missing meta description", "duplicate titles", "page not described well in
-  search", "site is slow", "Core Web Vitals", "page speed", "mobile-friendly", page
-  copy, or on-page metadata question. Verifies on the rendered HTML, not the source.
+  Web Vitals (page speed). Use this AFTER Reach passes, for the on-page technical
+  fundamentals of a single page — "missing meta description", "duplicate titles",
+  "page not described well in search", "site is slow", "Core Web Vitals", "page
+  speed", "mobile-friendly". (To assess content quality across many pages, use
+  seo-content-audit; to rewrite one page's copy, use seo-content-editing.) Verifies
+  on the rendered HTML, not the source.
 ---
 
 # Read — Content, Metadata & Page Experience

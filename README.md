@@ -1,18 +1,21 @@
 # seo-for-ai-agents
 
-**A drop-in SEO skill pack that teaches AI coding agents to build *and audit* sites that search engines rank well — and that AI answer engines can draw on. New sites or existing ones.**
+**A drop-in SEO + AEO skill pack that teaches AI coding agents (Claude Code, Cursor, Codex) to build *and audit* sites that search engines rank — and AI answer engines can cite. New sites or existing ones.**
 
-> **New here?** Two ways to start: paste [`install/copy-paste/audit.md`](install/copy-paste/audit.md) to run a full, repeatable audit of an **existing** site, or [`install/copy-paste/reach.md`](install/copy-paste/reach.md) for the single highest-impact fix on a **new** build. Jump to [Install](#install).
+> ⚡ **The problem it fixes:** sites built by AI agents look perfect in a browser and are often nearly **invisible to crawlers** — they serve an empty shell with no real content in the HTML. This pack catches that (and four rungs more), checking **what's actually served to a crawler**, not the source an agent edited and hoped about.
 
-This is, first and foremost, a proper **SEO** pack: comprehensive, build-time, on your own site — for owners who don't know SEO, and for developers using Claude Code on real codebases. It works **whether you're building a new site from scratch or improving an existing one with rankings to protect**: it audits, fixes, and re-checks the technical and on-page fundamentals that drive search visibility — verified on what's actually served, not just edited in the source.
+`experimental · v0.1 (current as of 2026-06) · MIT` — **[Which skill when?](SKILLS.md)** · [Method](METHOD.md) · [Changelog](CHANGELOG.md) · [Disclaimer](DISCLAIMER.md)
 
-It's also built for the AI-search era — but honestly. Search is moving from ten blue links toward synthesised answers that cite a handful of sources (AI Overviews, AI Mode, ChatGPT, Perplexity, Claude), and that direction matters. So the pack adds a rung for **answer-engine optimisation (AEO)**: the things you can do *on your own site* to be eligible to be cited.
+> **New here?** Paste [`install/copy-paste/audit.md`](install/copy-paste/audit.md) into your agent to audit an **existing** site, or [`install/copy-paste/reach.md`](install/copy-paste/reach.md) for the highest-impact fix on a **new** build. → [Install](#install)
 
-One distinction most packs blur, stated plainly: **SEO and AEO are related, but not the same thing.** They share a foundation — a page has to be reachable, readable, understandable, and well-structured to do anything in either. But they diverge at the top. SEO ranks *your page*, and that ranking is largely earned by your page. Whether an AI answer actually *cites* you is far less in your control: the engine synthesises from many sources and often answers without citing anyone in particular, so even a perfectly optimised page may not be quoted. AEO improves your **eligibility**; it cannot promise the outcome.
+## Contents
+- [The method — the Visibility Ladder](#the-method-the-visibility-ladder)
+- [It runs as an audit lifecycle](#it-runs-as-an-audit-lifecycle-not-a-one-shot)
+- [Who it's for, and how it adapts](#who-its-for-and-how-it-adapts)
+- [Install](#install) · [Which skill when? (skills index)](SKILLS.md)
+- [The honest boundary](#the-honest-boundary-and-how-live-data-fits) · [Disclaimer](#disclaimer)
 
-So this is **primarily SEO, with AEO as the owned-media layer on top.** **Rungs 1–4 are the SEO fundamentals** (rendering, content, metadata, speed, mobile, schema, architecture, canonicals); **rung 5 is the owned side of AEO** — the formatting and trust signals that make a page citable, with no false promise that it will be cited. Most sites built by AI agents fail at the very bottom — perfect in a browser, nearly invisible to a crawler — so that's where the method starts.
-
-It's **horizontal** (any site, any industry), built for users who **don't know SEO**, and it **verifies on what's actually served to a crawler** — not on the source code an agent edited and hoped about.
+It's primarily **SEO** — the technical and on-page fundamentals that drive ranking, done correctly and verified on the served output (not the source). On top sits **AEO** (answer-engine optimisation): the owned-media work to make a page *eligible* to be cited by AI answers. The two are related but not the same, and citation is never guaranteed — the full distinction is in **[METHOD.md](METHOD.md)**. It's **horizontal** (any site, any industry) and built for people who don't want to become SEOs to ship a findable site.
 
 ---
 
@@ -44,7 +47,13 @@ The **[`seo-orchestrator`](skills/seo-orchestrator/SKILL.md)** is the entry poin
 - **[`seo-positioning-strategy`](skills/seo-positioning-strategy/SKILL.md)** — what topics to own (topical authority), how to differentiate, and a pillar/cluster content plan.
 - **[`seo-proposal-roadmap`](skills/seo-proposal-roadmap/SKILL.md)** — package the audit into a client-ready proposal + phased roadmap (honest outcomes, no guarantees).
 
-The content & marketing skills get sharper when you connect your own data tools (see [the boundary](#the-honest-boundary-and-how-live-data-fits)), but work without them.
+*Automation & advanced:*
+- **[`seo-automations`](skills/seo-automations/SKILL.md)** — run the audit in CI/CD: a regression gate that fails a deploy/PR which would make the site invisible to crawlers, plus scheduled re-audits.
+- **[`seo-media`](skills/seo-media/SKILL.md)** — image & video SEO: `VideoObject` schema, media sitemaps, real transcripts/captions.
+- **[`seo-programmatic`](skills/seo-programmatic/SKILL.md)** — pages at scale from data, the white-hat way (a quality gate that refuses thin/doorway pages).
+- **[`seo-log-analysis`](skills/seo-log-analysis/SKILL.md)** — large-site server-log & crawl-budget analysis: what crawlers actually fetch.
+
+The content & marketing skills get sharper when you connect your own data tools (see [the boundary](#the-honest-boundary-and-how-live-data-fits)), but work without them. `seo-automations` is the one to add once your site is healthy — it keeps it that way.
 
 ---
 

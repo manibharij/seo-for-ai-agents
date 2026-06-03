@@ -4,9 +4,12 @@ description: >-
   Audit a site's existing CONTENT (not just its markup) — quality and depth,
   search-intent match, topical gaps, keyword cannibalisation, E-E-A-T, freshness and
   decay, and internal-link opportunities — and recommend a keep / improve /
-  consolidate / prune / refresh action for each page. Use on "content audit", "is my
-  content good", "content gaps", "which pages to update or remove", "thin content",
-  or "content strategy review". Assesses real content on the served output; uses
+  consolidate / prune / refresh action for each page. Use when you want page-by-page
+  content DECISIONS across the whole site — "content audit", "is my content good",
+  "content gaps", "which pages to update, merge, or remove", "thin content across my
+  site". (For the full technical+content audit use seo-orchestrator; to rewrite one
+  specific page's copy use seo-content-editing; for topic/positioning strategy use
+  seo-positioning-strategy.) Assesses real content on the served output; uses
   connected live data (Search Console / keyword tools) when present, never required.
 ---
 

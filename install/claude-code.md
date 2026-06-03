@@ -29,7 +29,11 @@ Copy each skill directory (the folder containing `SKILL.md` and its `references/
 ├── seo-content-audit/       # content: assess content, recommend actions
 ├── seo-content-editing/     # content: improve real copy (edit, not generate)
 ├── seo-positioning-strategy/# content: topical authority + positioning plan
-└── seo-proposal-roadmap/    # content: package findings into a proposal/roadmap
+├── seo-proposal-roadmap/    # content: package findings into a proposal/roadmap
+├── seo-automations/         # automation: CI/CD regression gate + scheduled audits
+├── seo-media/               # advanced: image & video SEO
+├── seo-programmatic/        # advanced: white-hat pages-at-scale from data
+└── seo-log-analysis/        # advanced: server-log & crawl-budget analysis
 ```
 
 Copy the **whole `skills/` folder** — keep the skills together. The orchestrator holds the cross-cutting references (audit lifecycle, site-type profiles, stack/platform adapters) the others rely on.
@@ -70,6 +74,10 @@ Once installed, just describe the problem — the descriptions are written to tr
 - *"Improve / tighten this page's copy."* → **`seo-content-editing`**.
 - *"What topics should we own / how do we differentiate?"* → **`seo-positioning-strategy`**.
 - *"Put together an SEO proposal / roadmap."* → **`seo-proposal-roadmap`**.
+- *"Catch SEO regressions in CI / GitHub Action for SEO."* → **`seo-automations`**.
+- *"Get my images/videos into search."* → **`seo-media`**.
+- *"Generate location/product pages at scale."* → **`seo-programmatic`**.
+- *"What is Googlebot actually crawling / crawl budget."* → **`seo-log-analysis`**.
 
 Connect your own data tools (Search Console, DataForSEO, Ahrefs) to sharpen all of these — optional, see [data-integrations.md](data-integrations.md).
 

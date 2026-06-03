@@ -3,9 +3,11 @@ name: seo-content-editing
 description: >-
   Improve EXISTING page copy for search and answer engines — clarity, structure,
   depth, search-intent match, readability, and answerability — while keeping it
-  truthful and in the author's voice. Use on "improve this content", "edit my copy",
-  "make this page clearer/better", "tighten this", "optimise this page's content",
-  or after a content audit flags a page to "improve". Strictly white-hat: it edits
+  truthful and in the author's voice. Use when improving the copy on ONE specific
+  page you point to — "improve this page", "edit this copy", "make this page
+  clearer", "tighten this page" — or after seo-content-audit flags a page to
+  "improve". (For a site-wide content review/decisions, use seo-content-audit first.)
+  Strictly white-hat: it edits
   and restructures REAL content and flags where genuine substance is missing — it
   never fabricates facts, sources, or expertise, and never mass-generates content.
 ---
