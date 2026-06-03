@@ -7,6 +7,9 @@ This project aims to follow [Semantic Versioning](https://semver.org/) loosely w
 ## [Unreleased]
 *Current as of: 2026-06. Experimental — see [DISCLAIMER.md](DISCLAIMER.md).*
 
+### Added — a read-only audit mini
+- **`install/copy-paste/audit-readonly.md`** — an analysis-only version of the audit mini: it walks the whole Visibility Ladder on the served HTML and reports a scorecard, the floor, and prioritised fixes with risk, but **changes nothing** (no code edits, no `.seo/` written). The safe first look, ideal for auto-mode or a live site you don't want touched; switch to `audit.md` to actually apply fixes.
+
 ### Added — holistic completeness (closing the off-page and niche gaps)
 - **`seo-offsite-authority`** — the off-page half of SEO: audit the backlink profile (via connected Search Console / Ahrefs / DataForSEO), flag toxic links and produce a disavow file, find the competitor authority gap, and recommend strictly white-hat link-building and digital PR. Advisory and audit only — never executes outreach or buys links.
 - **Broader schema catalogue** — added `JobPosting`, `Event`, `Course`, `Review`/`AggregateRating`, and `SoftwareApplication` to the Understand skill, with a pointer to the wider schema.org set.

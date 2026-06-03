@@ -32,4 +32,4 @@ The pack has three tiers. **Start with the orchestrator** for anything broad —
 - **Automation / advanced** — keep a site healthy automatically (CI/CD) and handle the harder cases (media, scale, large-site crawl budget). Reach for these once the core is solid.
 - **Off-page** — `seo-offsite-authority`: the earned-media half of SEO (backlinks, authority, digital PR). The ladder can't *build* it, but this skill *audits and strategises* it (advisory, white-hat, never buying links).
 
-No host? Every skill has a paste-into-chat mini in [`install/copy-paste/`](install/copy-paste/) — start with [`audit.md`](install/copy-paste/audit.md).
+No host? Every skill has a paste-into-chat mini in [`install/copy-paste/`](install/copy-paste/) — start with [`audit.md`](install/copy-paste/audit.md), or [`audit-readonly.md`](install/copy-paste/audit-readonly.md) for an analysis-only first pass that changes nothing.

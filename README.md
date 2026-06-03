@@ -6,7 +6,7 @@
 
 `experimental · v0.1 (current as of 2026-06) · MIT` — **[Which skill when?](SKILLS.md)** · [Method](METHOD.md) · [Changelog](CHANGELOG.md) · [Disclaimer](DISCLAIMER.md)
 
-> **New here?** Paste [`install/copy-paste/audit.md`](install/copy-paste/audit.md) into your agent to audit an **existing** site, or [`install/copy-paste/reach.md`](install/copy-paste/reach.md) for the highest-impact fix on a **new** build. → [Install](#install)
+> **New here?** Paste [`install/copy-paste/audit.md`](install/copy-paste/audit.md) into your agent to audit an **existing** site, or [`install/copy-paste/reach.md`](install/copy-paste/reach.md) for the highest-impact fix on a **new** build. Want a look without any changes? Use [`audit-readonly.md`](install/copy-paste/audit-readonly.md). → [Install](#install)
 
 ## Contents
 - [The method — the Visibility Ladder](#the-method-the-visibility-ladder)
@@ -104,6 +104,7 @@ Install copies the **whole `skills/` folder** (the orchestrator carries the shar
 ### Fastest start (no setup)
 Paste a mini straight into your agent:
 - [**`audit.md`**](install/copy-paste/audit.md) — the best all-rounder: runs the full audit lifecycle on a **new or existing** site (creates the `.seo/` report, fixes the floor up).
+- [**`audit-readonly.md`**](install/copy-paste/audit-readonly.md) — the same audit, **analysis-only**: diagnoses and reports but changes nothing. Safest first look, ideal for auto-mode or a live site you don't want touched.
 - [**`reach.md`**](install/copy-paste/reach.md) — the highest-impact single fix and the best demo: catch a site that's invisible to crawlers.
 - Then the per-rung minis (`read`, `understand`, `connect`, `rank`), the AEO-layer mini (`cite`), and the specialist minis: technical (`migrations`, `measurement`), content/marketing (`content-audit`, `content-editing`, `positioning-strategy`, `proposal-roadmap`), automation & advanced (`automations`, `media`, `programmatic`, `log-analysis`), and off-page (`offsite`). One per skill in [`install/copy-paste/`](install/copy-paste/).
 
