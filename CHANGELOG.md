@@ -7,6 +7,11 @@ This project aims to follow [Semantic Versioning](https://semver.org/) loosely w
 ## [Unreleased]
 *Current as of: 2026-06. Experimental — see [DISCLAIMER.md](DISCLAIMER.md).*
 
+### Changed — the ladder now ends in Rank (SEO-first), plus an autonomy principle
+- **Reworked the Visibility Ladder so it names the goal.** The fifth rung is now **Rank** (`5-rank-relevance`): is the page good and relevant enough to actually rank — search intent, quality/depth, E-E-A-T, topical authority. The first four rungs make a page *eligible*; Rank is whether it deserves to win. This makes SEO/ranking the explicit summit.
+- **AEO/citation is now the layer *on top* of the ladder, not a rung.** The Cite skill moved from `5-cite-aeo-geo` to **`cite-aeo-geo`** and is framed as additive and secondary: applied after a page can rank, never instead of it.
+- **New principle: work it out yourself; don't interrogate the user.** The agent reads the codebase and served pages to infer the site's purpose, audience, stack, platform and sector, and acts on sensible defaults, rather than asking the user to fill in details. Step 0 of the orchestrator is now "understand the site yourself," and "ask the user" prompts are reframed as infer-first.
+
 ### Added — holistic coverage (technical · content · data · automations · advanced)
 - **`seo-automations`** — automate the audit in CI/CD: a GitHub Action that runs the served-HTML checks on deploy/PR and fails the build on a critical regression, plus Lighthouse CI, scheduled re-audits, and hooks. (Codifies the mechanisable checks; the deeper agent audit stays a periodic human-in-the-loop run.)
 - **`seo-media`** — image & video SEO: alt/filenames/formats, image & video sitemaps, `VideoObject` schema (honest values only), and real transcripts/captions.

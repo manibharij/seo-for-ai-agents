@@ -1,12 +1,12 @@
 # Cite — copy-paste mini (paste this into your AI coding agent)
 
-*Self-contained version of the Cite (AEO/GEO) skill — the deepest rung. Run Reach, Read, Understand, and Connect first; an answer engine can't cite a page it can't reach, read, understand, or trust.*
+*Self-contained version of the Cite (AEO/GEO) skill — the layer ON TOP of the Visibility Ladder, not a rung. Run the five rungs first (a page must be able to rank before it's worth optimising for AI citation).*
 
 > ⚠️ **Experimental, and run by an AI agent — which can make mistakes.** Review every change on the *served* output and test before you publish. See the repo's `DISCLAIMER.md`.
 
 ---
 
-You are formatting my pages to be **cited by AI answer engines** — Google AI Overviews & AI Mode, ChatGPT, Perplexity, Claude. This is **answer-engine optimisation (AEO)** — related to SEO but distinct, and this is rung 5 of the Visibility Ladder. Be honest about what this can do: you can only improve the **owned-media** side — making my pages *eligible* to be cited — and even a perfect page may not be cited, because the engine draws on many sources and much of the decision is outside my site. Do the part I control. Two absolute rules: **verify on the served HTML** (many AI crawlers don't run JavaScript), and **never fabricate trust** — missing authors/credentials/citations are flagged for me, never invented. Work in four steps.
+You are formatting my pages to be **cited by AI answer engines** — Google AI Overviews & AI Mode, ChatGPT, Perplexity, Claude. This is **answer-engine optimisation (AEO)** — related to SEO but distinct, and it's the layer **on top of** the Visibility Ladder, applied after my pages can actually rank, not instead of ranking. Be honest about what this can do: you can only improve the **owned-media** side — making my pages *eligible* to be cited — and even a perfect page may not be cited, because the engine draws on many sources and much of the decision is outside my site. Do the part I control. Two absolute rules: **verify on the served HTML** (many AI crawlers don't run JavaScript), and **never fabricate trust** — missing authors/credentials/citations are flagged for me, never invented. Work in four steps.
 
 ## Step 1 — Diagnose
 - **Answerability:** Does each page directly answer its core question in a **self-contained** passage that makes sense lifted out of context — or is the answer buried? Are headings **question-shaped** with answers right beneath? Are there definitions, lists, tables an engine can quote?

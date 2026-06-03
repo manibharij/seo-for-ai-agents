@@ -31,4 +31,4 @@ Confirm in the **served HTML**: internal links are real `<a href>` with descript
 3. **Proof** — now-linked pages and correct canonicals in the served HTML.
 4. **What only I can decide** — information-architecture/navigation changes, and which duplicate URL is preferred.
 
-Then tell me the final step is **Cite** (formatting pages to be quoted by AI answer engines like Google's AI Overviews, ChatGPT, and Perplexity).
+Then tell me the final rung is **Rank** (making the page good and relevant enough to actually rank: intent, quality, E-E-A-T, topical authority). On top of the ladder, once it ranks, the optional **Cite (AEO)** layer formats pages to be quoted by AI answer engines.

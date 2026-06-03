@@ -34,7 +34,7 @@ Look for the framework so you can reason about how it renders:
 - A `create-react-app` / plain CRA `react-scripts` setup → **CRA SPA** (high risk).
 - Plain static `.html` files or a static-site generator output → usually fine for Reach; focus on robots/sitemap.
 
-If you cannot tell, say so and ask before assuming. Do not guess the framework.
+Work the stack out from the dependencies and config yourself; if it's genuinely undeterminable, assume the most likely and proceed, noting the assumption. Don't make the user tell you the framework.
 
 ### 1b. Fetch a real URL and look at the SERVED HTML
 This is the heart of the diagnosis. Pick a representative content page (not just the homepage — an article, a product, a deep page). Fetch the **raw, un-executed** HTML the way a crawler first sees it.
@@ -77,7 +77,7 @@ The principle: **the primary content must be in the HTML the server sends, befor
 > Never "fix" rendering by stuffing hidden content for crawlers or serving crawlers different HTML than users (cloaking). That is black-hat and breaks the method. The content a crawler sees must be the content a user sees.
 
 ### Robots, sitemap, status, HTTPS
-- Remove erroneous `Disallow` rules and stray `noindex` directives on pages that should be indexed (confirm with the user which paths are intentionally private).
+- Remove erroneous `Disallow` rules and stray `noindex` directives on pages that should be indexed. Infer intent yourself: admin, cart, account, and internal-search paths are almost always meant to stay private, so leave those; only flag a genuinely ambiguous case rather than asking about every path.
 - Ensure a valid sitemap exists, lists canonical `200` URLs only, and is referenced from `robots.txt`. For framework-native sitemap generation (e.g. Next.js `app/sitemap.ts`), see `references/robots-and-sitemaps.md`.
 - Fix soft 404s (return a real `404`), collapse redirect chains, and resolve `5xx`.
 - Ensure `http://` redirects to `https://` (single hop) and fix mixed-content references (assets loaded over `http://` on an HTTPS page). Certificate provisioning is usually a host/platform setting — flag it for the user if it's missing rather than assuming you can issue one. Picking the single preferred host+protocol site-wide is finished at rung 4.

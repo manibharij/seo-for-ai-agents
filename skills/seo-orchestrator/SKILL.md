@@ -16,7 +16,8 @@ description: >-
 This is the brain of the pack. It turns the five rung skills into one **adaptive audit lifecycle** that works the first time *and every time after*, on a freshly built site or a mature one with existing rankings. Read `METHOD.md` for the philosophy; this skill runs it.
 
 Two ideas drive everything here:
-- **The Visibility Ladder** — five rungs in dependency order (Reach → Read → Understand → Connect → Cite). Diagnose top-to-bottom; fix bottom-to-top; never fix a rung while a lower one fails. Verify on the **served HTML**, never the source. Stay strictly white-hat.
+- **The Visibility Ladder** — five rungs in dependency order (Reach → Read → Understand → Connect → **Rank**), climbing to the goal of every site: ranking. Diagnose top-to-bottom; fix bottom-to-top; never fix a rung while a lower one fails. **AEO/citation (`cite-aeo-geo`) is the optional layer on top, for the AI-answer era, after a page ranks, not a rung in the ladder.** Verify on the **served HTML**, never the source. Stay strictly white-hat.
+- **Work it out yourself** — read the codebase and the served pages to understand the site (its purpose, audience, stack, platform, sector). Infer and act on sensible defaults; don't interrogate the user.
 - **The lifecycle** — an audit is not a one-shot. The first run establishes a baseline and fixes the safe wins; **every later run reads what happened before, re-verifies it still holds (regressions), finds what's new, and advances.** State lives in a `.seo/` folder in the project so progress persists across sessions.
 
 | Rung | Skill | Question |
@@ -25,7 +26,8 @@ Two ideas drive everything here:
 | 2. Read | `2-read-content` | Real content + metadata + page experience (speed/mobile)? |
 | 3. Understand | `3-understand-schema` | Entities identifiable via valid, honest schema? |
 | 4. Connect | `4-connect-architecture` | Wired into a coherent site (links, canonicals)? |
-| 5. Cite | `5-cite-aeo-geo` | Owned-side AEO — formatted to be *eligible* for citation? |
+| 5. Rank | `5-rank-relevance` | Good and relevant enough to rank? (intent, quality, E-E-A-T, topical authority) |
+| + Cite (AEO) | `cite-aeo-geo` | *On top of the ladder:* eligible to be cited by AI answers, after it ranks |
 
 Specialist skills outside the ladder, dispatched when relevant:
 - **`seo-migrations`** — URL changes / redirects / site moves.
@@ -41,15 +43,15 @@ Specialist skills outside the ladder, dispatched when relevant:
 
 ---
 
-## Step 0 — Detect context (before anything)
+## Step 0 — Understand the site yourself (before anything)
 
-Establish four things; they shape the whole run:
+Read the codebase and the served pages and **work the context out on your own** — the user shouldn't have to describe their site or fill in a form. First, build a quick working model of **what the site is, who it's for, and what each page is trying to do** (from the content, routes, copy, and structure). Then establish the five things below. Infer and proceed on sensible defaults; ask only for the rare decision a human genuinely must make, and even then propose a default rather than blocking.
 
 1. **First run or progression?** Check for a **`.seo/` folder** in the project.
    - **No `.seo/`** → this is a **first run**. Go to the First-run lifecycle.
    - **`.seo/` exists** → this is a **progression run**. Read `.seo/state.json` and `.seo/log.md` first, then go to the Progression lifecycle.
-2. **Stack & platform.** Detect the framework (`next.config.*`, `astro.config.*`, etc.) and whether it's a **code-editable** app or a **hosted/CMS** platform (WordPress/Shopify/Webflow). This changes *how* fixes are applied. See `references/stack-and-platform-adapters.md`. If you can't tell, ask — don't guess.
-3. **Site type (profile).** Content/blog, marketing/SaaS, e-commerce, local business, docs, or international? This tunes which issues matter most and adds type-specific checks. See `references/profiles/`.
+2. **Stack & platform.** Detect the framework (`next.config.*`, `astro.config.*`, etc.) and whether it's a **code-editable** app or a **hosted/CMS** platform (WordPress/Shopify/Webflow). This changes *how* fixes are applied. See `references/stack-and-platform-adapters.md`. Detect it from the files and config; if it's genuinely undeterminable, assume the most likely and proceed.
+3. **Site type (profile).** Content/blog, marketing/SaaS, e-commerce, local business, docs, or international? **Infer it from the content and structure** (don't ask) — it tunes which issues matter most and adds type-specific checks. See `references/profiles/`.
 4. **Existing site?** If the site is live with real traffic/rankings, switch on the **don't-regress discipline** (`references/existing-site-safety.md`) — understand what's working and intentional before you change anything.
 5. **Any live-data integrations connected?** Check for **optional** BYO-key data tools (Search Console, DataForSEO, Ahrefs, Bing) via env vars/MCP. If present, use them to *enrich* the audit (real indexation, traffic-weighted priorities, demand/competitor data); if not, proceed on served-output checks alone. **Never required, never a gate** — see `references/live-data-integrations.md`. (Read keys only from env vars; never store them in `.seo/` or commits.)
 
@@ -84,6 +86,7 @@ Progression is what makes this a system: the second, fifth, twentieth run is nev
 
 - Run the specialist skill for the **lowest failing rung**, complete its verify, then climb. Skip rungs that already pass (don't redo good work) but never skip *upward over* a failing rung.
 - If the user's goal is a higher rung (e.g. AI citation), still resolve every lower failing rung first — then reach the goal rung legitimately.
+- **Rung 5 (Rank) is the goal.** Dispatch **`5-rank-relevance`** to make the page genuinely competitive — search intent, quality/depth, E-E-A-T, topical authority; it draws on the content/strategy skills below. **AEO is the layer on top, not a rung:** only once a page can rank, use **`cite-aeo-geo`** to make it eligible for AI-answer citation — never instead of ranking.
 - Pull in **`seo-migrations`** whenever URLs change or the site moves, and **`seo-measurement-setup`** when analytics/Search Console plumbing is missing or broken.
 - Pull in the **content/marketing skills** when the work is about the content itself, not just its markup: **`seo-content-audit`** (assess), **`seo-content-editing`** (improve real copy), **`seo-positioning-strategy`** (messaging/competitive/topical planning), and **`seo-proposal-roadmap`** (package the findings as a proposal/roadmap deliverable). These read live data (demand/competitor) when it's connected, and say so honestly when it isn't.
 - Pull in the **advanced/automation skills** when relevant: **`seo-automations`** (set up CI/CD regression gates + scheduled re-audits — recommend this once a site is healthy, to keep it that way), **`seo-media`** (sites with significant image/video), **`seo-programmatic`** (data-driven pages at scale — apply its quality gate), **`seo-log-analysis`** (large/crawl-constrained sites with server logs).
@@ -99,7 +102,7 @@ Summarise for a non-SEO user (or a developer who wants the SEO judgement, not a 
 - **Where the site stands** — the rung scores, the floor, the trend vs last run.
 - **What was fixed**, rung by rung, each with why it matters and **proof on the served HTML**.
 - **What needs you** — flagged human decisions and any real content/trust signals the pack refused to fabricate.
-- **The boundary** — these are build-time, owned-media fixes. Whether you actually rank, where, against whom, or get cited by AI engines over time is **live data** (rank tracking, AI-citation monitoring, geo-grid) — a separate, ongoing discipline. Earned media (backlinks, PR) is off-site and out of scope. Never paywall a build-time capability; point across the boundary honestly. (The Cite skill carries the full handoff.)
+- **The boundary** — these are build-time, owned-media fixes. Whether you actually rank, where, against whom, or get cited by AI engines over time is **live data** (rank tracking, AI-citation monitoring, geo-grid) — a separate, ongoing discipline. Earned media (backlinks, PR) is off-site and out of scope. Never paywall a build-time capability; point across the boundary honestly. (The `cite-aeo-geo` skill carries the full handoff.)
 
 ---
 

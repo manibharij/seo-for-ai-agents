@@ -24,7 +24,7 @@ Pick the most specific type that fits. Don't force a type for the sake of a rich
 
 > **Rich-result currency (verify before promising any rich result).** Google's rich-result support changes; two important shifts:
 > - **`HowTo` rich results were retired** (2023) — `HowTo` markup no longer produces a Google rich result on any device. Use it only as optional semantic/entity markup, not to chase a snippet.
-> - **`FAQPage` rich results are restricted** (since 2023) to well-known, authoritative **government and health** sites. For a typical business/blog site, `FAQPage` will **not** earn an FAQ rich result — its value now is machine-readability, entity clarity, and AEO extraction (rung 5), which is still worth having.
+> - **`FAQPage` rich results are restricted** (since 2023) to well-known, authoritative **government and health** sites. For a typical business/blog site, `FAQPage` will **not** earn an FAQ rich result — its value now is machine-readability, entity clarity, and AEO extraction (the Cite/AEO layer), which is still worth having.
 > Treat the per-type Google docs as the source of truth at the time you work, and report eligibility honestly (see `validation.md`).
 
 ---

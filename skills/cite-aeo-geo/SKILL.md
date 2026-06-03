@@ -1,17 +1,18 @@
 ---
-name: 5-cite-aeo-geo
+name: cite-aeo-geo
 description: >-
-  Format pages to be cited by AI answer engines — Google AI Overviews & AI Mode,
-  ChatGPT, Perplexity, Claude — through self-contained answer blocks, question-shaped
+  Format pages to be cited by AI answer engines (Google AI Overviews & AI Mode,
+  ChatGPT, Perplexity, Claude) through self-contained answer blocks, question-shaped
   headings, consistent entities, genuine attribution, and AI-crawler awareness
-  (incl. llms.txt). This is AEO/GEO. Use this LAST, after Reach→Read→Understand→Connect
-  all pass, on any "AI search", "AI Overviews", "AEO", "GEO", "get cited by ChatGPT/
-  Perplexity", "answer engine", "llms.txt", or "show up in AI answers" question.
+  (incl. llms.txt). This is AEO/GEO, the layer ON TOP of the Visibility Ladder. Use
+  it AFTER the five rungs pass and the page can rank, on any "AI search", "AI
+  Overviews", "AEO", "GEO", "get cited by ChatGPT/Perplexity", "answer engine",
+  "llms.txt", or "show up in AI answers" request.
 ---
 
 # Cite — AEO / GEO (Answer & Generative Engine Optimisation)
 
-**Rung 5 of the Visibility Ladder. The deepest rung. Do not start until rungs 1–4 all pass** — an answer engine cannot cite a page it cannot reach, read, understand, or place in a trustworthy site. This rung is where search is heading: AI Overviews, AI Mode, ChatGPT, Perplexity and Claude increasingly *synthesise an answer and cite a few sources* instead of listing ten links. But be clear-eyed: this is **answer-engine optimisation (AEO)**, a discipline related to but distinct from SEO. You can only improve the **owned-media** side of it — making your page *eligible* to be cited — and even a perfect page may not be cited, because the engine draws on many sources and much of the decision sits outside your site. This rung does the part you control, honestly.
+**The layer on top of the Visibility Ladder, not a rung in it. Do not start until the five rungs pass and the page can actually rank** — an answer engine cannot cite a page it cannot reach, read, understand, place in a trustworthy site, or that isn't good enough to rank in the first place. AEO is **additive and secondary**: it comes after ranking, never instead of it. AI Overviews, AI Mode, ChatGPT, Perplexity and Claude increasingly *synthesise an answer and cite a few sources*, so being one of those sources is worth earning, but be clear-eyed: this is **answer-engine optimisation (AEO)**, related to but distinct from SEO. You can only improve the **owned-media** side of it, making your page *eligible* to be cited, and even a perfect page may not be cited, because the engine draws on many sources and much of the decision sits outside your site. This skill does the part you control, honestly, on a page that has already earned its ranking.
 
 A page passes Cite when it is formatted and trusted so an answer engine can confidently lift a self-contained, attributable answer from it. This is a formatting and trust discipline, not a trick — and the white-hat rule is absolute here, because fabricated authority is exactly what these systems are built to discount.
 
@@ -91,7 +92,7 @@ This is the top of the ladder. If all five rungs pass, the site is built to be f
 
 ---
 
-## Reference files (this rung has the most — read what you need)
+## Reference files (this layer has the most — read what you need)
 - `references/ai-overviews-and-ai-mode.md` — how AI search surfaces and cites sources; what eligibility really means; how it differs from classic ranking.
 - `references/answer-block-formatting.md` — self-contained answer blocks, question-shaped headings, extractable structure; patterns and anti-patterns.
 - `references/entity-and-attribution.md` — entity consistency, `sameAs`, genuine E-E-A-T and attribution, the white-hat line in detail.

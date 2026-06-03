@@ -91,4 +91,4 @@ Confirm in the served HTML, per template:
 - [ ] One preferred host + protocol enforced (https + chosen www/non-www), others `301`-redirected.
 - [ ] Important pages are linked (no orphans) and within ~3 clicks; links are real `<a href>` in the served output.
 
-If any box is unchecked, Connect has not passed. Only then climb to rung 5 (Cite).
+If any box is unchecked, Connect has not passed. Only then climb to rung 5 (Rank).

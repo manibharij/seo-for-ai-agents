@@ -24,7 +24,8 @@ fix a rung until the ones below it pass:
 2. Read (`skills/2-read-content/`) — content + metadata + page experience (speed/mobile)
 3. Understand (`skills/3-understand-schema/`) — valid, honest schema
 4. Connect (`skills/4-connect-architecture/`) — internal links + canonicals
-5. Cite (`skills/5-cite-aeo-geo/`) — owned-side AEO answer formatting + attribution
+5. Rank (`skills/5-rank-relevance/`) — the goal: good & relevant enough to rank (intent, quality, E-E-A-T, topical authority)
+On top of the ladder (after a page ranks): `skills/cite-aeo-geo/` — AEO, eligible to be cited by AI answers (secondary, not a rung).
 Specialists: `skills/seo-migrations/` (URL changes/redirects), `skills/seo-measurement-setup/` (analytics/GSC),
 `skills/seo-content-audit/` (assess content), `skills/seo-content-editing/` (improve real copy — edit not generate),
 `skills/seo-positioning-strategy/` (topical authority/positioning), `skills/seo-proposal-roadmap/` (proposal/roadmap),

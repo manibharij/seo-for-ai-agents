@@ -11,6 +11,6 @@ Read the profile that matches the site. A profile doesn't replace the Visibility
 | [documentation.md](documentation.md) | Developer/product docs, knowledge bases, help centres |
 | [international.md](international.md) | Any site targeting multiple countries/languages (combine with another profile) |
 
-A site can match more than one (e.g. an international e-commerce site → apply `ecommerce.md` + `international.md`). Profiles tune emphasis and add checks; they never let you skip a lower rung. When in doubt about the type, ask the user.
+A site can match more than one (e.g. an international e-commerce site → apply `ecommerce.md` + `international.md`). Profiles tune emphasis and add checks; they never let you skip a lower rung. Infer the type from the site's content and structure; when genuinely ambiguous, pick the most likely and proceed rather than asking.
 
 These are deliberately horizontal *modalities*, not narrow sector playbooks — they shift how each rung applies, they don't fork the method.

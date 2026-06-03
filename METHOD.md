@@ -1,6 +1,6 @@
 # The Visibility Ladder
 
-*A method for making websites visible to search engines and AI answer engines, in the order that actually matters.*
+*A method for getting a website to rank in search, in the dependency order that actually matters, with AI-answer visibility as the layer on top.*
 
 ---
 
@@ -12,17 +12,13 @@ The problem is not that the items are wrong. The problem is that they have a **d
 
 You cannot optimise what cannot be seen. And most sites built by AI coding agents fail at the very bottom of the stack — the page looks perfect in the browser, and is nearly invisible to a crawler — while everyone busies themselves at the top.
 
-The Visibility Ladder fixes the order. It is five rungs, and **you may not climb a rung until the ones beneath it pass.**
+The Visibility Ladder fixes the order. It is **five rungs that climb to the goal of every site: ranking** — and you may not climb a rung until the ones beneath it pass. Then, above the ladder, sits one further layer for the AI-answer era.
 
-### SEO and AI search: a shared foundation, not the same discipline
+### SEO is the goal; AI search is the layer on top
 
-It's tempting to treat "AI SEO" as a replacement for the old SEO — and equally tempting to call them the same thing renamed. Both are wrong. **SEO** (ranking in search results) and **AEO** (being cited by AI answer engines) are *related but distinct.*
+Be clear about the priority, because it's easy to get backwards. **The goal is to rank in search.** That is what the ladder is for, and the fifth rung names it: Rank. Everything below the summit exists to earn it.
 
-What they share is the foundation. A page has to be reachable, readable, understandable, and well-structured to stand a chance in either; do that badly and you lose both. The lower rungs are common ground.
-
-Where they diverge is the **outcome and how much of it you control.** In classic SEO, your page largely earns its own ranking — the relationship between what you do and what you get is reasonably direct. In AI search, the engine synthesises an answer from many sources and may cite few or none; even a flawless page is *not* guaranteed a citation, and much of what decides it — the model, what it retrieves, your authority across the wider web — sits outside your own site entirely.
-
-So this method is **primarily SEO**, with the AI-search work scoped to what you can actually control: the **owned-media** side. Rungs 1–4 are the SEO fundamentals. Rung 5 makes the same well-built page *eligible* to be cited — it does not pretend eligibility is a citation. Build the foundation once and it serves both, but treat them as two related disciplines, not one.
+**AEO** (answer-engine optimisation: being cited by AI answers like AI Overviews, ChatGPT and Perplexity) is real and growing, and it's worth doing. But it is **a layer on top of the ladder, not a rung in it, and not a replacement for ranking.** SEO and AEO share a foundation, a page must be reachable, readable, understandable, well-connected and genuinely good to do anything in either. They diverge at the top: classic ranking is largely earned by your own page, whereas whether an AI answer *cites* you depends on the model, what it retrieves, and your authority across the wider web, much of which sits outside your site. So citation is never guaranteed, comes *after* you've earned ranking, and is scoped here to the **owned-media** part you can actually control. SEO first; AEO on top.
 
 ---
 
@@ -54,11 +50,22 @@ A page is not an island. Engines learn importance and meaning from how pages lin
 
 Connect comes after Understand because internal linking is most powerful when the engine already knows what each page is and what entities it covers. Wire understood pages together and the whole site reinforces itself.
 
-### 5. Cite — *is it formatted to be quoted by an AI answer engine?*
+### 5. Rank — *is the page actually good and relevant enough to win?*
 
-The deepest rung, and the forward-looking one — because this is where search is heading. AI Overviews, AI Mode, ChatGPT, Perplexity and the rest do not just rank ten blue links; they **synthesise an answer and cite a handful of sources.** Earning a place among those sources is becoming valuable in its own right — but it is the *owned-media* part of that you can act on here, and only the part. This rung makes a well-built page **eligible** to be quoted; it cannot guarantee the engine will quote it, because that depends on much that sits outside your site. And you still need the four rungs below it first.
+The summit, and the whole point. The first four rungs make a page *eligible* to rank: reachable, readable, understood, and well-connected. Rung five is whether it is *competitive* — whether it deserves to rank for what its audience is searching. That is four things, all build-time and owned-media:
 
-Citability is a formatting and trust discipline: self-contained answer blocks that make sense lifted out of context, question-shaped headings, consistent entity naming so the engine is confident who and what you are, genuine attribution and expertise signals, and an awareness of how AI crawlers differ from classic ones. You can only earn this rung once the four below it hold — an answer engine cannot cite a page it cannot reach, read, understand, or place in a trustworthy site.
+- **Search intent** — does the page actually answer the query a visitor came for (informational, commercial, transactional, navigational), in their language?
+- **Genuine quality and depth** — is it comprehensive, specific, and more useful than what already ranks, or thin and derivative?
+- **E-E-A-T and trust** — real experience, real expertise, real authorship and sources, the signals engines weigh for a page they're about to rank.
+- **Topical authority** — does the site cover the topic deeply enough (the hub-and-spoke clusters from Connect) to be treated as a credible source on it?
+
+Honest boundary: ranking is also decided by things you do not control, off-site authority and the strength of the competition. Those are not build-time work (see the boundary, below). Rung five is everything on *your own site* that earns ranking, taken as far as it can go. That is the goal of the ladder.
+
+### Above the ladder: AEO (being cited by AI answers)
+
+Once a page genuinely ranks, the same foundations make it *eligible* to be cited by AI answer engines, AI Overviews, ChatGPT, Perplexity, Claude. This is **a layer on top of the ladder, not a sixth rung**, because it is not a prerequisite for ranking, it is a bonus above it, and it comes *after* the page has earned its place.
+
+AEO is a formatting and trust discipline: self-contained answer blocks that make sense lifted out of context, question-shaped headings, consistent entity naming, genuine attribution, and an awareness of how AI crawlers differ from classic ones. It makes a page **eligible** to be quoted; it cannot guarantee a citation, because that depends on much that sits outside your site. Worth doing, on the page you've already earned ranking for, never instead of it.
 
 ---
 
@@ -84,7 +91,9 @@ This is what makes the method serve an *existing* site as well as a new one. A f
 
 ---
 
-## Three principles that keep the method honest
+## Four principles that keep the method honest
+
+**Work it out yourself; don't interrogate the user.** The person running this should not have to know SEO, describe their site, or fill in a questionnaire. Before doing anything, the agent **reads the codebase and the served pages and works out the context on its own**: what the site is, who it's for, what each page is trying to do, the stack, the platform, and the sector. It forms a working model, acts on sensible defaults, and only pauses for the handful of decisions a human genuinely must make, and even then it proposes a default rather than blocking. Inferring beats asking. A good audit should feel like handing the keys to an expert who looks around and gets to work, not one who hands you a form.
 
 **Verify on the rendered output, not the source.** An agent that edits some JSX and announces "meta tags added" has proven nothing — it has changed the *source*. What matters is what is actually *served* to a crawler. Every rung in this pack is verified by inspecting fetched, rendered HTML, not by trusting that the code change had the intended effect. Client-rendered content that is invisible to crawlers is the single most common failure of AI-built sites, and the only way to catch it is to look at what comes down the wire.
 

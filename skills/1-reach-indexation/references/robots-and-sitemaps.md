@@ -24,7 +24,7 @@ Allow: /
 
 Sitemap: https://example.com/sitemap.xml
 ```
-Add specific `Disallow` rules only for genuinely non-public paths (admin, cart, internal search results, faceted-filter URL explosions). Confirm intent with the user before blocking anything.
+Add specific `Disallow` rules only for genuinely non-public paths (admin, cart, internal search results, faceted-filter URL explosions). Infer which paths those are from their names and role rather than asking; flag only a genuinely ambiguous case rather than blocking blind.
 
 ---
 

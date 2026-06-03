@@ -29,9 +29,10 @@ Five rungs, fixed in sequence. **You cannot climb a rung until the ones beneath 
 | 2 | **Read** | Is there real, readable content, correct metadata, and a good page experience (speed + mobile)? | [`2-read-content`](skills/2-read-content/SKILL.md) |
 | 3 | **Understand** | Can engines identify the entities? (structured data) | [`3-understand-schema`](skills/3-understand-schema/SKILL.md) |
 | 4 | **Connect** | Is the page wired into a coherent site? (internal links, canonicals) | [`4-connect-architecture`](skills/4-connect-architecture/SKILL.md) |
-| 5 | **Cite** | Is it formatted to be cited by AI search? (AEO/GEO) | [`5-cite-aeo-geo`](skills/5-cite-aeo-geo/SKILL.md) |
+| 5 | **Rank** | Is it good and relevant enough to actually rank? (intent, quality, E-E-A-T, topical authority) | [`5-rank-relevance`](skills/5-rank-relevance/SKILL.md) |
+| + | **Cite (AEO)** | *On top of the ladder:* eligible to be cited by AI answers, after it ranks | [`cite-aeo-geo`](skills/cite-aeo-geo/SKILL.md) |
 
-Fixing content (Read) on a page Google can't render (Reach) is wasted work. The ladder stops that. The full philosophy is in **[METHOD.md](METHOD.md)** — read it; it's the heart of the pack.
+**Ranking is the goal**, and rung 5 names it. The first four rungs make a page *eligible*; Rank is whether it's good and relevant enough to win. **Cite (AEO)** is the optional layer *on top* of the ladder, for the AI-answer era, after a page ranks, never instead of ranking. Fixing content (Read) on a page Google can't render (Reach) is wasted work; the ladder stops that. Full philosophy in **[METHOD.md](METHOD.md)**.
 
 The **[`seo-orchestrator`](skills/seo-orchestrator/SKILL.md)** is the entry point for any broad request ("audit my SEO", "improve my rankings", "why am I not showing up", "get cited by ChatGPT"). It detects your stack, platform, and site type, finds the lowest failing rung, dispatches in order — and runs the whole thing as a **repeatable audit lifecycle** (below).
 
@@ -75,11 +76,12 @@ It **adapts** to the site: per-stack guidance (Next.js, Astro, Nuxt, SvelteKit, 
 
 ---
 
-## Three principles that make it better than a flat checklist
+## Four principles that make it better than a flat checklist
 
-1. **Verify on rendered output, not source.** An agent editing JSX and declaring "meta tags added" proves nothing. Every skill confirms what is actually *served* by re-fetching the URL — because client-rendered content invisible to crawlers is the #1 failure of AI-built sites (and a frequent silent regression on established ones after a refactor or replatform).
-2. **Talk to the agent, serve the non-SEO human.** The skill instructs the agent; the agent fixes what's safe, explains every change in plain English and why it matters, and flags what only a human can decide.
-3. **Strictly white-hat.** Never fabricate authors, credentials, reviews, or E-E-A-T signals. Where real trust signals are missing, they're flagged as human tasks — never invented. (This isn't only ethics: AI answer engines are built to discount manufactured authority.)
+1. **Work it out yourself; don't interrogate the user.** You shouldn't have to know SEO or describe your site. The agent reads the codebase and the served pages and figures out the context on its own — what the site is, who it's for, the stack, the platform, the sector — acts on sensible defaults, and only pauses for the few calls a human genuinely must make. Inferring beats asking.
+2. **Verify on rendered output, not source.** An agent editing JSX and declaring "meta tags added" proves nothing. Every skill confirms what is actually *served* by re-fetching the URL — because client-rendered content invisible to crawlers is the #1 failure of AI-built sites (and a frequent silent regression on established ones after a refactor or replatform).
+3. **Talk to the agent, serve the non-SEO human.** The skill instructs the agent; the agent fixes what's safe, explains every change in plain English and why it matters, and flags what only a human can decide.
+4. **Strictly white-hat.** Never fabricate authors, credentials, reviews, or E-E-A-T signals. Where real trust signals are missing, they're flagged as human tasks — never invented. (This isn't only ethics: AI answer engines are built to discount manufactured authority.)
 
 ---
 
@@ -100,7 +102,7 @@ Install copies the **whole `skills/` folder** (the orchestrator carries the shar
 Paste a mini straight into your agent:
 - [**`audit.md`**](install/copy-paste/audit.md) — the best all-rounder: runs the full audit lifecycle on a **new or existing** site (creates the `.seo/` report, fixes the floor up).
 - [**`reach.md`**](install/copy-paste/reach.md) — the highest-impact single fix and the best demo: catch a site that's invisible to crawlers.
-- Then the per-rung minis (`read`, `understand`, `connect`, `cite`), the technical specialists (`migrations`, `measurement`), and the content/marketing minis (`content-audit`, `content-editing`, `positioning-strategy`, `proposal-roadmap`).
+- Then the per-rung minis (`read`, `understand`, `connect`, `rank`), the AEO-layer mini (`cite`), the technical specialists (`migrations`, `measurement`), and the content/marketing minis (`content-audit`, `content-editing`, `positioning-strategy`, `proposal-roadmap`).
 
 On a host with skill support, the [`seo-orchestrator`](skills/seo-orchestrator/SKILL.md) does the routing and runs the lifecycle for you.
 
@@ -128,7 +130,7 @@ The free skills are **build-time and owned-media** at their core — rendering, 
 - **Optional, bring-your-own-key (DIY).** Connect tools you already use — Search Console (free), DataForSEO, Ahrefs, Bing Webmaster — with your **own** API keys, and the audit sharpens: real indexation and rankings, traffic-weighted priorities, and real demand/competitor context for the content and positioning work. Optional and self-service. See [install/data-integrations.md](install/data-integrations.md).
 - **Done-for-you (managed).** Don't want to wire up and pay for your own data APIs, or want ongoing managed monitoring — rank tracking, geo-grid, AI-citation tracking — hands-off? That's **SearchOps** (managed data) and **MB Search** (done-for-you optimisation).
 
-The line that never moves: **no build-time capability is ever paywalled, and nothing here requires a paid key to function.** And reading your *current* data is never a promise of *future* rankings or citations — see the closing note in the [Cite skill](skills/5-cite-aeo-geo/SKILL.md).
+The line that never moves: **no build-time capability is ever paywalled, and nothing here requires a paid key to function.** And reading your *current* data is never a promise of *future* rankings or citations — see the closing note in the [Cite skill](skills/cite-aeo-geo/SKILL.md).
 
 ---
 

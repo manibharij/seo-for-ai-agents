@@ -15,7 +15,8 @@ Cursor uses **Project Rules** — Markdown-with-frontmatter files in `.cursor/ru
 ├── 2-read-content.mdc
 ├── 3-understand-schema.mdc
 ├── 4-connect-architecture.mdc
-├── 5-cite-aeo-geo.mdc
+├── 5-rank-relevance.mdc
+├── cite-aeo-geo.mdc        # AEO layer on top (after a page ranks)
 ├── seo-migrations.mdc       # URL changes / redirects
 ├── seo-measurement-setup.mdc
 ├── seo-content-audit.mdc    # content: assess + recommend actions
@@ -51,7 +52,8 @@ Repeat for each mini:
 - `2-read-content.mdc` ← `copy-paste/read.md`
 - `3-understand-schema.mdc` ← `copy-paste/understand.md`
 - `4-connect-architecture.mdc` ← `copy-paste/connect.md`
-- `5-cite-aeo-geo.mdc` ← `copy-paste/cite.md`
+- `5-rank-relevance.mdc` ← `copy-paste/rank.md`
+- `cite-aeo-geo.mdc` ← `copy-paste/cite.md`
 - `seo-migrations.mdc` ← `copy-paste/migrations.md`
 - `seo-measurement-setup.mdc` ← `copy-paste/measurement.md`
 - `seo-content-audit.mdc` ← `copy-paste/content-audit.md`

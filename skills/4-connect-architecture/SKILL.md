@@ -89,7 +89,7 @@ Exact crawl/inspection steps and the checklist are in `references/canonicals-and
 3. **Proof** — the now-linked pages and correct canonicals in the served HTML.
 4. **What only you can decide** — information-architecture and navigation choices: "I recommend grouping these ten articles under a 'Guides' hub — shall I? It changes your menu." Plus which of any duplicate URLs is the *preferred* one.
 
-Then point up the ladder: with the site connected, the final rung is **Cite** — formatting pages to be quoted by AI answer engines.
+Then point up the ladder: with the site connected, the final rung is **Rank** (`5-rank-relevance`) — making the page good and relevant enough to actually rank (intent, quality, E-E-A-T, topical authority). Above the ladder, once it ranks, the optional **Cite (AEO)** layer formats it to be quoted by AI answer engines.
 
 ---
 

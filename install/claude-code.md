@@ -23,7 +23,8 @@ Copy each skill directory (the folder containing `SKILL.md` and its `references/
 ├── 2-read-content/
 ├── 3-understand-schema/
 ├── 4-connect-architecture/
-├── 5-cite-aeo-geo/
+├── 5-rank-relevance/        # rung 5 (the goal): good & relevant enough to rank
+├── cite-aeo-geo/            # the AEO layer on top of the ladder (after a page ranks)
 ├── seo-migrations/          # specialist: URL changes / redirects / site moves
 ├── seo-measurement-setup/   # specialist: analytics / Search Console / web-vitals plumbing
 ├── seo-content-audit/       # content: assess content, recommend actions
@@ -67,7 +68,8 @@ Once installed, just describe the problem — the descriptions are written to tr
 
 - *"Audit my site's SEO"* / *"why isn't my site showing up?"* → the **orchestrator** runs the audit lifecycle, usually starting at **Reach**.
 - *"Add structured data to my product pages."* → **Understand**.
-- *"Help my pages get cited by ChatGPT and AI Overviews."* → the **orchestrator** walks the ladder up to **Cite**.
+- *"Why am I not ranking / improve my rankings."* → the **orchestrator** climbs to **Rank** (rung 5).
+- *"Help my pages get cited by ChatGPT and AI Overviews."* → the **orchestrator** ranks the page first, then applies the **Cite (AEO)** layer.
 - *"We're redesigning / changing our URLs — don't lose rankings."* → **`seo-migrations`**.
 - *"Set up analytics and Search Console."* → **`seo-measurement-setup`**.
 - *"Audit my content / which pages should I update or cut?"* → **`seo-content-audit`**.
