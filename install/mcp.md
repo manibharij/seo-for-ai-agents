@@ -4,7 +4,9 @@
 
 MCP (Model Context Protocol) servers are an **optional** layer that makes *verification* sharper. The skills are written to **detect and use them if present, and fall back silently if not.** Nothing here is a dependency.
 
-> **Hard boundary:** the free core never *requires* a paid or live-data MCP. Live ranking and geo-grid data sit on the other side of the product line (see the README and the Cite skill's closing note). Requiring it for free would undercut that product. Use optional MCPs only to sharpen build-time verification — never to gate a capability the pack claims to give away.
+> **For live-data tools** (Google Search Console, DataForSEO, Ahrefs, Bing Webmaster) connected with **your own API key** to *enrich* the audit, see **[data-integrations.md](data-integrations.md)** — those can be exposed via an MCP server or directly via env vars. This file covers the MCP layer specifically.
+
+> **The boundary, kept intact:** the free core never *requires* any paid or live-data integration — it works fully with none connected. Live data is **optional enrichment** (your own keys, DIY) or **managed/done-for-you** (SearchOps for data, MB Search for the work). Optional integrations only *add live context and sharpen verification* — they never gate or paywall a build-time capability the pack gives away.
 
 ---
 

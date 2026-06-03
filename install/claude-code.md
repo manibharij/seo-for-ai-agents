@@ -18,13 +18,21 @@ Copy each skill directory (the folder containing `SKILL.md` and its `references/
 
 ```
 ~/.claude/skills/
-├── seo-orchestrator/
+├── seo-orchestrator/        # the conductor — runs the audit lifecycle; carries shared references (lifecycle, profiles, stack/platform adapters)
 ├── 1-reach-indexation/
 ├── 2-read-content/
 ├── 3-understand-schema/
 ├── 4-connect-architecture/
-└── 5-cite-aeo-geo/
+├── 5-cite-aeo-geo/
+├── seo-migrations/          # specialist: URL changes / redirects / site moves
+├── seo-measurement-setup/   # specialist: analytics / Search Console / web-vitals plumbing
+├── seo-content-audit/       # content: assess content, recommend actions
+├── seo-content-editing/     # content: improve real copy (edit, not generate)
+├── seo-positioning-strategy/# content: topical authority + positioning plan
+└── seo-proposal-roadmap/    # content: package findings into a proposal/roadmap
 ```
+
+Copy the **whole `skills/` folder** — keep the skills together. The orchestrator holds the cross-cutting references (audit lifecycle, site-type profiles, stack/platform adapters) the others rely on.
 
 **PowerShell:**
 ```powershell
@@ -53,13 +61,24 @@ Copy the same skill folders there and commit them. Project skills take precedenc
 
 Once installed, just describe the problem — the descriptions are written to trigger the right skill:
 
-- *"Why isn't my site showing up in Google?"* → the **orchestrator** routes you, usually starting at **Reach**.
+- *"Audit my site's SEO"* / *"why isn't my site showing up?"* → the **orchestrator** runs the audit lifecycle, usually starting at **Reach**.
 - *"Add structured data to my product pages."* → **Understand**.
 - *"Help my pages get cited by ChatGPT and AI Overviews."* → the **orchestrator** walks the ladder up to **Cite**.
+- *"We're redesigning / changing our URLs — don't lose rankings."* → **`seo-migrations`**.
+- *"Set up analytics and Search Console."* → **`seo-measurement-setup`**.
+- *"Audit my content / which pages should I update or cut?"* → **`seo-content-audit`**.
+- *"Improve / tighten this page's copy."* → **`seo-content-editing`**.
+- *"What topics should we own / how do we differentiate?"* → **`seo-positioning-strategy`**.
+- *"Put together an SEO proposal / roadmap."* → **`seo-proposal-roadmap`**.
 
-You can also invoke a skill explicitly by name in your prompt (e.g. "use the 1-reach-indexation skill on this site").
+Connect your own data tools (Search Console, DataForSEO, Ahrefs) to sharpen all of these — optional, see [data-integrations.md](data-integrations.md).
 
-The **orchestrator** is the best entry point for broad requests — it detects your stack, finds the lowest failing rung, and dispatches in order.
+You can also invoke a skill explicitly by name (e.g. "use the 1-reach-indexation skill on this site").
+
+The **orchestrator** is the best entry point for broad requests — it detects your stack, platform, and site type, finds the lowest failing rung, dispatches in order, and runs everything as a repeatable audit.
+
+### The `.seo/` folder
+On a broad audit, the orchestrator writes a **`.seo/` folder into your project** — `audit.md` (readable scorecard), `state.json` (issue tracker), `log.md` (history). **Commit it** (don't gitignore it): it persists progress so later runs re-verify past fixes, catch regressions, and advance. It's yours to read any time to see where your SEO stands.
 
 ---
 

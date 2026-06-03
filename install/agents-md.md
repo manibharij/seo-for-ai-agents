@@ -15,27 +15,38 @@ Many agents read a project-root `AGENTS.md` (or a tool-specific equivalent) for 
 ## SEO — the Visibility Ladder
 
 For any SEO, indexing, "not showing up", AI-search/citation, schema, internal-linking,
-or rendering task, use the seo-for-ai-agents skill pack in `skills/`.
+rendering, redirect/migration, or analytics task, use the seo-for-ai-agents skill pack
+in `skills/`. Works on new or existing sites.
 
 Method: diagnose top-to-bottom, fix bottom-to-top. Five rungs, in order — you may not
 fix a rung until the ones below it pass:
-1. Reach (`skills/1-reach-indexation/`) — crawlable + content in the SERVED HTML
-2. Read (`skills/2-read-content/`) — real content + metadata
+1. Reach (`skills/1-reach-indexation/`) — crawlable + content in the SERVED HTML + HTTPS
+2. Read (`skills/2-read-content/`) — content + metadata + page experience (speed/mobile)
 3. Understand (`skills/3-understand-schema/`) — valid, honest schema
 4. Connect (`skills/4-connect-architecture/`) — internal links + canonicals
-5. Cite (`skills/5-cite-aeo-geo/`) — AEO/GEO answer formatting + attribution
+5. Cite (`skills/5-cite-aeo-geo/`) — owned-side AEO answer formatting + attribution
+Specialists: `skills/seo-migrations/` (URL changes/redirects), `skills/seo-measurement-setup/` (analytics/GSC),
+`skills/seo-content-audit/` (assess content), `skills/seo-content-editing/` (improve real copy — edit not generate),
+`skills/seo-positioning-strategy/` (topical authority/positioning), `skills/seo-proposal-roadmap/` (proposal/roadmap).
+Optional live-data tools (GSC/DataForSEO/Ahrefs, bring-your-own-key) enrich the audit — see `install/data-integrations.md`; never required.
 
-Rules: VERIFY ON SERVED HTML, not source (re-fetch and confirm). NEVER fabricate
-authors, reviews, credentials, or trust signals — flag missing ones as human tasks.
-Start broad requests with `skills/seo-orchestrator/SKILL.md`. Optional MCPs in
-`install/mcp.md` sharpen verification but are never required.
+Start broad requests with `skills/seo-orchestrator/SKILL.md` — it runs an AUDIT LIFECYCLE:
+write/read a `.seo/` folder in the project (audit.md, state.json, log.md); on later runs
+re-verify past fixes (catch regressions) and advance. It also adapts to the stack/platform
+and site-type profile (`skills/seo-orchestrator/references/`).
+
+Rules: VERIFY ON SERVED HTML, not source (re-fetch and confirm). NEVER fabricate authors,
+reviews, credentials, or trust signals — flag missing ones as human tasks. On an EXISTING
+site, don't regress what works — preserve URLs (301s), respect intentional decisions, get
+sign-off on big changes. Optional MCPs in `install/mcp.md` sharpen verification but are
+never required.
 ```
 
 The agent reads `AGENTS.md`, then opens the relevant `SKILL.md` and its `references/` as needed — the same progressive-disclosure flow Claude Code uses.
 
 ## Path B — Inline the minis (simplest)
 
-If you'd rather not check in the full tree, paste the self-contained minis from `install/copy-paste/` directly into `AGENTS.md` under an SEO heading (or keep them as `docs/seo/*.md` and link them). Each mini is complete on its own. Start with `reach.md` and add rungs as needed; lead the section with the orchestrator's routing rule so broad requests get sequenced.
+If you'd rather not check in the full tree, paste the self-contained minis from `install/copy-paste/` directly into `AGENTS.md` under an SEO heading (or keep them as `docs/seo/*.md` and link them). Each mini is complete on its own. For broad requests, lead with **`audit.md`** (it runs the whole lifecycle and writes `.seo/`); add the per-rung minis (`reach`, `read`, …), the technical specialists (`migrations`, `measurement`), and the content/marketing minis (`content-audit`, `content-editing`, `positioning-strategy`, `proposal-roadmap`) as needed.
 
 ---
 

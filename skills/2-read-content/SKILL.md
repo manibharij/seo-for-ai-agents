@@ -89,7 +89,7 @@ Re-fetch the page's served HTML and confirm:
 - `<html lang>` is set; meaningful images have `alt`.
 - Headings form a logical outline; content sits in semantic elements.
 
-- **Page experience:** confirm the viewport meta is present and the page reflows on a narrow viewport; re-run Lighthouse/PageSpeed (or check the specific fixes) to confirm images are sized/lazy-loaded and CLS causes are resolved. Core Web Vitals have a *field-data* side (real users, measured over time) that is **live data you can't fully confirm at build time** — the build fixes the known causes; the live score is on the SearchOps side of the boundary.
+- **Page experience:** confirm the viewport meta is present and the page reflows on a narrow viewport; re-run Lighthouse/PageSpeed (or check the specific fixes) to confirm images are sized/lazy-loaded and CLS causes are resolved. Core Web Vitals have a *field-data* side (real users, measured over time) that is **live data you can't fully confirm at build time** — the build fixes the known causes; the live score is live data, on the other side of the boundary.
 
 Check more than one template type (article, product, listing) — metadata and performance bugs are usually per-template. Verification details are in `references/metadata-titles-descriptions.md` and `references/page-experience.md`.
 
@@ -112,3 +112,4 @@ Then point up the ladder: once Read passes, the next rung is **Understand** (str
 - `references/content-and-structure.md` — headings, semantic HTML, content substance, duplication, matching content to search intent, what "thin" means and why it matters.
 - `references/metadata-titles-descriptions.md` — title and description standards, the Next.js Metadata API patterns, alt text, Open Graph, and exact verification steps.
 - `references/page-experience.md` — mobile-friendliness, Core Web Vitals (LCP/INP/CLS), image/font/JS optimisation, the Next.js tools for each, and what's build-time vs live-data.
+- `references/accessibility-and-semantics.md` — the large accessibility/SEO overlap (semantic HTML, headings, alt, link text, lang) that improves both at once, and where a full a11y review goes beyond SEO.

@@ -10,12 +10,18 @@ Cursor uses **Project Rules** — Markdown-with-frontmatter files in `.cursor/ru
 
 ```
 <your-project>/.cursor/rules/
-├── seo-orchestrator.mdc
+├── seo-audit.mdc            # the all-rounder: full audit lifecycle (best default)
 ├── 1-reach-indexation.mdc
 ├── 2-read-content.mdc
 ├── 3-understand-schema.mdc
 ├── 4-connect-architecture.mdc
-└── 5-cite-aeo-geo.mdc
+├── 5-cite-aeo-geo.mdc
+├── seo-migrations.mdc       # URL changes / redirects
+├── seo-measurement-setup.mdc
+├── seo-content-audit.mdc    # content: assess + recommend actions
+├── seo-content-editing.mdc  # content: improve real copy (edit, not generate)
+├── seo-positioning-strategy.mdc
+└── seo-proposal-roadmap.mdc
 ```
 
 ## Converting a skill to a rule
@@ -35,14 +41,21 @@ alwaysApply: false
 <paste the body of install/copy-paste/reach.md here>
 ```
 
-Repeat for each rung using the matching mini:
+Repeat for each mini:
+- `seo-audit.mdc` ← `copy-paste/audit.md` *(the all-rounder — runs the full lifecycle; make this your go-to broad rule)*
 - `1-reach-indexation.mdc` ← `copy-paste/reach.md`
 - `2-read-content.mdc` ← `copy-paste/read.md`
 - `3-understand-schema.mdc` ← `copy-paste/understand.md`
 - `4-connect-architecture.mdc` ← `copy-paste/connect.md`
 - `5-cite-aeo-geo.mdc` ← `copy-paste/cite.md`
+- `seo-migrations.mdc` ← `copy-paste/migrations.md`
+- `seo-measurement-setup.mdc` ← `copy-paste/measurement.md`
+- `seo-content-audit.mdc` ← `copy-paste/content-audit.md`
+- `seo-content-editing.mdc` ← `copy-paste/content-editing.md`
+- `seo-positioning-strategy.mdc` ← `copy-paste/positioning-strategy.md`
+- `seo-proposal-roadmap.mdc` ← `copy-paste/proposal-roadmap.md`
 
-For the orchestrator, create `seo-orchestrator.mdc` with a description like *"Entry point for broad SEO requests; diagnose the Visibility Ladder top-to-bottom and fix the lowest failing rung first"* and summarise the routing table from `skills/seo-orchestrator/SKILL.md` in the body.
+`copy-paste/audit.md` is effectively the orchestrator in a single file — it walks the whole ladder, writes the `.seo/` state, and handles first-run vs progression. For broad requests, point Cursor at that rule. (The deeper lifecycle/profiles/adapters references live in `skills/seo-orchestrator/references/`; copy the ones you want into `docs/seo/` and cite them if you need that depth.)
 
 ## Rule type
 

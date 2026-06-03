@@ -2,7 +2,7 @@
 
 Read this for the speed-and-usability half of Read. Page experience isn't a ladder *dependency* — a slow or clumsy page still gets reached, read, and indexed — but it's a genuine ranking signal and, crucially, a **build-time** problem an agent can fix. It matters identically for classic ranking and for AI search (an answer engine still prefers a fast, usable source). As always, judge it on what's actually **served/rendered**, not on intentions in the source.
 
-> What's build-time vs live: you can fix the **known causes** of poor performance in the code (this file). The **field score** — real users' Core Web Vitals measured over 28 days in the Chrome UX Report — is live data you can't confirm at build time. Fix the causes here; the live score is on the SearchOps side of the boundary.
+> What's build-time vs live: you can fix the **known causes** of poor performance in the code (this file). The **field score** — real users' Core Web Vitals measured over 28 days in the Chrome UX Report — is live data you can't confirm at build time. Fix the causes here; the live score is live data, on the other side of the boundary.
 
 ---
 

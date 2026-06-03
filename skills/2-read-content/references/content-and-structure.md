@@ -15,7 +15,7 @@ Keyword *density* is dead, but **search intent** is not. A page should clearly a
 - **Intent match:** does the page's main content answer what someone arriving here actually wants — informational ("what is X"), commercial ("best X"), transactional ("buy X"), or navigational? A pricing page should talk price; a guide should teach. A mismatch between the page's purpose and its content is a real problem no amount of formatting fixes.
 - **Recognisable language:** use the terms your audience uses for the thing (naturally, in headings and body), rather than internal jargon — so both readers and engines connect the page to the query. This is *not* an invitation to keyword-stuff.
 
-Note the boundary: which queries to target, their search volume, and how competitive they are is **keyword research — live data** on the SearchOps side. The build-time job is making each existing page genuinely match the intent it's meant to serve.
+Note the boundary: which queries to target, their search volume, and how competitive they are is **keyword research — live data**, on the other side of the boundary. The build-time job is making each existing page genuinely match the intent it's meant to serve.
 
 ---
 

@@ -9,7 +9,17 @@ Thanks for considering a contribution. This pack lives or dies by its **correctn
 3. **Strictly white-hat.** Nothing that fabricates trust signals (authors, reviews, credentials, ratings) or deceives engines or users. Where a real signal is missing, the correct output is a flagged human task — never an invention.
 4. **Be honest about the boundary.** Free skills fix build-time, owned-media problems. They do not promise rankings or citations, and they don't cover earned media or live measurement. Don't add claims that cross that line.
 5. **Match the template.** Every skill follows **Diagnose → Fix → Verify (on rendered output) → Report to the user (plain English)**, with a lean `SKILL.md` (well under 500 lines) and depth pushed into `references/`. Each full skill has a self-contained `copy-paste/` mini.
-6. **British English**, imperative voice, explain *why* a step matters rather than stacking bare rules.
+6. **Protect existing sites.** Contributions must respect the don't-regress discipline — preserve URLs (301s), treat existing canonicals/redirects/`noindex`/`hreflang` as potentially intentional, prefer additive/reversible fixes, and flag big changes for human sign-off.
+7. **British English**, imperative voice, explain *why* a step matters rather than stacking bare rules.
+
+## Repo structure
+
+- `skills/seo-orchestrator/` — the conductor: runs the audit lifecycle and carries the cross-cutting references (`audit-lifecycle`, `audit-report-and-state`, `prioritisation`, `existing-site-safety`, `stack-and-platform-adapters`, and `profiles/`). Keep cross-cutting concerns here so they travel with the pack.
+- `skills/1..5-*/` — the five rung skills, each with `references/` and a `copy-paste/` mini.
+- `skills/seo-migrations/`, `skills/seo-measurement-setup/` — technical specialist skills beside the ladder.
+- `skills/seo-content-audit/`, `skills/seo-content-editing/`, `skills/seo-positioning-strategy/`, `skills/seo-proposal-roadmap/` — the content & marketing layer (assess, improve real copy, plan topical authority, package proposals). These read optional live data when connected.
+- `install/` — per-host guides + `copy-paste/` minis + `mcp.md` (MCP layer) + `data-integrations.md` (optional bring-your-own-key live-data tools).
+- The agent writes a `.seo/` folder into the *user's* project (audit/state/log) — that's runtime output, documented in `audit-report-and-state.md`, not part of this repo.
 
 ## How to contribute
 
@@ -23,8 +33,9 @@ Thanks for considering a contribution. This pack lives or dies by its **correctn
 ## Out of scope (for now)
 
 - **Earned media** (backlinks, digital PR, third-party reviews) — off-site authority isn't a build-time action.
-- **Live data** (rank tracking, AI-citation monitoring, geo-grid/local visibility) — separate, ongoing disciplines, not build-time fixes.
-- **Per-type modifiers** (local, e-commerce, international) — planned for a future version once the five rungs have traction. Open an issue to discuss before building these.
+- **Live data** (rank tracking, AI-citation monitoring, geo-grid/local visibility) — separate, ongoing disciplines, not build-time fixes. `seo-measurement-setup` wires up the *instruments* only; reading them is out of scope.
+- **Deep hosted-platform fix automation** — the pack diagnoses any site, but on hosted platforms (WordPress/Shopify/Webflow) it currently *instructs* rather than auto-fixes. Deeper per-platform fix guidance is a welcome contribution (see `stack-and-platform-adapters.md`).
+- **New site-type profiles** are welcome — extend `skills/seo-orchestrator/references/profiles/` following the existing ones.
 
 ## Licence
 

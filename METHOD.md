@@ -72,11 +72,25 @@ A site can have immaculate schema and a tidy link graph and still be invisible, 
 
 ---
 
-## Two principles that keep the method honest
+## Run it as a lifecycle, not a one-shot
+
+A real site is never "done." Content ships, templates get refactored, platforms get upgraded — and fixes silently revert. So the ladder isn't a checklist you run once; it's an **audit you re-run**, and it should *remember*.
+
+- **Baseline.** The first pass takes the site's vitals across all five rungs, records where it stands, and fixes the safe wins.
+- **Progress.** Each later pass reads what happened before, re-verifies that past fixes still hold on the served output (**catching regressions** — the fix that quietly broke in a deploy), finds what's new, and advances the backlog by priority.
+- **Maintain.** Over time this keeps a site healthy rather than letting it drift.
+
+This is what makes the method serve an *existing* site as well as a new one. A freshly built site needs the baseline; an established site needs the ongoing audit — the same ladder, run with memory. (In this pack, that memory is a `.seo/` folder written into the project: a readable report, a machine-readable issue tracker, and a dated history.)
+
+---
+
+## Three principles that keep the method honest
 
 **Verify on the rendered output, not the source.** An agent that edits some JSX and announces "meta tags added" has proven nothing — it has changed the *source*. What matters is what is actually *served* to a crawler. Every rung in this pack is verified by inspecting fetched, rendered HTML, not by trusting that the code change had the intended effect. Client-rendered content that is invisible to crawlers is the single most common failure of AI-built sites, and the only way to catch it is to look at what comes down the wire.
 
 **Never fabricate trust.** Authors, credentials, reviews, experience, expertise — these are either real or they are a liability. Where a genuine trust signal is missing, the right move is to flag it as a human decision, never to invent it. White-hat is not a constraint on the method; it is part of what makes the method work, because answer engines are increasingly built to detect and discount manufactured authority.
+
+**On an existing site, first do no harm.** A new site has nothing to lose; an established one has rankings, traffic, and *intentional* past decisions. A `noindex`, a canonical, a redirect, a blocked path that looks "wrong" may be load-bearing. So on a live site the method is conservative: understand what's working and what's deliberate before changing it, never break a URL that has value without a `301` to its closest equivalent, prefer additive and reversible fixes, and put the big, risky changes in front of a human before applying them. Improving a site is not licence to regress what already earns its place.
 
 ---
 
@@ -88,6 +102,6 @@ Two things sit outside that line, honestly:
 
 **Earned media — the off-site half of SEO.** Backlinks, digital PR, brand mentions, and reviews on third-party sites build off-site authority that genuinely affects ranking. But authority is *earned* through outreach and reputation over time — it can't be *built* into your code, and faking it (bought links, fake reviews) is the black-hat behaviour this method refuses. So the ladder doesn't cover it. It's a real, separate discipline, not an oversight.
 
-**Live measurement.** A build can't tell you what's happening out in the live world: whether you actually rank, where, against whom, in which local map cells, or whether AI engines are citing you over time. That needs live data — rank tracking, AI-citation monitoring, real-user Core Web Vitals, geo-grid visibility — a different discipline on the other side of an honest line.
+**Live measurement.** A build, by itself, can't tell you what's happening out in the live world: whether you actually rank, where, against whom, or whether AI engines are citing you over time. That's **live data** — rank tracking, AI-citation monitoring, real-user Core Web Vitals, geo-grid visibility. The method treats it as **optional enrichment, never a requirement**: connect your own data tools (Search Console, DataForSEO, Ahrefs) with your own keys and the audit gets sharper — real indexation, traffic-weighted priorities, real demand. Don't want to wire that up, or want it managed and ongoing? That's the done-for-you tier. Either way, the free build-time work never depends on it, and current data is never a guarantee of future results.
 
-The ladder gets your site built right. Earning off-site authority, and measuring and competing in the live results, is the next conversation.
+The ladder gets your site built right; live data tells you how it's doing. Earning off-site authority remains its own discipline. None of it is paywalled at the build-time layer — that's the honest line.
