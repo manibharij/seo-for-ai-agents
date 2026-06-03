@@ -24,7 +24,7 @@ For a real video on the page:
 - `duration` is ISO 8601 (`PT8M30S` = 8 min 30 s). `uploadDate` is a real date.
 - Provide `contentUrl` (the file) and/or `embedUrl` (the player).
 - For embedded YouTube/Vimeo, describe the embedded video accurately; values must still be true.
-- Optional but valuable: `transcript` (text), `hasPart`/`Clip` for key moments (only if real).
+- `transcript` (text) is high-value, not a nice-to-have (see Transcripts & captions below); `hasPart`/`Clip` for key moments (only if real).
 - **Never** mark up a video that isn't on the page, or invent duration/date/thumbnail.
 
 ## Transcripts & captions — the highest-value media SEO move
@@ -37,30 +37,36 @@ Put the transcript in the served HTML (collapsible is fine, but in the DOM, not 
 Help important images get discovered. Either a dedicated image sitemap or `image:` extensions in your sitemap entries:
 
 ```xml
-<url>
-  <loc>https://example.com/products/widget</loc>
-  <image:image>
-    <image:loc>https://example.com/img/widget.webp</image:loc>
-  </image:image>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://example.com/products/widget</loc>
+    <image:image>
+      <image:loc>https://example.com/img/widget.webp</image:loc>
+    </image:image>
+  </url>
+</urlset>
 ```
-List only real, `200` images that matter (product shots, key illustrations) — not every icon. In Next.js you can extend `app/sitemap.ts` to include image entries.
+The enclosing `<urlset>` **must declare the image namespace** (`xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"`) — without it Google silently ignores the `image:` entries. List only real, `200` images that matter (product shots, key illustrations) — not every icon. In Next.js you can extend `app/sitemap.ts` to include image entries.
 
 ## Video sitemaps
 For important self-hosted video, a video sitemap entry exposes the metadata to Google:
 
 ```xml
-<url>
-  <loc>https://example.com/watch/intro</loc>
-  <video:video>
-    <video:thumbnail_loc>https://example.com/thumb.jpg</video:thumbnail_loc>
-    <video:title>Exact video title</video:title>
-    <video:description>Accurate description.</video:description>
-    <video:content_loc>https://example.com/video.mp4</video:content_loc>
-  </video:video>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://example.com/watch/intro</loc>
+    <video:video>
+      <video:thumbnail_loc>https://example.com/thumb.jpg</video:thumbnail_loc>
+      <video:title>Exact video title</video:title>
+      <video:description>Accurate description.</video:description>
+      <video:content_loc>https://example.com/video.mp4</video:content_loc>
+    </video:video>
+  </url>
+</urlset>
 ```
-Values must match the `VideoObject` and the real video.
+The `<urlset>` **must declare the video namespace** (`xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"`) or the entries are ignored. Google **requires** `video:title`, `video:description`, `video:thumbnail_loc`, and **at least one of** `video:content_loc` (the actual media file, not the page) **or** `video:player_loc` (the embed/player URL). Values must match the `VideoObject` and the real video.
 
 ## Image fundamentals (overlaps the Read rung's page-experience)
 - Descriptive `alt` (meaningful) / `alt=""` (decorative); descriptive filenames where you control them.

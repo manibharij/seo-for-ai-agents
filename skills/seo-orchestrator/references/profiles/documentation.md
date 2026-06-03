@@ -5,7 +5,7 @@ Use for developer/product docs, knowledge bases, and help centres. Docs are exce
 ## How each rung shifts
 - **Reach** — many docs frameworks are SPAs (or have search/versioning UIs) that can hide content from crawlers. Confirm doc content is in the served HTML. Versioned docs: ensure the canonical/current version is indexable and old versions handled deliberately.
 - **Read** — accurate, complete, well-structured content with clear headings, code blocks, and definitions. Docs live or die on clarity and correctness. Match page to the task/question the reader has.
-- **Understand** — `TechArticle`/`Article` where appropriate; `BreadcrumbList`; `FAQPage` for genuine Q&As. Often lighter on schema than other types — clarity matters more.
+- **Understand** — `TechArticle`/`Article` where appropriate; `BreadcrumbList`; `FAQPage` for genuine Q&As (note: since 2023 Google restricts FAQ *rich results* to government and health authorities, so for docs the value is clarity and AEO extraction, not a SERP rich result). Often lighter on schema than other types — clarity matters more.
 - **Connect** — strong information architecture: a logical tree, prev/next, "related", and a clear canonical per page. Avoid orphan pages and duplicate content across versions/locales.
 - **Cite** — the headline rung for docs. Question/task-shaped headings ("How do I authenticate?"), self-contained answers, copy-pasteable code, clear definitions, accurate `dateModified`. This is what gets quoted by ChatGPT/Claude/Perplexity and AI Overviews.
 

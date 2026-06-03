@@ -12,7 +12,7 @@ description: >-
 
 # Off-site Authority — the other half of SEO
 
-A specialist skill, beside the ladder, for the part of SEO that doesn't live in your code: **off-page authority.** Links, brand mentions and reputation are roughly half of how you rank, and the Visibility Ladder deliberately can't *build* them, you don't write a backlink in JSX. But an agent absolutely can **audit** your off-site profile and **strategise** how to earn authority, white-hat. That's what this does.
+A specialist skill, beside the ladder, for the part of SEO that doesn't live in your code: **off-page authority.** Links, brand mentions and reputation are a major factor in how you rank, and the Visibility Ladder deliberately can't *build* them, you don't write a backlink in JSX. But an agent absolutely can **audit** your off-site profile and **strategise** how to earn authority, white-hat. That's what this does.
 
 > The honest scope, up front. This skill **audits and advises**; it does not, and must not, *execute* link acquisition. It produces three things: a **backlink audit**, a **disavow file** (the one concrete artifact), and a **white-hat link-building / digital-PR strategy**. Earning the links is ongoing, off-site work you (or a managed service) do over time. Authority is earned, never built or bought.
 

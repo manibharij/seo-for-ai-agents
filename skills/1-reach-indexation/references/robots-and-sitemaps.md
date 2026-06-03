@@ -10,6 +10,7 @@ Read this when the gatekeeper checks (Step 1c) turn up a `robots.txt`, `noindex`
 
 - **`Disallow` does not guarantee de-indexing.** A disallowed URL can still appear in results (without a snippet) if other pages link to it. To keep a page *out of the index*, allow crawling and use a `noindex` meta tag/header instead — the crawler must be able to fetch the page to see the `noindex`.
 - **Blocking a path you optimise is self-sabotage.** The most common accident is a leftover `Disallow: /` from a staging config, or disallowing a directory that holds real content (`/blog/`, `/products/`).
+- **The `noindex` + `Disallow` conflict — the classic indexing mistake.** If a URL is *both* `Disallow`-ed in robots.txt *and* carries a `noindex`, the disallow stops the crawler ever fetching the page, so it **never sees the `noindex`** — and the URL can stay indexed (as a URL-only entry). To remove a page from the index, you must **allow crawling so the `noindex` is seen**; only `Disallow` it later, once it has actually dropped out. Getting this order wrong is why "I noindexed it but it's still in Google" happens.
 
 ### What to check
 - Is there a stray `Disallow: /` or an over-broad rule blocking real content?

@@ -58,12 +58,14 @@ If a render/fetch MCP or headless browser is available, fetch the **JS-executed*
 
 - **Status & redirects:** `curl -sIL` (or the PowerShell `Head` call) — confirm a final `200`, and that any redirects are a single clean hop, not a chain or loop.
 - **HTTPS & security headers:** confirm the page is served over `https://` (and `http://` redirects to it), with no mixed `http://` assets. In the response headers, check for `Strict-Transport-Security` (HSTS); note `Content-Security-Policy` / `X-Content-Type-Options` if relevant. `curl -sI https://example.com/ | grep -iE "strict-transport|content-security|x-content-type"`.
-- **`noindex` — check body AND headers:**
+- **`noindex` — check the meta tag AND headers (a bare `grep noindex` false-positives on body copy):**
   ```bash
-  grep -i "noindex" raw.html                              # meta robots in <head>
-  curl -sI https://example.com/page | grep -i "x-robots-tag"   # header directive
+  # meta robots/googlebot noindex in <head> — target the tag, not the word
+  grep -iE '<meta[^>]+name=["'\'']?(robots|googlebot)["'\'']?[^>]*noindex' raw.html
+  # header directive — also delists, and a meta grep can't see it
+  curl -sI https://example.com/page | grep -i "x-robots-tag"
   ```
-  A `noindex` in either place delists the page. Confirm any you find is intentional.
+  A `noindex` in either place delists the page. Greps are a quick screen: attribute order can vary (`content` before `name`), and directives can be header-set or JS-injected, so for certainty confirm against the parsed/rendered `<head>`. Confirm any you find is intentional.
 - **robots.txt:** fetch `https://example.com/robots.txt`; confirm the tested path is not disallowed and the sitemap is referenced.
 - **sitemap:** fetch `https://example.com/sitemap.xml`; confirm it lists **production, canonical, `200`** URLs — no localhost/staging hosts, no redirects, no 404s.
 - **canonical:** confirm `<link rel="canonical">` points to a sensible self/production URL, not a dev host or an unrelated page.

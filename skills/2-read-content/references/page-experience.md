@@ -23,13 +23,13 @@ A correct viewport and obvious responsive fixes are safe to apply. A full respon
 
 ## Core Web Vitals — the three metrics
 
-| Metric | Measures | Good | Common build-time causes |
-|---|---|---|---|
-| **LCP** (Largest Contentful Paint) | How fast the main content renders | ≤ 2.5 s | Oversized hero images, render-blocking CSS/JS, slow server/TTFB, client-rendered content (a Reach problem too) |
-| **INP** (Interaction to Next Paint) | How fast the page responds to input | ≤ 200 ms | Heavy/long JavaScript tasks, oversized hydration, expensive event handlers |
-| **CLS** (Cumulative Layout Shift) | How much the layout jumps while loading | ≤ 0.1 | Images/embeds without dimensions, late-loading fonts, injected banners/ads pushing content |
+| Metric | Measures | Good | Needs work | Poor | Common build-time causes |
+|---|---|---|---|---|---|
+| **LCP** (Largest Contentful Paint) | How fast the main content renders | ≤ 2.5 s | 2.5–4.0 s | > 4.0 s | Oversized hero images, render-blocking CSS/JS, slow server/TTFB, client-rendered content (a Reach problem too) |
+| **INP** (Interaction to Next Paint) | How fast the page responds to input | ≤ 200 ms | 200–500 ms | > 500 ms | Heavy/long JavaScript tasks, oversized hydration, expensive event handlers |
+| **CLS** (Cumulative Layout Shift) | How much the layout jumps while loading | ≤ 0.1 | 0.1–0.25 | > 0.25 | Images/embeds without dimensions, late-loading fonts, injected banners/ads pushing content |
 
-*(INP replaced FID as the responsiveness metric in 2024.)* Diagnose with a Lighthouse/PageSpeed run if a server is available; otherwise inspect for the causes above directly in the served page.
+A page is only "Good" when the field metric (the **75th percentile** of real visits) clears the Good threshold; the middle band is "needs improvement", not "failing", so don't over-engineer a page sitting at, say, 350 ms INP at the expense of a page in the Poor band. *(INP replaced FID as the responsiveness metric in 2024.)* Diagnose with a Lighthouse/PageSpeed run if a server is available; otherwise inspect for the causes above directly in the served page.
 
 ---
 
@@ -54,7 +54,7 @@ A correct viewport and obvious responsive fixes are safe to apply. A full respon
 - Minimise render-blocking CSS; inline only what's needed for first paint where practical.
 
 ### Server / delivery
-- A slow time-to-first-byte caps LCP regardless of front-end work — note hosting/CDN/caching causes for the user even if they're outside the code you can change.
+- A slow time-to-first-byte caps LCP regardless of front-end work — aim for **TTFB under ~800 ms** (Google's guideline); above that, no amount of front-end tuning will reach a good LCP. Note hosting/CDN/caching/`revalidate`/edge causes for the user even if they're outside the code you can change.
 
 ---
 
