@@ -21,6 +21,7 @@ The pack has three tiers. **Start with the orchestrator** for anything broad —
 | [`seo-media`](skills/seo-media/SKILL.md) | Image & video SEO — alt/formats, `VideoObject` schema, media sitemaps, transcripts | "image SEO", "video SEO", "get my videos in Google", "image sitemap" | Automation / advanced |
 | [`seo-programmatic`](skills/seo-programmatic/SKILL.md) | Generate pages at scale from data, white-hat (quality gate; no doorway pages) | "programmatic SEO", "pages from a database", "location pages at scale" | Automation / advanced |
 | [`seo-log-analysis`](skills/seo-log-analysis/SKILL.md) | Server-log & crawl-budget analysis — what crawlers actually fetch (large sites) | "log file analysis", "crawl budget", "what is Googlebot crawling" | Automation / advanced |
+| [`seo-offsite-authority`](skills/seo-offsite-authority/SKILL.md) | The off-page half: backlink audit, toxic-link/disavow, white-hat link-building & digital-PR strategy (advisory) | "backlinks", "link building", "off-page SEO", "domain authority", "disavow", "digital PR" | Off-page |
 
 **Tiers, plainly:**
 - **Entry** — the orchestrator; your default for anything broad.
@@ -29,5 +30,6 @@ The pack has three tiers. **Start with the orchestrator** for anything broad —
 - **Technical specialists** — jobs that don't fit a single rung (URL changes; measurement plumbing).
 - **Strategy tier** — the content & marketing layer (assess, edit, position, package). Secondary to the technical rungs, and sharper when you connect your own data tools.
 - **Automation / advanced** — keep a site healthy automatically (CI/CD) and handle the harder cases (media, scale, large-site crawl budget). Reach for these once the core is solid.
+- **Off-page** — `seo-offsite-authority`: the earned-media half of SEO (backlinks, authority, digital PR). The ladder can't *build* it, but this skill *audits and strategises* it (advisory, white-hat, never buying links).
 
 No host? Every skill has a paste-into-chat mini in [`install/copy-paste/`](install/copy-paste/) — start with [`audit.md`](install/copy-paste/audit.md).

@@ -7,6 +7,12 @@ This project aims to follow [Semantic Versioning](https://semver.org/) loosely w
 ## [Unreleased]
 *Current as of: 2026-06. Experimental — see [DISCLAIMER.md](DISCLAIMER.md).*
 
+### Added — holistic completeness (closing the off-page and niche gaps)
+- **`seo-offsite-authority`** — the off-page half of SEO: audit the backlink profile (via connected Search Console / Ahrefs / DataForSEO), flag toxic links and produce a disavow file, find the competitor authority gap, and recommend strictly white-hat link-building and digital PR. Advisory and audit only — never executes outreach or buys links.
+- **Broader schema catalogue** — added `JobPosting`, `Event`, `Course`, `Review`/`AggregateRating`, and `SoftwareApplication` to the Understand skill, with a pointer to the wider schema.org set.
+- **News/publisher profile** — `news-publisher.md`: `NewsArticle` + honest timestamps, news sitemaps, Top Stories/Discover eligibility, recency, paywalled-content markup, and the "inclusion is Google's call" boundary.
+- **Security headers** — added HSTS / CSP / `X-Content-Type-Options` and mixed-content checks to the Reach rung (previously HTTPS only).
+
 ### Changed — the ladder now ends in Rank (SEO-first), plus an autonomy principle
 - **Reworked the Visibility Ladder so it names the goal.** The fifth rung is now **Rank** (`5-rank-relevance`): is the page good and relevant enough to actually rank — search intent, quality/depth, E-E-A-T, topical authority. The first four rungs make a page *eligible*; Rank is whether it deserves to win. This makes SEO/ranking the explicit summit.
 - **AEO/citation is now the layer *on top* of the ladder, not a rung.** The Cite skill moved from `5-cite-aeo-geo` to **`cite-aeo-geo`** and is framed as additive and secondary: applied after a page can rank, never instead of it.

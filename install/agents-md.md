@@ -30,7 +30,8 @@ Specialists: `skills/seo-migrations/` (URL changes/redirects), `skills/seo-measu
 `skills/seo-content-audit/` (assess content), `skills/seo-content-editing/` (improve real copy — edit not generate),
 `skills/seo-positioning-strategy/` (topical authority/positioning), `skills/seo-proposal-roadmap/` (proposal/roadmap),
 `skills/seo-automations/` (CI/CD regression gate + scheduled audits), `skills/seo-media/` (image/video SEO),
-`skills/seo-programmatic/` (white-hat pages-at-scale), `skills/seo-log-analysis/` (server-log/crawl-budget, large sites).
+`skills/seo-programmatic/` (white-hat pages-at-scale), `skills/seo-log-analysis/` (server-log/crawl-budget, large sites),
+`skills/seo-offsite-authority/` (off-page: backlink audit + white-hat link-building strategy, advisory).
 Optional live-data tools (GSC/DataForSEO/Ahrefs, bring-your-own-key) enrich the audit — see `install/data-integrations.md`; never required.
 
 Start broad requests with `skills/seo-orchestrator/SKILL.md` — it runs an AUDIT LIFECYCLE:

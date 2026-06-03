@@ -16,11 +16,16 @@ Read this to pick the right type and fill it honestly. Use **JSON-LD** (a `<scri
 | A person | `Person` | `name`, `jobTitle`, `sameAs` (real profiles) |
 | Step-by-step instructions | `HowTo` | `name`, `step` (`HowToStep`) — *semantic only; see note* |
 | A recipe | `Recipe` | `name`, `recipeIngredient`, `recipeInstructions` |
+| A job opening | `JobPosting` | `title`, `description`, `datePosted`, `hiringOrganization`, `jobLocation`, `validThrough` |
+| An event | `Event` | `name`, `startDate`, `endDate`, `eventStatus`, `location` (or `VirtualLocation`), `offers` |
+| A course | `Course` | `name`, `description`, `provider` (`Organization`) |
+| A genuine review / rating | `Review` / `AggregateRating` | only if real reviews are shown on the page — `reviewRating`/`author`, or `ratingValue`/`reviewCount`. Never fabricate. |
+| Software / an app | `SoftwareApplication` | `name`, `applicationCategory`, `operatingSystem`, `offers` |
 | Real on-page Q&As | `FAQPage` | `mainEntity` (`Question` → `acceptedAnswer`) — *rich result restricted; see note* |
 | A nav trail | `BreadcrumbList` | `itemListElement` (`ListItem`) |
 | The site itself | `WebSite` | `name`, `url`, optional `SearchAction` |
 
-Pick the most specific type that fits. Don't force a type for the sake of a rich result.
+Pick the most specific type that fits. Don't force a type for the sake of a rich result. This is the common set; schema.org has many more (e.g. `Service`, `QAPage`, `Dataset`) — choose the most specific *real* one. Media types (`VideoObject`, `ImageObject`) are handled by the `seo-media` skill.
 
 > **Rich-result currency (verify before promising any rich result).** Google's rich-result support changes; two important shifts:
 > - **`HowTo` rich results were retired** (2023) — `HowTo` markup no longer produces a Google rich result on any device. Use it only as optional semantic/entity markup, not to chase a snippet.

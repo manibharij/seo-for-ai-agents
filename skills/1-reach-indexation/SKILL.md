@@ -81,6 +81,7 @@ The principle: **the primary content must be in the HTML the server sends, befor
 - Ensure a valid sitemap exists, lists canonical `200` URLs only, and is referenced from `robots.txt`. For framework-native sitemap generation (e.g. Next.js `app/sitemap.ts`), see `references/robots-and-sitemaps.md`.
 - Fix soft 404s (return a real `404`), collapse redirect chains, and resolve `5xx`.
 - Ensure `http://` redirects to `https://` (single hop) and fix mixed-content references (assets loaded over `http://` on an HTTPS page). Certificate provisioning is usually a host/platform setting — flag it for the user if it's missing rather than assuming you can issue one. Picking the single preferred host+protocol site-wide is finished at rung 4.
+- Add baseline **security headers** where you control the response: **HSTS** (`Strict-Transport-Security`) to lock in HTTPS, plus `X-Content-Type-Options: nosniff`, and consider a `Content-Security-Policy`. These are trust/safety hygiene that underpins the HTTPS baseline (they don't rank a page on their own). **Caution:** a strict CSP can break a site if misconfigured — propose and test it, don't apply it blind.
 
 ---
 

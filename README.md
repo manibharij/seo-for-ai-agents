@@ -54,6 +54,9 @@ The **[`seo-orchestrator`](skills/seo-orchestrator/SKILL.md)** is the entry poin
 - **[`seo-programmatic`](skills/seo-programmatic/SKILL.md)** — pages at scale from data, the white-hat way (a quality gate that refuses thin/doorway pages).
 - **[`seo-log-analysis`](skills/seo-log-analysis/SKILL.md)** — large-site server-log & crawl-budget analysis: what crawlers actually fetch.
 
+*Off-page (the earned-media half):*
+- **[`seo-offsite-authority`](skills/seo-offsite-authority/SKILL.md)** — backlink-profile audit, toxic-link/disavow, and white-hat link-building & digital-PR strategy. Advisory: it audits and strategises (with your connected link data), it never builds or buys links.
+
 The content & marketing skills get sharper when you connect your own data tools (see [the boundary](#the-honest-boundary-and-how-live-data-fits)), but work without them. `seo-automations` is the one to add once your site is healthy — it keeps it that way.
 
 ---
@@ -102,7 +105,7 @@ Install copies the **whole `skills/` folder** (the orchestrator carries the shar
 Paste a mini straight into your agent:
 - [**`audit.md`**](install/copy-paste/audit.md) — the best all-rounder: runs the full audit lifecycle on a **new or existing** site (creates the `.seo/` report, fixes the floor up).
 - [**`reach.md`**](install/copy-paste/reach.md) — the highest-impact single fix and the best demo: catch a site that's invisible to crawlers.
-- Then the per-rung minis (`read`, `understand`, `connect`, `rank`), the AEO-layer mini (`cite`), the technical specialists (`migrations`, `measurement`), and the content/marketing minis (`content-audit`, `content-editing`, `positioning-strategy`, `proposal-roadmap`).
+- Then the per-rung minis (`read`, `understand`, `connect`, `rank`), the AEO-layer mini (`cite`), and the specialist minis: technical (`migrations`, `measurement`), content/marketing (`content-audit`, `content-editing`, `positioning-strategy`, `proposal-roadmap`), automation & advanced (`automations`, `media`, `programmatic`, `log-analysis`), and off-page (`offsite`). One per skill in [`install/copy-paste/`](install/copy-paste/).
 
 On a host with skill support, the [`seo-orchestrator`](skills/seo-orchestrator/SKILL.md) does the routing and runs the lifecycle for you.
 
@@ -115,11 +118,11 @@ On a host with skill support, the [`seo-orchestrator`](skills/seo-orchestrator/S
 
 ---
 
-## Scope: owned media (your site), not earned media
+## Scope: owned media is built; earned media is advised
 
-This pack optimises **owned media** — the website an agent is building or editing. That's everything on your own pages: rendering, content, metadata, speed, mobile, schema, architecture, and answer formatting. It is comprehensive *for that*.
+This pack **builds owned media** — everything on your own pages: rendering, content, metadata, speed, mobile, schema, architecture, ranking factors, and answer formatting. The whole Visibility Ladder is build-time, owned-media work.
 
-It deliberately does **not** cover **earned media** — the off-site half of SEO: backlinks, digital PR, brand mentions, and reviews on third-party sites. Off-site authority is real and it matters, but it isn't something an AI agent can *build* into your code; it's earned through outreach, relationships, and reputation over time. We flag where it's relevant (e.g. real external profiles for entity trust) but we don't pretend a build can manufacture it — and manufacturing it (fake reviews, bought links) is exactly the black-hat behaviour the pack refuses. Earned media is a genuine, separate discipline, not an oversight here.
+**Earned media** — the off-site half of SEO (backlinks, digital PR, brand mentions, third-party reviews) — can't be *built* into your code; it's earned through outreach and reputation over time, and faking it (bought links, fake reviews) is the black-hat behaviour the pack refuses. So the pack doesn't *execute* it. But it's half of SEO, so the **[`seo-offsite-authority`](skills/seo-offsite-authority/SKILL.md)** skill *audits and strategises* it: read your backlink profile (via your connected data), flag toxic links and produce a disavow file, find the competitor authority gap, and recommend white-hat link-building and digital PR. Advisory and audit, never doing the outreach or buying links, that earning stays ongoing, off-site work (yours, or a managed service).
 
 ---
 

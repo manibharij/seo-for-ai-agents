@@ -26,7 +26,8 @@ Cursor uses **Project Rules** — Markdown-with-frontmatter files in `.cursor/ru
 ├── seo-automations.mdc      # CI/CD regression gate + scheduled audits
 ├── seo-media.mdc            # image & video SEO
 ├── seo-programmatic.mdc     # white-hat pages-at-scale
-└── seo-log-analysis.mdc     # server-log & crawl-budget (large sites)
+├── seo-log-analysis.mdc     # server-log & crawl-budget (large sites)
+└── seo-offsite-authority.mdc # off-page: backlinks + link-building strategy
 ```
 
 ## Converting a skill to a rule
@@ -64,6 +65,7 @@ Repeat for each mini:
 - `seo-media.mdc` ← `copy-paste/media.md`
 - `seo-programmatic.mdc` ← `copy-paste/programmatic.md`
 - `seo-log-analysis.mdc` ← `copy-paste/log-analysis.md`
+- `seo-offsite-authority.mdc` ← `copy-paste/offsite.md`
 
 `copy-paste/audit.md` is effectively the orchestrator in a single file — it walks the whole ladder, writes the `.seo/` state, and handles first-run vs progression. For broad requests, point Cursor at that rule. (The deeper lifecycle/profiles/adapters references live in `skills/seo-orchestrator/references/`; copy the ones you want into `docs/seo/` and cite them if you need that depth.)
 

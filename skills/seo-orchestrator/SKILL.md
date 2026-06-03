@@ -40,6 +40,7 @@ Specialist skills outside the ladder, dispatched when relevant:
 - **`seo-media`** — image & video SEO (alt, formats, `VideoObject` schema, media sitemaps, transcripts).
 - **`seo-programmatic`** — generate pages at scale from data, white-hat (quality gate; no thin/doorway pages).
 - **`seo-log-analysis`** — advanced/large-site: server-log & crawl-budget analysis (what crawlers actually fetch).
+- **`seo-offsite-authority`** — the off-page half: backlink audit, toxic-link/disavow, and white-hat link-building & digital-PR strategy (advisory; audits with connected link data).
 
 ---
 
@@ -90,6 +91,7 @@ Progression is what makes this a system: the second, fifth, twentieth run is nev
 - Pull in **`seo-migrations`** whenever URLs change or the site moves, and **`seo-measurement-setup`** when analytics/Search Console plumbing is missing or broken.
 - Pull in the **content/marketing skills** when the work is about the content itself, not just its markup: **`seo-content-audit`** (assess), **`seo-content-editing`** (improve real copy), **`seo-positioning-strategy`** (messaging/competitive/topical planning), and **`seo-proposal-roadmap`** (package the findings as a proposal/roadmap deliverable). These read live data (demand/competitor) when it's connected, and say so honestly when it isn't.
 - Pull in the **advanced/automation skills** when relevant: **`seo-automations`** (set up CI/CD regression gates + scheduled re-audits — recommend this once a site is healthy, to keep it that way), **`seo-media`** (sites with significant image/video), **`seo-programmatic`** (data-driven pages at scale — apply its quality gate), **`seo-log-analysis`** (large/crawl-constrained sites with server logs).
+- Pull in **`seo-offsite-authority`** for the off-page half: backlinks, domain authority, toxic links/disavow, or "competitors outrank me on authority." It audits the off-site profile (with connected link data) and strategises white-hat link earning, advisory only, never executing or buying links.
 - **Enrich, don't gate.** When a live-data integration is present, use it to prioritise by real impact and ground content/positioning in real demand — but the audit and fixes never *require* it.
 - Apply the active **profile** (`references/profiles/<type>.md`) and **stack/platform adapter** so each rung's checks and fixes fit this specific site.
 - On an **existing site**, gate every change through `references/existing-site-safety.md`.

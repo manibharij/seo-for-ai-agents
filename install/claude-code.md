@@ -34,7 +34,8 @@ Copy each skill directory (the folder containing `SKILL.md` and its `references/
 ├── seo-automations/         # automation: CI/CD regression gate + scheduled audits
 ├── seo-media/               # advanced: image & video SEO
 ├── seo-programmatic/        # advanced: white-hat pages-at-scale from data
-└── seo-log-analysis/        # advanced: server-log & crawl-budget analysis
+├── seo-log-analysis/        # advanced: server-log & crawl-budget analysis
+└── seo-offsite-authority/   # off-page: backlink audit + white-hat link-building strategy
 ```
 
 Copy the **whole `skills/` folder** — keep the skills together. The orchestrator holds the cross-cutting references (audit lifecycle, site-type profiles, stack/platform adapters) the others rely on.
@@ -80,6 +81,7 @@ Once installed, just describe the problem — the descriptions are written to tr
 - *"Get my images/videos into search."* → **`seo-media`**.
 - *"Generate location/product pages at scale."* → **`seo-programmatic`**.
 - *"What is Googlebot actually crawling / crawl budget."* → **`seo-log-analysis`**.
+- *"Audit my backlinks / how do I get more authority?"* → **`seo-offsite-authority`**.
 
 Connect your own data tools (Search Console, DataForSEO, Ahrefs) to sharpen all of these — optional, see [data-integrations.md](data-integrations.md).
 

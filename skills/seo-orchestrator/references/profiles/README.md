@@ -4,7 +4,8 @@ Read the profile that matches the site. A profile doesn't replace the Visibility
 
 | Profile | Use when the site is… |
 |---|---|
-| [content-blog.md](content-blog.md) | A blog, news, magazine, or content/affiliate site |
+| [content-blog.md](content-blog.md) | A blog, magazine, or content/affiliate site |
+| [news-publisher.md](news-publisher.md) | A news site or publisher (recency, Top Stories, `NewsArticle`) |
 | [ecommerce.md](ecommerce.md) | A shop selling products (Shopify, WooCommerce, custom) |
 | [local-business.md](local-business.md) | A business serving a place (shop, clinic, tradesperson, restaurant) |
 | [saas-marketing.md](saas-marketing.md) | A SaaS/product marketing site or app landing pages |

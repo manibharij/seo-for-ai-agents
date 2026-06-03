@@ -57,6 +57,7 @@ If a render/fetch MCP or headless browser is available, fetch the **JS-executed*
 ## Gatekeeper verification
 
 - **Status & redirects:** `curl -sIL` (or the PowerShell `Head` call) — confirm a final `200`, and that any redirects are a single clean hop, not a chain or loop.
+- **HTTPS & security headers:** confirm the page is served over `https://` (and `http://` redirects to it), with no mixed `http://` assets. In the response headers, check for `Strict-Transport-Security` (HSTS); note `Content-Security-Policy` / `X-Content-Type-Options` if relevant. `curl -sI https://example.com/ | grep -iE "strict-transport|content-security|x-content-type"`.
 - **`noindex` — check body AND headers:**
   ```bash
   grep -i "noindex" raw.html                              # meta robots in <head>

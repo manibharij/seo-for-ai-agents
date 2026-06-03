@@ -20,6 +20,7 @@ Thanks for considering a contribution. This pack lives or dies by its **correctn
 - `skills/seo-migrations/`, `skills/seo-measurement-setup/` — technical specialist skills beside the ladder.
 - `skills/seo-content-audit/`, `skills/seo-content-editing/`, `skills/seo-positioning-strategy/`, `skills/seo-proposal-roadmap/` — the content & marketing layer (assess, improve real copy, plan topical authority, package proposals). These read optional live data when connected.
 - `skills/seo-automations/`, `skills/seo-media/`, `skills/seo-programmatic/`, `skills/seo-log-analysis/` — automation & advanced (CI/CD regression gates, image/video SEO, white-hat pages-at-scale, server-log/crawl-budget analysis).
+- `skills/seo-offsite-authority/` — the off-page half (backlink audit, disavow, white-hat link-building/digital-PR strategy). Advisory; never executes or buys links.
 - [`SKILLS.md`](SKILLS.md) — the canonical skills index; keep it in sync when adding/removing a skill.
 - `install/` — per-host guides + `copy-paste/` minis + `mcp.md` (MCP layer) + `data-integrations.md` (optional bring-your-own-key live-data tools).
 - The agent writes a `.seo/` folder into the *user's* project (audit/state/log) — that's runtime output, documented in `audit-report-and-state.md`, not part of this repo.
