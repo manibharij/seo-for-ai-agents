@@ -23,7 +23,7 @@ The machine state the agent updates each run. Keep it valid JSON. Suggested shap
   "site": { "url": "https://example.com", "stack": "next-app-router", "platform": "code", "profile": "saas-marketing" },
   "lastRun": "2026-06-03",
   "runs": 4,
-  "scores": { "reach": "pass", "read": "minor", "understand": "fail", "connect": "pass", "cite": "minor" },
+  "scores": { "reach": "pass", "read": "minor", "understand": "fail", "connect": "pass", "rank": "pass", "cite": "minor" },
   "findings": [
     {
       "id": "understand-product-schema-missing",
@@ -73,7 +73,8 @@ _Last run: 2026-06-03 · Run #4 · Stack: Next.js App Router · Profile: SaaS/ma
 | 2. Read | 🟡 Minor | 3 pages missing meta descriptions; LCP image unoptimised |
 | 3. Understand | 🔴 Failing | Product pages have no schema — **the floor** |
 | 4. Connect | ✅ Pass | — |
-| 5. Cite | 🟡 Minor | Answers buried on 2 key pages |
+| 5. Rank | ✅ Pass | Intent match and depth solid (owned-media half) |
+| + Cite (on top) | 🟡 Minor | Answers buried on 2 key pages |
 
 **Start here (the floor):** Understand — add honest Product/Offer schema to product pages.
 
@@ -109,7 +110,7 @@ A dated, append-only narrative so the trend is visible. Suggested entry:
 - **Regressions caught:** 1 — blog canonicals had reverted after a template refactor; re-fixed.
 - **New issues:** product pages shipped with no schema (new product section added).
 - **Advanced:** added meta descriptions to 3 pages; surfaced buried answers on pricing.
-- **Scores:** Reach ✅, Read 🟡, Understand 🔴 (was ✅ — new section), Connect ✅, Cite 🟡.
+- **Scores:** Reach ✅, Read 🟡, Understand 🔴 (was ✅ — new section), Connect ✅, Rank ✅, Cite 🟡 (on top).
 - **Next:** product schema (the floor); then the buried-answer formatting.
 ```
 

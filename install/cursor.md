@@ -16,7 +16,7 @@ Cursor uses **Project Rules** — Markdown-with-frontmatter files in `.cursor/ru
 ├── 3-understand-schema.mdc
 ├── 4-connect-architecture.mdc
 ├── 5-rank-relevance.mdc
-├── cite-aeo-geo.mdc        # AEO layer on top (after a page ranks)
+├── cite-aeo-geo.mdc        # AEO layer on top (once a page can rank)
 ├── seo-migrations.mdc       # URL changes / redirects
 ├── seo-measurement-setup.mdc
 ├── seo-content-audit.mdc    # content: assess + recommend actions

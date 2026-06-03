@@ -11,11 +11,16 @@ description: >-
   competition also decide it. Infers the page's target intent itself, never asks.
 ---
 
-# Rank — good and relevant enough to win
+# Rank — good enough, and trusted enough, to win
 
-**Rung 5 of the Visibility Ladder, and the whole point of it.** Reach, Read, Understand and Connect make a page *eligible* to rank. Rank is whether it actually *deserves* to, for the searches its audience makes. This is the SEO summit. Above it sits only the optional AEO layer (`cite-aeo-geo`), which is for AI-answer citation, after a page already ranks.
+**Rung 5 of the Visibility Ladder, and the whole point of it.** Reach, Read, Understand and Connect make a page *eligible* to rank. Rank is whether it actually *deserves* to, for the searches its audience makes. This is the SEO summit. Above it sits only the optional AEO layer (`cite-aeo-geo`), which is for AI-answer citation, on a page whose ranking fundamentals are already sound.
 
-> **Honest boundary, stated up front.** Final ranking is decided partly by things you do not control: off-site authority (links, brand, reputation) and the strength of the competition. Those are not build-time, owned-media work (see the Report step and `METHOD.md`'s boundary). This rung does everything on *your own site* that earns ranking, taken as far as it goes. That is the part you control, and it's substantial.
+Unlike the rungs below it, ranking is not a property you switch on — it is an **outcome you earn**, so this rung has two halves and they are not the same kind of work:
+
+- **What you build (owned media, this skill's job):** search-intent match, genuine quality and depth, on-page E-E-A-T surfaced honestly, and topical authority. Everything on your own site that earns ranking, taken as far as it goes.
+- **What you earn (off-site, advise only):** backlinks, brand and reputation, and the strength of the competition. A major ranking factor, but earned over time, not built at deploy. The pack's **`seo-offsite-authority`** skill audits and strategises it (white-hat only); the earning itself is ongoing, off-site work.
+
+> **Honest boundary, stated up front.** This rung works the left-hand column hard and is honest about the right: final ranking is decided partly by off-site authority and competition you do not control (see the Report step and `METHOD.md`'s boundary). What you control here is substantial — do it fully — but it is not the whole story.
 
 **Self-discovery, not interrogation.** Work out the page's target intent yourself, from its content, purpose, headings, and place in the site. Don't ask the user "what keyword is this for"; infer it, and say what you inferred.
 
@@ -57,7 +62,7 @@ These are owned-media improvements; dispatch the deep work to the content/strate
 3. **What needs the user** — genuine substance, authors, or sources you refused to fabricate.
 4. **The boundary, plainly:** you've now done the owned-media work that earns ranking. **Whether the page actually ranks also depends on off-site authority and the competition, which are not build-time work** (earning links and reputation is a separate, earned-media discipline; tracking where you actually rank is live data). This rung takes the part you control as far as it goes.
 
-This is the top of the ladder. Once a page genuinely ranks, the optional **`cite-aeo-geo`** layer makes the same page eligible to be cited by AI answers, on top, never instead.
+This is the top of the ladder. Once a page's ranking fundamentals are sound, the optional **`cite-aeo-geo`** layer makes the same page eligible to be cited by AI answers, alongside ranking, never instead.
 
 ---
 

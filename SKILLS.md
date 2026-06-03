@@ -9,8 +9,8 @@ The pack has three tiers. **Start with the orchestrator** for anything broad —
 | [`2-read-content`](skills/2-read-content/SKILL.md) | Real content + metadata + page experience (speed/mobile) on a page | "missing meta description", "duplicate titles", "site is slow", "mobile-friendly" | Rung 2 |
 | [`3-understand-schema`](skills/3-understand-schema/SKILL.md) | Valid, honest structured data (schema/JSON-LD) | "add schema", "structured data", "rich results" | Rung 3 |
 | [`4-connect-architecture`](skills/4-connect-architecture/SKILL.md) | Internal links, site architecture, canonicals | "internal linking", "canonical", "orphan pages", "site structure" | Rung 4 |
-| [`5-rank-relevance`](skills/5-rank-relevance/SKILL.md) | **The goal.** Good and relevant enough to rank: intent, quality, E-E-A-T, topical authority | "why am I not ranking", "improve my rankings", "is my content good enough", "search intent" | Rung 5 |
-| [`cite-aeo-geo`](skills/cite-aeo-geo/SKILL.md) | *On top of the ladder:* format to be *eligible* for AI citation, after a page ranks | "AI Overviews", "get cited by ChatGPT", "AEO", "llms.txt" | Layer on top |
+| [`5-rank-relevance`](skills/5-rank-relevance/SKILL.md) | **The goal.** Good enough, and trusted enough, to win — *what you build:* intent, quality, on-page E-E-A-T, topical authority (*what you earn* — links, brand — sits beside the ladder, see below) | "why am I not ranking", "improve my rankings", "is my content good enough", "search intent" | Rung 5 |
+| [`cite-aeo-geo`](skills/cite-aeo-geo/SKILL.md) | *On top of the ladder:* format to be *eligible* for AI citation, on a page that can already rank | "AI Overviews", "get cited by ChatGPT", "AEO", "llms.txt" | Layer on top |
 | [`seo-migrations`](skills/seo-migrations/SKILL.md) | Preserve rankings when URLs change | "redesign", "moving domain/CMS", "changed our URLs", "404s after relaunch" | Technical specialist |
 | [`seo-measurement-setup`](skills/seo-measurement-setup/SKILL.md) | Install analytics / Search Console / web-vitals (setup only) | "set up analytics", "install GA4", "verify Search Console" | Technical specialist |
 | [`seo-content-audit`](skills/seo-content-audit/SKILL.md) | Assess content **across the site**; recommend keep/improve/consolidate/prune per page | "content audit", "which pages to update or remove", "is my content good" | Strategy tier |
@@ -25,8 +25,8 @@ The pack has three tiers. **Start with the orchestrator** for anything broad —
 
 **Tiers, plainly:**
 - **Entry** — the orchestrator; your default for anything broad.
-- **Rungs 1–5** — the Visibility Ladder, the core SEO method, climbing to the goal: **Rank**. Fixed in order: you can't climb a rung until the ones below pass.
-- **Layer on top** — `cite-aeo-geo` (AEO): makes a page that already ranks *eligible* to be cited by AI answers. Additive, after ranking, not a rung.
+- **Rungs 1–5** — the Visibility Ladder, the core SEO method, climbing to the goal: **Rank**. The lower rungs are strict prerequisites; the top two build on them. A broken lower rung caps everything above it, so diagnose top-down and fix bottom-up. Rung 5 itself has two halves: *what you build* (on-page) and *what you earn* (off-page, advised beside the ladder).
+- **Layer on top** — `cite-aeo-geo` (AEO): makes a page that can already rank *eligible* to be cited by AI answers. Additive, alongside ranking, never instead of it, not a rung.
 - **Technical specialists** — jobs that don't fit a single rung (URL changes; measurement plumbing).
 - **Strategy tier** — the content & marketing layer (assess, edit, position, package). Secondary to the technical rungs, and sharper when you connect your own data tools.
 - **Automation / advanced** — keep a site healthy automatically (CI/CD) and handle the harder cases (media, scale, large-site crawl budget). Reach for these once the core is solid.

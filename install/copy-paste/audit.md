@@ -19,7 +19,7 @@ On a sample of templates (homepage AND an article/product/deep page), check each
 2. **Read** — one descriptive `<h1>`? unique title/description? substantive, intent-matched content? mobile-friendly? Core Web Vitals causes (unsized/oversized images, render-blocking JS, shifting fonts)?
 3. **Understand** — valid, **honest** schema (JSON-LD) for the page's entities, in the served HTML?
 4. **Connect** — real `<a href>` links, no orphans, exactly one correct canonical, no duplicate-URL sprawl?
-5. **Rank** (the goal) — good and relevant enough to rank: matches search intent, genuinely useful/competitive, real E-E-A-T, topical authority?
+5. **Rank** (the goal) — good enough, and trusted enough, to win: matches search intent, genuinely useful/competitive, real on-page E-E-A-T, topical authority? (Score the owned-media half here; off-site authority is advised separately via the `offsite` skill, not scored as a rung.)
 Then, *on top of the ladder* (only once it can rank): **Cite (AEO)** — self-contained answer blocks, question-shaped headings, consistent entities, genuine attribution, AI-crawler access.
 Score each rung and find **the floor** (lowest failing rung). Work out the site's purpose, audience, stack and sector yourself, don't ask me to describe it.
 

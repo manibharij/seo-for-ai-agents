@@ -21,7 +21,7 @@ It's primarily **SEO** — the technical and on-page fundamentals that drive ran
 
 ## The method: the Visibility Ladder
 
-Five rungs, fixed in sequence. **You cannot climb a rung until the ones beneath it pass.** Diagnose top-to-bottom; fix bottom-to-top.
+Five rungs in dependency order. The lower rungs are strict prerequisites; the top two build on them. Either way a broken lower rung quietly caps everything above it, so you **diagnose top-to-bottom and fix bottom-to-top.**
 
 | # | Rung | The question it answers | Skill |
 |---|------|------------------------|-------|
@@ -29,10 +29,10 @@ Five rungs, fixed in sequence. **You cannot climb a rung until the ones beneath 
 | 2 | **Read** | Is there real, readable content, correct metadata, and a good page experience (speed + mobile)? | [`2-read-content`](skills/2-read-content/SKILL.md) |
 | 3 | **Understand** | Can engines identify the entities? (structured data) | [`3-understand-schema`](skills/3-understand-schema/SKILL.md) |
 | 4 | **Connect** | Is the page wired into a coherent site? (internal links, canonicals) | [`4-connect-architecture`](skills/4-connect-architecture/SKILL.md) |
-| 5 | **Rank** | Is it good and relevant enough to actually rank? (intent, quality, E-E-A-T, topical authority) | [`5-rank-relevance`](skills/5-rank-relevance/SKILL.md) |
-| + | **Cite (AEO)** | *On top of the ladder:* eligible to be cited by AI answers, after it ranks | [`cite-aeo-geo`](skills/cite-aeo-geo/SKILL.md) |
+| 5 | **Rank** | Is it good enough, and trusted enough, to win? (intent, quality, on-page E-E-A-T, topical authority) | [`5-rank-relevance`](skills/5-rank-relevance/SKILL.md) |
+| + | **Cite (AEO)** | *On top of the ladder:* eligible to be cited by AI answers, on a page that can already rank | [`cite-aeo-geo`](skills/cite-aeo-geo/SKILL.md) |
 
-**Ranking is the goal**, and rung 5 names it. The first four rungs make a page *eligible*; Rank is whether it's good and relevant enough to win. **Cite (AEO)** is the optional layer *on top* of the ladder, for the AI-answer era, after a page ranks, never instead of ranking. Fixing content (Read) on a page Google can't render (Reach) is wasted work; the ladder stops that. Full philosophy in **[METHOD.md](METHOD.md)**.
+**Ranking is the goal**, and rung 5 names it. The first four rungs make a page *eligible*; Rank is whether it *deserves* to win. Because ranking is an outcome you **earn**, rung 5 has two halves: **what you build** (intent, quality, on-page E-E-A-T, topical authority — the agent's job) and **what you earn** (backlinks, brand, reputation — a major factor, but off-site and ongoing, so [`seo-offsite-authority`](skills/seo-offsite-authority/SKILL.md) advises beside the ladder rather than building it). **Cite (AEO)** is the optional layer *on top*, for the AI-answer era, applied alongside ranking, never instead of it. Fixing content (Read) on a page Google can't render (Reach) is wasted work; the ladder stops that. Full philosophy in **[METHOD.md](METHOD.md)**.
 
 The **[`seo-orchestrator`](skills/seo-orchestrator/SKILL.md)** is the entry point for any broad request ("audit my SEO", "improve my rankings", "why am I not showing up", "get cited by ChatGPT"). It detects your stack, platform, and site type, finds the lowest failing rung, dispatches in order — and runs the whole thing as a **repeatable audit lifecycle** (below).
 

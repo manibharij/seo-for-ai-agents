@@ -16,7 +16,8 @@ It walks the ladder top-to-bottom on a sample of templates (home, a feature page
 - **Read** 🟡 — 3 pages missing meta descriptions; the pricing page's hero image is a 2.4 MB unsized PNG (LCP + CLS).
 - **Understand** 🔴 — **no schema anywhere** (the floor).
 - **Connect** ✅ — links and canonicals fine.
-- **Cite** 🟡 — the pricing answer is buried under "Our Approach" prose.
+- **Rank** ✅ — pages match the intent they target and the content is solid (the owned-media half; off-site authority isn't scored here).
+- **Cite** *(the layer on top, not a rung)* 🟡 — the pricing answer is buried under "Our Approach" prose.
 
 It writes the baseline into the project — a real `.seo/` folder the developer can read:
 
@@ -39,7 +40,8 @@ _Run #1 · 2026-06-03 · Next.js App Router · Profile: SaaS/marketing_
 | 2. Read | 🟡 Minor |
 | 3. Understand | 🔴 Failing — the floor |
 | 4. Connect | ✅ Pass |
-| 5. Cite | 🟡 Minor |
+| 5. Rank | ✅ Pass |
+| + Cite (on top) | 🟡 Minor |
 
 Start here (floor): Understand — add Organization + SoftwareApplication schema.
 
@@ -79,7 +81,7 @@ The developer runs it again. `.seo/` **exists**, so the orchestrator reads prior
 - Regression: Organization schema dropped by the 2026-06-12 layout refactor — re-fixed.
 - New: /customers section is client-rendered — content missing from served HTML (Reach). Flagged.
 - Advanced: re-verified meta descriptions + pricing fixes still hold.
-- Scores: Reach 🟡 (new section), Read ✅, Understand ✅, Connect ✅, Cite ✅.
+- Scores: Reach 🟡 (new section), Read ✅, Understand ✅, Connect ✅, Rank ✅, Cite ✅ (on top).
 ```
 
 > **Report:** "Heads up — a deploy on the 12th silently dropped the schema we added; I've restored it and made it more robust. Your new customers section is client-rendered, so crawlers can't see those case studies — here are three ways to fix it. Everything else we fixed still checks out."

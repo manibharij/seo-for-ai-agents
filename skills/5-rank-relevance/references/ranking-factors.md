@@ -50,3 +50,5 @@ Title, `<h1>`, headings and body should clearly and naturally align with the int
 
 ## The honest boundary (put this in the report)
 You can make a page maximally **deserving** of ranking: right intent, genuinely excellent, trustworthy, inside an authoritative cluster. You cannot, from the build, supply the **off-site authority** (links, brand, reputation, earned over time) or out-muscle stronger **competition**, and you cannot promise a position. Those are earned-media and live-data work, a separate, ongoing discipline. So the honest claim is always: "I've done the owned-media work that earns ranking; whether you rank, and where, also depends on factors outside the build, which is the next discipline." Never promise a ranking.
+
+For the off-site half — auditing the backlink profile, the competitor authority gap, and white-hat link-building and digital PR — hand off to **`seo-offsite-authority`**, which sits beside the ladder and advises only (it never buys links or executes outreach).

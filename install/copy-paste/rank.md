@@ -1,6 +1,6 @@
 # Rank — copy-paste mini (paste this into your AI coding agent)
 
-*Self-contained version of the Rank rung, the top of the Visibility Ladder and the goal: make a page good and relevant enough to actually rank. Run Reach, Read, Understand and Connect first.*
+*Self-contained version of the Rank rung, the top of the Visibility Ladder and the goal: make a page good enough, and trusted enough, to win. Ranking is an outcome you earn, so this rung has two halves — what you build (on-page, below) and what you earn (off-site authority, advised by the `offsite` mini). Run Reach, Read, Understand and Connect first.*
 
 > ⚠️ **Experimental, and run by an AI agent, which can make mistakes.** It works the owned-media factors that earn ranking and never fabricates trust signals. Review changes on the served output before publishing. See the repo's `DISCLAIMER.md`.
 
@@ -28,6 +28,6 @@ For each important page, on the served content:
 Confirm the page clearly targets and satisfies its intent in the served HTML (read the opening alone: does it answer the query?); quality/depth are genuinely there, not padded; E-E-A-T signals are real and present; the cluster exists and links coherently. Confirm nothing was fabricated.
 
 ## Step 4 — Report + boundary
-Tell me what was holding the page back, what you improved (with proof), and what needs me (real substance/authors/sources you wouldn't invent). **Boundary, plainly:** you've done the owned-media work that earns ranking. Whether I actually rank, and where, also depends on **off-site authority and the competition**, which are not build-time work (earning links/reputation is separate; tracking rank is live data). Never promise a ranking.
+Tell me what was holding the page back, what you improved (with proof), and what needs me (real substance/authors/sources you wouldn't invent). **Boundary, plainly:** you've done the owned-media work that earns ranking. Whether I actually rank, and where, also depends on **off-site authority and the competition** — a major factor, but not build-time work (earning links/reputation is the `offsite` skill's white-hat, advisory remit; tracking rank is live data). Never promise a ranking.
 
-Once a page genuinely ranks, the **Cite (AEO)** layer can make it eligible to be cited by AI answers, on top, never instead.
+Once a page's ranking fundamentals are sound, the **Cite (AEO)** layer can make it eligible to be cited by AI answers, alongside ranking, never instead of it.

@@ -12,7 +12,7 @@ The problem is not that the items are wrong. The problem is that they have a **d
 
 You cannot optimise what cannot be seen. And most sites built by AI coding agents fail at the very bottom of the stack — the page looks perfect in the browser, and is nearly invisible to a crawler — while everyone busies themselves at the top.
 
-The Visibility Ladder fixes the order. It is **five rungs that climb to the goal of every site: ranking** — and you may not climb a rung until the ones beneath it pass. Then, above the ladder, sits one further layer for the AI-answer era.
+The Visibility Ladder fixes the order. It is **five rungs that climb to the goal of every site: ranking.** The first three are strict prerequisites — a page that can't be reached can't be read, and one that can't be read can't be understood — and the top two build on that foundation rather than gating it as rigidly. Either way, a broken lower rung quietly caps everything above it, so you diagnose from the top and fix from the bottom up. Then, above the ladder, sits one further layer for the AI-answer era.
 
 ### SEO is the goal; AI search is the layer on top
 
@@ -50,22 +50,26 @@ A page is not an island. Engines learn importance and meaning from how pages lin
 
 Connect comes after Understand because internal linking is most powerful when the engine already knows what each page is and what entities it covers. Wire understood pages together and the whole site reinforces itself.
 
-### 5. Rank — *is the page actually good and relevant enough to win?*
+### 5. Rank — *is the page good enough, and trusted enough, to win?*
 
-The summit, and the whole point. The first four rungs make a page *eligible* to rank: reachable, readable, understood, and well-connected. Rung five is whether it is *competitive* — whether it deserves to rank for what its audience is searching. That is four things, all build-time and owned-media:
+The summit, and the whole point. The first four rungs make a page *eligible* to rank: reachable, readable, understood, and well-connected. Rung five is whether it actually *deserves* to win the query. And here is the honest part most checklists hide: unlike the rungs below it, ranking is not a property you switch on. It is an **outcome you earn**, decided partly on your own page and partly out in the wider world. So rung five has two halves, and they are not the same kind of work.
 
-- **Search intent** — does the page actually answer the query a visitor came for (informational, commercial, transactional, navigational), in their language?
-- **Genuine quality and depth** — is it comprehensive, specific, and more useful than what already ranks, or thin and derivative?
-- **E-E-A-T and trust** — real experience, real expertise, real authorship and sources, the signals engines weigh for a page they're about to rank.
-- **Topical authority** — does the site cover the topic deeply enough (the hub-and-spoke clusters from Connect) to be treated as a credible source on it?
+**What you build — owned media, the agent's job.** Everything on your own page and site that earns ranking, taken as far as it can go:
 
-Honest boundary: ranking is also decided by things you do not control, off-site authority and the strength of the competition. Those are not build-time work (see the boundary, below). Rung five is everything on *your own site* that earns ranking, taken as far as it can go. That is the goal of the ladder.
+- **Search intent** — does the page actually answer the query a visitor came for (informational, commercial, transactional, navigational), in their language, and in the format the results page rewards?
+- **Genuine quality and depth** — is it comprehensive, specific, and more useful than what already ranks, adding something new rather than echoing it?
+- **On-page E-E-A-T** — real experience, expertise, authorship and sources, *surfaced honestly* where they genuinely exist, never invented.
+- **Topical authority** — does the site cover the topic deeply enough (the hub-and-spoke clusters from Connect) to read as a credible source on it? This is where Connect and Rank reinforce each other rather than strictly stack.
+
+**What you earn — off-site, the agent only advises.** Ranking is also decided by authority you cannot code: backlinks, brand and reputation, and the sheer strength of the competition. This is earned over time through real work and trust, not built at deploy. It sits *beside* the ladder, not on it — the pack's **`seo-offsite-authority`** skill audits and strategises it (white-hat only), but the earning itself stays off-site, ongoing work. It is a major ranking factor, so it earns a place at the summit; it is simply not something a build can do for you.
+
+Rung five is the goal of the ladder: build everything on the left as far as it will go, and advise honestly on the right.
 
 ### Above the ladder: AEO (being cited by AI answers)
 
-Once a page genuinely ranks, the same foundations make it *eligible* to be cited by AI answer engines, AI Overviews, ChatGPT, Perplexity, Claude. This is **a layer on top of the ladder, not a sixth rung**, because it is not a prerequisite for ranking, it is a bonus above it, and it comes *after* the page has earned its place.
+Once a page can genuinely rank, the same foundations make it *eligible* to be cited by AI answer engines, AI Overviews, ChatGPT, Perplexity, Claude. This is **a layer on top of the ladder, not a sixth rung**, because it is not a prerequisite for ranking and it never substitutes for it. It is applied to a page whose fundamentals are already in place — alongside ranking, never before it, and never instead of it.
 
-AEO is a formatting and trust discipline: self-contained answer blocks that make sense lifted out of context, question-shaped headings, consistent entity naming, genuine attribution, and an awareness of how AI crawlers differ from classic ones. It makes a page **eligible** to be quoted; it cannot guarantee a citation, because that depends on much that sits outside your site. Worth doing, on the page you've already earned ranking for, never instead of it.
+AEO is a formatting and trust discipline: self-contained answer blocks that make sense lifted out of context, question-shaped headings, consistent entity naming, genuine attribution, and an awareness of how AI crawlers differ from classic ones. It makes a page **eligible** to be quoted; it cannot guarantee a citation, because that depends on much that sits outside your site — including, increasingly, whether you already rank for the query. Worth doing, on a page whose ranking fundamentals are sound, never as a shortcut around them.
 
 ---
 
@@ -109,7 +113,7 @@ This method, and the skills built on it, fix **build-time** problems on your **o
 
 Two things sit outside that line, honestly:
 
-**Earned media — the off-site half of SEO.** Backlinks, digital PR, brand mentions and third-party reviews build off-site authority that genuinely affects ranking. The *ladder* can't cover it, because authority is **earned** through outreach and reputation over time, not built into your code, and faking it (bought links, fake reviews) is the black-hat behaviour this method refuses. But it is half of SEO, so the pack includes an **off-site authority skill (`seo-offsite-authority`), beside the ladder**, that *audits* your backlink profile (toxic links, a disavow file, the competitor gap) and *strategises* white-hat link-building and digital PR. It advises and audits; it never executes outreach or buys links. The earning itself stays off-site, ongoing work, yours or a managed service's.
+**Earned media — the off-site half of SEO.** Backlinks, digital PR, brand mentions and third-party reviews build off-site authority that genuinely affects ranking. It has a named place at the summit (rung five's *what you earn*), but the ladder can't *build* it, because authority is **earned** through outreach and reputation over time, not written into your code, and faking it (bought links, fake reviews) is the black-hat behaviour this method refuses. But it is half of SEO, so the pack includes an **off-site authority skill (`seo-offsite-authority`), beside the ladder**, that *audits* your backlink profile (toxic links, a disavow file, the competitor gap) and *strategises* white-hat link-building and digital PR. It advises and audits; it never executes outreach or buys links. The earning itself stays off-site, ongoing work, yours or a managed service's.
 
 **Live measurement.** A build, by itself, can't tell you what's happening out in the live world: whether you actually rank, where, against whom, or whether AI engines are citing you over time. That's **live data** — rank tracking, AI-citation monitoring, real-user Core Web Vitals, geo-grid visibility. The method treats it as **optional enrichment, never a requirement**: connect your own data tools (Search Console, DataForSEO, Ahrefs) with your own keys and the audit gets sharper — real indexation, traffic-weighted priorities, real demand. Don't want to wire that up, or want it managed and ongoing? That's the done-for-you tier. Either way, the free build-time work never depends on it, and current data is never a guarantee of future results.
 

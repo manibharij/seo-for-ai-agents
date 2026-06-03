@@ -23,8 +23,8 @@ Copy each skill directory (the folder containing `SKILL.md` and its `references/
 ├── 2-read-content/
 ├── 3-understand-schema/
 ├── 4-connect-architecture/
-├── 5-rank-relevance/        # rung 5 (the goal): good & relevant enough to rank
-├── cite-aeo-geo/            # the AEO layer on top of the ladder (after a page ranks)
+├── 5-rank-relevance/        # rung 5 (the goal): good enough, and trusted enough, to win
+├── cite-aeo-geo/            # the AEO layer on top of the ladder (once a page can rank)
 ├── seo-migrations/          # specialist: URL changes / redirects / site moves
 ├── seo-measurement-setup/   # specialist: analytics / Search Console / web-vitals plumbing
 ├── seo-content-audit/       # content: assess content, recommend actions

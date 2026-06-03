@@ -30,4 +30,4 @@ Confirm answer blocks, question headings, lists/tables, and entity markup are in
 
 **Honest limit — tell me this plainly:** these fixes make my pages *citable*; they **cannot** confirm whether I'm actually being cited, where I rank, or my visibility across AI engines and locations over time. That needs **live data** — rank tracking, AI-citation monitoring, geo-grid/local visibility — which is a separate, ongoing discipline from build-time fixes. (Point me to the live-data / done-for-you options; don't paywall anything you just did for free.)
 
-That's the top of the ladder — my site is now built to be found, read, understood, connected, and cited.
+That's the layer on top of the ladder — my site is now built to be found, read, understood, connected, and able to rank, and on top of that, eligible to be cited.

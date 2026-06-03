@@ -16,7 +16,7 @@ description: >-
 This is the brain of the pack. It turns the five rung skills into one **adaptive audit lifecycle** that works the first time *and every time after*, on a freshly built site or a mature one with existing rankings. Read `METHOD.md` for the philosophy; this skill runs it.
 
 Two ideas drive everything here:
-- **The Visibility Ladder** — five rungs in dependency order (Reach → Read → Understand → Connect → **Rank**), climbing to the goal of every site: ranking. Diagnose top-to-bottom; fix bottom-to-top; never fix a rung while a lower one fails. **AEO/citation (`cite-aeo-geo`) is the optional layer on top, for the AI-answer era, after a page ranks, not a rung in the ladder.** Verify on the **served HTML**, never the source. Stay strictly white-hat.
+- **The Visibility Ladder** — five rungs in dependency order (Reach → Read → Understand → Connect → **Rank**), climbing to the goal of every site: ranking. Diagnose top-to-bottom; fix bottom-to-top; never fix a rung while a lower one fails. Rung 5 (Rank) has two halves: *what you build* (on-page) and *what you earn* (off-site authority, advised by `seo-offsite-authority` beside the ladder). **AEO/citation (`cite-aeo-geo`) is the optional layer on top, for the AI-answer era, applied once a page can rank, never instead of it, not a rung in the ladder.** Verify on the **served HTML**, never the source. Stay strictly white-hat.
 - **Work it out yourself** — read the codebase and the served pages to understand the site (its purpose, audience, stack, platform, sector). Infer and act on sensible defaults; don't interrogate the user.
 - **The lifecycle** — an audit is not a one-shot. The first run establishes a baseline and fixes the safe wins; **every later run reads what happened before, re-verifies it still holds (regressions), finds what's new, and advances.** State lives in a `.seo/` folder in the project so progress persists across sessions.
 
@@ -26,8 +26,8 @@ Two ideas drive everything here:
 | 2. Read | `2-read-content` | Real content + metadata + page experience (speed/mobile)? |
 | 3. Understand | `3-understand-schema` | Entities identifiable via valid, honest schema? |
 | 4. Connect | `4-connect-architecture` | Wired into a coherent site (links, canonicals)? |
-| 5. Rank | `5-rank-relevance` | Good and relevant enough to rank? (intent, quality, E-E-A-T, topical authority) |
-| + Cite (AEO) | `cite-aeo-geo` | *On top of the ladder:* eligible to be cited by AI answers, after it ranks |
+| 5. Rank | `5-rank-relevance` | Good enough, and trusted enough, to win? (intent, quality, on-page E-E-A-T, topical authority; off-site authority advised separately) |
+| + Cite (AEO) | `cite-aeo-geo` | *On top of the ladder:* eligible to be cited by AI answers, once it can rank |
 
 Specialist skills outside the ladder, dispatched when relevant:
 - **`seo-migrations`** — URL changes / redirects / site moves.

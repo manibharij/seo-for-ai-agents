@@ -19,7 +19,8 @@ For a **representative sample of templates** (homepage *and* an article, a produ
 2. **Read** — one descriptive `<h1>`? unique sensible title/description? substantive, intent-matched content? mobile-friendly? no glaring Core Web Vitals causes?
 3. **Understand** — appropriate, valid, **honest** JSON-LD for the page's entities, present in served HTML?
 4. **Connect** — real `<a href>` internal links, no orphans, exactly one correct canonical, no duplicate-URL sprawl?
-5. **Cite** — self-contained answer blocks, question-shaped headings, consistent entities, genuine attribution, AI-crawler access?
+5. **Rank** — does the page match the intent it should serve, with genuine quality/depth, real on-page E-E-A-T, and a credible topical cluster? (The owned-media half; off-site authority is advised separately, not scored here.)
+- **+ Cite (on top of the ladder, not a rung)** — self-contained answer blocks, question-shaped headings, consistent entities, genuine attribution, AI-crawler access. Assess for pages whose ranking fundamentals are already sound.
 
 Record each finding (see the state format): which rung, which page/template, severity, and an effort estimate. **Score each rung** (e.g. pass / minor issues / failing) so the report shows a clear health picture and an obvious floor.
 

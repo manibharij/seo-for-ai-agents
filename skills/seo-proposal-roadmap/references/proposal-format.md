@@ -15,7 +15,7 @@ _Prepared <date> · Based on audit run #N · Stack: <stack> · Profile: <type>_
 and the shape of the plan. Written for a decision-maker, not an SEO.
 
 ## Where the site stands today
-- Visibility Ladder scorecard (Reach/Read/Understand/Connect/Cite) + the floor.
+- Visibility Ladder scorecard (Reach/Read/Understand/Connect/Rank, plus Cite on top) + the floor.
 - The 3–5 most important findings, each in one line, with evidence.
   (Cite live data where connected: "1,200 impressions/mo, avg position 12 — strong upside.")
 
