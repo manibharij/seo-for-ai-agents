@@ -11,7 +11,7 @@ You are adding **structured data (schema.org as JSON-LD)** so engines can identi
 **Verify on what is actually SERVED.** Schema injected only client-side may never be seen — it must be in the raw HTML.
 
 ## Step 1 — Diagnose
-- Classify each template by what it actually is: article → `BlogPosting`/`Article`; product → `Product` (+ `Offer`); the business → `Organization`/`LocalBusiness`; a person → `Person`; real Q&As → `FAQPage`; nav trail → `BreadcrumbList`. (Note: Google retired `HowTo` rich results, and `FAQPage` rich results are now restricted to government/health sites — on a normal site add these for entity clarity/AEO, not expecting a Google snippet. Verify current per-type eligibility before promising any rich result.)
+- Classify each template by what it actually is: article → `BlogPosting`/`Article`; product → `Product` (+ `Offer`); the business → `Organization`/`LocalBusiness`; a person → `Person`; real Q&As → `FAQPage`; nav trail → `BreadcrumbList`. (Note: Google retired `HowTo` rich results in 2023 and `FAQPage` rich results entirely in May 2026 — the markup stays valid; add these for entity clarity/AEO, never expecting a Google snippet. Verify current per-type eligibility before promising any rich result.)
 - Fetch the served HTML and find existing `<script type="application/ld+json">` blocks. Are there any? Are they in the served HTML or only client-side? Do they **match the visible content**, or claim things the page doesn't show (placeholder ratings, fake authors, wrong `@type`)?
 
 ## Step 2 — Fix

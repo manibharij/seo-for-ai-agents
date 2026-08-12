@@ -5,7 +5,7 @@ Use for SaaS and product marketing sites, app landing pages, and B2B sites. The 
 ## How each rung shifts
 - **Reach** — the prime suspect. Marketing pages built in the same SPA as the app often serve an empty shell to crawlers. Verify content is in the served HTML; this is frequently *the floor*. Keep the marketing site server-rendered (or static) even if the app is an SPA.
 - **Read** — clear articulation of what the product does, for whom, and the problem it solves — matched to real search intent (problem-aware, solution-aware, comparison, branded). Avoid vague "platform that empowers teams" copy that says nothing.
-- **Understand** — `Organization`/`SoftwareApplication` where appropriate; `BreadcrumbList`; `FAQPage` for genuine FAQs (note: FAQ rich results are restricted now — value is AEO/clarity). `Product`/`Offer` only if you genuinely list pricing as products.
+- **Understand** — `Organization`/`SoftwareApplication` where appropriate; `BreadcrumbList`; `FAQPage` for genuine FAQs (note: FAQ rich results were retired in May 2026 — value is AEO/clarity). `Product`/`Offer` only if you genuinely list pricing as products.
 - **Connect** — a coherent architecture: features, use-cases, integrations, comparisons, and a real blog/resources hub, interlinked. Comparison and alternative pages need internal links and clear canonicals.
 - **Cite** — strong here: buyers ask AI engines "best tool for X", "X vs Y", "how to do Z". Self-contained answers, honest comparison tables, genuine docs/expertise make you citable. Entity consistency (one clear company identity) matters.
 

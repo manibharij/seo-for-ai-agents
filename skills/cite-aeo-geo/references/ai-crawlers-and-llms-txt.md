@@ -53,8 +53,9 @@ Caveats to tell the user honestly:
 `llms.txt` is a **proposed** convention: a Markdown file at your site root (`/llms.txt`) that offers LLMs a curated, clean map of your most important content — links to key pages, sometimes with summaries, so a model can find the good stuff without wading through navigation and boilerplate. Think of it as a "table of contents for LLMs", analogous in spirit to a sitemap but human-readable and curated.
 
 ### Be honest about its status
-- It is a **community proposal, not an established standard**, and **adoption by major AI engines is limited/unconfirmed** as of 2026. Major providers have not broadly committed to consuming it.
-- So treat it as **low-cost, low-certainty**: cheap to add, possibly helpful as adoption grows, but **not** a substitute for the real work (reachable, well-formatted, trustworthy pages). Don't oversell it to the user.
+- It is a **community proposal, not an established standard**. As of mid-2026, **Google has stated plainly that `llms.txt` has no effect on Search rankings or AI Overviews** (its guidance says Search doesn't use it), and adoption across top sites remains low.
+- It **is** retrieved by some AI tools: Perplexity and Claude fetch it, and several coding agents (Claude Code, Cursor, Copilot and others) look for `/llms.txt` when pointed at a documentation site — so it's most defensible for **docs**.
+- So treat it as **low-cost, low-certainty**: cheap to add, useful to the tools that read it, but **not** an SEO lever and **not** a substitute for the real work (reachable, well-formatted, trustworthy pages). Don't oversell it to the user.
 
 ### If you add one
 Keep it a genuine, curated index of real, important pages with honest short descriptions:

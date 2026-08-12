@@ -1,6 +1,6 @@
 # Which skill do I use when?
 
-The pack has three tiers. **Start with the orchestrator** for anything broad — it routes to the rest and runs the audit lifecycle. Reach for a specific skill only when your request is already scoped.
+The pack has three tiers. **Start with the orchestrator** for anything broad — it routes to the rest and runs the audit lifecycle. Reach for a specific skill only when your request is already scoped. Looking by *site type* instead (shop, blog, SaaS, docs, local, news, international)? See **[USE-CASES.md](USE-CASES.md)**.
 
 | Skill | What it does | Reach for it when you say… | Tier |
 |---|---|---|---|

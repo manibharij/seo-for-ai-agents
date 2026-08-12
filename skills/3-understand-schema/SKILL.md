@@ -34,7 +34,7 @@ Schema follows content. First classify each template by its real entity:
 - Navigation trail → `BreadcrumbList`
 - Site-wide → `WebSite` (optionally with `SearchAction`)
 
-> Rich-result support changes: **`HowTo` rich results were retired** and **`FAQPage` rich results are now restricted to government/health authorities**. On a typical site, add these for entity clarity and AEO — not expecting a Google snippet. Verify current per-type eligibility before promising any rich result (see `references/schema-types-and-jsonld.md`).
+> Rich-result support changes: **`HowTo` rich results were retired (2023)** and **`FAQPage` rich results were fully retired (May 2026)** — the markup stays valid, but neither produces a Google snippet any more. Add these for entity clarity and AEO only. Verify current per-type eligibility before promising any rich result (see `references/schema-types-and-jsonld.md`).
 
 ### Check what's already there (and whether it's valid)
 - Fetch the **served HTML** and look for existing `<script type="application/ld+json">` blocks. Are there any? Are they in the served output or only injected client-side?

@@ -5,7 +5,15 @@ All notable changes to this pack. Because search and AI-answer behaviour change 
 This project aims to follow [Semantic Versioning](https://semver.org/) loosely while it's pre-1.0 and experimental.
 
 ## [Unreleased]
-*Current as of: 2026-06. Experimental — see [DISCLAIMER.md](DISCLAIMER.md).*
+*Current as of: 2026-08. Experimental — see [DISCLAIMER.md](DISCLAIMER.md).*
+
+### Added — a use-case guide by site type
+- **[USE-CASES.md](USE-CASES.md)** — the orientation layer for site types: which profile fits (SaaS, e-commerce, local, blog/content, docs, news, international), the classic failure per type, the priority tilt, a read-only starter prompt per type, and the honest per-type boundaries. Linked from README and SKILLS.md. Depth stays in the profile files; this is the map.
+
+### Changed — freshness pass (2026-08), verified against Google's changelog
+- **FAQ rich results were fully retired by Google (May 2026)** — previously restricted to government/health sites (2023), now not shown at all. Updated everywhere the old restriction was stated (Understand skill + schema reference, Cite answer-formatting reference, docs & SaaS profiles, `understand.md` mini). `FAQPage` markup stays valid; its value is entity clarity and AEO extraction only.
+- **More rich-result types retired** — course info, estimated salary, learning video, special announcement, vehicle listing (Sep 2025) and practice problems (Jan 2026) noted in the schema reference's currency box; the schema types themselves remain valid for entity clarity.
+- **`llms.txt` status sharpened** — Google has stated it has no effect on Search rankings or AI Overviews (mid-2026); some AI tools (Perplexity, Claude, coding agents) do fetch it, making it most defensible for docs. The reference now says both, still framed as low-cost, low-certainty.
 
 ### Added — a read-only audit mini
 - **`install/copy-paste/audit-readonly.md`** — an analysis-only version of the audit mini: it walks the whole Visibility Ladder on the served HTML and reports a scorecard, the floor, and prioritised fixes with risk, but **changes nothing** (no code edits, no `.seo/` written). The safe first look, ideal for auto-mode or a live site you don't want touched; switch to `audit.md` to actually apply fixes.

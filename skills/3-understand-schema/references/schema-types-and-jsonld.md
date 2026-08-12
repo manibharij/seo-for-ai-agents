@@ -27,9 +27,10 @@ Read this to pick the right type and fill it honestly. Use **JSON-LD** (a `<scri
 
 Pick the most specific type that fits. Don't force a type for the sake of a rich result. This is the common set; schema.org has many more (e.g. `Service`, `QAPage`, `Dataset`) — choose the most specific *real* one. Media types (`VideoObject`, `ImageObject`) are handled by the `seo-media` skill.
 
-> **Rich-result currency (verify before promising any rich result).** Google's rich-result support changes; two important shifts:
+> **Rich-result currency (verify before promising any rich result).** Google keeps narrowing which types produce rich results; the important shifts:
 > - **`HowTo` rich results were retired** (2023) — `HowTo` markup no longer produces a Google rich result on any device. Use it only as optional semantic/entity markup, not to chase a snippet.
-> - **`FAQPage` rich results are restricted** (since 2023) to well-known, authoritative **government and health** sites. For a typical business/blog site, `FAQPage` will **not** earn an FAQ rich result — its value now is machine-readability, entity clarity, and AEO extraction (the Cite/AEO layer), which is still worth having.
+> - **`FAQPage` rich results were fully retired (May 2026).** They were restricted to government/health sites in 2023 and are now **no longer shown in Google Search at all**. `FAQPage` remains valid schema.org markup — its value now is machine-readability, entity clarity, and AEO extraction (the Cite/AEO layer), which is still worth having. Never add it expecting a SERP feature.
+> - **More types retired in 2025–26:** course info, estimated salary, learning video, special announcement and vehicle listing (Sep 2025), and practice problems (Jan 2026) no longer produce rich results. The underlying schema types stay valid for entity clarity.
 > Treat the per-type Google docs as the source of truth at the time you work, and report eligibility honestly (see `validation.md`).
 
 ---
@@ -114,7 +115,7 @@ The `@id` lets other blocks reference this same business (see entity linking bel
   }]
 }
 ```
-Mark up FAQs that actually exist and serve the reader — never invent Q&As. And note (per the currency box above) that an FAQ *rich result* is now restricted to government/health authorities; on a typical site the payoff is machine-readability and AEO extraction, not a Google snippet — so don't add it expecting one.
+Mark up FAQs that actually exist and serve the reader — never invent Q&As. And note (per the currency box above) that FAQ *rich results* were fully retired in May 2026; the payoff is machine-readability and AEO extraction, not a Google snippet — so don't add it expecting one.
 
 ### BreadcrumbList
 ```json

@@ -4,14 +4,14 @@
 
 > ⚡ **The problem it fixes:** sites built by AI agents look perfect in a browser and are often nearly **invisible to crawlers** — they serve an empty shell with no real content in the HTML. This pack catches that (and four rungs more), checking **what's actually served to a crawler**, not the source an agent edited and hoped about.
 
-`experimental · v0.1 (current as of 2026-06) · MIT` — **[Which skill when?](SKILLS.md)** · [Method](METHOD.md) · [Changelog](CHANGELOG.md) · [Disclaimer](DISCLAIMER.md)
+`experimental · v0.1 (current as of 2026-08) · MIT` — **[Which skill when?](SKILLS.md)** · [Method](METHOD.md) · [Use cases](USE-CASES.md) · [Changelog](CHANGELOG.md) · [Disclaimer](DISCLAIMER.md)
 
 > **New here?** Paste [`install/copy-paste/audit.md`](install/copy-paste/audit.md) into your agent to audit an **existing** site, or [`install/copy-paste/reach.md`](install/copy-paste/reach.md) for the highest-impact fix on a **new** build. Want a look without any changes? Use [`audit-readonly.md`](install/copy-paste/audit-readonly.md). → [Install](#install)
 
 ## Contents
 - [The method — the Visibility Ladder](#the-method-the-visibility-ladder)
 - [It runs as an audit lifecycle](#it-runs-as-an-audit-lifecycle-not-a-one-shot)
-- [Who it's for, and how it adapts](#who-its-for-and-how-it-adapts)
+- [Who it's for, and how it adapts](#who-its-for-and-how-it-adapts) · [Use cases by site type](USE-CASES.md)
 - [Install](#install) · [Which skill when? (skills index)](SKILLS.md)
 - [The honest boundary](#the-honest-boundary-and-how-live-data-fits) · [Disclaimer](#disclaimer)
 
@@ -75,7 +75,7 @@ That turns it from a one-time fixer into a system that keeps a site healthy over
 - **New / "vibe-coded" sites** — catch the classic failure where an AI-built site looks perfect in a browser but is nearly invisible to crawlers, and ship it correct from the start.
 - **Existing sites (developers on Claude Code)** — audit a real codebase, fix safely *without regressing what already ranks* (it protects URLs, canonicals, and intentional decisions — see the don't-regress discipline), and track progress run over run.
 
-It **adapts** to the site: per-stack guidance (Next.js, Astro, Nuxt, SvelteKit, Remix, Gatsby, SPAs, static — plus an honest boundary for hosted platforms like WordPress/Shopify where fixes live in the platform, not the code), and **site-type profiles** (content/blog, e-commerce, local, SaaS/marketing, docs, international) that tune which issues matter most.
+It **adapts** to the site: per-stack guidance (Next.js, Astro, Nuxt, SvelteKit, Remix, Gatsby, SPAs, static — plus an honest boundary for hosted platforms like WordPress/Shopify where fixes live in the platform, not the code), and **site-type profiles** (content/blog, news/publisher, e-commerce, local, SaaS/marketing, docs, international) that tune which issues matter most. **[USE-CASES.md](USE-CASES.md)** maps each site type to its profile, priority tilt, and a ready-to-paste starter prompt.
 
 ---
 
@@ -142,7 +142,7 @@ The line that never moves: **no build-time capability is ever paywalled, and not
 
 Issues and PRs welcome — the bar is correctness and restraint over coverage (this isn't a 20-item flat checklist). In short: respect the ladder's order, verify on served output, stay strictly white-hat, be honest about the boundary, and match the skill template. Full guidance in **[CONTRIBUTING.md](CONTRIBUTING.md)**.
 
-Site-type profiles (content, e-commerce, local, SaaS/marketing, docs, international) ship as [orchestrator references](skills/seo-orchestrator/references/profiles/); new profiles and deeper per-platform (WordPress/Shopify) fix guidance are good contribution areas.
+Site-type profiles (content, news/publisher, e-commerce, local, SaaS/marketing, docs, international) ship as [orchestrator references](skills/seo-orchestrator/references/profiles/) with a per-type guide in [USE-CASES.md](USE-CASES.md); new profiles and deeper per-platform (WordPress/Shopify) fix guidance are good contribution areas.
 
 ---
 

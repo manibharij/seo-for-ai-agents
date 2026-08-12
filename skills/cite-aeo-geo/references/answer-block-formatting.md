@@ -49,7 +49,7 @@ Give engines clean units to quote:
 - **Ordered lists** for steps/processes; **unordered lists** for options/criteria.
 - **Comparison tables** for "X vs Y", specs, pricing tiers — highly extractable for comparison queries.
 - **A concise summary** near the top for long pages (a "key takeaways" that's genuinely accurate).
-- **Real FAQs** where users genuinely have repeated questions — and mark them up with `FAQPage` schema (rung 3), but only if they're real (never invent FAQs for markup's sake). The point here is AEO extraction and entity clarity, not a Google FAQ rich result (those are now restricted to government/health sites).
+- **Real FAQs** where users genuinely have repeated questions — and mark them up with `FAQPage` schema (rung 3), but only if they're real (never invent FAQs for markup's sake). The point here is AEO extraction and entity clarity, not a Google FAQ rich result (those were fully retired in May 2026).
 
 All of this must be in the **served HTML** — a table or list rendered only client-side may be invisible to AI crawlers that don't run JS.
 
