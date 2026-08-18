@@ -30,6 +30,7 @@ Two ideas drive everything here:
 | + Cite (AEO) | `cite-aeo-geo` | *On top of the ladder:* eligible to be cited by AI answers, once it can rank |
 
 Specialist skills outside the ladder, dispatched when relevant:
+- **`seo-context-gathering`** — the foundation under the content half: learn what the business is, who it serves, what it can truthfully claim, and how it writes; record it in `.seo/context.md`. Run it *before* content, positioning, E-E-A-T or entity work.
 - **`seo-migrations`** — URL changes / redirects / site moves.
 - **`seo-measurement-setup`** — analytics / Search Console instrumentation.
 - **`seo-content-audit`** — assess existing content (quality, intent, gaps, cannibalisation, decay).
@@ -46,7 +47,9 @@ Specialist skills outside the ladder, dispatched when relevant:
 
 ## Step 0 — Understand the site yourself (before anything)
 
-Read the codebase and the served pages and **work the context out on your own** — the user shouldn't have to describe their site or fill in a form. First, build a quick working model of **what the site is, who it's for, and what each page is trying to do** (from the content, routes, copy, and structure). Then establish the five things below. Infer and proceed on sensible defaults; ask only for the rare decision a human genuinely must make, and even then propose a default rather than blocking.
+Read the codebase and the served pages and **work the context out on your own** — the user shouldn't have to describe their site or fill in a form. First, build a quick working model of **what the site is, who it's for, and what each page is trying to do** (from the content, routes, copy, and structure). Then establish the six things below. Infer and proceed on sensible defaults; ask only for the rare decision a human genuinely must make, and even then propose a default rather than blocking.
+
+This step is deliberately shallow — enough to route the technical work. **Anything touching content, positioning, E-E-A-T, or entities needs the deeper picture**, which is `seo-context-gathering`'s job (item 6).
 
 1. **First run or progression?** Check for a **`.seo/` folder** in the project.
    - **No `.seo/`** → this is a **first run**. Go to the First-run lifecycle.
@@ -55,6 +58,10 @@ Read the codebase and the served pages and **work the context out on your own** 
 3. **Site type (profile).** Content/blog, marketing/SaaS, e-commerce, local business, docs, or international? **Infer it from the content and structure** (don't ask) — it tunes which issues matter most and adds type-specific checks. See `references/profiles/`.
 4. **Existing site?** If the site is live with real traffic/rankings, switch on the **don't-regress discipline** (`references/existing-site-safety.md`) — understand what's working and intentional before you change anything.
 5. **Any live-data integrations connected?** Check for **optional** BYO-key data tools (Search Console, DataForSEO, Ahrefs, Bing) via env vars/MCP. If present, use them to *enrich* the audit (real indexation, traffic-weighted priorities, demand/competitor data); if not, proceed on served-output checks alone. **Never required, never a gate** — see `references/live-data-integrations.md`. (Read keys only from env vars; never store them in `.seo/` or commits.)
+
+6. **Is there a context pack?** Check for **`.seo/context.md`** — the record of what this business is, who it serves, what it can truthfully claim, and how it writes.
+   - **Exists** → read it before any content, positioning, E-E-A-T or entity work, and re-check the parts it marks volatile.
+   - **Missing** → dispatch **`seo-context-gathering`** *before* that work, not after. Purely technical fixes (Reach, most of Read) can proceed without it; content and trust work cannot, because that is where an agent without context starts inventing.
 
 > New or existing, the method is the same climb — but on an existing site you protect what already works while you improve it.
 
@@ -92,6 +99,7 @@ Progression is what makes this a system: the second, fifth, twentieth run is nev
 - Pull in the **content/marketing skills** when the work is about the content itself, not just its markup: **`seo-content-audit`** (assess), **`seo-content-editing`** (improve real copy), **`seo-positioning-strategy`** (messaging/competitive/topical planning), and **`seo-proposal-roadmap`** (package the findings as a proposal/roadmap deliverable). These read live data (demand/competitor) when it's connected, and say so honestly when it isn't.
 - Pull in the **advanced/automation skills** when relevant: **`seo-automations`** (set up CI/CD regression gates + scheduled re-audits — recommend this once a site is healthy, to keep it that way), **`seo-media`** (sites with significant image/video), **`seo-programmatic`** (data-driven pages at scale — apply its quality gate), **`seo-log-analysis`** (large/crawl-constrained sites with server logs).
 - Pull in **`seo-offsite-authority`** for the off-page half: backlinks, domain authority, toxic links/disavow, or "competitors outrank me on authority." It audits the off-site profile (with connected link data) and strategises white-hat link earning, advisory only, never executing or buying links.
+- **Get context before content.** Before dispatching any content, positioning, E-E-A-T or entity work, ensure `.seo/context.md` exists and is current — dispatch **`seo-context-gathering`** if not. Judging whether a page "matches intent" or "shows expertise" without knowing the audience or the real credentials is guesswork wearing a checklist.
 - **Enrich, don't gate.** When a live-data integration is present, use it to prioritise by real impact and ground content/positioning in real demand — but the audit and fixes never *require* it.
 - Apply the active **profile** (`references/profiles/<type>.md`) and **stack/platform adapter** so each rung's checks and fixes fit this specific site.
 - On an **existing site**, gate every change through `references/existing-site-safety.md`.

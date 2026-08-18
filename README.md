@@ -38,6 +38,9 @@ The **[`seo-orchestrator`](skills/seo-orchestrator/SKILL.md)** is the entry poin
 
 **Specialist skills** sit beside the ladder for jobs that don't fit a single rung:
 
+*Foundation — run this before any content work:*
+- **[`seo-context-gathering`](skills/seo-context-gathering/SKILL.md)** — learn the business before touching its words: what it actually sells, who it serves and in *their* vocabulary, which differentiators are provable, what real proof exists (named authors, case studies, data), how it writes, and what it may not claim. Written once to `.seo/context.md` and read by every skill after it. Every fact is labelled established / inferred / unknown — and only an established fact may ever reach published copy or schema. This is how the pack answers "don't fabricate" with something better than a refusal: go and find the real material first.
+
 *Technical:*
 - **[`seo-migrations`](skills/seo-migrations/SKILL.md)** — preserve rankings when URLs change (redesigns, replatforming, domain moves, slug changes, post-relaunch 404s).
 - **[`seo-measurement-setup`](skills/seo-measurement-setup/SKILL.md)** — wire up analytics, Search Console, and web-vitals so results *can* be measured (setup only — reading the data is live-data work).
@@ -106,6 +109,7 @@ Paste a mini straight into your agent:
 - [**`audit.md`**](install/copy-paste/audit.md) — the best all-rounder: runs the full audit lifecycle on a **new or existing** site (creates the `.seo/` report, fixes the floor up).
 - [**`audit-readonly.md`**](install/copy-paste/audit-readonly.md) — the same audit, **analysis-only**: diagnoses and reports but changes nothing. Safest first look, ideal for auto-mode or a live site you don't want touched.
 - [**`reach.md`**](install/copy-paste/reach.md) — the highest-impact single fix and the best demo: catch a site that's invisible to crawlers.
+- [**`context.md`**](install/copy-paste/context.md) — the foundation for content work: learns your business and writes it to `.seo/context.md` so nothing downstream has to guess.
 - Then the per-rung minis (`read`, `understand`, `connect`, `rank`), the AEO-layer mini (`cite`), and the specialist minis: technical (`migrations`, `measurement`), content/marketing (`content-audit`, `content-editing`, `positioning-strategy`, `proposal-roadmap`), automation & advanced (`automations`, `media`, `programmatic`, `log-analysis`), and off-page (`offsite`). One per skill in [`install/copy-paste/`](install/copy-paste/).
 
 On a host with skill support, the [`seo-orchestrator`](skills/seo-orchestrator/SKILL.md) does the routing and runs the lifecycle for you.

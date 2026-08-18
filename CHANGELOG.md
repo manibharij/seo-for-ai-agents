@@ -7,6 +7,14 @@ This project aims to follow [Semantic Versioning](https://semver.org/) loosely w
 ## [Unreleased]
 *Current as of: 2026-08. Experimental — see [DISCLAIMER.md](DISCLAIMER.md).*
 
+### Added — context gathering, the foundation under the content half
+- **`seo-context-gathering`** — the missing first step. Learns what the business actually is (offer, audience and *their* vocabulary, provable differentiators, real proof assets, house voice, claim constraints, competitors, entities) from the repository, the served site, connected data and free public sources, then writes it to **`.seo/context.md`** for every later skill and every later run to read.
+- **Provenance labelling, and the rule it enforces.** Every fact in the pack is marked `[established]` / `[inferred]` / `[unknown]` / `[conflict]`. Inferences may shape strategy; **only an established fact may reach published copy, structured data, or a trust signal**, and unknown is never rounded up to a plausible guess. This turns "never fabricate" from a refusal into a method: go and find the real material first.
+- **`.seo/context.md` is now part of the lifecycle.** Added to the `.seo/` folder contract in `audit-report-and-state.md`; orchestrator Step 0 gained a sixth check (does a context pack exist, is it current) and a dispatch rule that context precedes any content, positioning, E-E-A-T or entity work. Purely technical rungs still run without it.
+- **References:** `context-sources.md` (every source worth reading and what each is uniquely good for — including Search Console's query report as the best audience-vocabulary source there is, the free no-key options, and the fetching etiquette and legal lines) and `context-pack-format.md` (the file format, section by section, with a worked example).
+- **Respects the autonomy principle.** The skill infers everything it can and is explicitly forbidden from becoming an onboarding questionnaire: what remains is a short ranked list of only the questions that materially change the work, each with a proposed default. Unanswered questions stay `[unknown]` and downstream skills degrade gracefully.
+- **Mini:** `install/copy-paste/context.md`.
+
 ### Added — a use-case guide by site type
 - **[USE-CASES.md](USE-CASES.md)** — the orientation layer for site types: which profile fits (SaaS, e-commerce, local, blog/content, docs, news, international), the classic failure per type, the priority tilt, a read-only starter prompt per type, and the honest per-type boundaries. Linked from README and SKILLS.md. Depth stays in the profile files; this is the map.
 

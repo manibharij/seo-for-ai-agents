@@ -5,6 +5,7 @@ The pack has three tiers. **Start with the orchestrator** for anything broad —
 | Skill | What it does | Reach for it when you say… | Tier |
 |---|---|---|---|
 | [`seo-orchestrator`](skills/seo-orchestrator/SKILL.md) | **Entry point.** Detects stack/site-type, runs the whole Visibility Ladder as a repeatable audit, routes to every other skill. | "audit my SEO", "improve my rankings", "why isn't my site showing up" | **Entry** |
+| [`seo-context-gathering`](skills/seo-context-gathering/SKILL.md) | **Foundation.** Learns the business — offer, audience and their vocabulary, provable differentiators, real proof assets, voice, claim constraints — and writes it to `.seo/context.md` for every other skill to use | "understand my business", "gather context", "what's our brand voice", "who are we writing for", before any content work | **Foundation** |
 | [`1-reach-indexation`](skills/1-reach-indexation/SKILL.md) | Crawlable + rendered in served HTML + HTTPS + indexable | "Google can't find my site", "is it crawlable", SSR/CSR | Rung 1 |
 | [`2-read-content`](skills/2-read-content/SKILL.md) | Real content + metadata + page experience (speed/mobile) on a page | "missing meta description", "duplicate titles", "site is slow", "mobile-friendly" | Rung 2 |
 | [`3-understand-schema`](skills/3-understand-schema/SKILL.md) | Valid, honest structured data (schema/JSON-LD) | "add schema", "structured data", "rich results" | Rung 3 |
@@ -25,6 +26,7 @@ The pack has three tiers. **Start with the orchestrator** for anything broad —
 
 **Tiers, plainly:**
 - **Entry** — the orchestrator; your default for anything broad.
+- **Foundation** — `seo-context-gathering`: learns the business and records it in `.seo/context.md`. Not a rung, and not optional for content work. It runs *before* content, positioning, E-E-A-T or entity work, because those judgements are only as good as the context behind them — and an agent without context is an agent that invents.
 - **Rungs 1–5** — the Visibility Ladder, the core SEO method, climbing to the goal: **Rank**. The lower rungs are strict prerequisites; the top two build on them. A broken lower rung caps everything above it, so diagnose top-down and fix bottom-up. Rung 5 itself has two halves: *what you build* (on-page) and *what you earn* (off-page, advised beside the ladder).
 - **Layer on top** — `cite-aeo-geo` (AEO): makes a page that can already rank *eligible* to be cited by AI answers. Additive, alongside ranking, never instead of it, not a rung.
 - **Technical specialists** — jobs that don't fit a single rung (URL changes; measurement plumbing).

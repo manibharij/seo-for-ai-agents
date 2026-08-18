@@ -6,6 +6,7 @@ Read this for the exact files the lifecycle reads and writes. The agent creates 
 <user-project>/.seo/
 ├── audit.md      # human-readable health report (read this first as a person)
 ├── state.json    # machine-readable issue tracker (the source of truth for status)
+├── context.md    # what this business is, who it serves, what it can claim (see below)
 └── log.md        # dated history of runs (what changed each time)
 ```
 
@@ -98,6 +99,16 @@ These are build-time fixes. Actual rankings/citations need live measurement — 
 ```
 
 Keep it scannable: scorecard, the floor, prioritised open items, what was fixed (with proof), what needs the human, what's deferred, the boundary.
+
+---
+
+## `context.md` — what the business actually is
+
+Written by **`seo-context-gathering`**, read by everything that touches content, positioning, E-E-A-T or entities. It records the offer, the audience and their vocabulary, provable differentiators, real proof assets, the house voice, what may not be claimed, and the open questions — with **every fact labelled `[established]`, `[inferred]`, `[unknown]` or `[conflict]`**.
+
+The rule it exists to enforce: **only an established fact may reach published copy or schema.** An inference can steer strategy; it can never become a claim.
+
+Full format and a worked example: `seo-context-gathering/references/context-pack-format.md`. Like the rest of `.seo/`, it is committed — so it holds conclusions, never credentials or private customer data. Re-check the sections it marks volatile at the start of each progression run.
 
 ---
 
