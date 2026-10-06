@@ -1,6 +1,6 @@
 # Install for Claude Code
 
-`seo-for-ai-agents` is a set of [Agent Skills](https://docs.claude.com/en/docs/claude-code/skills). Claude Code discovers skills automatically and invokes them when a request matches their `description`. You have two install scopes.
+`seo-for-ai-agents` is a set of [Agent Skills](https://code.claude.com/docs/en/skills). Claude Code discovers skills automatically and invokes them when a request matches their `description`. You have two install scopes.
 
 ---
 
@@ -25,6 +25,10 @@ Copy each skill directory (the folder containing `SKILL.md` and its `references/
 ├── 4-connect-architecture/
 ├── 5-rank-relevance/        # rung 5 (the goal): good enough, and trusted enough, to win
 ├── cite-aeo-geo/            # the AEO layer on top of the ladder (once a page can rank)
+├── seo-context-gathering/   # foundation: learns the business, writes .seo/context.md
+├── seo-search-data/         # data: reads the user's own search data (indexing, traffic, demand, change impact)
+├── seo-launch-qa/           # specialist: pre-launch and go-live checks
+├── seo-performance/         # specialist: Core Web Vitals deep work
 ├── seo-migrations/          # specialist: URL changes / redirects / site moves
 ├── seo-measurement-setup/   # specialist: analytics / Search Console / web-vitals plumbing
 ├── seo-content-audit/       # content: assess content, recommend actions
@@ -71,6 +75,10 @@ Once installed, just describe the problem — the descriptions are written to tr
 - *"Add structured data to my product pages."* → **Understand**.
 - *"Why am I not ranking / improve my rankings."* → the **orchestrator** climbs to **Rank** (rung 5).
 - *"Help my pages get cited by ChatGPT and AI Overviews."* → the **orchestrator** ranks the page first, then applies the **Cite (AEO)** layer.
+- *"We're about to launch"* / *"what will stop this ranking?"* → **`seo-launch-qa`**.
+- *"Our Core Web Vitals are failing"* / *"fix our LCP"* → **`seo-performance`**.
+- *"Why aren't these pages indexed?"* / *"did our change work?"* → **`seo-search-data`** (uses whatever search data your environment already has).
+- *"Understand our business before writing anything."* → **`seo-context-gathering`**.
 - *"We're redesigning / changing our URLs — don't lose rankings."* → **`seo-migrations`**.
 - *"Set up analytics and Search Console."* → **`seo-measurement-setup`**.
 - *"Audit my content / which pages should I update or cut?"* → **`seo-content-audit`**.

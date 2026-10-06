@@ -92,7 +92,7 @@ The build-time fixes were now done. As an optional live follow-up, the owner sub
 
 ---
 
-## Report — plain English
+## Report
 
 > **What was wrong:** Your site was built as a single-page app. Your pages looked fine to you because your browser runs the JavaScript that loads the content — but search engine crawlers often don't, so to Google your pages looked nearly empty, and every page even shared the same title. That's why two months in, you had no search traffic.
 >

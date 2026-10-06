@@ -10,13 +10,17 @@ Cursor uses **Project Rules** — Markdown-with-frontmatter files in `.cursor/ru
 
 ```
 <your-project>/.cursor/rules/
-├── seo-audit.mdc            # the all-rounder: full audit lifecycle (best default)
+├── seo-audit.mdc            # the all-rounder: audit mode, changes nothing (best default)
 ├── 1-reach-indexation.mdc
 ├── 2-read-content.mdc
 ├── 3-understand-schema.mdc
 ├── 4-connect-architecture.mdc
 ├── 5-rank-relevance.mdc
 ├── cite-aeo-geo.mdc        # AEO layer on top (once a page can rank)
+├── seo-context-gathering.mdc # learn the business first
+├── seo-search-data.mdc     # your own search data: indexing, traffic, change impact
+├── seo-launch-qa.mdc       # pre-launch and go-live checks
+├── seo-performance.mdc     # Core Web Vitals deep work
 ├── seo-migrations.mdc       # URL changes / redirects
 ├── seo-measurement-setup.mdc
 ├── seo-content-audit.mdc    # content: assess + recommend actions
@@ -48,13 +52,19 @@ alwaysApply: false
 ```
 
 Repeat for each mini:
-- `seo-audit.mdc` ← `copy-paste/audit.md` *(the all-rounder — runs the full lifecycle; make this your go-to broad rule)*
+- `seo-audit.mdc` ← `copy-paste/audit.md` *(the all-rounder: audits and records findings, changes nothing; make this your go-to broad rule)*
 - `1-reach-indexation.mdc` ← `copy-paste/reach.md`
 - `2-read-content.mdc` ← `copy-paste/read.md`
 - `3-understand-schema.mdc` ← `copy-paste/understand.md`
 - `4-connect-architecture.mdc` ← `copy-paste/connect.md`
 - `5-rank-relevance.mdc` ← `copy-paste/rank.md`
 - `cite-aeo-geo.mdc` ← `copy-paste/cite.md`
+- `seo-fix.mdc` ← `copy-paste/fix.md` *(applies approved findings only)*
+- `seo-recheck.mdc` ← `copy-paste/recheck.md` *(re-tests findings, changes nothing)*
+- `seo-context-gathering.mdc` ← `copy-paste/context.md`
+- `seo-search-data.mdc` ← `copy-paste/search-data.md`
+- `seo-launch-qa.mdc` ← `copy-paste/launch-qa.md`
+- `seo-performance.mdc` ← `copy-paste/performance.md`
 - `seo-migrations.mdc` ← `copy-paste/migrations.md`
 - `seo-measurement-setup.mdc` ← `copy-paste/measurement.md`
 - `seo-content-audit.mdc` ← `copy-paste/content-audit.md`

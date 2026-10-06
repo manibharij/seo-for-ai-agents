@@ -4,6 +4,8 @@ Read this for the speed-and-usability half of Read. Page experience isn't a ladd
 
 > What's build-time vs live: you can fix the **known causes** of poor performance in the code (this file). The **field score** — real users' Core Web Vitals measured over 28 days in the Chrome UX Report — is live data you can't confirm at build time. Fix the causes here; the live score is live data, on the other side of the boundary.
 
+> **For deep work, use `seo-performance`.** This file is Read's light pass. When field data still fails after it, or someone asks for real Core Web Vitals work (LCP sub-parts, INP and long tasks, CLS causes, third-party tag triage, CrUX and Lighthouse commands), switch to `skills/seo-performance/SKILL.md`.
+
 ---
 
 ## Mobile-friendliness (Google indexes mobile-first)
@@ -39,7 +41,7 @@ A page is only "Good" when the field metric (the **75th percentile** of real vis
 - Serve **appropriately sized** images (don't ship a 3000px image into a 400px slot) in **modern formats** (WebP/AVIF).
 - **Lazy-load** below-the-fold images; eagerly load the LCP image.
 - Always set **width/height** (or a reserved aspect ratio) so the browser doesn't reflow when the image arrives — a top CLS cause.
-- **Next.js:** `next/image` does sizing, lazy-loading, modern formats, and reserves space automatically. Prefer it over raw `<img>`. Mark the LCP image with `priority`.
+- **Next.js:** `next/image` does sizing, lazy-loading, modern formats, and reserves space automatically. Prefer it over raw `<img>`. From Next.js 16, `next/image` lazy-loads by default and the `priority` prop is deprecated, so give the LCP image `loading="eager"` and `fetchPriority="high"` (verified 2026-10, nextjs.org/docs/app/api-reference/components/image).
 
 ### Fonts
 - Avoid invisible or shifting text while a web font loads; use `font-display: swap` and preload critical fonts; self-host to avoid a third-party round-trip.

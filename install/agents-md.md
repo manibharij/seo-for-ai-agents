@@ -26,7 +26,11 @@ fix a rung until the ones below it pass:
 4. Connect (`skills/4-connect-architecture/`) — internal links + canonicals
 5. Rank (`skills/5-rank-relevance/`) — the goal: good enough, and trusted enough, to win (intent, quality, on-page E-E-A-T, topical authority; off-site authority advised via `seo-offsite-authority`)
 On top of the ladder (once a page can rank): `skills/cite-aeo-geo/` — AEO, eligible to be cited by AI answers (secondary, not a rung).
-Specialists: `skills/seo-migrations/` (URL changes/redirects), `skills/seo-measurement-setup/` (analytics/GSC),
+Modes: every skill runs in `audit` (default, read-only), `fix` (approved findings only) or `re-check`.
+Foundation and data: `skills/seo-context-gathering/` (learn the business first), `skills/seo-search-data/`
+(the user's own search data: indexing, traffic, demand, change impact).
+Specialists: `skills/seo-launch-qa/` (pre-launch and go-live), `skills/seo-performance/` (Core Web Vitals),
+`skills/seo-migrations/` (URL changes/redirects), `skills/seo-measurement-setup/` (analytics/GSC),
 `skills/seo-content-audit/` (assess content), `skills/seo-content-editing/` (improve real copy — edit not generate),
 `skills/seo-positioning-strategy/` (topical authority/positioning), `skills/seo-proposal-roadmap/` (proposal/roadmap),
 `skills/seo-automations/` (CI/CD regression gate + scheduled audits), `skills/seo-media/` (image/video SEO),

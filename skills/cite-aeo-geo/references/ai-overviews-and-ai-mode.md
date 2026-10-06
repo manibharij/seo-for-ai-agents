@@ -21,7 +21,7 @@ These change frequently. Treat specifics as a moving target; the **principles** 
 An answer engine roughly: (1) interprets the user's question, (2) retrieves candidate passages from pages it has crawled/indexed, (3) synthesises an answer, and (4) cites the sources whose passages it used. To be cited you must clear every step:
 
 1. **Be reachable and in the index** — the engine's crawler must have fetched your page and seen the content in the **served HTML** (rungs 1–2; doubly important because several AI crawlers run little/no JavaScript).
-2. **Have a passage that cleanly answers the question** — self-contained, extractable, unambiguous (this rung's formatting work).
+2. **Have a passage that cleanly answers the question** — self-contained, extractable, unambiguous (clear writing, not special formatting; see `answer-block-formatting.md`).
 3. **Be understandable and trustworthy** — clear entities (rung 3), a coherent site (rung 4), and genuine attribution/expertise (this rung). Engines prefer sources they can attribute and trust.
 4. **Match the query's intent** — the answer the engine needs must actually be on your page, phrased close to how it's asked.
 

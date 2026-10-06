@@ -49,12 +49,44 @@ For YMYL topics (health, finance, legal — "your money or your life"), the E-E-
 ---
 
 ## Using live data here (when connected)
+Detect what exists before using it (a tool, then an API with the user's credentials, then an export), as set out in `seo-orchestrator/references/live-data-integrations.md`. The pulls are defined in `decay-cannibalisation-actions.md`; the API recipes are in `seo-orchestrator/references/data/`.
 - **Search Console:** which pages get impressions/clicks, at what position, and which are **declining** (decay). Strong signal for keep vs refresh vs improve. A page with impressions but low clicks/position is an improve/intent opportunity; a page with falling clicks is a refresh candidate.
 - **Keyword tool:** real demand and SERP/competitor context — does the topic warrant the effort, and what does winning content look like.
+- **Analytics or CRM** (`data/analytics-ga4.md`): key events or leads by landing page. A page that converts has a business purpose even with few clicks.
 
 Without these, assess on content signals and **state the limitation** in the verdict ("no performance data connected; judged on content quality and intent match"). Don't present an inference as if it were measured.
 
 ---
 
+## The verdict rubric
+
+Give each judged page one verdict. Read the served page, not the CMS draft, and decide with these questions.
+
+| Verdict | All of these hold |
+|---|---|
+| **strong** | Answers the main question and the obvious follow-ups; contains specifics a generic page would not (numbers, steps, first-hand detail, real examples); intent matches; claims are current and sourced where it matters |
+| **adequate** | Answers the main question correctly but generically, or misses obvious follow-ups; intent matches; nothing is wrong or stale |
+| **weak** | Any of: thin or padded, intent mismatch, outdated facts on a time-sensitive topic, says nothing the top results do not say better, or a YMYL page with no real author or sources |
+
+Write the reason into the CSV's `evidence` column in one checkable line: "answers 'how to bleed a radiator' but no steps for combi systems; no images; last updated 2021".
+
+### Measurable signals that support the verdict
+These help you find pages to read. None decides a verdict alone.
+- **Main-content word count** (`page_facts.py`): compare within a template. A post far below its template's median is worth reading first. Short is not weak if the question is short.
+- **Duplicate title or h1** across URLs: a lead for cannibalisation, not proof (see `title_overlap.py`).
+- **Visible date** older than the facts it relies on, on a time-sensitive topic.
+- **Missing author or sources** on a YMYL topic: a flag for a human task.
+- **Impressions with few clicks** (Search Console): the page is shown but not chosen. Check whether the title and opening match the query's intent.
+
+### Checking intent
+- **With a keyword tool or SERP data:** look at what ranks for the page's main query. If the top results are product pages and yours is an essay (or the reverse), the intent is mismatched whatever the quality.
+- **Without:** infer from the query wording ("buy", "best", "how to", a brand name) and the page's purpose, and set `basis` to `content`.
+- **With Search Console only:** the queries a page actually gets impressions for tell you the intent Google associates with it. If those queries differ from what the page sets out to answer, note both.
+
+### Sampling note
+On sites over 1,000 pages you judge a stratified sample (see `decay-cannibalisation-actions.md`). Read at least the sampled pages in full. Never apply a `weak` verdict to an unread page in a way that leads to prune or consolidate: those always need the page read.
+
+---
+
 ## The output per page
-For each page: a short **quality verdict** (strong / adequate / weak, with the why), the **intent** it targets and whether it matches, the **E-E-A-T** state (and any missing real signals to flag), freshness, and the **basis** (live-data-backed or content-signal inference). This feeds the action decision in `decay-cannibalisation-actions.md`.
+For each page: a short **quality verdict** (strong / adequate / weak, with the why), the **intent** it targets and whether it matches, the **E-E-A-T** state (and any missing real signals to flag), freshness, and the **basis** (live-data-backed or content-signal inference). These fill the `verdict`, `intent`, `basis` and `evidence` columns of the inventory CSV and feed the decision rules in `decay-cannibalisation-actions.md`.

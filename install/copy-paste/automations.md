@@ -24,3 +24,5 @@ Confirm the workflow runs on the right trigger; **prove it catches a regression*
 
 ## Step 4 — Report
 Tell me what's automated, what it gates vs warns, when the scheduled audit runs, and the boundary: **CI catches mechanisable regressions; run the full audit periodically for depth, and live performance is still live data.**
+
+*Facts in this pack carry "verified YYYY-MM" stamps. Re-check anything older than about six months against its source. The full skill's `references/freshness.md` explains the convention and the monthly check.*

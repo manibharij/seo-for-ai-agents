@@ -1,4 +1,4 @@
-# Example 3 — Cite: good answers, buried → answer blocks AI can quote
+# Example 3: Cite, good answers buried → clear answers a reader and an AI answer can quote
 
 A consultancy has genuinely useful content, but it's written as flowing prose with the answer buried three paragraphs down. The pages reach, read, understand, and connect fine (rungs 1–4 pass). They're just not *formatted to be cited* by AI answer engines. This example shows the AI-search lead and the honest live-data handoff.
 
@@ -29,7 +29,7 @@ Diagnosis:
 
 ## Fix — reformat real content (invent nothing)
 
-The agent restructures the existing, true content into a self-contained answer block under a question-shaped heading:
+The agent restructures the existing, true content into a clear, self-contained answer under a heading that says what it answers:
 
 ```markdown
 ## How much does a fractional CFO cost?
@@ -63,19 +63,19 @@ The agent also confirmed entity consistency (the firm's name/`@id`/`sameAs` agre
 curl -sL https://example.com/services/fractional-cfo | grep -i "How much does a fractional CFO cost"
 ```
 
-- **Served:** the question heading, the answer block, and the list are in the raw served HTML.
+- **Served:** the question heading, the self-contained answer, and the list are in the raw served HTML.
 - **Self-containment test:** read the answer passage in isolation — it answers "how much does a fractional CFO cost?" on its own, with the figure. ✓
 - **Honesty:** every figure is the firm's real pricing; the byline and credentials are real. Nothing fabricated.
 
 ---
 
-## Report — plain English + the honest handoff
+## Report + the honest handoff
 
 > **What was wrong:** Your pages had the right answers, but buried in long paragraphs under headings like "Our Approach to Pricing". AI answer engines (Google's AI Overviews, ChatGPT, Perplexity) lift short, self-contained answers to quote and cite — so even though your content was genuinely good, it was hard for them to use.
 >
 > **What I changed:** I led each key page with a direct, self-contained answer under a heading phrased the way people actually ask, and turned the pricing factors into a list. All the figures are your real ones — I only restructured what was already there.
 >
-> **Proof:** the new question heading and answer block now in the served HTML (shown above), and the answer reads correctly on its own.
+> **Proof:** the new question heading and self-contained answer now in the served HTML (shown above), and the answer reads correctly on its own.
 >
 > **The honest handoff:** these changes make your pages *citable* — well-formatted and trustworthy enough to be eligible. They **cannot** tell you whether you're *actually* being cited by AI Overviews or ChatGPT, for which questions, or how that compares to competitors and changes over time. That's **live data**: AI-citation monitoring, rank tracking, and geo/local visibility — a separate, ongoing discipline from these build-time fixes. *(This is where the rank/geo-grid data product and the done-for-you service come in — the build is free and complete; live measurement is the next step.)*
 

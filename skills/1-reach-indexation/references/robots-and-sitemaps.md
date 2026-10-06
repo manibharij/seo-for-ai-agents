@@ -17,6 +17,7 @@ Read this when the gatekeeper checks (Step 1c) turn up a `robots.txt`, `noindex`
 - Are CSS/JS assets blocked that the page needs to render? (Blocking these can stop a crawler rendering the page correctly.)
 - Is the sitemap referenced? Add `Sitemap: https://example.com/sitemap.xml`.
 - Are you accidentally blocking AI crawlers you *want* (or failing to block ones you don't)? That is a deliberate choice — see the Cite skill's `ai-crawlers-and-llms-txt.md`. Here, just surface it; don't decide it for the user.
+- Is the live file the one in the repo? A CDN can rewrite it (Cloudflare's managed `robots.txt` prepends its own AI-crawler rules), and a WAF can block crawlers whatever the file says. Fetch the live `/robots.txt` and see `edge-cdn-and-bot-access.md`.
 
 ### A sane default for a content site
 ```
@@ -79,3 +80,69 @@ An XML sitemap lists the canonical URLs you want crawled and indexed. It does no
 - **Gatsby:** `gatsby-plugin-sitemap`.
 
 Whatever generates it, **verify the output**: fetch `/sitemap.xml` and confirm the URLs are production, canonical, and `200`. A generator pointed at the wrong base URL produces a confidently wrong sitemap.
+
+### Bulk status check from the sitemap
+Spot checks miss the one template that redirects or carries `noindex`. Check every listed URL and write a CSV with `url, status, final_url, x_robots_tag, canonical`. Keep it polite: at most 4 requests in parallel with a pause after each, a cap on URLs (500 by default), and a production site only with the owner's agreement.
+
+**bash** (macOS, Linux, Git Bash, WSL). Save as `sitemap-status.sh`, then run `bash sitemap-status.sh https://example.com/sitemap.xml 500 > status.csv`:
+```bash
+#!/usr/bin/env bash
+SITEMAP="$1"; MAX="${2:-500}"
+export UA='Mozilla/5.0 (compatible; site-audit)'
+check() {
+  local url="$1" tmp meta status final xrt canon
+  tmp=$(mktemp -d)
+  meta=$(curl -sL --compressed --max-redirs 5 --max-time 20 -A "$UA" \
+    -D "$tmp/h" -o "$tmp/b" -w '%{http_code} %{url_effective}' "$url")
+  status=${meta%% *}; final=${meta#* }
+  # X-Robots-Tag from the last response in the redirect chain only
+  xrt=$(tr -d '\r' < "$tmp/h" | awk '/^HTTP\//{v=""} tolower($0) ~ /^x-robots-tag:/{sub(/^[^:]*:[ \t]*/,""); v=(v=="" ? $0 : v"; "$0)} END{print v}')
+  canon=$(grep -oiE '<link[^>]*rel=["'\'']?canonical["'\'']?[^>]*>' "$tmp/b" | head -n1 \
+    | grep -oiE 'href=["'\'']?[^"'\'' >]+' | sed -E 's/^[hH][rR][eE][fF]=["'\'']?//')
+  printf '"%s","%s","%s","%s","%s"\n' "$url" "$status" "$final" "${xrt//\"/}" "$canon"
+  rm -rf "$tmp"; sleep 0.5
+}
+export -f check
+echo 'url,status,final_url,x_robots_tag,canonical'
+curl -sL --compressed -A "$UA" "$SITEMAP" | grep -oE '<loc>[^<]+</loc>' \
+  | sed -E 's#</?loc>##g; s/&amp;/\&/g' | head -n "$MAX" \
+  | xargs -P 4 -I{} bash -c 'check "$1"' _ {}
+```
+
+**PowerShell** (Windows PowerShell 5.1 or PowerShell 7). Runs one request at a time with a pause, so it is slower but gentle:
+```powershell
+$Sitemap = 'https://example.com/sitemap.xml'; $Max = 500
+$UA = 'Mozilla/5.0 (compatible; site-audit)'
+function Get-FinalUrl($resp) {
+  if ($resp.ResponseUri) { $resp.ResponseUri.AbsoluteUri }      # Windows PowerShell 5.1
+  else { $resp.RequestMessage.RequestUri.AbsoluteUri }           # PowerShell 7+
+}
+[xml]$xml = (Invoke-WebRequest -Uri $Sitemap -UserAgent $UA -UseBasicParsing).Content
+$urls = @($xml.urlset.url.loc) | Select-Object -First $Max
+$rows = foreach ($u in $urls) {
+  $row = [ordered]@{ url = $u; status = ''; final_url = ''; x_robots_tag = ''; canonical = '' }
+  try {
+    $r = Invoke-WebRequest -Uri $u -UserAgent $UA -UseBasicParsing -MaximumRedirection 5 -TimeoutSec 20
+    $row.status = [int]$r.StatusCode
+    $row.final_url = Get-FinalUrl $r.BaseResponse
+    $row.x_robots_tag = ($r.Headers['X-Robots-Tag'] -join '; ')
+    $link = [regex]::Match($r.Content, '<link[^>]*rel=["'']?canonical["'']?[^>]*>', 'IgnoreCase').Value
+    $row.canonical = [regex]::Match($link, 'href=["'']?([^"''\s>]+)', 'IgnoreCase').Groups[1].Value
+  } catch {
+    $resp = $_.Exception.Response
+    if ($resp) { $row.status = [int]$resp.StatusCode; $row.final_url = Get-FinalUrl $resp }
+    else { $row.status = 'error' }
+  }
+  [pscustomobject]$row
+  Start-Sleep -Milliseconds 500
+}
+$rows | Export-Csv -Path status.csv -NoTypeInformation -Encoding UTF8
+```
+
+Notes:
+- A **sitemap index** lists child sitemaps in its `<loc>` tags, not pages. Run the check on each child (in PowerShell, read `$xml.sitemapindex.sitemap.loc` first). A `.xml.gz` sitemap needs decompressing first.
+- Windows PowerShell 5.1 does not follow `308` redirects, so a `308` row there is a redirect to look at, not a failure. Either way, a redirecting URL should not be in the sitemap.
+- The canonical comes from the raw HTML. If it is set by JavaScript, it will be blank here, which is a finding in itself.
+- The parallel bash output is unordered. Sort it before comparing runs.
+
+**Read the CSV for:** any `status` other than `200`; `final_url` different from `url` (a redirect listed in the sitemap); any `noindex` in `x_robots_tag`; a `canonical` that is blank or points elsewhere (the sitemap should list the canonical itself). If a WAF rate-limits the run (`429`, `403`, `503` appearing partway through), stop, lower the concurrency, and see `edge-cdn-and-bot-access.md`.

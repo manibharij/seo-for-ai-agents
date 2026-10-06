@@ -72,7 +72,7 @@ The agent marks up **only what is visibly true**, removes the fabrications, and 
 
 ---
 
-## Report — plain English
+## Report
 
 > **What was wrong:** The structured data on your blog posts claimed each one had a "4.9 rating from 127 reviews" and an author called "John Doe" — none of which exist. That was added automatically and it's a problem: Google can hand out manual penalties for fake review markup, and AI answer engines are built to distrust sources that fake credentials. It would have hurt you, not helped.
 >

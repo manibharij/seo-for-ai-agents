@@ -8,7 +8,7 @@ Read this to turn "what should we own and how" into a concrete, honest plan. Two
 
 A search positioning statement answers: **what is this site the go-to source for, for whom, and why it (genuinely) over alternatives?**
 
-- Derive it from the **real content** and the **user's input** on genuine differentiators. Ask directly: what do you actually do better/differently — real expertise, real focus, real proof?
+- Derive it from the **real content** and `.seo/context.md`. Use only the `[established]` entries under Differentiators and Proof assets; if the file is missing, run `seo-context-gathering` first. Ask the user only about what is still open after that, as a short ranked list with a default for each question.
 - A useful shape: *"For [audience], [site] is the [category] that [genuine differentiator], because [real reason/proof]."*
 - If the user can't name a real differentiator, **that is the finding** — surface it ("the site currently reads as undifferentiated; here's what that costs in search and AI citation") rather than inventing a claim. Undifferentiated, me-too content is exactly what struggles to rank or be cited.
 - Positioning must show up **consistently** across the key pages and entity signals (name, schema `@id`, `sameAs`) — ties to the Cite rung. Consistency builds the entity engines trust.
@@ -37,7 +37,7 @@ Engines (and AI answer engines) reward sites that demonstrably, comprehensively 
 ## Competitive & gap analysis (honest)
 
 - **With data:** identify who ranks for your target topics and the shape of winning content (depth, format, angle) — to find realistic gaps and a differentiated angle. Cite the data.
-- **Without data:** a qualitative read from known competitors and the SERP, clearly labelled as inference — useful for direction, not a substitute for real numbers.
+- **Without data:** a qualitative read from known competitors' pages, fetched directly, clearly labelled as inference. It is useful for direction, not a substitute for real numbers. Do not scrape search results to fill the gap; see `serp-competitor-and-keyword-research.md` for the method and the rules.
 - **Gaps** become create-briefs (content-audit's "create" action): the topic, the intent, the questions to answer, the angle that fits the positioning. Briefs for humans — not auto-generated articles.
 - Never fabricate competitor metrics or market claims. Inference labelled as inference; data cited as data.
 

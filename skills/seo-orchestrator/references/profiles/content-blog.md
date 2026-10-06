@@ -7,7 +7,7 @@ Use for blogs, news, magazines, and content/affiliate sites. The product *is* th
 - **Read** — the heaviest rung here. Depth, originality, and genuine expertise matter most; thin/templated posts are the main failure. Strong heading outlines, real author bylines, accurate dates. Match content to **search intent** precisely.
 - **Understand** — `Article`/`BlogPosting` (or `NewsArticle`) with real `author` (`Person`) and `publisher`; `datePublished`/`dateModified` that are true. `BreadcrumbList`.
 - **Connect** — **topic clusters** are the signature move: pillar/hub pages linking to detailed posts and back. Hunt **orphan posts** and fix **cannibalisation** (multiple posts targeting the same intent — consolidate or differentiate).
-- **Cite** — answer-block formatting pays off most here: question-shaped headings, self-contained answers, definitions, comparison tables. Real author E-E-A-T is a major citation signal.
+- **Cite**: clear writing pays off most here: headings that say what the section answers, self-contained answers, definitions and comparison tables where they genuinely help the reader. No fragmenting pages into FAQ chunks. Real author E-E-A-T is a major citation signal.
 
 ## Type-specific checks
 - **Content freshness:** genuinely update and re-date cornerstone posts; don't just bump dates.

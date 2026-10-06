@@ -1,70 +1,129 @@
-# Stack & platform adapters
+# Stack and platform adapters
 
-Read this to make the audit fit the **specific** site. The Visibility Ladder is universal; *how* you diagnose and fix each rung depends on the stack (which framework) and the platform (code-editable app vs hosted/CMS). Detect both in Step 0, then adapt.
+Read this in Step 0, straight after the first fetch. It is the routing table: detect the stack and the platform, then open the file that says where each fix lives and what you cannot change. The ladder and the diagnosis are the same everywhere, because you always judge the served HTML. What changes is where the fix lives: a code edit, a theme file, a plugin screen, a builder panel or a CMS field.
 
-> The **diagnosis** is the same everywhere — you always check the served HTML. The **fix** is what changes: a code edit in Next.js, a theme/plugin/setting in WordPress, an app setting in Shopify.
+Framework facts here were verified against each framework's own documentation in 2026-10. Versions move fast, so read the project's `package.json` (or lockfile, `Gemfile`, `composer.json`) before you trust any version-specific advice, and prefer the installed version's docs over this file when they disagree.
 
----
-
-## The big fork: code-editable vs hosted/CMS
-
-### Code-editable apps (agent can edit the source)
-Next.js, Astro, Nuxt, SvelteKit, Remix, Gatsby, Vite/CRA SPAs, static sites. The agent can directly apply fixes in code. This is the pack's home turf and where fixes are most complete.
-
-### Hosted / CMS / site builders (fixes live in the platform, not your code)
-WordPress, Shopify, Wix, Squarespace, Webflow, etc. **The diagnosis still fully applies** — fetch the served HTML and assess every rung exactly the same way. But the **fixes** are often *not* code an agent can edit:
-- They live in **platform settings**, a **theme**, **plugins/apps**, or template editors.
-- Some are not fixable on the platform at all (e.g. forced client-rendering, or platform-controlled markup).
-
-So on a hosted platform, the agent's job shifts to: **diagnose precisely, then tell the user exactly what to change and where** (which setting, which plugin, which theme file), rather than editing code it doesn't control. Be honest about what the platform won't let you change.
-
-Platform quick-notes (diagnosis universal; fixes as below):
-- **WordPress** — most on-page SEO via a plugin (Yoast/Rank Math/SEO Framework): titles, descriptions, canonicals, sitemaps, schema, `noindex`. Theme controls headings/markup/performance. Guide the user to the plugin/theme settings; some fixes need theme/child-theme edits (which an agent *can* do if it has file access).
-- **Shopify** — titles/descriptions and some schema via theme Liquid templates and theme settings; sitemap/robots largely auto-managed (and partly locked); apps add structured data. Faceted/collection URLs and duplicate variants need care. Point to theme files and app settings.
-- **Wix / Squarespace / Webflow** — SEO controlled through the builder's SEO panels and page settings; markup and rendering are largely platform-controlled. Diagnose and instruct via the builder UI; note what the platform doesn't expose.
-
-> Don't pretend a hosted platform is code. If a fix isn't available in the platform, say so and give the user the closest real option — that honesty is part of the method.
+**Out of scope:** native mobile apps and app indexing (Android App Links, iOS Universal Links, deep links into apps from search). The pack covers websites only.
 
 ---
 
-## Per-stack adapter (code-editable)
+## Step 0: detect, in this order
 
-How each rung typically manifests and gets fixed, by framework. (Reach detail is also in `1-reach-indexation/references/rendering-ssr-csr.md`; this is the cross-rung quick map.)
+1. **The repo, if you have one.** Config files and dependencies are the strongest evidence (tables below).
+2. **The served output.** Response headers, `<meta name="generator">`, asset paths and framework markers in the raw HTML. Use this when you only have a URL. Headers can be stripped and generator tags removed, so treat a missing signal as "unknown", never as "not this stack".
+3. **Ask** only if both are inconclusive and the answer changes the fix.
 
-### Next.js — App Router *(default)*
-- **Reach:** Server Components render server-side by default; failures come from `"use client"` too high or data in `useEffect`. Fix: server fetch, push client boundaries down.
-- **Read/metadata:** Metadata API (`metadata` / `generateMetadata`, `title.template`, `metadataBase`). Page experience via `next/image`, `next/font`, `next/dynamic`.
-- **Understand:** JSON-LD from a server component (`<script type="application/ld+json">`), rendered from the same data as the page.
-- **Connect:** `<Link href>` (real `<a href>`); canonicals via `alternates.canonical` derived from the route.
-- **Reach plumbing:** `app/sitemap.ts`, `app/robots.ts`. (Next 15: `params` is a Promise — await it.)
+```bash
+URL="https://example.com/"
+curl -sIL "$URL" | grep -iE "^(server|x-powered-by|powered-by|x-generator):"
+curl -sL "$URL" | grep -oE '<meta name="generator"[^>]*>|/_next/static|/_nuxt/|/_app/immutable|/_astro/|ng-version|ng-server-context="[a-z]*"|q:container|__reactRouterContext|wp-content|cdn\.shopify\.com|data-wf-site|static\.parastorage\.com|static1\.squarespace\.com|framerusercontent' | sort | uniq -c
+```
+```powershell
+$URL = "https://example.com/"
+$r = Invoke-WebRequest -Uri $URL -UseBasicParsing
+$r.Headers.GetEnumerator() | Where-Object { $_.Key -match '^(server|x-powered-by|powered-by|x-generator)$' }
+[regex]::Matches($r.Content, '<meta name="generator"[^>]*>|/_next/static|/_nuxt/|/_app/immutable|/_astro/|ng-version|ng-server-context="[a-z]*"|q:container|__reactRouterContext|wp-content|cdn\.shopify\.com|data-wf-site|static\.parastorage\.com|static1\.squarespace\.com|framerusercontent') | Group-Object Value | Select-Object Count, Name
+```
 
-### Next.js — Pages Router
-- Data via `getServerSideProps`/`getStaticProps` (not `useEffect`). Metadata via `next/head`. Sitemap via a library or API route. Same principles, older APIs.
+Record the result in `.seo/` state (stack, platform, version, and whether you have write access), because every later finding is phrased in that idiom.
 
-### Astro
-- SSG/SSR by default, ships no JS unless asked — usually strong on Reach/performance. Watch `client:only` hiding content. Metadata in the layout `<head>`; `@astrojs/sitemap`; JSON-LD in templates.
+---
 
-### Nuxt (Vue)
-- SSR/SSG by default; watch `ssr: false` and `<client-only>`. `useHead()` for metadata; `@nuxtjs/sitemap`.
+## The fork: where can a fix actually be made?
 
-### SvelteKit
-- SSR by default; watch `export const ssr = false` and `onMount`-only content. `load` functions for data; `<svelte:head>` for metadata; endpoint for sitemap.
+| Kind | Examples | Who applies the fix | Detail |
+|---|---|---|---|
+| **Code-editable app** | Next.js, Nuxt, SvelteKit, Astro, React Router, Angular, TanStack Start, SolidStart, Qwik, Gatsby, SPAs, static generators | The agent, as a code change | The tables below, plus `1-reach-indexation/references/rendering-ssr-csr.md` and `2-read-content/references/metadata-titles-descriptions.md` |
+| **Server-rendered stack** | Rails, Django, Laravel, plain PHP | The agent, in templates, routes and server config | Below |
+| **Docs generator** | Docusaurus, VitePress, Starlight (code); Mintlify (hosted) | Config and front matter; Mintlify through its config file | Below |
+| **Headless CMS + front end** | Contentful, Sanity, Strapi, Storyblok, Payload | Code for the template, editors for the field values | [platforms/headless-cms.md](platforms/headless-cms.md) |
+| **Hosted platform or builder** | WordPress, Shopify, Webflow, Wix, Squarespace, Framer, Ghost, HubSpot, Drupal, BigCommerce | Usually a person, in a settings screen, plugin or theme | The platform files linked below |
 
-### Remix / React Router (framework mode)
-- SSR via route `loader`s; move `useEffect` fetches into loaders. `meta` export for metadata.
+On a hosted platform the diagnosis still applies in full. The agent's job shifts to diagnosing precisely and then telling the user exactly what to change and where. Never pretend a platform is code. If the platform does not expose a fix, say so and offer the closest real option, because that honesty is part of the method.
 
-### Gatsby
-- SSG; content from the build-time data layer. `gatsby-plugin-sitemap`; Head API / react-helmet for metadata.
+---
 
-### Vite / CRA SPA
-- Pure CSR — empty shell, the classic Reach failure. Fix = introduce SSR/prerender (migrate to a meta-framework, add `vike`, or prerender routes). A **big rock** — flag it.
+## Code-editable frameworks
 
-### Static HTML / SSGs (Hugo, Eleventy, Jekyll)
-- Reach-rendering is fine by construction; focus on metadata, schema, internal links, and the generator's sitemap/robots config.
+| Stack | Detect in the repo | Detect in the served HTML | Default rendering | Where SEO fixes live | Main Reach risk |
+|---|---|---|---|---|---|
+| **Next.js, App Router** *(default)* | `next.config.*`, an `app/` directory | `/_next/static/`, `self.__next_f`, often `x-powered-by: Next.js` | Server Components, prerendered or server-rendered | `metadata` / `generateMetadata`, `app/sitemap.ts`, `app/robots.ts`, `redirects()` in `next.config`, `proxy.ts` | `"use client"` high in the tree; content fetched in `useEffect` |
+| **Next.js, Pages Router** | a `pages/` directory | `/_next/static/`, `__NEXT_DATA__` | Static unless a data function is exported | `next/head`, `getStaticProps` / `getServerSideProps` | Content fetched client-side with no data function |
+| **Nuxt** | `nuxt.config.*` | `/_nuxt/`, `__NUXT_DATA__`, often `x-powered-by: Nuxt` | Universal (server) rendering | `useSeoMeta`, `useHead`, `routeRules`, a sitemap module | `ssr: false`; real content inside `<ClientOnly>` |
+| **SvelteKit** | `svelte.config.js`, `@sveltejs/kit` | `/_app/immutable/`, `data-sveltekit-*` attributes | SSR | `<svelte:head>`, `load` in `+page.ts` / `+page.server.ts`, a `+server.ts` sitemap | `export const ssr = false`; content loaded in `onMount` |
+| **Astro** | `astro.config.*` | `/_astro/`, `astro-island`, usually a generator tag | Static by default; SSR per route with an adapter | The layout `<head>`, `@astrojs/sitemap` (needs `site` set) | `client:only` components; `server:defer` islands (both missing from the initial HTML) |
+| **React Router, framework mode** (v7 onward; Remix v2 is its predecessor) | `react-router.config.ts`, `@react-router/dev`; `@remix-run/*` for Remix v2 | `window.__reactRouterContext` (`__remixContext` on Remix v2) | SSR (`ssr: true` is the default) | `meta` export or React 19 `<title>` / `<meta>` in components, `loader`, `headers` export | `ssr: false` (SPA mode); data in `useEffect` instead of a `loader` |
+| **Angular SSR** | `angular.json`, `@angular/ssr`, `app.routes.server.ts` | `ng-version` attribute; `ng-server-context="ssr"` or `"ssg"` when server-rendered (absent means client-rendered) | **Client-side** unless `@angular/ssr` is added | Route `title` and `TitleStrategy`, the `Meta` service, render modes in `app.routes.server.ts` | No SSR at all; routes set to `RenderMode.Client`; `@defer` blocks render only their placeholder on the server |
+| **TanStack Start** | `@tanstack/react-start` (or the Solid variant) | `$_TSR` script markers | SSR by default | The route `head()` option rendered by `<HeadContent />`; server routes for a sitemap | Routes with `ssr: false` |
+| **SolidStart** | `@solidjs/start` | `_$HY` hydration script | SSR | `@solidjs/meta`: `<Title>`, `<Meta>`, `<Link>` | Client-only rendering configured; content fetched only in the browser |
+| **Qwik City** | `@builder.io/qwik-city` (check `package.json` for the router package your version uses) | `q:container` attribute | SSR, then resumed (no hydration pass) | `export const head: DocumentHead`, `routeLoader$` | Content produced only in `useVisibleTask$`, which runs in the browser |
+| **Gatsby** | `gatsby-config.*` | `id="___gatsby"`, `/page-data/` | Static | Head API, `gatsby-plugin-sitemap` | Content fetched client-side after load |
+| **Vite or CRA SPA** | `vite.config.*` with no SSR framework, or `react-scripts` | A near-empty `<div id="root">` | **Client-side only** | Needs SSR or prerendering first; a big rock, flag it | Everything: the raw HTML is a shell |
+| **Static generators** (Hugo, Eleventy, Jekyll) | `hugo.toml` / `config.toml`, `eleventy.config.*` / `.eleventy.js`, `_config.yml` | Often a generator tag | Static | Templates and generator config | Rarely rendering; check robots, sitemap, canonicals |
+
+### Docs generators
+
+| Tool | Detect | Rendering | Where SEO settings live | Locked or easy to miss |
+|---|---|---|---|---|
+| **Docusaurus** | `docusaurus.config.*`; generator `Docusaurus vX` | Static HTML per route | Front matter (`title`, `description`, `keywords`, `image`), `themeConfig.metadata`, the sitemap plugin in `preset-classic` | Canonical and `hreflang` links are generated for you, so check them before adding your own. Deeper markup changes need swizzled theme components |
+| **VitePress** | `.vitepress/config.*`; generator `VitePress vX` | Static | Front matter (`title`, `description`, `head`), `head` and `transformHead` in config | No sitemap until `sitemap.hostname` is set in config |
+| **Starlight** | `@astrojs/starlight` in the Astro config; generator `Starlight vX` | Static (Astro) | Front matter (`title`, `description`, `head`), the `head` config option | The built-in sitemap is generated only when `site` is set in `astro.config.mjs` |
+| **Mintlify** (hosted) | `docs.json` in the repo; Mintlify asset hosts in the HTML | Hosted, rendered by Mintlify | Page front matter (`title`, `description`, `og:*`, `canonical`, `noindex`), `seo.metatags` in `docs.json` | Hosting and rendering are locked. `sitemap.xml` and `robots.txt` are generated, and a file of the same name in the project root replaces them |
+
+### Server-rendered stacks
+
+These render HTML on the server for every request, so Reach is usually fine by construction. Audit the templates, status codes and redirects instead.
+
+| Stack | Detect | Where SEO fixes live | Watch for |
+|---|---|---|---|
+| **Rails** | `Gemfile` with `rails`, `config/routes.rb`; served signals are weak (`csrf-param` / `csrf-token` metas, Turbo `data-turbo` attributes) | The layout (`app/views/layouts/application.html.erb`) with `content_for :title` and `yield(:title)`; redirects in `config/routes.rb`; `public/robots.txt`; a sitemap gem | Lazy Turbo Frames (`<turbo-frame src loading="lazy">`) whose content is not in the initial HTML |
+| **Django** | `manage.py`, `settings.py` | Base template blocks (`{% block title %}`, `{% block meta %}`); `django.contrib.sitemaps`; `RedirectView` or `django.contrib.redirects` | `DEBUG = True` in production; trailing-slash duplicates if a proxy rewrites URLs |
+| **Laravel** | `artisan`, `laravel/framework` in `composer.json`; `XSRF-TOKEN` / `laravel_session` cookies | Blade layouts (`@yield('title')`, `@section`); `Route::permanentRedirect` in `routes/web.php`; `public/robots.txt` | **Inertia** front ends render in the browser unless Inertia's SSR server is set up and running: check the raw HTML for an empty root element |
+| **Plain PHP** | `.php` entry files; often `x-powered-by: PHP/x` | Shared header includes; redirects in `.htaccess` or the nginx config | `index.php` and query-string duplicates; error pages that return `200` |
+
+---
+
+## Hosted platforms and CMSs
+
+| Platform | Detect in the served output | Where SEO settings live | What is locked | Deep reference |
+|---|---|---|---|---|
+| **WordPress** | `/wp-content/`, `/wp-json/` in a `Link` header, generator `WordPress x.y`; plugin comments such as `This site is optimized with the Yoast SEO plugin` or `Search Engine Optimization by Rank Math` | The SEO plugin, Settings > Reading and Permalinks, the theme or child theme | On hosted plans: plugins and theme files may be unavailable | [platforms/wordpress.md](platforms/wordpress.md) |
+| **Shopify** | `powered-by: Shopify` header, `cdn.shopify.com`, `window.Shopify` | Theme Liquid (`layout/theme.liquid`), `templates/robots.txt.liquid`, each resource's search engine listing, URL redirects | Fixed URL prefixes (`/products/`, `/collections/`, `/pages/`, `/blogs/`), checkout, the sitemap | [platforms/shopify.md](platforms/shopify.md) |
+| **Webflow** | `data-wf-site` and `data-wf-page` attributes | Site settings > SEO, page settings, CMS collection SEO fields | Rendering, the sitemap generator, CMS item URLs under the collection slug | [platforms/site-builders.md](platforms/site-builders.md) |
+| **Wix** | `x-wix-request-id` header, generator `Wix.com Website Builder`, `static.parastorage.com` | SEO & GEO dashboard, page SEO settings, URL Redirect Manager, robots.txt editor | Rendering and markup; app page URL structures | [platforms/site-builders.md](platforms/site-builders.md) |
+| **Squarespace** | `server: Squarespace`, `static1.squarespace.com` | Page settings (SEO tab), site SEO settings, Developer tools > URL mappings | `robots.txt` is not editable; markup is mostly fixed | [platforms/site-builders.md](platforms/site-builders.md) |
+| **Framer** | `server: Framer`, generator `Framer`, `framerusercontent.com` | Site settings (SEO, Hosting > Redirects), page settings | Rendering, sitemap, much of the markup | [platforms/site-builders.md](platforms/site-builders.md) |
+| **Ghost, HubSpot CMS, Drupal, BigCommerce** | Generator `Ghost x.y`; generator `HubSpot` and `x-hs-*` headers; generator or `x-generator: Drupal`; BigCommerce asset hosts | See the short section in the site-builders file | Varies | [platforms/site-builders.md](platforms/site-builders.md) |
+| **Headless CMS** (Contentful, Sanity, Strapi, Storyblok, Payload) | Only in the repo: `contentful`, `@sanity/client` / `next-sanity`, `@strapi/*`, `@storyblok/*`, `payload` | Field values in the CMS; the tags they become in the front-end templates | Nothing reaches the live page until the front end rebuilds or revalidates | [platforms/headless-cms.md](platforms/headless-cms.md) |
+
+---
+
+## Per-stack notes that cut across rungs
+
+### Next.js, App Router (the default)
+- **Reach:** Server Components render on the server by default. Failures come from `"use client"` placed too high, or data loaded in `useEffect`. Push client boundaries down to interactive leaves and fetch on the server.
+- **Read:** the Metadata API (`metadata`, `generateMetadata`, `title.template`, `metadataBase`). Since 15.2, `generateMetadata` can stream: for browsers and bots that run JavaScript the tags may be appended to `<body>`, while HTML-only bots (Next.js keeps a user-agent list, `htmlLimitedBots`) get them in `<head>`. Check the served HTML with more than one user agent.
+- **Understand:** JSON-LD as a native `<script type="application/ld+json">` in a page or layout, escaping `<` as `<`. Not `next/script`.
+- **Connect:** `<Link href>` renders a real `<a href>`; canonicals through `alternates.canonical`.
+- **Plumbing:** `app/sitemap.ts`, `app/robots.ts`; redirects in `next.config` `redirects()` or in **`proxy.ts`**. Next.js 16 deprecated the `middleware` file convention and renamed it `proxy` (file `proxy.ts`, exported function `proxy`, Node.js runtime by default). The codemod is `npx @next/codemod@canary middleware-to-proxy .`. On an older project, look for `middleware.ts` instead.
+- **Since 15:** `params`, `searchParams` and `draftMode()` are Promises and must be awaited.
+
+### Next.js, Pages Router
+Data through `getStaticProps` / `getServerSideProps`, not `useEffect`. Metadata through `next/head`. Same principles, older APIs.
+
+### Everything else
+Use the tables above to find where fixes live, then go to the deep reference for the rung:
+- Rendering and Reach, per framework: `1-reach-indexation/references/rendering-ssr-csr.md`.
+- Hydration, streaming, links, soft 404s, JavaScript-set `noindex` and canonicals: `1-reach-indexation/references/javascript-seo.md`.
+- Titles, canonicals, Open Graph, JSON-LD, `noindex` and `hreflang` per framework: `2-read-content/references/metadata-titles-descriptions.md`.
+- Moving between stacks: `seo-migrations/references/framework-migrations.md`.
 
 ---
 
 ## Using the adapter in the audit
-1. Detect stack + platform in Step 0.
-2. For each finding, frame the **fix** in the right idiom (the code change *or* the platform setting), and adjust the **effort** estimate accordingly (a fix that's trivial in Next.js may be awkward or impossible on a hosted builder).
-3. On hosted platforms, write findings as **clear instructions for the user** ("In Yoast → Search Appearance, set …") rather than code edits, and record in `.seo/` what's platform-limited.
+
+1. Detect the stack and the platform in Step 0 and record them, with the version, in `.seo/`.
+2. Phrase each fix in the right idiom (the code change, or the exact setting and screen) and adjust the effort. A fix that is one line in Next.js can be awkward or impossible on a hosted builder, and `prioritisation.md` should weight it accordingly.
+3. Without write access, or on a hosted platform, write each finding as an instruction a person can follow: the screen, the field, the value, and how to check it afterwards on the live URL. Each platform file has a template for this.
+4. Record anything the platform will not let you change as `needs-human` or `wont-fix` with the reason, so a later audit does not raise it again as new.

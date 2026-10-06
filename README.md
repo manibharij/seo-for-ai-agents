@@ -4,11 +4,12 @@
 
 > ⚡ **The problem it fixes:** sites built by AI agents look perfect in a browser and are often nearly **invisible to crawlers** — they serve an empty shell with no real content in the HTML. This pack catches that (and four rungs more), checking **what's actually served to a crawler**, not the source an agent edited and hoped about.
 
-`experimental · v0.1 (current as of 2026-08) · MIT` — **[Which skill when?](SKILLS.md)** · [Method](METHOD.md) · [Use cases](USE-CASES.md) · [Changelog](CHANGELOG.md) · [Disclaimer](DISCLAIMER.md)
+`experimental · v0.2 (current as of 2026-10) · MIT` — **[Which skill when?](SKILLS.md)** · [Method](METHOD.md) · [Use cases](USE-CASES.md) · [Changelog](CHANGELOG.md) · [Disclaimer](DISCLAIMER.md)
 
-> **New here?** Paste [`install/copy-paste/audit.md`](install/copy-paste/audit.md) into your agent to audit an **existing** site, or [`install/copy-paste/reach.md`](install/copy-paste/reach.md) for the highest-impact fix on a **new** build. Want a look without any changes? Use [`audit-readonly.md`](install/copy-paste/audit-readonly.md). → [Install](#install)
+> **New here?** Paste [`install/copy-paste/audit.md`](install/copy-paste/audit.md) into your agent. It audits a new or existing site and **changes nothing**. When you have reviewed the findings, [`fix.md`](install/copy-paste/fix.md) applies only the ones you approve, and [`recheck.md`](install/copy-paste/recheck.md) re-tests them later. About to go live? Use [`launch-qa.md`](install/copy-paste/launch-qa.md). → [Install](#install)
 
 ## Contents
+- [Three modes: audit, fix, re-check](#three-modes-audit-fix-re-check)
 - [The method — the Visibility Ladder](#the-method-the-visibility-ladder)
 - [It runs as an audit lifecycle](#it-runs-as-an-audit-lifecycle-not-a-one-shot)
 - [Who it's for, and how it adapts](#who-its-for-and-how-it-adapts) · [Use cases by site type](USE-CASES.md)
@@ -16,6 +17,28 @@
 - [The honest boundary](#the-honest-boundary-and-how-live-data-fits) · [Disclaimer](#disclaimer)
 
 It's primarily **SEO** — the technical and on-page fundamentals that drive ranking, done correctly and verified on the served output (not the source). On top sits **AEO** (answer-engine optimisation): the owned-media work to make a page *eligible* to be cited by AI answers. The two are related but not the same, and citation is never guaranteed — the full distinction is in **[METHOD.md](METHOD.md)**. It's **horizontal** (any site, any industry) and built for people who don't want to become SEOs to ship a findable site.
+
+---
+
+## Three modes: audit, fix, re-check
+
+Every skill runs in one of three modes. The default is always `audit`.
+
+| Mode | What it does | Changes the site |
+|---|---|---|
+| `audit` (default) | Diagnoses on the served output and records findings with ids, evidence, risk and the proposed fix. Saves the report to `.seo/` when it can write files. | Never |
+| `fix` | Applies only the findings you approve, by id or by a rule such as "all low-risk". Works on a branch, one commit per finding, verifying each on the served output. | Only what you approve |
+| `re-check` | Re-tests earlier findings: what is fixed, what regressed and, if your environment has search data, what changed. | Never |
+
+Ask in the same shape every time: skill, mode, target, then optional scope and output.
+
+```
+Run seo-orchestrator in audit mode on https://example.com. Scope: top 10. Output: ticket list.
+Run seo-orchestrator in fix mode: apply R-03 and R-07 from .seo/state.json.
+Run 1-reach-indexation in re-check mode.
+```
+
+Without an install, the same three modes are copy-paste minis: [`audit.md`](install/copy-paste/audit.md), [`fix.md`](install/copy-paste/fix.md) and [`recheck.md`](install/copy-paste/recheck.md). Every skill also adapts to what it can reach (a URL only, a read-only repo, or write access), to a scope or time budget, and to whatever data your environment already has: see [`operating-modes.md`](skills/seo-orchestrator/references/operating-modes.md).
 
 ---
 
@@ -41,7 +64,12 @@ The **[`seo-orchestrator`](skills/seo-orchestrator/SKILL.md)** is the entry poin
 *Foundation — run this before any content work:*
 - **[`seo-context-gathering`](skills/seo-context-gathering/SKILL.md)** — learn the business before touching its words: what it actually sells, who it serves and in *their* vocabulary, which differentiators are provable, what real proof exists (named authors, case studies, data), how it writes, and what it may not claim. Written once to `.seo/context.md` and read by every skill after it. Every fact is labelled established / inferred / unknown — and only an established fact may ever reach published copy or schema. This is how the pack answers "don't fabricate" with something better than a refusal: go and find the real material first.
 
+*Data:*
+- **[`seo-search-data`](skills/seo-search-data/SKILL.md)**: reads the search data your environment already has (Search Console, analytics, CrUX, Bing, or an SEO tool, whatever is connected) to see what Google actually concluded: indexing reasons and Google's chosen canonical, which pages already earn traffic and must be protected, demand and striking-distance queries, and whether a change worked. It detects capabilities, not products, and never requires data.
+
 *Technical:*
+- **[`seo-launch-qa`](skills/seo-launch-qa/SKILL.md)**: pre-launch and go-live checks on the production URL, split into launch blockers and fix-this-week.
+- **[`seo-performance`](skills/seo-performance/SKILL.md)**: Core Web Vitals deep work, field data first, then lab and the cause.
 - **[`seo-migrations`](skills/seo-migrations/SKILL.md)** — preserve rankings when URLs change (redesigns, replatforming, domain moves, slug changes, post-relaunch 404s).
 - **[`seo-measurement-setup`](skills/seo-measurement-setup/SKILL.md)** — wire up analytics, Search Console, and web-vitals so results *can* be measured (setup only — reading the data is live-data work).
 
@@ -68,8 +96,9 @@ The content & marketing skills get sharper when you connect your own data tools 
 
 The pack **remembers**. The orchestrator writes a `.seo/` folder into your project — `audit.md` (a readable health scorecard), `state.json` (every finding with status), `log.md` (dated history) — so it works the first time *and every time after*:
 
-- **First run** → baseline audit across all five rungs, fix the safe wins, record state.
-- **Later runs** → re-verify past fixes (**catch regressions** after deploys/edits), find what's new, and advance the prioritised backlog.
+- **First run** (`audit`): a baseline across all five rungs, findings recorded with ids. Nothing on the site changes.
+- **Then** (`fix`): you approve findings and the agent applies only those, logging each change with a date.
+- **Later runs** (`re-check`): re-verify past fixes, **catch regressions** after deploys and edits, measure what changed where data is available, and find what's new.
 
 That turns it from a one-time fixer into a system that keeps a site healthy over time — which is exactly what an **existing** site needs.
 
@@ -86,7 +115,7 @@ It **adapts** to the site: per-stack guidance (Next.js, Astro, Nuxt, SvelteKit, 
 
 1. **Work it out yourself; don't interrogate the user.** You shouldn't have to know SEO or describe your site. The agent reads the codebase and the served pages and figures out the context on its own — what the site is, who it's for, the stack, the platform, the sector — acts on sensible defaults, and only pauses for the few calls a human genuinely must make. Inferring beats asking.
 2. **Verify on rendered output, not source.** An agent editing JSX and declaring "meta tags added" proves nothing. Every skill confirms what is actually *served* by re-fetching the URL — because client-rendered content invisible to crawlers is the #1 failure of AI-built sites (and a frequent silent regression on established ones after a refactor or replatform).
-3. **Talk to the agent, serve the non-SEO human.** The skill instructs the agent; the agent fixes what's safe, explains every change in plain English and why it matters, and flags what only a human can decide.
+3. **Talk to the agent, serve the non-SEO human.** The skill instructs the agent; the agent fixes what's safe, explains every change and why it matters, and flags what only a human can decide.
 4. **Strictly white-hat.** Never fabricate authors, credentials, reviews, or E-E-A-T signals. Where real trust signals are missing, they're flagged as human tasks — never invented. (This isn't only ethics: AI answer engines are built to discount manufactured authority.)
 
 ---
@@ -106,8 +135,11 @@ Install copies the **whole `skills/` folder** (the orchestrator carries the shar
 
 ### Fastest start (no setup)
 Paste a mini straight into your agent:
-- [**`audit.md`**](install/copy-paste/audit.md) — the best all-rounder: runs the full audit lifecycle on a **new or existing** site (creates the `.seo/` report, fixes the floor up).
-- [**`audit-readonly.md`**](install/copy-paste/audit-readonly.md) — the same audit, **analysis-only**: diagnoses and reports but changes nothing. Safest first look, ideal for auto-mode or a live site you don't want touched.
+- [**`audit.md`**](install/copy-paste/audit.md): the best all-rounder. Audits a **new or existing** site across the whole ladder, records findings with ids in `.seo/`, and changes nothing.
+- [**`fix.md`**](install/copy-paste/fix.md): applies only the findings you approve, one commit each, verified on the served output.
+- [**`recheck.md`**](install/copy-paste/recheck.md): re-tests earlier findings, catches regressions, and, if your environment has search data, shows what changed.
+- [**`launch-qa.md`**](install/copy-paste/launch-qa.md): the go-live pass: launch blockers first, then fix-this-week.
+
 - [**`reach.md`**](install/copy-paste/reach.md) — the highest-impact single fix and the best demo: catch a site that's invisible to crawlers.
 - [**`context.md`**](install/copy-paste/context.md) — the foundation for content work: learns your business and writes it to `.seo/context.md` so nothing downstream has to guess.
 - Then the per-rung minis (`read`, `understand`, `connect`, `rank`), the AEO-layer mini (`cite`), and the specialist minis: technical (`migrations`, `measurement`), content/marketing (`content-audit`, `content-editing`, `positioning-strategy`, `proposal-roadmap`), automation & advanced (`automations`, `media`, `programmatic`, `log-analysis`), and off-page (`offsite`). One per skill in [`install/copy-paste/`](install/copy-paste/).
@@ -133,10 +165,11 @@ This pack **builds owned media** — everything on your own pages: rendering, co
 
 ## The honest boundary (and how live data fits)
 
-The free skills are **build-time and owned-media** at their core — rendering, content, metadata, speed and mobile, schema, structure, architecture, AEO formatting — and they **never require live data**: they work fully with nothing connected. But you can bring data in, two ways:
+At their core the skills are build-time, owned-media work: rendering, content, metadata, speed and mobile, schema, structure, architecture and AI-answer readiness. They **never require live data** and work fully with nothing connected.
 
-- **Optional, bring-your-own-key (DIY).** Connect tools you already use — Search Console (free), DataForSEO, Ahrefs, Bing Webmaster — with your **own** API keys, and the audit sharpens: real indexation and rankings, traffic-weighted priorities, and real demand/competitor context for the content and positioning work. Optional and self-service. See [install/data-integrations.md](install/data-integrations.md).
-- **Done-for-you (managed).** Don't want to wire up and pay for your own data APIs, or want ongoing managed monitoring — rank tracking, geo-grid, AI-citation tracking — hands-off? That's **SearchOps** (managed data) and **MB Search** (done-for-you optimisation).
+They get sharper with whatever your environment already has. The pack detects capabilities, not products: if your agent has a tool for search performance, URL inspection, Core Web Vitals field data, revenue or leads by landing page, keyword demand, backlinks or AI answer mentions (an MCP server, a connector, a CLI, your own API keys, or a file you export), the skills use it, read-only, and record which sources each report used. Nothing is connected for you and nothing is a precondition. See [install/data-integrations.md](install/data-integrations.md).
+
+Prefer not to run your own data? Ongoing managed monitoring (rank tracking, geo-grid, AI citation tracking) is what **SearchOps** does, and **MB Search** offers done-for-you optimisation.
 
 The line that never moves: **no build-time capability is ever paywalled, and nothing here requires a paid key to function.** And reading your *current* data is never a promise of *future* rankings or citations — see the closing note in the [Cite skill](skills/cite-aeo-geo/SKILL.md).
 

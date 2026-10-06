@@ -18,7 +18,7 @@ This page is the orientation layer: which profile fits, what it emphasises, whic
 
 ## Starter prompts per site type
 
-Each prompt is **read-only**: the agent audits and reports, and changes nothing until you ask. Swap in your details.
+Each prompt runs in `audit` mode: the agent audits and reports, and changes nothing. When you have reviewed the findings, ask it to run in `fix` mode for the ones you approve. Swap in your details.
 
 **SaaS / product marketing**
 ```

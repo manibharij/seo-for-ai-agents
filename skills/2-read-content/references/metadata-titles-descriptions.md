@@ -82,12 +82,54 @@ Notes:
 - `metadataBase` is needed for absolute `og:image`/canonical URLs — without it you get warnings and relative URLs.
 - A child page's metadata **merges with and overrides** its ancestors. If a page shows the wrong title, look up the layout chain.
 - Don't hand-write `<title>`/`<meta>` in JSX alongside the Metadata API; pick the API.
+- `title.template` applies to **child** segments only. A template in `app/layout.tsx` does not apply to the title set in `app/page.tsx` (same segment), so the home page title is used exactly as written.
+- Since Next.js 15.2, `generateMetadata` may stream: for clients that run JavaScript the tags can be appended to `<body>`, while HTML-only bots get them in `<head>`. If a non-Google crawler matters and is not on Next.js's `htmlLimitedBots` list, check what it receives, and set `htmlLimitedBots` in `next.config` if needed.
 
-### Other frameworks (brief)
-- **Astro:** set `<title>`/`<meta>` in the layout `<head>`, usually via props/frontmatter.
-- **Nuxt:** `useHead()` / `definePageMeta`.
-- **SvelteKit:** `<svelte:head>` in the page/layout.
-- **Remix:** the route `meta` export.
+---
+
+## Per-framework metadata patterns
+
+Each cell is where that tag comes from in the framework's idiomatic setup. Whatever the framework, the tag only counts if it is in the served HTML, so the framework must render on the server (see `1-reach-indexation/references/rendering-ssr-csr.md`). Verified 2026-10 against each framework's docs.
+
+| Framework | Title template | Canonical | Open Graph | JSON-LD injection | Robots `noindex` | `hreflang` |
+|---|---|---|---|---|---|---|
+| **Next.js App Router** | Root layout `title: { template: '%s \| Brand', default: 'Brand' }`; pages set `title`; `title.absolute` skips the template | `alternates: { canonical: '/path' }` with `metadataBase` in the root layout | `openGraph: { ... }` (a page's object **replaces** the parent's whole object) | Native `<script type="application/ld+json">` in a page or layout, `JSON.stringify(data).replace(/</g, '\\u003c')` | `robots: { index: false, follow: true }` | `alternates: { languages: { 'en-GB': '/en-gb/page', 'de-DE': '/de/page' } }` |
+| **Nuxt** | `titleTemplate: '%s \| Brand'` in `app.vue` (`useHead`) or `app.head` in `nuxt.config`; pages set `title` with `useSeoMeta` or `definePageMeta` | `useHead({ link: [{ rel: 'canonical', href }] })` (`useSeoMeta` does not handle links) | `useSeoMeta({ ogTitle, ogDescription, ogImage })` | `useHead({ script: [{ type: 'application/ld+json', innerHTML: JSON.stringify(data) }] })` | `useSeoMeta({ robots: 'noindex, follow' })` | `@nuxtjs/i18n` `useLocaleHead()` (needs `baseUrl`), or `useHead` links |
+| **SvelteKit** | No built-in template. Return SEO fields from `load`, render them once in the root `+layout.svelte` `<svelte:head>` (the pattern SvelteKit's SEO docs recommend) | `<link rel="canonical" href={...}>` in `<svelte:head>` | `<meta property="og:...">` in `<svelte:head>` | `{@html}` of a `<script type="application/ld+json">` string inside `<svelte:head>`, with `<` escaped | `<meta name="robots" content="noindex">` in `<svelte:head>` | `<link rel="alternate" hreflang="..." href="...">` in `<svelte:head>` |
+| **Astro** | A layout component takes a `title` prop and renders ``<title>{`${title} \| Brand`}</title>`` | `<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />` (needs `site`) | `<meta property="og:...">` in the layout head, from props | `<script type="application/ld+json" set:html={JSON.stringify(data)} />` (escape `<` yourself) | A `noindex` prop that renders the robots meta | Manual `<link rel="alternate">`; the `astro:i18n` helpers (such as `getAbsoluteLocaleUrl`) build the URLs |
+| **React Router framework mode / Remix** | No template: a child route's `meta` **replaces** the parent's array. Build titles with a shared helper, or use React 19 `<title>` in the component (now recommended by the docs) | `{ tagName: 'link', rel: 'canonical', href }` in `meta`, the `links` export, or a `<link>` rendered in the component | `{ property: 'og:title', content }` in `meta` | `{ 'script:ld+json': data }` in `meta` (React Router escapes it) | `{ name: 'robots', content: 'noindex' }` in `meta` | `{ tagName: 'link', rel: 'alternate', hrefLang: 'de', href }` in `meta` |
+| **Angular** | Route `title`, plus a custom `TitleStrategy` for `%s \| Brand` | No built-in: create or update the `<link>` through `DOCUMENT` in a service | `Meta.updateTag({ property: 'og:title', content })` | Append a `<script type="application/ld+json">` through `DOCUMENT` during server rendering | `Meta.updateTag({ name: 'robots', content: 'noindex' })` | Manual `<link rel="alternate">` through `DOCUMENT` |
+
+React Router v8 renamed the `data` argument of `meta` to `loaderData`; v7 code reading `data` breaks on upgrade. Angular head changes reach the served HTML only with `@angular/ssr` or prerendering; otherwise they happen in the browser.
+
+**Other stacks, briefly:**
+- **TanStack Start:** the route `head()` option returns `meta`, `links` and `scripts`, rendered by `<HeadContent />` in the root. Nested routes win: a child's `title`, or a meta tag with the same `name` or `property`, overrides the parent's.
+- **SolidStart:** `<Title>`, `<Meta>` and `<Link>` from `@solidjs/meta` inside routes, defaults in `root.tsx`. Wrap `<Title>` in a component to add the brand suffix.
+- **Qwik City:** `export const head: DocumentHead` per route; a layout's `head` can be a function that receives the page's `head` and changes it (for example, to append the brand).
+- **Docs generators:** front matter `title` and `description` in Docusaurus, VitePress and Starlight; the generator applies the site template.
+
+---
+
+## Classic override bugs
+
+These survive code review because each file looks right on its own. Find them in the served HTML.
+
+1. **The layout title wins.** A page sets no title and inherits the layout's, so every page in a section shares one title. In React Router a route without a `meta` export inherits its parent's; in Next.js a page with no `title` gets the nearest `title.default`. Also: a client component that sets `document.title` after hydration, so crawlers that read the raw HTML see the layout title.
+2. **Two `<title>` elements.** A title in the layout's `<svelte:head>` and another in the page's can both reach the server HTML; the same happens when an Astro page adds a title to a layout that already prints one. Render the title in one place.
+3. **Every page canonicalises to the home page.** `alternates: { canonical: '/' }` in the Next.js root layout is inherited by every page that does not set its own `alternates`. The same happens with a hard-coded canonical in an SPA's `index.html`. Set canonicals per page, derived from the route.
+4. **Duplicate canonicals from layout and page.** The layout hand-writes a `<link rel="canonical">` and the page sets one through the framework API; or a theme and an SEO plugin both print one; or a tag manager injects one on top of the platform's. With conflicting canonicals, search engines may ignore them all.
+5. **Open Graph replaced wholesale.** In Next.js, a page that sets `openGraph: { title }` drops the layout's `og:image` and `og:description` (shallow merge). In React Router, a child `meta` drops every parent tag. Share common fields through a helper and spread them in.
+6. **A staging `noindex` in a shared layout** that ships to production. Check the robots meta on every template after launch.
+
+```bash
+curl -sL https://example.com/page | grep -oiE '<title[^>]*>|<link[^>]+rel=.canonical.[^>]*>|<meta[^>]+name="robots"[^>]*>' | sort | uniq -c
+```
+```powershell
+$h = (Invoke-WebRequest -Uri "https://example.com/page" -UseBasicParsing).Content
+[regex]::Matches($h, '(?i)<title[^>]*>|<link[^>]+rel=.canonical.[^>]*>|<meta[^>]+name="robots"[^>]*>') | Group-Object Value | Select-Object Count, Name
+```
+
+A count above 1 for `<title` or for the canonical is a finding.
 
 ---
 
