@@ -87,6 +87,49 @@ model removed:
 
 Every other mini filename in `install/copy-paste/` is unchanged.
 
+### Added: named DataForSEO workflows, so three described analyses become executable
+
+`live-data-integrations.md` already said "think in capabilities, not products", and
+`third-party-mcps.md` already covered how to connect DataForSEO, Ahrefs, Semrush and
+OpenSEO. What was missing was the step after connecting: **what to actually call, with which
+filter, to perform a named analysis.**
+
+New: [`data/dataforseo.md`](skills/seo-orchestrator/references/data/dataforseo.md), verified
+against DataForSEO's documentation 2026-11. Six workflows, each with the endpoint, the
+request shape, the fields to read and what it cannot tell you.
+
+Three of them were analyses the library described and had no mechanism for:
+
+1. **Cannibalisation without Search Console.** `ranked_keywords/live` returns
+   `keyword_data.keyword` and `ranked_serp_element.serp_item.url` per item, so grouping by
+   keyword finds any query with two of the site's own URLs. This is the path for
+   `client-audit`, which by definition never has the owner's Search Console. Confirmed by
+   re-running the SERP on a schedule: a winner that **flips between two of your own pages**
+   is confirmed cannibalisation, which is a stronger signal than any single snapshot.
+2. **Intent-shift detection.** `search-intent.md` said the result shape changing over time is
+   the clearest evidence of an intent shift and gave no way to see it. Snapshot the `type` of
+   every SERP element, re-run, diff the mix. A stable mix with you falling is decay; a changed
+   mix is an intent shift; an `ai_overview` appearing explains falling clicks on flat
+   impressions. `content-decay.md` separates four causes that look identical in a traffic
+   graph, and two of them can now be told apart with evidence.
+3. **AI Overview references.** `item_types: ["ai_overview_reference"]` returns which pages
+   were cited, for which keywords, and the `text` snippet used to generate the overview.
+   That last field says which passage was extractable enough to lift, which is the most
+   actionable signal available on a surface where the honest alternative is sampled prompts.
+   It does not move the claimable outcome: vendor observation, confidence `inferred`,
+   eligibility only.
+
+Plus striking distance on a site you do not own (a `rank_group` filter), and page-level
+competitor comparison via `relevant_pages/live`.
+
+Wired into `decay-cannibalisation-actions.md` (as a third data path, between the Search
+Console method and the title-overlap fallback), `search-intent.md`, `content-decay.md`,
+`seo-surface-assistants` and `live-data-integrations.md`.
+
+Honest about its own edges: DataForSEO's Backlinks, OnPage, Business Data, Domain Analytics
+and Content Analysis modules are reachable through capability detection and have **no
+verified recipe in that file yet**, and it says so rather than implying coverage.
+
 ### Added: four more site-type profiles, and depth where the model said it was missing
 
 **Four new profiles**, bringing the set to eleven. They are deliberately *modalities* rather

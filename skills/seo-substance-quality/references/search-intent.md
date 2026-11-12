@@ -39,6 +39,12 @@ Two further signals in the same place, both cheap and both routinely ignored:
   query that used to return guides now returns product pages, your guide did not get worse. The
   query moved. That is a different finding with a different fix.
 
+  To observe it rather than remember it, snapshot the **type** of every SERP element for the
+  keyword and diff it month on month. Where the environment has DataForSEO, workflow 3 in
+  [`seo-orchestrator/references/data/dataforseo.md`](../../seo-orchestrator/references/data/dataforseo.md)
+  does exactly this, and distinguishes an intent shift from ordinary decay with evidence
+  instead of a hunch.
+
 ---
 
 ## The four mismatch patterns

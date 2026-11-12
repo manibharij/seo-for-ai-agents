@@ -126,7 +126,8 @@ When no tool in the environment provides a capability but the user has configure
 - [`data/analytics-ga4.md`](data/analytics-ga4.md): organic landing pages, key events, the AI Assistant channel, and CRM or warehouse revenue.
 - [`data/crux-pagespeed.md`](data/crux-pagespeed.md): CrUX API, CrUX History API, PageSpeed Insights.
 - [`data/bing-webmaster.md`](data/bing-webmaster.md): traffic, crawl and index data, and the AI Performance report.
-- [`data/third-party-mcps.md`](data/third-party-mcps.md): Ahrefs, Semrush, DataForSEO and OpenSEO, and how to treat their numbers.
+- [`data/third-party-mcps.md`](data/third-party-mcps.md): Ahrefs, Semrush, DataForSEO and OpenSEO, how to connect them, and how to treat their numbers.
+- [`data/dataforseo.md`](data/dataforseo.md): named DataForSEO workflows with endpoints and filters. Cannibalisation without Search Console, confirming it by SERP flip, intent-shift detection from the SERP type mix, AI Overview references (which page was cited and which sentence was used), striking distance on a site you do not own, and page-level competitor comparison.
 
 User-facing setup notes: `install/data-integrations.md`.
 

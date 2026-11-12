@@ -25,6 +25,14 @@ That last row is worth dwelling on, because it is increasingly common and gets r
 decay. If impressions are flat and clicks are down, the page did not lose ranking. The result
 page changed around it, and no amount of content work on the page will recover the click.
 
+**Telling rows two and three apart needs evidence, not memory.** Snapshot the type of every
+element in the SERP for the keyword, then re-run it monthly and diff the mix. A stable mix
+with you falling is decay; a changed mix is an intent shift, and an `ai_overview` appearing
+where there was none explains falling clicks on flat impressions. Where the environment has
+DataForSEO, workflow 3 in
+[`seo-orchestrator/references/data/dataforseo.md`](../../seo-orchestrator/references/data/dataforseo.md)
+is the mechanism.
+
 ---
 
 ## The four things that actually decay

@@ -233,7 +233,29 @@ COPY (
 
 The 10% share, position 20 and "several swaps" cut-offs are judgement. Weight by the query's value: a split on a query with 20 impressions is not worth a merge. Branded and navigational queries often show several URLs legitimately (home, about, contact); exclude them.
 
-### Without Search Console: title and h1 overlap
+### With a keyword tool but no Search Console: shared keyword, two URLs
+
+This is the path for an audit of a site you do not own, which is every `client-audit`. A
+keyword tool that reports the **ranking URL** per keyword gives you the same shape of
+evidence from outside.
+
+With DataForSEO, `dataforseo_labs/google/ranked_keywords/live` returns
+`keyword_data.keyword` and `ranked_serp_element.serp_item.url` per item. Group by keyword;
+any keyword with two or more distinct URLs from the target domain is a candidate. Then
+confirm it by running the SERP for that keyword on a schedule: **a winner that flips between
+two of your own pages across runs is confirmed cannibalisation**, because Google cannot
+decide which page answers the query. A stable winner with a second page far below is usually
+fine and gets left alone.
+
+The full recipe, with the filters, the paging and the honest limits, is in
+[`seo-orchestrator/references/data/dataforseo.md`](../../seo-orchestrator/references/data/dataforseo.md).
+Ahrefs and Semrush expose the same capability under different names; match by what the tool
+returns, not what it is called.
+
+These are the vendor's estimates, so the finding's confidence is `inferred`, and Search
+Console wins wherever it is available.
+
+### Without Search Console or a keyword tool: title and h1 overlap
 Flag pairs whose titles or h1s share most of their meaningful words, then read both pages. Feed it `url,title,h1` from `page-facts.csv`.
 
 ```python

@@ -39,6 +39,7 @@ Tool names differ by host and version. Match by description: a tool that "return
 - **Modules:** SERP, Keywords Data, OnPage, DataForSEO Labs, Backlinks, Business Data, Domain Analytics, Content Analysis, **AI Optimization**.
 - **Cost:** pay as you go; **every call is billed**. Responses can be trimmed to configured fields, which keeps context small.
 - **Use it for:** live SERPs for a query set, keyword volumes, backlink data and AI answer checks, when the user prefers metered data to a subscription.
+- **Named workflows with endpoints and filters:** [`dataforseo.md`](dataforseo.md). Cannibalisation without Search Console, intent-shift detection, AI Overview references, striking distance on a site you do not own.
 
 ## OpenSEO
 
