@@ -37,7 +37,7 @@ Before you start: if `.seo/context.md` exists, read it. A fact may reach JSON-LD
 - **Parity (shops):** for a sample (a simple product, a variant, a sale item, an out-of-stock item), confirm the served JSON-LD price, currency, availability and identifiers equal what the page shows **and** what the Merchant Center feed says. A price that JavaScript fills in after load fails. If page, markup and feed come from different data, tell me: they will drift again.
 
 ## Step 4 — Report to me
-Record each finding with: `id`, `skill` (`3-understand-schema`), `area` (`understand`), `target` (URL or template), `severity` (high/medium/low), `evidence` (what the served JSON-LD showed), `fix`, `risk`, `status` (`open` / `fixed` / `regression` / `needs-human` / `wont-fix`), `verified` (ISO date), `notes`. Then explain:
+Record each finding with: `id`, `skill` (`seo-access-understand`), `area` (`understand`), `target` (URL or template), `severity` (high/medium/low), `evidence` (what the served JSON-LD showed), `fix`, `risk`, `status` (`open` / `fixed` / `regression` / `needs-human` / `wont-fix`), `verified` (ISO date), `notes`. Then explain:
 
 1. **What was wrong** (e.g. "your product pages didn't state product/price/availability in a structured way, so they couldn't qualify for the richer result format").
 2. **What you added and why it matters.**

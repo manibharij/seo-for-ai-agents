@@ -44,7 +44,7 @@ $h = (Invoke-WebRequest -Uri "https://example.com/" -UseBasicParsing).Content
 ## WooCommerce
 
 - **Product URLs:** the product base is set in Settings > Permalinks (`/product/` by default). Changing it changes every product URL and needs redirects.
-- **Faceted and sorted URLs:** `?orderby=`, `?filter_*` and layered navigation parameters can multiply listing URLs. Keep them out of the sitemap and canonical them to the unfiltered listing where they add nothing (see `4-connect-architecture/references/canonicals-and-architecture.md`).
+- **Faceted and sorted URLs:** `?orderby=`, `?filter_*` and layered navigation parameters can multiply listing URLs. Keep them out of the sitemap and canonical them to the unfiltered listing where they add nothing (see `seo-access-connect/references/canonicals-and-architecture.md`).
 - **Cart, checkout and account pages** should not be indexed. Check that they carry `noindex` in the served HTML.
 - **Out-of-stock and discontinued products:** decide per product. Keep the page live (with the stock state in `Product` markup) if it returns; 301 to the closest replacement if it is gone for good. Never redirect everything to the home page.
 - **Product schema:** WooCommerce and the SEO plugin can both emit `Product`. Validate the served HTML and keep one complete graph.
@@ -65,7 +65,7 @@ $h = (Invoke-WebRequest -Uri "https://example.com/" -UseBasicParsing).Content
 1. **Staging "discourage" switch left on after launch.** Settings > Reading > Search engine visibility stays ticked, so every page serves `noindex, nofollow` and the core sitemap is disabled. Check the served `<meta name="robots">` on the home page first. High severity, one-click fix, but confirm with a person that the site is meant to be live.
 2. **The reverse: staging indexed.** A staging copy (`staging.example.com`, a host's temporary domain) without the switch, password protection or `noindex` gets indexed as a duplicate. Protect staging with HTTP auth or `noindex`, not `robots.txt` alone, because a blocked URL can still be indexed from links.
 3. **Two SEO plugins.** Duplicate titles, two canonicals, two sitemaps. Keep one and migrate its settings.
-4. **Permalink changes without redirects.** Switching from `/?p=123` or `/2024/05/post/` to `/post/` changes every URL. WordPress guesses some old post URLs, but do not rely on that. Map old to new and 301 (`seo-migrations/references/redirect-mapping.md`).
+4. **Permalink changes without redirects.** Switching from `/?p=123` or `/2024/05/post/` to `/post/` changes every URL. WordPress guesses some old post URLs, but do not rely on that. Map old to new and 301 (`seo-access-migrations/references/redirect-mapping.md`).
 5. **Physical `robots.txt` shadowing the plugin.** Edits in the plugin "do nothing" because a file in the web root wins.
 6. **Thin archives indexed.** Tag, author, date and attachment pages with little content. `noindex` them or improve them; attachment pages are usually best redirected to the file or parent post (Yoast and Rank Math both have a setting).
 7. **Caching and optimisation plugins.** "Delay JavaScript" and lazy-load features can hide content or links from the raw HTML, and a stale page cache can keep serving an old title or `noindex` after a fix. Purge the cache, then verify.

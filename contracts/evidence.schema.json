@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seo-ai-agents.com/contracts/evidence.schema.json",
+  "title": "Evidence",
+  "description": "A captured observation. Every finding, fix and completion claim must point at evidence, and evidence is always of what a machine actually received, never of source code.",
+  "type": "object",
+  "required": ["kind", "captured_at"],
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "type": "string",
+      "enum": [
+        "served_html",
+        "response_headers",
+        "render_trace",
+        "serp",
+        "screenshot",
+        "api_response",
+        "log",
+        "crawl",
+        "feed"
+      ]
+    },
+    "url": { "type": "string", "format": "uri" },
+    "surface": { "type": "string" },
+    "captured_at": { "type": "string", "format": "date-time" },
+    "captured_by": {
+      "type": "string",
+      "description": "Tool or runtime that captured it, so the capture can be repeated."
+    },
+    "hash": {
+      "type": "string",
+      "description": "Content hash of the stored artefact, so tampering is detectable."
+    },
+    "excerpt": {
+      "type": "string",
+      "maxLength": 4000,
+      "description": "The specific passage that supports the claim. Not the whole document."
+    },
+    "artefact_ref": {
+      "type": "string",
+      "description": "Pointer to the full stored capture."
+    }
+  }
+}

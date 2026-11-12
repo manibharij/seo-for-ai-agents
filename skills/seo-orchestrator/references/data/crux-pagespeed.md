@@ -1,6 +1,6 @@
 # CrUX and PageSpeed Insights: direct-API recipe
 
-Use this for the capability **Core Web Vitals field data**: how real Chrome users experience a page or a whole origin. `seo-performance` owns the diagnosis and fixes; this file is the data recipe. Prefer a CrUX or PageSpeed tool already in the environment. Facts verified 2026-10.
+Use this for the capability **Core Web Vitals field data**: how real Chrome users experience a page or a whole origin. `seo-access-performance` owns the diagnosis and fixes; this file is the data recipe. Prefer a CrUX or PageSpeed tool already in the environment. Facts verified 2026-10.
 
 ---
 

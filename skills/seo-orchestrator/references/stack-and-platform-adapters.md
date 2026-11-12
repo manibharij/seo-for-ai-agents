@@ -34,7 +34,7 @@ Record the result in `.seo/` state (stack, platform, version, and whether you ha
 
 | Kind | Examples | Who applies the fix | Detail |
 |---|---|---|---|
-| **Code-editable app** | Next.js, Nuxt, SvelteKit, Astro, React Router, Angular, TanStack Start, SolidStart, Qwik, Gatsby, SPAs, static generators | The agent, as a code change | The tables below, plus `1-reach-indexation/references/rendering-ssr-csr.md` and `2-read-content/references/metadata-titles-descriptions.md` |
+| **Code-editable app** | Next.js, Nuxt, SvelteKit, Astro, React Router, Angular, TanStack Start, SolidStart, Qwik, Gatsby, SPAs, static generators | The agent, as a code change | The tables below, plus `seo-access-reach/references/rendering-ssr-csr.md` and `seo-access-read/references/metadata-titles-descriptions.md` |
 | **Server-rendered stack** | Rails, Django, Laravel, plain PHP | The agent, in templates, routes and server config | Below |
 | **Docs generator** | Docusaurus, VitePress, Starlight (code); Mintlify (hosted) | Config and front matter; Mintlify through its config file | Below |
 | **Headless CMS + front end** | Contentful, Sanity, Strapi, Storyblok, Payload | Code for the template, editors for the field values | [platforms/headless-cms.md](platforms/headless-cms.md) |
@@ -114,10 +114,10 @@ Data through `getStaticProps` / `getServerSideProps`, not `useEffect`. Metadata 
 
 ### Everything else
 Use the tables above to find where fixes live, then go to the deep reference for the rung:
-- Rendering and Reach, per framework: `1-reach-indexation/references/rendering-ssr-csr.md`.
-- Hydration, streaming, links, soft 404s, JavaScript-set `noindex` and canonicals: `1-reach-indexation/references/javascript-seo.md`.
-- Titles, canonicals, Open Graph, JSON-LD, `noindex` and `hreflang` per framework: `2-read-content/references/metadata-titles-descriptions.md`.
-- Moving between stacks: `seo-migrations/references/framework-migrations.md`.
+- Rendering and Reach, per framework: `seo-access-reach/references/rendering-ssr-csr.md`.
+- Hydration, streaming, links, soft 404s, JavaScript-set `noindex` and canonicals: `seo-access-reach/references/javascript-seo.md`.
+- Titles, canonicals, Open Graph, JSON-LD, `noindex` and `hreflang` per framework: `seo-access-read/references/metadata-titles-descriptions.md`.
+- Moving between stacks: `seo-access-migrations/references/framework-migrations.md`.
 
 ---
 

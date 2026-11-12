@@ -1,6 +1,6 @@
 # Use cases: the ladder, tuned to your kind of site
 
-The Visibility Ladder is the same for every site — Reach → Read → Understand → Connect → **Rank**, with Cite (AEO) as the layer on top. What changes per site type is **where sites like yours actually fail** and **which checks matter most**. The pack encodes that as [site-type profiles](skills/seo-orchestrator/references/profiles/) which the orchestrator applies automatically: it infers your site type in Step 0, so you don't have to declare it.
+The Visibility Model is the same for every site: Demand, Identity, Substance, Access (where the Visibility Ladder lives: Reach → Read → Understand → Connect) and Distribution, kept true by Operations. **Rank** is the outcome they produce together, and an AI assistant is simply one more surface. What changes per site type is **where sites like yours actually fail** and **which checks matter most**. The pack encodes that as [site-type profiles](skills/seo-orchestrator/references/profiles/) which the orchestrator applies automatically: it infers your site type in Step 0, so you don't have to declare it.
 
 This page is the orientation layer: which profile fits, what it emphasises, which skills carry the weight, and a copy-paste prompt to start with. Depth lives in each profile file.
 

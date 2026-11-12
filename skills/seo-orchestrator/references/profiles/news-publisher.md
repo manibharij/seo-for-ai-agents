@@ -21,7 +21,7 @@ Use for news sites, magazines, and publishers, anywhere recency and editorial tr
 
 ## The honest news boundary (state it)
 - **Google News / Publisher Center inclusion** and **Top Stories/Discover** placement are Google's editorial/algorithmic decisions and policy-gated, you can be *eligible* (technical + E-E-A-T done right) but never *guaranteed* a slot.
-- Reputation and authority for a news brand are heavily **off-site/earned** (see `seo-offsite-authority`) and **live** — outside what a build controls.
+- Reputation and authority for a news brand are heavily **off-site/earned** (see `seo-distribution-authority`) and **live** — outside what a build controls.
 
 ## Common failures
 - Client-rendered article bodies (recency wasted, fails Reach).

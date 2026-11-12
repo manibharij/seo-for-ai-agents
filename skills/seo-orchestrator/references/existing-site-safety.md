@@ -29,7 +29,7 @@ URLs that rank carry equity. If a URL must change (slug change, restructure, fra
 - **Always add a `301` redirect** from old → new. Never leave a ranking URL returning `404`.
 - Update internal links and the sitemap to the new URL.
 - Map redirects 1:1 where possible; avoid chains and avoid dumping everything to the homepage.
-- For anything beyond a handful of URLs, this is a **migration** — use the `seo-migrations` skill, which exists for exactly this.
+- For anything beyond a handful of URLs, this is a **migration** — use the `seo-access-migrations` skill, which exists for exactly this.
 
 ### 3. Prefer additive, reversible changes
 Adding a meta description, alt text or honest schema, or tightening an unclear answer, is low-risk and additive. Removing content, changing URLs, altering canonicals/redirects, or restructuring navigation is high-risk. Bias to additive fixes; stage the risky ones.
@@ -44,14 +44,14 @@ Work in version control; keep changes in reviewable commits; recommend a deploy 
 A page that already earns clicks has proved itself to search engines. Its title, `h1`, copy and URL are what it ranks on, so changing them can lose the queries it wins today.
 
 - **Any change to the title, `h1`, copy or URL of a page with meaningful clicks needs explicit approval for that page**, even when the finding was approved under a rule such as "all low-risk", and even in auto-mode (where it is queued as `needs-human`).
-- **"Meaningful" is judgement; scale it to the site.** On a site with a few hundred clicks a month, any page with steady clicks counts. On a large site, use a share of site clicks or the top slice of pages, plus any page with attributed revenue or leads. `seo-search-data` sets the threshold and shows the sign-off format (`seo-search-data/references/demand-and-protection.md`).
-- **Before the change**, run `seo-search-data`'s traffic check: pull the page's clicks, impressions, position and top queries, and present them with the proposed change, the risk and the rollback.
+- **"Meaningful" is judgement; scale it to the site.** On a site with a few hundred clicks a month, any page with steady clicks counts. On a large site, use a share of site clicks or the top slice of pages, plus any page with attributed revenue or leads. `seo-demand-search-data` sets the threshold and shows the sign-off format (`seo-demand-search-data/references/demand-and-protection.md`).
+- **Before the change**, run `seo-demand-search-data`'s traffic check: pull the page's clicks, impressions, position and top queries, and present them with the proposed change, the risk and the rollback.
 - **Log it with a date** in `.seo/log.md` as a change entry: finding id, files or settings touched, URLs affected, baseline, who approved it and when (`audit-report-and-state.md`, `log.md`).
-- **Measure it later** through `seo-search-data` (measuring changes), from a `re-check` run, with its caveats.
+- **Measure it later** through `seo-demand-search-data` (measuring changes), from a `re-check` run, with its caveats.
 - **Without data**, you cannot know which pages earn traffic. Treat the homepage, main hubs and any page the user names as important as protected, say that is an assumption, and recommend connecting Search Console.
 
 ### 7. Measure before and after (honestly)
-Where the user has analytics/Search Console, note the **before** state so impact can be judged later — but be clear that *attributing* ranking/traffic change to a specific fix is live-data analysis, on the other side of the boundary. Set up the plumbing (`seo-measurement-setup`) if it's missing; don't pretend the build can prove the outcome.
+Where the user has analytics/Search Console, note the **before** state so impact can be judged later — but be clear that *attributing* ranking/traffic change to a specific fix is live-data analysis, on the other side of the boundary. Set up the plumbing (`seo-operations-measurement`) if it's missing; don't pretend the build can prove the outcome.
 
 ---
 

@@ -24,7 +24,7 @@ Tool names differ by host and version. Match by description: a tool that "return
 - **Access:** Lite plan and above. Uses an Ahrefs key generated in the account. No extra fee, but calls consume the plan's **API units**: one call costs at least 50 units, more for complex requests, shared with Ahrefs Connect and API v3. Ahrefs describes the integration as read-only.
 - **Tool groups:** Site Explorer (overview metrics, backlinks, referring domains, anchors, organic keywords, competitors), Keywords Explorer (volume, matching terms), SERP overview, Rank Tracker, Site Audit, **Brand Radar**, Web Analytics, a Search Console group, social media, content helper, batch analysis, management, subscription info.
 - **Brand Radar** reports AI responses that mention a brand or its competitors, with **cited pages** and **cited domains**. Its `data_source` covers ChatGPT, Google AI Overviews, Google AI Mode, Gemini, Perplexity, Copilot, Claude and Grok. Requests using only the user's custom prompts are free; requests including Ahrefs' own prompt data use API units.
-- **Use it for:** backlink audits (`seo-offsite-authority`), keyword demand and competitor gaps (`seo-positioning-strategy`, demand mapping in `seo-search-data`), and AI visibility (which pages are cited, for which prompts, against which competitors).
+- **Use it for:** backlink audits (`seo-distribution-authority`), keyword demand and competitor gaps (`seo-identity-positioning`, demand mapping in `seo-demand-search-data`), and AI visibility (which pages are cited, for which prompts, against which competitors).
 
 ## Semrush MCP (official)
 
@@ -53,10 +53,10 @@ Tool names differ by host and version. Match by description: a tool that "return
 
 | Job | Capability | Notes |
 |---|---|---|
-| Demand mapping (`seo-search-data`) | Keyword demand | Add volume and difficulty to Search Console's real queries and to gaps. Volumes are estimates; Search Console impressions are real. |
-| Topical plan (`seo-positioning-strategy`) | Keyword demand, competitors | Size topics; find what competitors rank for that the site does not. |
-| Backlink audit (`seo-offsite-authority`) | Backlinks | Referring domains, lost links, anchors. Never buy or build links from it. |
-| AI visibility (`seo-search-data`, `cite-aeo-geo`) | AI answer mentions | Which pages are cited, for which prompts, against which competitors. Sampled prompts, not every user conversation. |
+| Demand mapping (`seo-demand-search-data`) | Keyword demand | Add volume and difficulty to Search Console's real queries and to gaps. Volumes are estimates; Search Console impressions are real. |
+| Topical plan (`seo-identity-positioning`) | Keyword demand, competitors | Size topics; find what competitors rank for that the site does not. |
+| Backlink audit (`seo-distribution-authority`) | Backlinks | Referring domains, lost links, anchors. Never buy or build links from it. |
+| AI visibility (`seo-demand-search-data`, `seo-surface-assistants`) | AI answer mentions | Which pages are cited, for which prompts, against which competitors. Sampled prompts, not every user conversation. |
 
 ---
 

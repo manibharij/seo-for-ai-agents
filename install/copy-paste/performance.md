@@ -1,6 +1,6 @@
 # Performance: copy-paste mini (paste this into your AI coding agent)
 
-*Self-contained version of the seo-performance skill: deep Core Web Vitals work. Run Reach and Read first; this goes further than Read's light page-experience pass.*
+*Self-contained version of the seo-access-performance skill: deep Core Web Vitals work. Run Reach and Read first; this goes further than Read's light page-experience pass.*
 
 > ⚠️ **Experimental, and run by an AI agent, which can make mistakes.** Review every change on the *served* output and test before you publish. See the repo's `DISCLAIMER.md`.
 

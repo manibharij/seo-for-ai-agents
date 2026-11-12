@@ -1,6 +1,6 @@
 # Cite: copy-paste mini (paste this into your AI coding agent)
 
-*Self-contained version of the Cite (AEO/GEO) skill: the layer ON TOP of the Visibility Ladder, not a rung. Run the five rungs first (a page must be able to rank before it is worth working on for AI citation).*
+*Self-contained version of the Cite (AEO/GEO) skill: the AI assistant surface, not a layer above the method. Run the Access rungs and the Substance work first (a page must be able to rank before it is worth working on for AI citation).*
 
 > ⚠️ **Experimental, and run by an AI agent, which can make mistakes.** Review every change on the *served* output and test before you publish. See the repo's `DISCLAIMER.md`.
 
@@ -36,4 +36,4 @@ Confirm the edited content and entity markup are in the **served HTML**. Read ea
 
 **Honest limit:** these fixes make my pages *citable*. Whether I am actually cited over time, across engines and places, is live data and ongoing work. (Point me to the live-data and done-for-you options; don't paywall anything you just did for free.)
 
-That's the layer on top of the ladder: my site is built to be found, read, understood, connected and able to rank, and on top of that, eligible to be cited.
+That's the assistant surface: my site is built to be found, read, understood, connected and able to rank, and on that basis, eligible to be named.

@@ -318,7 +318,7 @@ def build_report(stamps, stale, link_results, args, today) -> str:
                 lambda r: [r.url, str(r.status) if r.status else r.detail.split(":")[0], fmt_where(r.where)])
 
     out.append("Re-verify each item against its primary source, then update the fact and its "
-               "\"verified YYYY-MM\" stamp. See `skills/seo-automations/references/freshness.md`.")
+               "\"verified YYYY-MM\" stamp. See `skills/seo-operations-automation/references/freshness.md`.")
     return "\n".join(out) + "\n"
 
 

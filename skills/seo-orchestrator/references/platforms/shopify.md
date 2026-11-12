@@ -24,7 +24,7 @@ Read this when Step 0 detects Shopify. Diagnose the served HTML exactly as on an
 | Sitemap | Automatic at `/sitemap.xml`, linking product, collection, page and blog sitemaps | Not editable. If theme code sets `noindex` on a resource, check whether the sitemap still lists it, and treat a mismatch as a finding |
 | Redirects | Content > Menus > **View URL redirects** (bulk CSV import is available) | Limits below |
 | URL handle | Each resource's search engine listing. Changing a handle offers a **Create a URL redirect** option | Leave it ticked unless a person decides otherwise |
-| Agent and LLM files | `/agents.md` is managed by Shopify for every store; an `agents.md.liquid` template can override it, and it also serves `/llms.txt` and `/llms-full.txt` unless those have their own templates | Verified 2026-10. See `cite-aeo-geo` before changing it |
+| Agent and LLM files | `/agents.md` is managed by Shopify for every store; an `agents.md.liquid` template can override it, and it also serves `/llms.txt` and `/llms-full.txt` unless those have their own templates | Verified 2026-10. See `seo-surface-assistants` before changing it |
 
 ### `robots.txt.liquid`
 
@@ -59,7 +59,7 @@ Before publishing, save the current `/robots.txt` output and compare it with the
 
 ## Fixed URL structure
 
-Shopify's URL prefixes are not configurable: products live at `/products/<handle>`, collections at `/collections/<handle>`, pages at `/pages/<handle>`, blog posts at `/blogs/<blog>/<handle>`. A migration into Shopify must map every old URL onto these prefixes (`seo-migrations/references/redirect-mapping.md`). Never promise a client that `/shoes/red-runner` will survive a move to Shopify: it becomes `/products/red-runner` plus a redirect.
+Shopify's URL prefixes are not configurable: products live at `/products/<handle>`, collections at `/collections/<handle>`, pages at `/pages/<handle>`, blog posts at `/blogs/<blog>/<handle>`. A migration into Shopify must map every old URL onto these prefixes (`seo-access-migrations/references/redirect-mapping.md`). Never promise a client that `/shoes/red-runner` will survive a move to Shopify: it becomes `/products/red-runner` plus a redirect.
 
 ---
 

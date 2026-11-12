@@ -37,7 +37,7 @@ An "audit" that silently edits is wrong. Diagnosis and change are separate steps
 
 **`re-check`**
 - May: re-fetch and re-test every earlier finding on the served output, read `.seo/log.md` and live data, and update statuses and `verified` dates in `state.json`.
-- Reports: what is now fixed, what regressed (set `status: regression`), what is still open, and, for each dated change in `.seo/log.md`, what the data shows when a capability is present (search performance, field data, revenue by page). That measurement belongs to `seo-search-data`; call its "measuring changes" recipe and keep its caveats.
+- Reports: what is now fixed, what regressed (set `status: regression`), what is still open, and, for each dated change in `.seo/log.md`, what the data shows when a capability is present (search performance, field data, revenue by page). That measurement belongs to `seo-demand-search-data`; call its "measuring changes" recipe and keep its caveats.
 - May not: fix anything, even a regression. Record it and let the user run `fix`.
 - Does not hunt for new issues. Run `audit` for that; on a site with `.seo/`, an audit includes the re-check.
 
@@ -60,8 +60,8 @@ Skill, mode and target, plus optional scope and output:
 - "Run seo-orchestrator in audit mode on https://example.com. Scope: top 10. Output: ticket list."
 - "Run seo-orchestrator in fix mode: apply R-03 and R-07 from .seo/state.json."
 - "Run seo-orchestrator in fix mode: apply all low-risk findings."
-- "Run 1-reach-indexation in re-check mode."
-- "Run seo-performance in audit mode on /products/*. Output: CSV."
+- "Run seo-access-reach in re-check mode."
+- "Run seo-access-performance in audit mode on /products/*. Output: CSV."
 
 The target defaults to the project in the working directory, or its deployed domain. In `fix`, the target is a set of findings: ids (the short `ref` such as `R-03`, or the full `id`) or a rule. In `re-check`, the target defaults to every finding in `.seo/state.json`.
 
@@ -85,7 +85,7 @@ Auto-mode is when the user says "just do it", "don't ask", "run unattended", or 
 - **It does not change the default mode.** An unattended run with no mode named is an `audit`.
 - **In `fix`, it never widens approval beyond low-risk, reversible items.** Apply those without asking; queue everything else as `needs-human` with a recommended option, and carry on.
 - **`audit` and `re-check` are unaffected**, since neither changes the site.
-- A scheduled `re-check` is the normal way to run the pack in CI (`seo-automations`).
+- A scheduled `re-check` is the normal way to run the pack in CI (`seo-operations-automation`).
 
 ---
 
@@ -163,7 +163,7 @@ Use the strongest tool available, and record which one produced each piece of ev
 
 3. **A fetch tool (low confidence).** Many agent fetch tools return converted Markdown or a summary, strip the `<head>`, drop scripts and JSON-LD, or run the page through a model. Use one to read visible copy when nothing else exists. Never use it to judge headers, metadata, canonicals, structured data or rendering, and mark any finding from it as low confidence.
 
-If the site sits behind a CDN or bot protection, responses can differ by user agent. See `1-reach-indexation/references/edge-cdn-and-bot-access.md` before concluding a crawler sees what you see.
+If the site sits behind a CDN or bot protection, responses can differ by user agent. See `seo-access-reach/references/edge-cdn-and-bot-access.md` before concluding a crawler sees what you see.
 
 ---
 
@@ -198,7 +198,7 @@ The findings and their order are the same for both. Only the wording changes.
 
 A chat report is the default. Add others when asked, or when the setting implies one (a PR description when you opened a branch; tickets when the user mentions Linear or Jira). Every export is generated from the same findings, in the shared schema, so they never disagree.
 
-- **`.seo/` state:** `audit.md`, `state.json`, `log.md` (written by all three modes, but not in chat-only runs), and `context.md` (written by `seo-context-gathering`).
+- **`.seo/` state:** `audit.md`, `state.json`, `log.md` (written by all three modes, but not in chat-only runs), and `context.md` (written by `seo-identity-context`).
 - **CSV:** one row per finding. Header:
   ```
   id,skill,area,target,severity,evidence,fix,risk,status,verified,notes
@@ -247,6 +247,6 @@ For a sitemap index, read `sitemapindex.sitemap.loc` instead of `urlset.url.loc`
 
 A few hundred fetches usually covers a large site. That size is judgement, not a rule: stop adding samples when new ones stop producing new findings.
 
-**3. Be polite.** One connection, 1 to 2 requests a second (a judgement call for an unannounced audit; go slower if responses slow down). Honour robots.txt for your user agent. Back off on `429` or `503` and respect `Retry-After`. Send an honest user agent for the crawl. Do not run a sampled crawl as Googlebot: sites can check a claimed Googlebot by reverse DNS or against Google's published IP ranges (verified 2026-10, [Google: verifying Googlebot](https://developers.google.com/crawling/docs/crawlers-fetchers/verify-google-requests)), so a spoofed one is often blocked or challenged and you end up auditing a response no real crawler gets. Deliberate user-agent comparisons on a few URLs belong in `1-reach-indexation/references/edge-cdn-and-bot-access.md`.
+**3. Be polite.** One connection, 1 to 2 requests a second (a judgement call for an unannounced audit; go slower if responses slow down). Honour robots.txt for your user agent. Back off on `429` or `503` and respect `Retry-After`. Send an honest user agent for the crawl. Do not run a sampled crawl as Googlebot: sites can check a claimed Googlebot by reverse DNS or against Google's published IP ranges (verified 2026-10, [Google: verifying Googlebot](https://developers.google.com/crawling/docs/crawlers-fetchers/verify-google-requests)), so a spoofed one is often blocked or challenged and you end up auditing a response no real crawler gets. Deliberate user-agent comparisons on a few URLs belong in `seo-access-reach/references/edge-cdn-and-bot-access.md`.
 
-**4. Write template-level findings.** Set `target` to the template pattern (`/products/*`), list the sampled URLs in `evidence`, and call a finding template-wide only when at least two samples show it. One fix in a template fixes every page on it, which is why template findings sort high in `prioritisation.md`. For crawl-budget questions (what crawlers actually fetch), hand over to `seo-log-analysis`.
+**4. Write template-level findings.** Set `target` to the template pattern (`/products/*`), list the sampled URLs in `evidence`, and call a finding template-wide only when at least two samples show it. One fix in a template fixes every page on it, which is why template findings sort high in `prioritisation.md`. For crawl-budget questions (what crawlers actually fetch), hand over to `seo-access-logs`.

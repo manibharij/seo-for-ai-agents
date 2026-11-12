@@ -18,7 +18,7 @@ Each skill checks, at its Verify step, whether a relevant server is available, a
 2. **`curl` or `Invoke-WebRequest`:** exact raw HTML, status, redirects and headers. High confidence for everything except rendering, which is enough to pass most of Reach.
 3. **The agent's built-in fetch tool** (WebFetch and similar): low confidence. Many return converted Markdown or a model's summary, with the `<head>` and response headers stripped. Use it to confirm visible text is reachable, never to judge `<head>` tags, headers, `noindex` or raw versus rendered, and say in the report when it was all you had.
 
-A skill should never block on a missing MCP: rung 2 is available almost everywhere and carries most checks on its own. It should, however, be honest about which rung produced each finding. Exact commands are in `skills/1-reach-indexation/references/verification.md`.
+A skill should never block on a missing MCP: rung 2 is available almost everywhere and carries most checks on its own. It should, however, be honest about which rung produced each finding. Exact commands are in `skills/seo-access-reach/references/verification.md`.
 
 ---
 
@@ -43,7 +43,7 @@ When writing or extending a skill's Verify step, follow this shape:
 
 Keep the `curl` path first-class. The MCP is an accelerator, never a gate.
 
-**A note on the edge.** None of these tools fetches from a crawler's IP. A WAF or CDN that verifies bots by IP can treat them differently from Googlebot or an AI crawler, so pair them with Search Console URL Inspection or verified log lines when a block is suspected (see `skills/1-reach-indexation/references/edge-cdn-and-bot-access.md`).
+**A note on the edge.** None of these tools fetches from a crawler's IP. A WAF or CDN that verifies bots by IP can treat them differently from Googlebot or an AI crawler, so pair them with Search Console URL Inspection or verified log lines when a block is suspected (see `skills/seo-access-reach/references/edge-cdn-and-bot-access.md`).
 
 ---
 

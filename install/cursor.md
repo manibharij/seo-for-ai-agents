@@ -11,34 +11,34 @@ Cursor uses **Project Rules** — Markdown-with-frontmatter files in `.cursor/ru
 ```
 <your-project>/.cursor/rules/
 ├── seo-audit.mdc            # the all-rounder: audit mode, changes nothing (best default)
-├── 1-reach-indexation.mdc
-├── 2-read-content.mdc
-├── 3-understand-schema.mdc
-├── 4-connect-architecture.mdc
-├── 5-rank-relevance.mdc
-├── cite-aeo-geo.mdc        # AEO layer on top (once a page can rank)
-├── seo-context-gathering.mdc # learn the business first
-├── seo-search-data.mdc     # your own search data: indexing, traffic, change impact
-├── seo-launch-qa.mdc       # pre-launch and go-live checks
-├── seo-performance.mdc     # Core Web Vitals deep work
-├── seo-migrations.mdc       # URL changes / redirects
-├── seo-measurement-setup.mdc
-├── seo-content-audit.mdc    # content: assess + recommend actions
-├── seo-content-editing.mdc  # content: improve real copy (edit, not generate)
-├── seo-positioning-strategy.mdc
-├── seo-proposal-roadmap.mdc
-├── seo-automations.mdc      # CI/CD regression gate + scheduled audits
-├── seo-media.mdc            # image & video SEO
-├── seo-programmatic.mdc     # white-hat pages-at-scale
-├── seo-log-analysis.mdc     # server-log & crawl-budget (large sites)
-└── seo-offsite-authority.mdc # off-page: backlinks + link-building strategy
+├── seo-access-reach.mdc
+├── seo-access-read.mdc
+├── seo-access-understand.mdc
+├── seo-access-connect.mdc
+├── seo-substance-quality.mdc
+├── seo-surface-assistants.mdc        # the AI assistant surface (once a page can rank)
+├── seo-identity-context.mdc # learn the business first
+├── seo-demand-search-data.mdc     # your own search data: indexing, traffic, change impact
+├── seo-operations-launch-qa.mdc       # pre-launch and go-live checks
+├── seo-access-performance.mdc     # Core Web Vitals deep work
+├── seo-access-migrations.mdc       # URL changes / redirects
+├── seo-operations-measurement.mdc
+├── seo-substance-content-audit.mdc    # content: assess + recommend actions
+├── seo-substance-content-editing.mdc  # content: improve real copy (edit, not generate)
+├── seo-identity-positioning.mdc
+├── seo-operations-reporting.mdc
+├── seo-operations-automation.mdc      # CI/CD regression gate + scheduled audits
+├── seo-substance-media.mdc            # image & video SEO
+├── seo-substance-at-scale.mdc     # white-hat pages-at-scale
+├── seo-access-logs.mdc     # server-log & crawl-budget (large sites)
+└── seo-distribution-authority.mdc # off-page: backlinks + link-building strategy
 ```
 
 ## Converting a skill to a rule
 
 For each skill, create a `.mdc` file with Cursor frontmatter, then paste the skill's body. Use the **copy-paste mini** versions (`install/copy-paste/*.md`) as the body — they're self-contained (no `references/` needed), which suits a single rule file.
 
-Example — `.cursor/rules/1-reach-indexation.mdc`:
+Example — `.cursor/rules/seo-access-reach.mdc`:
 
 ```mdc
 ---
@@ -53,29 +53,29 @@ alwaysApply: false
 
 Repeat for each mini:
 - `seo-audit.mdc` ← `copy-paste/audit.md` *(the all-rounder: audits and records findings, changes nothing; make this your go-to broad rule)*
-- `1-reach-indexation.mdc` ← `copy-paste/reach.md`
-- `2-read-content.mdc` ← `copy-paste/read.md`
-- `3-understand-schema.mdc` ← `copy-paste/understand.md`
-- `4-connect-architecture.mdc` ← `copy-paste/connect.md`
-- `5-rank-relevance.mdc` ← `copy-paste/rank.md`
-- `cite-aeo-geo.mdc` ← `copy-paste/cite.md`
+- `seo-access-reach.mdc` ← `copy-paste/reach.md`
+- `seo-access-read.mdc` ← `copy-paste/read.md`
+- `seo-access-understand.mdc` ← `copy-paste/understand.md`
+- `seo-access-connect.mdc` ← `copy-paste/connect.md`
+- `seo-substance-quality.mdc` ← `copy-paste/rank.md`
+- `seo-surface-assistants.mdc` ← `copy-paste/cite.md`
 - `seo-fix.mdc` ← `copy-paste/fix.md` *(applies approved findings only)*
 - `seo-recheck.mdc` ← `copy-paste/recheck.md` *(re-tests findings, changes nothing)*
-- `seo-context-gathering.mdc` ← `copy-paste/context.md`
-- `seo-search-data.mdc` ← `copy-paste/search-data.md`
-- `seo-launch-qa.mdc` ← `copy-paste/launch-qa.md`
-- `seo-performance.mdc` ← `copy-paste/performance.md`
-- `seo-migrations.mdc` ← `copy-paste/migrations.md`
-- `seo-measurement-setup.mdc` ← `copy-paste/measurement.md`
-- `seo-content-audit.mdc` ← `copy-paste/content-audit.md`
-- `seo-content-editing.mdc` ← `copy-paste/content-editing.md`
-- `seo-positioning-strategy.mdc` ← `copy-paste/positioning-strategy.md`
-- `seo-proposal-roadmap.mdc` ← `copy-paste/proposal-roadmap.md`
-- `seo-automations.mdc` ← `copy-paste/automations.md`
-- `seo-media.mdc` ← `copy-paste/media.md`
-- `seo-programmatic.mdc` ← `copy-paste/programmatic.md`
-- `seo-log-analysis.mdc` ← `copy-paste/log-analysis.md`
-- `seo-offsite-authority.mdc` ← `copy-paste/offsite.md`
+- `seo-identity-context.mdc` ← `copy-paste/context.md`
+- `seo-demand-search-data.mdc` ← `copy-paste/search-data.md`
+- `seo-operations-launch-qa.mdc` ← `copy-paste/launch-qa.md`
+- `seo-access-performance.mdc` ← `copy-paste/performance.md`
+- `seo-access-migrations.mdc` ← `copy-paste/migrations.md`
+- `seo-operations-measurement.mdc` ← `copy-paste/measurement.md`
+- `seo-substance-content-audit.mdc` ← `copy-paste/content-audit.md`
+- `seo-substance-content-editing.mdc` ← `copy-paste/content-editing.md`
+- `seo-identity-positioning.mdc` ← `copy-paste/positioning-strategy.md`
+- `seo-operations-reporting.mdc` ← `copy-paste/proposal-roadmap.md`
+- `seo-operations-automation.mdc` ← `copy-paste/automations.md`
+- `seo-substance-media.mdc` ← `copy-paste/media.md`
+- `seo-substance-at-scale.mdc` ← `copy-paste/programmatic.md`
+- `seo-access-logs.mdc` ← `copy-paste/log-analysis.md`
+- `seo-distribution-authority.mdc` ← `copy-paste/offsite.md`
 
 `copy-paste/audit.md` is effectively the orchestrator in a single file — it walks the whole ladder, writes the `.seo/` state, and handles first-run vs progression. For broad requests, point Cursor at that rule. (The deeper lifecycle/profiles/adapters references live in `skills/seo-orchestrator/references/`; copy the ones you want into `docs/seo/` and cite them if you need that depth.)
 

@@ -17,7 +17,7 @@ It walks the ladder top-to-bottom on a sample of templates (home, a feature page
 - **Understand** 🔴 — **no schema anywhere** (the floor).
 - **Connect** ✅ — links and canonicals fine.
 - **Rank** ✅ — pages match the intent they target and the content is solid (the owned-media half; off-site authority isn't scored here).
-- **Cite** *(the layer on top, not a rung)* 🟡 — the pricing answer is buried under "Our Approach" prose.
+- **Assistants** *(a surface, not a rung)* 🟡 — the pricing answer is buried under "Our Approach" prose.
 
 It writes the baseline into the project — a real `.seo/` folder the developer can read:
 

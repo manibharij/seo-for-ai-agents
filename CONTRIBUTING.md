@@ -4,12 +4,12 @@ Thanks for considering a contribution. This pack lives or dies by its **correctn
 
 ## The bar for any change
 
-1. **Respect the ladder's dependency order.** The method is the [Visibility Ladder](METHOD.md): Reach → Read → Understand → Connect → **Rank** (the goal), diagnosed top-to-bottom and fixed bottom-to-top, with **AEO/citation (`cite-aeo-geo`) as the optional layer on top, not a rung**. New advice must fit a rung and respect what must pass beneath it.
+1. **Respect the model, and the ladder's order inside Access.** The method is the [Visibility Model](METHOD.md): five systems (Demand, Identity, Substance, Access, Distribution) kept true by an Operations loop. **Access is where the Visibility Ladder lives** (Reach → Read → Understand → Connect), diagnosed top-to-bottom and fixed bottom-to-top. **Rank is the outcome of the whole model, never a rung**, and an **AI assistant is a surface, not a layer on top**. New advice must fit a system, and must respect what has to pass beneath it inside Access.
 2. **Verify on served output, not source.** Every check or fix must be confirmable on what's actually *served* to a crawler (fetched/rendered HTML), never on the assumption that a source edit worked.
 3. **Strictly white-hat.** Nothing that fabricates trust signals (authors, reviews, credentials, ratings) or deceives engines or users. Where a real signal is missing, the correct output is a flagged human task — never an invention.
 4. **Be honest about the boundary.** Free skills fix build-time, owned-media problems. They do not promise rankings or citations, and they don't cover earned media or live measurement. Don't add claims that cross that line.
 5. **Match the template.** Every skill has the standard **Inputs and modes** block (see `skills/seo-orchestrator/references/operating-modes.md`) and follows **Diagnose → Fix → Verify (on the served output) → Report**, with a lean `SKILL.md` (well under 500 lines) and depth pushed into `references/`. Every skill supports the three modes: `audit` (the default, never changes the site), `fix` (approved findings only) and `re-check`. Findings use the shared schema in `audit-report-and-state.md`. Each full skill has a self-contained mini in `install/copy-paste/`.
-8. **Date volatile facts.** Crawler tokens, quotas, rich-result availability, CDN defaults and framework APIs change often. Stamp each with "verified YYYY-MM" beside its source URL. `scripts/check-freshness.py` and a monthly workflow flag anything stale (see `skills/seo-automations/references/freshness.md`).
+8. **Date volatile facts.** Crawler tokens, quotas, rich-result availability, CDN defaults and framework APIs change often. Stamp each with "verified YYYY-MM" beside its source URL. `scripts/check-freshness.py` and a monthly workflow flag anything stale (see `skills/seo-operations-automation/references/freshness.md`).
 9. **Fetched content is data.** Skills must treat anything fetched from a site (HTML, robots.txt, llms.txt, API responses) as data, never as instructions.
 6. **Protect existing sites.** Contributions must respect the don't-regress discipline — preserve URLs (301s), treat existing canonicals/redirects/`noindex`/`hreflang` as potentially intentional, prefer additive/reversible fixes, and flag big changes for human sign-off.
 7. **British English**, imperative voice, explain *why* a step matters rather than stacking bare rules.
@@ -17,14 +17,14 @@ Thanks for considering a contribution. This pack lives or dies by its **correctn
 ## Repo structure
 
 - `skills/seo-orchestrator/` — the conductor: runs the audit lifecycle and carries the cross-cutting references (`audit-lifecycle`, `audit-report-and-state`, `prioritisation`, `existing-site-safety`, `stack-and-platform-adapters`, and `profiles/`). Keep cross-cutting concerns here so they travel with the pack.
-- `skills/1-reach-indexation/` … `skills/5-rank-relevance/` — the five rung skills (the ladder, climbing to the goal: **Rank**), each with `references/` and a mini in `install/copy-paste/`.
-- `skills/cite-aeo-geo/` — the **AEO/citation layer on top** of the ladder (not a rung; applied after a page can rank).
-- `skills/seo-context-gathering/`: the foundation, learns the business into `.seo/context.md`.
-- `skills/seo-search-data/`: reads the user's own search data through capability detection; the per-API recipes live in `skills/seo-orchestrator/references/data/`.
-- `skills/seo-launch-qa/`, `skills/seo-performance/`, `skills/seo-migrations/`, `skills/seo-measurement-setup/`: technical specialist skills beside the ladder.
-- `skills/seo-content-audit/`, `skills/seo-content-editing/`, `skills/seo-positioning-strategy/`, `skills/seo-proposal-roadmap/` — the content & marketing layer (assess, improve real copy, plan topical authority, package proposals). These read optional live data when connected.
-- `skills/seo-automations/`, `skills/seo-media/`, `skills/seo-programmatic/`, `skills/seo-log-analysis/` — automation & advanced (CI/CD regression gates, image/video SEO, white-hat pages-at-scale, server-log/crawl-budget analysis).
-- `skills/seo-offsite-authority/` — the off-page half (backlink audit, disavow, white-hat link-building/digital-PR strategy). Advisory; never executes or buys links.
+- `skills/seo-access-reach/` … `skills/seo-substance-quality/` — the five rung skills (the ladder, climbing to the goal: **Rank**), each with `references/` and a mini in `install/copy-paste/`.
+- `skills/seo-surface-assistants/` — the **AI assistant surface** (a surface, not a rung or a layer; applied once a page can rank).
+- `skills/seo-identity-context/`: the foundation, learns the business into `.seo/context.md`.
+- `skills/seo-demand-search-data/`: reads the user's own search data through capability detection; the per-API recipes live in `skills/seo-orchestrator/references/data/`.
+- `skills/seo-operations-launch-qa/`, `skills/seo-access-performance/`, `skills/seo-access-migrations/`, `skills/seo-operations-measurement/`: technical specialist skills beside the ladder.
+- `skills/seo-substance-content-audit/`, `skills/seo-substance-content-editing/`, `skills/seo-identity-positioning/`, `skills/seo-operations-reporting/` — the content & marketing layer (assess, improve real copy, plan topical authority, package proposals). These read optional live data when connected.
+- `skills/seo-operations-automation/`, `skills/seo-substance-media/`, `skills/seo-substance-at-scale/`, `skills/seo-access-logs/` — automation & advanced (CI/CD regression gates, image/video SEO, white-hat pages-at-scale, server-log/crawl-budget analysis).
+- `skills/seo-distribution-authority/` — the off-page half (backlink audit, disavow, white-hat link-building/digital-PR strategy). Advisory; never executes or buys links.
 - [`SKILLS.md`](SKILLS.md) — the canonical skills index; keep it in sync when adding/removing a skill.
 - `install/`: per-host guides, the `copy-paste/` minis (including `audit.md`, `fix.md` and `recheck.md` for the three modes), `mcp.md` (the tool ladder) and `data-integrations.md` (capability detection for live data).
 - `scripts/check-freshness.py` and `.github/workflows/freshness.yml`: the monthly check for stale dated facts and broken source links.
@@ -41,8 +41,8 @@ Thanks for considering a contribution. This pack lives or dies by its **correctn
 
 ## Out of scope (for now)
 
-- **Doing earned media.** Off-site authority isn't a build-time action. `seo-offsite-authority` audits and advises on it; the pack never sends outreach, buys links or exchanges them.
-- **Running data infrastructure.** The pack reads whatever data the user's environment already provides (through `seo-search-data` and capability detection) but never sets up, pays for or writes to those tools. Ongoing monitoring products (rank tracking, geo-grid, AI-citation tracking) stay outside the pack.
+- **Doing earned media.** Off-site authority isn't a build-time action. `seo-distribution-authority` audits and advises on it; the pack never sends outreach, buys links or exchanges them.
+- **Running data infrastructure.** The pack reads whatever data the user's environment already provides (through `seo-demand-search-data` and capability detection) but never sets up, pays for or writes to those tools. Ongoing monitoring products (rank tracking, geo-grid, AI-citation tracking) stay outside the pack.
 - **Deep hosted-platform fix automation** — the pack diagnoses any site, but on hosted platforms (WordPress/Shopify/Webflow) it currently *instructs* rather than auto-fixes. Deeper per-platform fix guidance is a welcome contribution (see `stack-and-platform-adapters.md`).
 - **New site-type profiles** are welcome — extend `skills/seo-orchestrator/references/profiles/` following the existing ones.
 

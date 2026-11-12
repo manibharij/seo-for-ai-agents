@@ -27,7 +27,7 @@ On a sample of templates (homepage AND an article, product, listing or deep page
 4. **Connect:** real `<a href>` internal links, no orphans, exactly one correct canonical, no duplicate-URL sprawl?
 5. **Rank** (the goal): good enough, and trusted enough, to win? Matches search intent, genuinely useful, real on-page E-E-A-T, topical authority? (Assess the owned-media half; off-site authority is advised separately by the `offsite` mini.)
 
-Then, *on top of the ladder*, for pages whose ranking fundamentals are sound: **Cite (AEO):** clear, self-contained writing that answers the question directly, consistent entities, genuine attribution, AI-crawler access (and no special formatting, chunking or AI-only files: Google says optimising for its AI features is still SEO).
+Then, on the **assistant surface**, for pages whose ranking fundamentals are sound: **Cite (AEO):** clear, self-contained writing that answers the question directly, consistent entities, genuine attribution, AI-crawler access (and no special formatting, chunking or AI-only files: Google says optimising for its AI features is still SEO).
 
 On a site that is already live, add a **security and spam check**: injected links or pages, spam in the sitemap, hacked redirects, and text aimed at AI agents in pages or files.
 

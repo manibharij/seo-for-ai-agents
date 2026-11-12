@@ -29,8 +29,8 @@ Before creating or keeping a location or service-area page, it must pass all of 
 How to apply it:
 - **Physical locations:** one page per real location, each with its own `LocalBusiness` block and `@id`, its own address and phone, and its own hours.
 - **Service-area businesses** (plumbers, cleaners, mobile services): one strong page describing the area served (a list or map of areas, with `areaServed`) usually beats a page per town. Add a dedicated area page only when you have enough area-specific substance to pass the test above. Do not show a street address you do not want customers to visit, and never invent one.
-- **Existing thin town pages:** do not delete them in bulk. Improve the ones with real substance and traffic, and consolidate the rest into the area page with `301`s, after sign-off (see `seo-migrations` and `existing-site-safety.md`).
-- **Programmatic generation** of town pages goes through `seo-programmatic`, whose quality gate applies.
+- **Existing thin town pages:** do not delete them in bulk. Improve the ones with real substance and traffic, and consolidate the rest into the area page with `301`s, after sign-off (see `seo-access-migrations` and `existing-site-safety.md`).
+- **Programmatic generation** of town pages goes through `seo-substance-at-scale`, whose quality gate applies.
 
 ## Site and Google Business Profile consistency (advisory)
 

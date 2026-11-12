@@ -5,7 +5,7 @@ Use for sites selling products (Shopify, WooCommerce, custom). The risks concent
 ## How each rung shifts
 - **Reach** — two big risks: (1) **prices/stock rendered client-side** so crawlers see an empty or price-less page; (2) **faceted navigation** (filters/sort) generating near-infinite crawlable URLs that waste crawl budget and create duplicates. Ensure product content (incl. price) is in the served HTML; control facet URLs deliberately.
 - **Read** — unique product descriptions, not just manufacturer boilerplate duplicated across the web and across your own variants. Category pages need real introductory content, not just a grid.
-- **Understand:** `Product` with `Offer` (`price`, `priceCurrency`, `availability`), `brand`, and `aggregateRating`/`review` **only if real**. On pages where people can buy, add the merchant listing fields (shipping, returns, identifiers) and `ProductGroup` for variants; see `3-understand-schema/references/schema-types-and-jsonld.md`. `BreadcrumbList`. High value here.
+- **Understand:** `Product` with `Offer` (`price`, `priceCurrency`, `availability`), `brand`, and `aggregateRating`/`review` **only if real**. On pages where people can buy, add the merchant listing fields (shipping, returns, identifiers) and `ProductGroup` for variants; see `seo-access-understand/references/schema-types-and-jsonld.md`. `BreadcrumbList`. High value here.
 - **Connect** — **canonicals across variants** are critical: colour/size variants, query-param and faceted URLs must canonicalise to the right page so equity consolidates. Avoid duplicate product URLs competing.
 - **Cite** — buying-intent and comparison queries: clear specs, comparison tables, genuine reviews, and honest, direct answers to buyer questions ("Is X waterproof?") in the product copy make product content citable.
 
@@ -19,7 +19,7 @@ Most shops send Google the same facts twice: in a Merchant Center feed and on th
 - **Shipping and returns** set in Merchant Center or Search Console take precedence over markup. Make the markup agree with them rather than compete.
 - **Served, not patched:** the price must be correct in the raw HTML. A placeholder that JavaScript replaces after load fails, even if shoppers see the right number.
 
-Run the parity checklist in `3-understand-schema/references/validation.md` on a sample (a simple product, a variant, a sale item, an out-of-stock item). Reading the Merchant Center account itself needs the owner's access; without it, list the feed comparison as `needs-human`.
+Run the parity checklist in `seo-access-understand/references/validation.md` on a sample (a simple product, a variant, a sale item, an out-of-stock item). Reading the Merchant Center account itself needs the owner's access; without it, list the feed comparison as `needs-human`.
 
 ## Variant URLs
 
@@ -28,7 +28,7 @@ Google's ecommerce URL guidance (verified 2026-10) accepts a variant as a path s
 - **Single-page design** (one page, a picker, `?size=large` preselects): the page canonicalises to the URL without variant parameters, and `ProductGroup` markup lists each variant with its own `offers.url`.
 - **Multi-page design** (each variant its own page): each page self-canonicalises and carries full markup for its variant.
 - Do not let sort, tracking or session parameters create further copies of variant URLs; canonicalise those to the clean URL.
-- On an existing shop, treat the current variant URL scheme as intentional. Changing it is a migration (`seo-migrations`), with redirects and sign-off.
+- On an existing shop, treat the current variant URL scheme as intentional. Changing it is a migration (`seo-access-migrations`), with redirects and sign-off.
 
 ## Faceted navigation
 
@@ -45,7 +45,7 @@ Follow Google's faceted navigation guidance (https://developers.google.com/crawl
 - **Discontinued with a real replacement:** `301` to the successor or the closest equivalent product, and say so on the target page. Redirecting everything to the homepage or a loosely related category is a judgement call Google may treat as a soft 404; prefer a genuinely equivalent target.
 - **Discontinued with no replacement:** keep a useful page (specs, support, alternatives) if people still search for it; otherwise return `404` or `410`. Remove it from the feed and the sitemap either way.
 - **Empty categories:** Google's guidance is to `noindex` them, or return `404` if the category is removed from the site's navigation.
-- Bulk changes (a range withdrawn, a season rolled over) go through `seo-migrations` for the redirect map.
+- Bulk changes (a range withdrawn, a season rolled over) go through `seo-access-migrations` for the redirect map.
 
 ## Type-specific checks
 - **Faceted/filter URLs:** decide per facet, as above. Coordinate robots + canonical (see Connect + Reach).

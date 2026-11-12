@@ -106,13 +106,13 @@ Put it at the end of the chat report and in that run's `.seo/log.md` entry. In f
 
 ## 6. How the skills use it
 
-- **`seo-search-data`** owns live search data: indexing triage, protecting pages that earn traffic, demand mapping, measuring changes, AI visibility. Other skills call into its recipes rather than repeating them.
+- **`seo-demand-search-data`** owns live search data: indexing triage, protecting pages that earn traffic, demand mapping, measuring changes, AI visibility. Other skills call into its recipes rather than repeating them.
 - **The orchestrator** detects the tier in Step 0 and weights `prioritisation.md` impact by real clicks, impressions and conversions when present.
-- **`1-reach-indexation`** checks its served-output verdict against URL Inspection where available.
-- **`seo-performance`** decides from CrUX field data and proves fixes in the lab.
-- **`seo-content-audit`, `seo-positioning-strategy`, `seo-context-gathering`** use query data for vocabulary, decay and cannibalisation, and keyword tools for demand.
-- **`seo-offsite-authority`** uses backlink capabilities.
-- **`cite-aeo-geo`** uses AI answer mentions where they exist and prompt sampling otherwise.
+- **`seo-access-reach`** checks its served-output verdict against URL Inspection where available.
+- **`seo-access-performance`** decides from CrUX field data and proves fixes in the lab.
+- **`seo-substance-content-audit`, `seo-identity-positioning`, `seo-identity-context`** use query data for vocabulary, decay and cannibalisation, and keyword tools for demand.
+- **`seo-distribution-authority`** uses backlink capabilities.
+- **`seo-surface-assistants`** uses AI answer mentions where they exist and prompt sampling otherwise.
 
 Without data, each of these runs exactly as before and says its basis.
 

@@ -19,27 +19,27 @@ Copy each skill directory (the folder containing `SKILL.md` and its `references/
 ```
 ~/.claude/skills/
 ├── seo-orchestrator/        # the conductor — runs the audit lifecycle; carries shared references (lifecycle, profiles, stack/platform adapters)
-├── 1-reach-indexation/
-├── 2-read-content/
-├── 3-understand-schema/
-├── 4-connect-architecture/
-├── 5-rank-relevance/        # rung 5 (the goal): good enough, and trusted enough, to win
-├── cite-aeo-geo/            # the AEO layer on top of the ladder (once a page can rank)
-├── seo-context-gathering/   # foundation: learns the business, writes .seo/context.md
-├── seo-search-data/         # data: reads the user's own search data (indexing, traffic, demand, change impact)
-├── seo-launch-qa/           # specialist: pre-launch and go-live checks
-├── seo-performance/         # specialist: Core Web Vitals deep work
-├── seo-migrations/          # specialist: URL changes / redirects / site moves
-├── seo-measurement-setup/   # specialist: analytics / Search Console / web-vitals plumbing
-├── seo-content-audit/       # content: assess content, recommend actions
-├── seo-content-editing/     # content: improve real copy (edit, not generate)
-├── seo-positioning-strategy/# content: topical authority + positioning plan
-├── seo-proposal-roadmap/    # content: package findings into a proposal/roadmap
-├── seo-automations/         # automation: CI/CD regression gate + scheduled audits
-├── seo-media/               # advanced: image & video SEO
-├── seo-programmatic/        # advanced: white-hat pages-at-scale from data
-├── seo-log-analysis/        # advanced: server-log & crawl-budget analysis
-└── seo-offsite-authority/   # off-page: backlink audit + white-hat link-building strategy
+├── seo-access-reach/
+├── seo-access-read/
+├── seo-access-understand/
+├── seo-access-connect/
+├── seo-substance-quality/        # Substance: good enough, and trusted enough, to win
+├── seo-surface-assistants/            # the AI assistant surface (once a page can rank)
+├── seo-identity-context/   # foundation: learns the business, writes .seo/context.md
+├── seo-demand-search-data/         # data: reads the user's own search data (indexing, traffic, demand, change impact)
+├── seo-operations-launch-qa/           # specialist: pre-launch and go-live checks
+├── seo-access-performance/         # specialist: Core Web Vitals deep work
+├── seo-access-migrations/          # specialist: URL changes / redirects / site moves
+├── seo-operations-measurement/   # specialist: analytics / Search Console / web-vitals plumbing
+├── seo-substance-content-audit/       # content: assess content, recommend actions
+├── seo-substance-content-editing/     # content: improve real copy (edit, not generate)
+├── seo-identity-positioning/# content: topical authority + positioning plan
+├── seo-operations-reporting/    # content: package findings into a proposal/roadmap
+├── seo-operations-automation/         # automation: CI/CD regression gate + scheduled audits
+├── seo-substance-media/               # advanced: image & video SEO
+├── seo-substance-at-scale/        # advanced: white-hat pages-at-scale from data
+├── seo-access-logs/        # advanced: server-log & crawl-budget analysis
+└── seo-distribution-authority/   # off-page: backlink audit + white-hat link-building strategy
 ```
 
 Copy the **whole `skills/` folder** — keep the skills together. The orchestrator holds the cross-cutting references (audit lifecycle, site-type profiles, stack/platform adapters) the others rely on.
@@ -73,27 +73,27 @@ Once installed, just describe the problem — the descriptions are written to tr
 
 - *"Audit my site's SEO"* / *"why isn't my site showing up?"* → the **orchestrator** runs the audit lifecycle, usually starting at **Reach**.
 - *"Add structured data to my product pages."* → **Understand**.
-- *"Why am I not ranking / improve my rankings."* → the **orchestrator** climbs to **Rank** (rung 5).
+- *"Why am I not ranking / improve my rankings."* → the **orchestrator** works **Substance** and **Identity**, the systems that earn ranking.
 - *"Help my pages get cited by ChatGPT and AI Overviews."* → the **orchestrator** ranks the page first, then applies the **Cite (AEO)** layer.
-- *"We're about to launch"* / *"what will stop this ranking?"* → **`seo-launch-qa`**.
-- *"Our Core Web Vitals are failing"* / *"fix our LCP"* → **`seo-performance`**.
-- *"Why aren't these pages indexed?"* / *"did our change work?"* → **`seo-search-data`** (uses whatever search data your environment already has).
-- *"Understand our business before writing anything."* → **`seo-context-gathering`**.
-- *"We're redesigning / changing our URLs — don't lose rankings."* → **`seo-migrations`**.
-- *"Set up analytics and Search Console."* → **`seo-measurement-setup`**.
-- *"Audit my content / which pages should I update or cut?"* → **`seo-content-audit`**.
-- *"Improve / tighten this page's copy."* → **`seo-content-editing`**.
-- *"What topics should we own / how do we differentiate?"* → **`seo-positioning-strategy`**.
-- *"Put together an SEO proposal / roadmap."* → **`seo-proposal-roadmap`**.
-- *"Catch SEO regressions in CI / GitHub Action for SEO."* → **`seo-automations`**.
-- *"Get my images/videos into search."* → **`seo-media`**.
-- *"Generate location/product pages at scale."* → **`seo-programmatic`**.
-- *"What is Googlebot actually crawling / crawl budget."* → **`seo-log-analysis`**.
-- *"Audit my backlinks / how do I get more authority?"* → **`seo-offsite-authority`**.
+- *"We're about to launch"* / *"what will stop this ranking?"* → **`seo-operations-launch-qa`**.
+- *"Our Core Web Vitals are failing"* / *"fix our LCP"* → **`seo-access-performance`**.
+- *"Why aren't these pages indexed?"* / *"did our change work?"* → **`seo-demand-search-data`** (uses whatever search data your environment already has).
+- *"Understand our business before writing anything."* → **`seo-identity-context`**.
+- *"We're redesigning / changing our URLs — don't lose rankings."* → **`seo-access-migrations`**.
+- *"Set up analytics and Search Console."* → **`seo-operations-measurement`**.
+- *"Audit my content / which pages should I update or cut?"* → **`seo-substance-content-audit`**.
+- *"Improve / tighten this page's copy."* → **`seo-substance-content-editing`**.
+- *"What topics should we own / how do we differentiate?"* → **`seo-identity-positioning`**.
+- *"Put together an SEO proposal / roadmap."* → **`seo-operations-reporting`**.
+- *"Catch SEO regressions in CI / GitHub Action for SEO."* → **`seo-operations-automation`**.
+- *"Get my images/videos into search."* → **`seo-substance-media`**.
+- *"Generate location/product pages at scale."* → **`seo-substance-at-scale`**.
+- *"What is Googlebot actually crawling / crawl budget."* → **`seo-access-logs`**.
+- *"Audit my backlinks / how do I get more authority?"* → **`seo-distribution-authority`**.
 
 Connect your own data tools (Search Console, DataForSEO, Ahrefs) to sharpen all of these — optional, see [data-integrations.md](data-integrations.md).
 
-You can also invoke a skill explicitly by name (e.g. "use the 1-reach-indexation skill on this site").
+You can also invoke a skill explicitly by name (e.g. "use the seo-access-reach skill on this site").
 
 The **orchestrator** is the best entry point for broad requests — it detects your stack, platform, and site type, finds the lowest failing rung, dispatches in order, and runs everything as a repeatable audit.
 

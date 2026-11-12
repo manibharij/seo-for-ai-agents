@@ -40,7 +40,7 @@ The machine state the agent updates each run. Keep it valid JSON. Suggested shap
     {
       "id": "understand-product-schema-missing",
       "ref": "R-03",
-      "skill": "3-understand-schema",
+      "skill": "seo-access-understand",
       "area": "understand",
       "rung": "understand",
       "title": "Product pages have no Product/Offer schema",
@@ -88,7 +88,7 @@ Every skill in the pack records findings in this one shape, whether it writes to
 | Field | Meaning |
 |---|---|
 | `id` | Stable, readable slug, reused across runs (`reach-blog-csr-empty-body`). |
-| `skill` | The skill that raised it (`1-reach-indexation`, `seo-performance`). |
+| `skill` | The skill that raised it (`seo-access-reach`, `seo-access-performance`). |
 | `area` | A rung name (`reach`, `read`, `understand`, `connect`, `rank`, `cite`) or the specialist's area (`migration`, `media`, `performance`, `launch`, `offsite`, `data`, `security`). `data` is a finding that comes from live data rather than the served output (Google chose another canonical, a page lost clicks). `security` covers hacked or injected content, spam, and text in fetched files aimed at AI agents (`operating-modes.md`, Fetched content is data). |
 | `target` | A URL, or a template pattern such as `/blog/*`. |
 | `severity` | `high` / `medium` / `low`. |
@@ -163,17 +163,17 @@ Keep it scannable: scorecard, the floor, prioritised open items (with `ref`), wh
 
 ## `context.md` — what the business actually is
 
-Written by **`seo-context-gathering`**, read by everything that touches content, positioning, E-E-A-T or entities. It records the offer, the audience and their vocabulary, provable differentiators, real proof assets, the house voice, what may not be claimed, and the open questions — with **every fact labelled `[established]`, `[inferred]`, `[unknown]` or `[conflict]`**.
+Written by **`seo-identity-context`**, read by everything that touches content, positioning, E-E-A-T or entities. It records the offer, the audience and their vocabulary, provable differentiators, real proof assets, the house voice, what may not be claimed, and the open questions — with **every fact labelled `[established]`, `[inferred]`, `[unknown]` or `[conflict]`**.
 
 The rule it exists to enforce: **only an established fact may reach published copy or schema.** An inference can steer strategy; it can never become a claim.
 
-Full format and a worked example: `seo-context-gathering/references/context-pack-format.md`. Like the rest of `.seo/`, it is committed — so it holds conclusions, never credentials or private customer data. Re-check the sections it marks volatile at the start of each progression run.
+Full format and a worked example: `seo-identity-context/references/context-pack-format.md`. Like the rest of `.seo/`, it is committed — so it holds conclusions, never credentials or private customer data. Re-check the sections it marks volatile at the start of each progression run.
 
 ---
 
 ## `log.md`: runs and dated changes
 
-A dated, append-only history with two kinds of entry. Run entries make the trend visible. Change entries let `re-check` and `seo-search-data` measure whether a change worked, which is impossible without knowing exactly what changed, where and when.
+A dated, append-only history with two kinds of entry. Run entries make the trend visible. Change entries let `re-check` and `seo-demand-search-data` measure whether a change worked, which is impossible without knowing exactly what changed, where and when.
 
 ### Run entry (every run, any mode)
 
@@ -201,8 +201,8 @@ A dated, append-only history with two kinds of entry. Run entries make the trend
 Rules:
 - **One change entry per applied finding**, with the date, the finding id and `ref`, the files or settings touched, and the URLs or template affected. Settings changed in a CMS or platform screen are named as precisely as files are.
 - **Use the deploy date** as the change date when you know it. If `fix` only committed to a branch, log the commit date and add the deploy date when the user reports it, or when `re-check` first sees the change live.
-- **Record a baseline** when a data capability is present (the same metrics `seo-search-data` will compare). With none, say so; never invent a figure.
-- **Pages that earn traffic** also carry the sign-off line (`existing-site-safety.md`), in the format `seo-search-data/references/demand-and-protection.md` uses.
+- **Record a baseline** when a data capability is present (the same metrics `seo-demand-search-data` will compare). With none, say so; never invent a figure.
+- **Pages that earn traffic** also carry the sign-off line (`existing-site-safety.md`), in the format `seo-demand-search-data/references/demand-and-protection.md` uses.
 
 The log is where progression becomes legible: a reader can see the site getting healthier, or where a deploy set it back, run over run.
 
@@ -218,7 +218,7 @@ One row per finding, UTF-8, comma-separated. Quote every field that contains a c
 
 ```
 id,skill,area,target,severity,evidence,fix,risk,status,verified,notes
-reach-blog-noindex,1-reach-indexation,reach,/blog/*,high,"curl: X-Robots-Tag: noindex on /blog/a and /blog/b",Remove the noindex header that headers() in next.config.ts sets for /blog/:path*,"Medium: confirm the noindex was not intentional",open,2026-10-06,
+reach-blog-noindex,seo-access-reach,reach,/blog/*,high,"curl: X-Robots-Tag: noindex on /blog/a and /blog/b",Remove the noindex header that headers() in next.config.ts sets for /blog/:path*,"Medium: confirm the noindex was not intentional",open,2026-10-06,
 ```
 
 ### Tickets (Linear, Jira)

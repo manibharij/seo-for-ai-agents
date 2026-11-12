@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seo-ai-agents.com/contracts/finding.schema.json",
+  "title": "Finding",
+  "description": "The unit of diagnosis. One problem, on one entity, in one system, with the evidence that proves it and the verification that will close it.",
+  "type": "object",
+  "required": ["id", "system", "entity", "severity", "confidence", "status", "title", "evidence", "verify"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable and readable: system.workflow.problem.entity, e.g. access.reach.noindex.blog-x"
+    },
+    "system": {
+      "type": "string",
+      "enum": ["demand", "identity", "substance", "access", "distribution", "operations"]
+    },
+    "workflow": {
+      "type": "string",
+      "description": "The workflow that produced it, e.g. access/reach. Makes the library auditable."
+    },
+    "surface": { "type": "string" },
+    "entity": {
+      "type": "object",
+      "required": ["type", "ref"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["site", "page", "location", "keyword", "competitor", "product", "author", "profile"]
+        },
+        "ref": { "type": "string" }
+      }
+    },
+    "severity": { "type": "string", "enum": ["critical", "high", "medium", "low"] },
+    "confidence": {
+      "type": "string",
+      "enum": ["established", "inferred", "unknown", "conflict"],
+      "description": "Same vocabulary as context facts. Only an established finding may be reported to a customer as fact."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["open", "proposed", "applied", "verified", "needs-human", "deferred", "wontfix", "regression"]
+    },
+    "title": { "type": "string", "maxLength": 140 },
+    "detail": {
+      "type": "string",
+      "description": "Written for a non-specialist. What is wrong, and what it costs."
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "evidence.schema.json" }
+    },
+    "fix": {
+      "type": "object",
+      "required": ["kind"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["patch", "instruction", "proposal", "advice", "escalation"],
+          "description": "advice is Distribution only. escalation means a permanently human task."
+        },
+        "instructions": { "type": "string" },
+        "patch": { "type": "string" },
+        "apply_path": {
+          "type": "string",
+          "enum": ["pull_request", "customer_agent_mcp", "profile_api", "cms_connector", "edge_snippet", "manual"]
+        },
+        "reversible": { "type": "boolean" }
+      }
+    },
+    "verify": {
+      "type": "object",
+      "required": ["method", "expect"],
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": ["served_html", "response_headers", "render_trace", "serp", "api_response", "crawl", "feed", "sampled_prompt"],
+          "description": "Never 'source'. Invariant 1."
+        },
+        "expect": { "type": "string" },
+        "verified_at": { "type": "string", "format": "date-time" },
+        "verified_evidence": { "$ref": "evidence.schema.json" }
+      }
+    },
+    "owner_role": { "type": "string" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "regressed_from": {
+      "type": "string",
+      "description": "Id of the earlier verified finding this regression reopens."
+    }
+  }
+}

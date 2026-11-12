@@ -1,6 +1,6 @@
 # Search Data: copy-paste mini (paste this into your AI coding agent)
 
-*Self-contained version of the `seo-search-data` skill. Read your live search data to see what Google actually concluded, and steer the work by it.*
+*Self-contained version of the `seo-demand-search-data` skill. Read your live search data to see what Google actually concluded, and steer the work by it.*
 
 > ⚠️ **Experimental, and run by an AI agent, which can make mistakes.** Read-only by design. Never paste API keys or customer data into a chat. See the repo's `DISCLAIMER.md`.
 

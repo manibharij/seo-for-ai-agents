@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seo-ai-agents.com/contracts/work-item.schema.json",
+  "title": "Work item",
+  "description": "What a role does next, what it is allowed to do unsupervised, what it may spend, and what finishing means. The queue of these is the product.",
+  "type": "object",
+  "required": ["id", "role", "title", "autonomy", "done_when", "status"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string" },
+    "role": { "type": "string" },
+    "job": {
+      "type": "string",
+      "enum": ["new-site", "launch", "rescue", "grow", "migrate", "scale", "ai-visible", "client-audit", "maintain"]
+    },
+    "workflow": { "type": "string" },
+    "title": { "type": "string", "maxLength": 140 },
+    "entity": {
+      "type": "object",
+      "required": ["type", "ref"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "type": "string" },
+        "ref": { "type": "string" }
+      }
+    },
+    "cadence": {
+      "type": "string",
+      "enum": ["once", "on-change", "daily", "weekly", "monthly", "quarterly"]
+    },
+    "autonomy": {
+      "type": "object",
+      "required": ["rung"],
+      "additionalProperties": false,
+      "properties": {
+        "rung": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5,
+          "description": "1 observe, 2 recommend, 3 propose, 4 execute within fences, 5 operate."
+        },
+        "approval": { "type": "string", "enum": ["required", "fenced", "auto"] },
+        "granted_by": {
+          "type": "string",
+          "enum": ["plan", "always_allow_rule", "one_off"],
+          "description": "always_allow_rule records that the customer ratcheted this themselves."
+        },
+        "rule_id": { "type": "string" }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tokens": { "type": "integer" },
+        "data_credits": { "type": "integer" },
+        "spent_tokens": { "type": "integer" },
+        "spent_credits": { "type": "integer" }
+      },
+      "description": "Measured, not estimated. A role that cannot report spend may not be trusted with rung 4."
+    },
+    "produces": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["findings", "patch", "pull_request", "draft", "post", "report", "advice", "brief"] }
+    },
+    "findings": { "type": "array", "items": { "type": "string" } },
+    "done_when": {
+      "type": "string",
+      "description": "A verifiable condition, stated as the verification that would prove it."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["queued", "running", "awaiting-approval", "applied", "verified", "blocked", "escalated", "skipped"]
+    },
+    "skipped_reason": {
+      "type": "string",
+      "description": "Invariant: a role that did nothing must say why. Silence reads as broken."
+    },
+    "scheduled_for": { "type": "string", "format": "date-time" },
+    "paused": { "type": "boolean" }
+  }
+}

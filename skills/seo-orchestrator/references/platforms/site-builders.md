@@ -78,7 +78,7 @@ Read this when Step 0 detects Webflow, Wix, Squarespace or Framer, or one of the
 
 **Failure patterns:**
 - Redirects added while the old page is still live, so they never fire.
-- The AI-crawler opt-out ticked without a decision from a person, which removes the site from those assistants' crawl (see `cite-aeo-geo/references/ai-crawlers-and-llms-txt.md`).
+- The AI-crawler opt-out ticked without a decision from a person, which removes the site from those assistants' crawl (see `seo-surface-assistants/references/ai-crawlers-and-llms-txt.md`).
 - Default page titles built from the site title with no page-specific text.
 
 ---

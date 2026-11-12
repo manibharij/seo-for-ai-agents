@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seo-ai-agents.com/contracts/context-fact.schema.json",
+  "title": "Context fact",
+  "description": "One fact about the business, carrying its provenance. The context pack is a set of these. Invariant 2: only an established fact may reach published copy, schema, or a claim made to a customer.",
+  "type": "object",
+  "required": ["key", "value", "provenance", "observed_at"],
+  "additionalProperties": false,
+  "properties": {
+    "key": {
+      "type": "string",
+      "description": "Dotted and stable, e.g. offer.primary, audience.vocabulary, proof.credentials, voice.example"
+    },
+    "value": {},
+    "provenance": {
+      "type": "string",
+      "enum": ["established", "inferred", "unknown", "conflict"],
+      "description": "established: observed in a citable source. inferred: reasoned, may guide strategy, may never be asserted. unknown: looked for, not found. conflict: sources disagree, needs a human."
+    },
+    "source": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["ref"],
+        "additionalProperties": false,
+        "properties": {
+          "ref": { "type": "string", "description": "URL, file path, or connected data source." },
+          "quote": { "type": "string", "maxLength": 1000 },
+          "retrieved_at": { "type": "string", "format": "date-time" }
+        }
+      },
+      "description": "Required in practice for established facts. A fact with no source cannot be established."
+    },
+    "observed_at": { "type": "string", "format": "date-time" },
+    "stale_after": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Facts decay. Prices, staff, opening hours and claims need re-checking."
+    },
+    "conflict_detail": {
+      "type": "string",
+      "description": "When provenance is conflict: what disagrees, so a human can settle it."
+    },
+    "publishable": {
+      "type": "boolean",
+      "description": "Derived, never hand-set: true only when provenance is established and the fact is not stale."
+    }
+  }
+}

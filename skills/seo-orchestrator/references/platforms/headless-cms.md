@@ -154,6 +154,6 @@ Check: after publishing, the live page may take up to the revalidation window to
 ---
 
 ## Related
-- Front-end rendering and Reach: `1-reach-indexation/references/rendering-ssr-csr.md`, `1-reach-indexation/references/javascript-seo.md`.
-- Per-framework metadata patterns: `2-read-content/references/metadata-titles-descriptions.md`.
-- Honest JSON-LD built from page data: `3-understand-schema/references/schema-types-and-jsonld.md`.
+- Front-end rendering and Reach: `seo-access-reach/references/rendering-ssr-csr.md`, `seo-access-reach/references/javascript-seo.md`.
+- Per-framework metadata patterns: `seo-access-read/references/metadata-titles-descriptions.md`.
+- Honest JSON-LD built from page data: `seo-access-understand/references/schema-types-and-jsonld.md`.

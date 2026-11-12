@@ -11,43 +11,43 @@ description: >-
   stack, platform, site type and data capabilities, works the Visibility Ladder from
   the lowest failing rung, routes to the specialist skills, and protects existing
   sites and the pages that earn traffic. (For a content-only quality review with no
-  technical audit, defer to seo-content-audit.)
+  technical audit, defer to seo-substance-content-audit.)
 ---
 
 # SEO Orchestrator — the conductor
 
-This is the brain of the pack. It turns the five rung skills into one **adaptive audit lifecycle** that works the first time *and every time after*, on a freshly built site or a mature one with existing rankings. Read `METHOD.md` for the philosophy; this skill runs it.
+This is the brain of the pack. It turns the system skills into one **adaptive audit lifecycle** that works the first time *and every time after*, on a freshly built site or a mature one with existing rankings. Read `METHOD.md` for the philosophy; this skill runs it.
 
-Two ideas drive everything here:
-- **The Visibility Ladder** — five rungs in dependency order (Reach → Read → Understand → Connect → **Rank**), climbing to the goal of every site: ranking. Diagnose top-to-bottom; fix bottom-to-top; never fix a rung while a lower one fails. Rung 5 (Rank) has two halves: *what you build* (on-page) and *what you earn* (off-site authority, advised by `seo-offsite-authority` beside the ladder). **AEO/citation (`cite-aeo-geo`) is the optional layer on top, for the AI-answer era, applied once a page can rank, never instead of it, not a rung in the ladder.** Verify on the **served HTML**, never the source. Stay strictly white-hat.
+Three ideas drive everything here:
+- **The Visibility Model** — five systems: **Demand** (observed), **Identity**, **Substance**, **Access** (built) and **Distribution** (earned, advisory), kept true by the **Operations** loop. **Access is where the Visibility Ladder lives**: four rungs in dependency order (Reach → Read → Understand → Connect). Diagnose top-to-bottom; fix bottom-to-top; never fix a rung while a lower one fails. **Rank is the outcome the whole model produces, not a rung**: it is earned in Substance (intent, quality), Identity (real experience and expertise) and Distribution (authority, advised by `seo-distribution-authority`, never executed). **An AI assistant is a surface, not a layer on top** (`seo-surface-assistants`), worked once a page can rank. Verify on the **served HTML**, never the source. Stay strictly white-hat.
 - **Work it out yourself** — read the codebase and the served pages to understand the site (its purpose, audience, stack, platform, sector). Infer and act on sensible defaults; don't interrogate the user.
 - **The lifecycle, in three modes.** The first run is an `audit`: a baseline of findings with ids, evidence, risk and proposed fixes, and no change to the site. `fix` applies only the findings the user approves. **Every later run is a `re-check` (what held, what regressed, what the data shows for each dated change) plus a new `audit` for what is new.** State lives in a `.seo/` folder in the project so progress persists across sessions.
 
-| Rung | Skill | Question |
+| Step | Skill | Question |
 |---|---|---|
-| 1. Reach | `1-reach-indexation` | Crawlable, rendered in served HTML, HTTPS, indexable? |
-| 2. Read | `2-read-content` | Real content + metadata + page experience (speed/mobile)? |
-| 3. Understand | `3-understand-schema` | Entities identifiable via valid, honest schema? |
-| 4. Connect | `4-connect-architecture` | Wired into a coherent site (links, canonicals)? |
-| 5. Rank | `5-rank-relevance` | Good enough, and trusted enough, to win? (intent, quality, on-page E-E-A-T, topical authority; off-site authority advised separately) |
-| + Cite (AEO) | `cite-aeo-geo` | *On top of the ladder:* eligible to be cited by AI answers, once it can rank |
+| 1. Reach | `seo-access-reach` | Crawlable, rendered in served HTML, HTTPS, indexable? |
+| 2. Read | `seo-access-read` | Real content + metadata + page experience (speed/mobile)? |
+| 3. Understand | `seo-access-understand` | Entities identifiable via valid, honest schema? |
+| 4. Connect | `seo-access-connect` | Wired into a coherent site (links, canonicals)? |
+| Substance | `seo-substance-quality` | Good enough, and trusted enough, to win? (intent, quality, real experience and expertise, topical authority) |
+| Surface | `seo-surface-assistants` | Eligible to be named by AI answers, once the page can rank |
 
-Specialist skills outside the ladder, dispatched when relevant:
-- **`seo-context-gathering`** — the foundation under the content half: learn what the business is, who it serves, what it can truthfully claim, and how it writes; record it in `.seo/context.md`. Run it *before* content, positioning, E-E-A-T or entity work.
-- **`seo-migrations`** — URL changes / redirects / site moves.
-- **`seo-measurement-setup`** — analytics / Search Console instrumentation.
-- **`seo-content-audit`** — assess existing content (quality, intent, gaps, cannibalisation, decay).
-- **`seo-content-editing`** — improve existing copy (white-hat: edit real content, never generate fake).
-- **`seo-proposal-roadmap`** — turn the audit into a client-style proposal / prioritised roadmap.
-- **`seo-positioning-strategy`** — messaging, competitive positioning, topical-authority planning.
-- **`seo-automations`** — automate the audit in CI/CD (regression gate on deploy/PR, scheduled re-audits, hooks).
-- **`seo-media`** — image & video SEO (alt, formats, `VideoObject` schema, media sitemaps, transcripts).
-- **`seo-programmatic`** — generate pages at scale from data, white-hat (quality gate; no thin/doorway pages).
-- **`seo-log-analysis`** — advanced/large-site: server-log & crawl-budget analysis (what crawlers actually fetch).
-- **`seo-offsite-authority`** — the off-page half: backlink audit, toxic-link/disavow, and white-hat link-building & digital-PR strategy (advisory; audits with connected link data).
-- **`seo-launch-qa`**: the pre-launch gate for a site about to go live or relaunch.
-- **`seo-performance`**: Core Web Vitals and speed work deeper than Read's page-level checks.
-- **`seo-search-data`**: live search data: indexing reasons, Google's chosen canonical, protecting pages that earn traffic, demand and striking distance, measuring dated changes, AI visibility.
+Skills in the other systems, dispatched when relevant:
+- **`seo-identity-context`** — the foundation under the content half: learn what the business is, who it serves, what it can truthfully claim, and how it writes; record it in `.seo/context.md`. Run it *before* content, positioning, E-E-A-T or entity work.
+- **`seo-access-migrations`** — URL changes / redirects / site moves.
+- **`seo-operations-measurement`** — analytics / Search Console instrumentation.
+- **`seo-substance-content-audit`** — assess existing content (quality, intent, gaps, cannibalisation, decay).
+- **`seo-substance-content-editing`** — improve existing copy (white-hat: edit real content, never generate fake).
+- **`seo-operations-reporting`** — turn the audit into a client-style proposal / prioritised roadmap.
+- **`seo-identity-positioning`** — messaging, competitive positioning, topical-authority planning.
+- **`seo-operations-automation`** — automate the audit in CI/CD (regression gate on deploy/PR, scheduled re-audits, hooks).
+- **`seo-substance-media`** — image & video SEO (alt, formats, `VideoObject` schema, media sitemaps, transcripts).
+- **`seo-substance-at-scale`** — generate pages at scale from data, white-hat (quality gate; no thin/doorway pages).
+- **`seo-access-logs`** — advanced/large-site: server-log & crawl-budget analysis (what crawlers actually fetch).
+- **`seo-distribution-authority`** — the off-page half: backlink audit, toxic-link/disavow, and white-hat link-building & digital-PR strategy (advisory; audits with connected link data).
+- **`seo-operations-launch-qa`**: the pre-launch gate for a site about to go live or relaunch.
+- **`seo-access-performance`**: Core Web Vitals and speed work deeper than Read's page-level checks.
+- **`seo-demand-search-data`**: live search data: indexing reasons, Google's chosen canonical, protecting pages that earn traffic, demand and striking distance, measuring dated changes, AI visibility.
 
 ---
 
@@ -68,7 +68,7 @@ Infer these before Step 1. Ask only if a wrong guess would be costly (see `seo-o
 
 Read the codebase and the served pages and **work the context out on your own** — the user shouldn't have to describe their site or fill in a form. First, build a quick working model of **what the site is, who it's for, and what each page is trying to do** (from the content, routes, copy, and structure). Then establish the six things below. Infer and proceed on sensible defaults; ask only for the rare decision a human genuinely must make, and even then propose a default rather than blocking.
 
-This step is deliberately shallow — enough to route the technical work. **Anything touching content, positioning, E-E-A-T, or entities needs the deeper picture**, which is `seo-context-gathering`'s job (item 7).
+This step is deliberately shallow — enough to route the technical work. **Anything touching content, positioning, E-E-A-T, or entities needs the deeper picture**, which is `seo-identity-context`'s job (item 7).
 
 1. **Mode.** Settle the mode (`audit` unless the request names `fix` or `re-check`), then access, tools, scope, audience and output (the block above; detail in `references/operating-modes.md`), and state them in one line at the top of your report. `audit` saves its report to `.seo/` and changes nothing else; if the user says "chat only" or nothing is writable, report in chat instead. In a monorepo, pick the deployed site first: each has its own `.seo/`.
 2. **First run or progression?** Check for a **`.seo/` folder** in the project.
@@ -81,7 +81,7 @@ This step is deliberately shallow — enough to route the technical work. **Anyt
 
 7. **Is there a context pack?** Check for **`.seo/context.md`** — the record of what this business is, who it serves, what it can truthfully claim, and how it writes.
    - **Exists** → read it before any content, positioning, E-E-A-T or entity work, and re-check the parts it marks volatile.
-   - **Missing** → dispatch **`seo-context-gathering`** *before* that work, not after. Purely technical fixes (Reach, most of Read) can proceed without it; content and trust work cannot, because that is where an agent without context starts inventing.
+   - **Missing** → dispatch **`seo-identity-context`** *before* that work, not after. Purely technical fixes (Reach, most of Read) can proceed without it; content and trust work cannot, because that is where an agent without context starts inventing.
 
 > New or existing, the method is the same climb — but on an existing site you protect what already works while you improve it.
 
@@ -99,7 +99,7 @@ This step is deliberately shallow — enough to route the technical work. **Anyt
 ### `fix`: approved findings only
 
 1. **Collect the approved findings**: `approved` set in `state.json`, ids or refs named in the request, or a rule the user stated ("all low-risk"). Nothing else. In auto-mode, only low-risk, reversible items count as approved; queue the rest as `needs-human`.
-2. **Protect what earns traffic.** A title, `h1`, copy or URL change on a page with meaningful clicks needs explicit approval for that page, and `seo-search-data`'s traffic check first (`references/existing-site-safety.md`).
+2. **Protect what earns traffic.** A title, `h1`, copy or URL change on a page with meaningful clicks needs explicit approval for that page, and `seo-demand-search-data`'s traffic check first (`references/existing-site-safety.md`).
 3. **Work on a branch** where git exists. For each finding, lowest rung first: dispatch to the owning skill, apply the change, verify it on the served output, commit once with the finding id in the message, set `status: fixed` and `verified`, and append a dated change entry to `.seo/log.md` (finding id, files or settings touched, URLs affected).
 4. **Report** what was applied with proof, what was skipped and why, the branch, and the line to run `re-check` after deploy.
 
@@ -107,7 +107,7 @@ This step is deliberately shallow — enough to route the technical work. **Anyt
 
 1. **Read prior state** (`state.json`, `log.md`): you now know what was found, approved, fixed and deferred.
 2. **Re-check.** For each previously **fixed** finding, confirm on the **served output** that it still holds. A regression (something that was fixed and broke again, common after a deploy or content change) goes to the front of the queue as `status: regression`, a status in its own right, not `open` with a tag.
-3. **Measure dated changes.** For each change entry in `log.md`, when a data capability is present, hand over to `seo-search-data` to compare before and after. Without data, say so.
+3. **Measure dated changes.** For each change entry in `log.md`, when a data capability is present, hand over to `seo-demand-search-data` to compare before and after. Without data, say so.
 4. **If the user asked only for `re-check`, stop here** and report. It changes nothing.
 5. **Audit what's new.** Re-walk the ladder for new pages, templates and issues since the last run; add findings with the next free `ref`.
 6. **Update `.seo/`** and **report progress**: what regressed, what the data shows, what's new, what's left to approve, and the trend since the last run.
@@ -123,24 +123,24 @@ Run any mode as normal, minus every write: on a site with `.seo/`, still read it
 Skill, mode and target, plus optional scope and output (`references/operating-modes.md`):
 - "Run seo-orchestrator in audit mode on https://example.com. Scope: top 10. Output: ticket list."
 - "Run seo-orchestrator in fix mode: apply R-03 and R-07 from .seo/state.json."
-- "Run 1-reach-indexation in re-check mode."
+- "Run seo-access-reach in re-check mode."
 
 ---
 
 ## Dispatch rules
 
-- Run the specialist skill for the **lowest failing rung**, complete its verify, then climb. Skip rungs that already pass (don't redo good work) but never skip *upward over* a failing rung.
-- If the user's goal is a higher rung (e.g. AI citation), still resolve every lower failing rung first — then reach the goal rung legitimately.
-- **Rung 5 (Rank) is the goal.** Dispatch **`5-rank-relevance`** to make the page genuinely competitive — search intent, quality/depth, E-E-A-T, topical authority; it draws on the content/strategy skills below. **AEO is the layer on top, not a rung:** only once a page can rank, use **`cite-aeo-geo`** to make it eligible for AI-answer citation — never instead of ranking.
-- Pull in **`seo-migrations`** whenever URLs change or the site moves, and **`seo-measurement-setup`** when analytics/Search Console plumbing is missing or broken.
-- Pull in the **content/marketing skills** when the work is about the content itself, not just its markup: **`seo-content-audit`** (assess), **`seo-content-editing`** (improve real copy), **`seo-positioning-strategy`** (messaging/competitive/topical planning), and **`seo-proposal-roadmap`** (package the findings as a proposal/roadmap deliverable). These read live data (demand/competitor) when it's connected, and say so honestly when it isn't.
-- Pull in the **advanced/automation skills** when relevant: **`seo-automations`** (set up CI/CD regression gates + scheduled re-audits — recommend this once a site is healthy, to keep it that way), **`seo-media`** (sites with significant image/video), **`seo-programmatic`** (data-driven pages at scale — apply its quality gate), **`seo-log-analysis`** (large/crawl-constrained sites with server logs).
-- Pull in **`seo-launch-qa`** when the user is about to launch, going live, relaunching, or asks for a pre-launch check. It gates the release on the things that are expensive to get wrong on day one.
-- Pull in **`seo-performance`** for Core Web Vitals and speed work beyond Read's page-level checks: field data, LCP/INP/CLS diagnosis across templates, and fixes in the build or hosting layer.
-- Indexing reasons, Google's chosen canonical, "did our change work", striking-distance or traffic questions, AI visibility, or any title, copy or URL change on a live page → **`seo-search-data`** (run its traffic check before the change).
+- Run the specialist skill for the **lowest failing Access rung**, complete its verify, then climb. Skip rungs that already pass (don't redo good work) but never skip *upward over* a failing rung.
+- If the user's goal sits further up (AI visibility, say), still resolve every failing Access rung first, then do the real work legitimately.
+- **Ranking is the outcome, not a step.** Once Access passes, dispatch **`seo-substance-quality`** to make the page genuinely competitive: search intent, quality and depth, real experience and expertise, topical authority. It draws on the content and strategy skills below. **An AI assistant is a surface, not a rung:** once a page can rank, use **`seo-surface-assistants`** to make it eligible to be named, never instead of ranking.
+- Pull in **`seo-access-migrations`** whenever URLs change or the site moves, and **`seo-operations-measurement`** when analytics/Search Console plumbing is missing or broken.
+- Pull in the **content/marketing skills** when the work is about the content itself, not just its markup: **`seo-substance-content-audit`** (assess), **`seo-substance-content-editing`** (improve real copy), **`seo-identity-positioning`** (messaging/competitive/topical planning), and **`seo-operations-reporting`** (package the findings as a proposal/roadmap deliverable). These read live data (demand/competitor) when it's connected, and say so honestly when it isn't.
+- Pull in the **advanced/automation skills** when relevant: **`seo-operations-automation`** (set up CI/CD regression gates + scheduled re-audits — recommend this once a site is healthy, to keep it that way), **`seo-substance-media`** (sites with significant image/video), **`seo-substance-at-scale`** (data-driven pages at scale — apply its quality gate), **`seo-access-logs`** (large/crawl-constrained sites with server logs).
+- Pull in **`seo-operations-launch-qa`** when the user is about to launch, going live, relaunching, or asks for a pre-launch check. It gates the release on the things that are expensive to get wrong on day one.
+- Pull in **`seo-access-performance`** for Core Web Vitals and speed work beyond Read's page-level checks: field data, LCP/INP/CLS diagnosis across templates, and fixes in the build or hosting layer.
+- Indexing reasons, Google's chosen canonical, "did our change work", striking-distance or traffic questions, AI visibility, or any title, copy or URL change on a live page → **`seo-demand-search-data`** (run its traffic check before the change).
 - Run the **security and spam check** (`references/security-and-spam.md`) in every audit of an existing site, and whenever a fetched file carries text aimed at AI agents.
-- Pull in **`seo-offsite-authority`** for the off-page half: backlinks, domain authority, toxic links/disavow, or "competitors outrank me on authority." It audits the off-site profile (with connected link data) and strategises white-hat link earning, advisory only, never executing or buying links.
-- **Get context before content.** Before dispatching any content, positioning, E-E-A-T or entity work, ensure `.seo/context.md` exists and is current — dispatch **`seo-context-gathering`** if not. Judging whether a page "matches intent" or "shows expertise" without knowing the audience or the real credentials is guesswork wearing a checklist.
+- Pull in **`seo-distribution-authority`** for the off-page half: backlinks, domain authority, toxic links/disavow, or "competitors outrank me on authority." It audits the off-site profile (with connected link data) and strategises white-hat link earning, advisory only, never executing or buying links.
+- **Get context before content.** Before dispatching any content, positioning, E-E-A-T or entity work, ensure `.seo/context.md` exists and is current — dispatch **`seo-identity-context`** if not. Judging whether a page "matches intent" or "shows expertise" without knowing the audience or the real credentials is guesswork wearing a checklist.
 - **Enrich, don't gate.** When a live-data integration is present, use it to prioritise by real impact and ground content/positioning in real demand — but the audit and fixes never *require* it.
 - Apply the active **profile** (`references/profiles/<type>.md`) and **stack/platform adapter** so each rung's checks and fixes fit this specific site.
 - On an **existing site**, gate every change through `references/existing-site-safety.md`.
@@ -156,7 +156,7 @@ Summarise for a non-SEO user (or a developer who wants the SEO judgement, not a 
 - **What needs you** — flagged human decisions and any real content/trust signals the pack refused to fabricate.
 - **The data used**: the tier and the `data_sources` list, or a note that the run was build-time only.
 - **What to run next**: the refs to approve and the `fix` or `re-check` line, in the prompt grammar above.
-- **The boundary** — these are build-time, owned-media fixes. Whether you actually rank, where, against whom, or get cited by AI engines over time is **live data** (rank tracking, AI-citation monitoring, geo-grid) — a separate, ongoing discipline. Earned media (backlinks, PR) is not something build-time work can create, but the pack does audit and advise on it: `seo-offsite-authority` reviews the link profile and plans white-hat earning. Never paywall a build-time capability; point across the boundary honestly. (The `cite-aeo-geo` skill carries the full handoff.)
+- **The boundary** — these are build-time, owned-media fixes. Whether you actually rank, where, against whom, or get cited by AI engines over time is **live data** (rank tracking, AI-citation monitoring, geo-grid) — a separate, ongoing discipline. Earned media (backlinks, PR) is not something build-time work can create, but the pack does audit and advise on it: `seo-distribution-authority` reviews the link profile and plans white-hat earning. Never paywall a build-time capability; point across the boundary honestly. (The `seo-surface-assistants` skill carries the full handoff.)
 
 ---
 

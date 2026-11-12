@@ -18,24 +18,24 @@ For any SEO, indexing, "not showing up", AI-search/citation, schema, internal-li
 rendering, redirect/migration, or analytics task, use the seo-for-ai-agents skill pack
 in `skills/`. Works on new or existing sites.
 
-Method: diagnose top-to-bottom, fix bottom-to-top. Five rungs, in order — you may not
+Method: diagnose top-to-bottom, fix bottom-to-top. Four Access rungs, in order — you may not
 fix a rung until the ones below it pass:
-1. Reach (`skills/1-reach-indexation/`) — crawlable + content in the SERVED HTML + HTTPS
-2. Read (`skills/2-read-content/`) — content + metadata + page experience (speed/mobile)
-3. Understand (`skills/3-understand-schema/`) — valid, honest schema
-4. Connect (`skills/4-connect-architecture/`) — internal links + canonicals
-5. Rank (`skills/5-rank-relevance/`) — the goal: good enough, and trusted enough, to win (intent, quality, on-page E-E-A-T, topical authority; off-site authority advised via `seo-offsite-authority`)
-On top of the ladder (once a page can rank): `skills/cite-aeo-geo/` — AEO, eligible to be cited by AI answers (secondary, not a rung).
+1. Reach (`skills/seo-access-reach/`) — crawlable + content in the SERVED HTML + HTTPS
+2. Read (`skills/seo-access-read/`) — content + metadata + page experience (speed/mobile)
+3. Understand (`skills/seo-access-understand/`) — valid, honest schema
+4. Connect (`skills/seo-access-connect/`) — internal links + canonicals
+5. Rank (`skills/seo-substance-quality/`) — the goal: good enough, and trusted enough, to win (intent, quality, on-page E-E-A-T, topical authority; off-site authority advised via `seo-distribution-authority`)
+The assistant surface (once a page can rank): `skills/seo-surface-assistants/` — eligible to be named by AI answers. A surface, not a rung.
 Modes: every skill runs in `audit` (default, read-only), `fix` (approved findings only) or `re-check`.
-Foundation and data: `skills/seo-context-gathering/` (learn the business first), `skills/seo-search-data/`
+Foundation and data: `skills/seo-identity-context/` (learn the business first), `skills/seo-demand-search-data/`
 (the user's own search data: indexing, traffic, demand, change impact).
-Specialists: `skills/seo-launch-qa/` (pre-launch and go-live), `skills/seo-performance/` (Core Web Vitals),
-`skills/seo-migrations/` (URL changes/redirects), `skills/seo-measurement-setup/` (analytics/GSC),
-`skills/seo-content-audit/` (assess content), `skills/seo-content-editing/` (improve real copy — edit not generate),
-`skills/seo-positioning-strategy/` (topical authority/positioning), `skills/seo-proposal-roadmap/` (proposal/roadmap),
-`skills/seo-automations/` (CI/CD regression gate + scheduled audits), `skills/seo-media/` (image/video SEO),
-`skills/seo-programmatic/` (white-hat pages-at-scale), `skills/seo-log-analysis/` (server-log/crawl-budget, large sites),
-`skills/seo-offsite-authority/` (off-page: backlink audit + white-hat link-building strategy, advisory).
+Specialists: `skills/seo-operations-launch-qa/` (pre-launch and go-live), `skills/seo-access-performance/` (Core Web Vitals),
+`skills/seo-access-migrations/` (URL changes/redirects), `skills/seo-operations-measurement/` (analytics/GSC),
+`skills/seo-substance-content-audit/` (assess content), `skills/seo-substance-content-editing/` (improve real copy — edit not generate),
+`skills/seo-identity-positioning/` (topical authority/positioning), `skills/seo-operations-reporting/` (proposal/roadmap),
+`skills/seo-operations-automation/` (CI/CD regression gate + scheduled audits), `skills/seo-substance-media/` (image/video SEO),
+`skills/seo-substance-at-scale/` (white-hat pages-at-scale), `skills/seo-access-logs/` (server-log/crawl-budget, large sites),
+`skills/seo-distribution-authority/` (off-page: backlink audit + white-hat link-building strategy, advisory).
 Optional live-data tools (GSC/DataForSEO/Ahrefs, bring-your-own-key) enrich the audit — see `install/data-integrations.md`; never required.
 
 Start broad requests with `skills/seo-orchestrator/SKILL.md` — it runs an AUDIT LIFECYCLE:
