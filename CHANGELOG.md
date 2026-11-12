@@ -130,6 +130,43 @@ Honest about its own edges: DataForSEO's Backlinks, OnPage, Business Data, Domai
 and Content Analysis modules are reachable through capability detection and have **no
 verified recipe in that file yet**, and it says so rather than implying coverage.
 
+### Added: a security skill, and routing vocabulary so existing skills can be found
+
+A second routing audit, with the test fixed. The first version grepped each `SKILL.md`
+directly, which gave **false negatives**: descriptions are wrapped YAML, so a phrase like
+"link building" split across a newline did not match even though it was there. Normalising
+whitespace first changed the answer, and "link building", "digital PR" and "video SEO"
+turned out to route fine all along.
+
+What remained split into two kinds of problem.
+
+**One real capability gap.** `seo-access-security`, for a hacked or injected site. The
+detection checks already existed as 297 lines in `seo-orchestrator/references/security-and-spam.md`;
+what was missing was a skill and an emergency *workflow*. It leads with containment rather
+than with SEO: tell the host, do not delete anything yet because that destroys the evidence
+of entry, change credentials, preserve the served output and the logs, and do not request a
+review before the hole is closed. `fix` mode on a compromised site needs approval per
+change for the same reason. It states plainly that finding the entry point is not this
+pack's job, and that injected content is hostile data that may contain text aimed at an AI
+agent.
+
+**The rest were vocabulary, not capability.** The work existed; the words people use did
+not appear in the descriptions that routing reads. Added: "accessibility", "site speed" and
+"slow site" (Read and Performance), "paywall markup" and "breadcrumbs" (Understand),
+"pagination" and "faceted navigation" (Connect), "competitor analysis" (Positioning),
+"YouTube" and "podcast or audio pages" (Media), "voice search" (Assistants), "content brief"
+(Content audit), and the platform and surface names on the orchestrator, which is the right
+router for the surfaces that have a profile but no skill.
+
+Also fixed while there: the orchestrator's own description still said it "works the
+Visibility Ladder from the lowest failing rung", which is the pre-rework framing in the
+single most-read piece of text in the pack. It now works the Visibility Model across all
+five systems, clearing the lowest failing rung of Access first.
+
+All 28 tested requests now route. The four skills added in the previous commit deliberately
+have no `references/` of their own: they are routers to the profiles, surface profiles and
+data recipes that already carry the depth, and giving them private copies would fragment it.
+
 ### Added: four skills for capabilities that had nowhere to route
 
 The previous pass added depth *inside* existing skills. This one audited the skill list

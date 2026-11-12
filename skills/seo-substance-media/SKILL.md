@@ -6,7 +6,8 @@ description: >-
   licence metadata, large previews for Discover, and for video a real watch page,
   VideoObject schema, key moments, transcripts and video sitemaps. Use on "image SEO",
   "video SEO", "get my videos/images in Google", "VideoObject", "key moments",
-  "image sitemap", "video sitemap", "Discover images", or "optimise media for search".
+  "image sitemap", "video sitemap", "Discover images", "YouTube", "podcast or audio
+  pages", or "optimise media for search".
   Marks up only real, on-page media truthfully and verifies on the served output.
   Deepens the alt-text (Read) and schema (Understand) rungs for media specifically.
 ---

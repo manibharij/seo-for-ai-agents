@@ -107,6 +107,7 @@ The **[`seo-orchestrator`](skills/seo-orchestrator/SKILL.md)** is the entry poin
 - **[`seo-access-migrations`](skills/seo-access-migrations/SKILL.md)** preserve rankings when URLs change.
 - **[`seo-access-logs`](skills/seo-access-logs/SKILL.md)** large-site server logs and crawl budget: what crawlers actually fetch.
 - **[`seo-access-international`](skills/seo-access-international/SKILL.md)** hreflang, per-locale canonicals and URL strategy, validated on the served output because hreflang fails silently.
+- **[`seo-access-security`](skills/seo-access-security/SKILL.md)** a hacked or injected site. Containment first, SEO second, and honest that finding how they got in is not this pack's job.
 
 **Distribution** — earned, advisory only
 - **[`seo-distribution-authority`](skills/seo-distribution-authority/SKILL.md)** backlink audit, toxic links and a disavow file, the competitor authority gap, and white-hat link and digital-PR strategy. It audits and advises. It never executes outreach and never buys links.

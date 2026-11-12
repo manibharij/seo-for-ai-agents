@@ -7,7 +7,7 @@ description: >-
   consolidate / prune / refresh action for each page. Use when you want page-by-page
   content DECISIONS across the whole site — "content audit", "is my content good",
   "content gaps", "which pages to update, merge, or remove", "thin content across my
-  site". (For the full technical+content audit use seo-orchestrator; to rewrite one
+  site", "content brief", "what should we write next". (For the full technical+content audit use seo-orchestrator; to rewrite one
   specific page's copy use seo-substance-content-editing; for topic/positioning strategy use
   seo-identity-positioning.) Assesses real content on the served output; uses
   connected live data (Search Console / keyword tools) when present, never required.

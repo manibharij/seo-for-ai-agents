@@ -8,7 +8,8 @@ description: >-
   delay, processing, presentation, long tasks, hydration, third-party scripts)
   and CLS by cause (unsized media, fonts, injected content, bfcache). Use on
   "Core Web Vitals failing", "poor LCP", "INP too high", "layout shift", "Search
-  Console CWV report", "PageSpeed score", "third-party tags slowing the site", or
+  Console CWV report", "PageSpeed score", "site speed", "my site is slow", "slow
+  site", "third-party tags slowing the site", or
   when Read's light page-experience pass is not enough. Verifies on the lab run
   and the served markup, and is honest that field data only moves after about
   28 days of real traffic.

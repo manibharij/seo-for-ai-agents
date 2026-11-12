@@ -45,7 +45,7 @@ Specialists: `skills/seo-operations-launch-qa/` (pre-launch and go-live), `skill
 `skills/seo-identity-positioning/` (topical authority/positioning), `skills/seo-operations-reporting/` (proposal/roadmap),
 `skills/seo-operations-automation/` (CI/CD regression gate + scheduled audits), `skills/seo-substance-media/` (image/video SEO),
 `skills/seo-substance-at-scale/` (white-hat pages-at-scale), `skills/seo-access-logs/` (server-log/crawl-budget, large sites),
-`skills/seo-access-international/` (hreflang, locales, URL strategy), `skills/seo-distribution-authority/` (off-page: backlink audit + white-hat link-building strategy, advisory).
+`skills/seo-access-international/` (hreflang, locales, URL strategy), `skills/seo-access-security/` (hacked/injected site, cloaking), `skills/seo-distribution-authority/` (off-page: backlink audit + white-hat link-building strategy, advisory).
 Surfaces: `skills/seo-surface-assistants/` (eligible to be named by AI answers), `skills/seo-surface-local/` (map pack, Google Business Profile, NAP),
 `skills/seo-surface-shopping/` (product feeds, Merchant Center, free listings).
 Optional live-data tools (GSC/DataForSEO/Ahrefs, bring-your-own-key) enrich the audit — see `install/data-integrations.md`; never required.

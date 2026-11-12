@@ -8,7 +8,9 @@ description: >-
   Web Vitals (page speed). Use this AFTER Reach passes, for the on-page technical
   fundamentals of a single page — "missing meta description", "duplicate titles",
   "page not described well in search", "site is slow", "Core Web Vitals", "page
-  speed", "mobile-friendly". (To assess content quality across many pages, use
+  speed", "site speed", "slow site", "mobile-friendly", "accessibility" (the large
+  a11y and SEO overlap: semantic HTML, headings, alt text, link text, `lang`).
+  (To assess content quality across many pages, use
   seo-substance-content-audit; to rewrite one page's copy, use seo-substance-content-editing.) Verifies
   on the rendered HTML, not the source.
 ---

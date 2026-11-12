@@ -8,9 +8,13 @@ description: >-
   ids in .seo/, never changes the site), fix (applies only approved findings, one
   commit each, verified), and re-check (re-tests earlier findings, catches
   regressions, measures dated changes against live data when present). Detects the
-  stack, platform, site type and data capabilities, works the Visibility Ladder from
-  the lowest failing rung, routes to the specialist skills, and protects existing
-  sites and the pages that earn traffic. (For a content-only quality review with no
+  stack, platform ("WordPress", "Shopify", "Webflow", "Wix", "Squarespace", "headless
+  CMS"), site type and data capabilities, works the Visibility Model across all five
+  systems while clearing the lowest failing rung of Access first, routes to the
+  specialist skills, and protects existing sites and the pages that earn traffic.
+  Also the router for surfaces with no dedicated skill ("Reddit", "communities",
+  "app store", "marketplace", "Amazon", "Google News", "Discover", "podcast"), each
+  of which has a profile in surfaces/. (For a content-only quality review with no
   technical audit, defer to seo-substance-content-audit.)
 ---
 

@@ -85,6 +85,7 @@ Plus the Access specialists:
 | [`seo-access-migrations`](skills/seo-access-migrations/SKILL.md) | Preserve rankings when URLs change | "redesign", "moving domain", "404s after relaunch" |
 | [`seo-access-logs`](skills/seo-access-logs/SKILL.md) | Server-log and crawl-budget analysis on large sites: what crawlers actually fetch | "log file analysis", "crawl budget" |
 | [`seo-access-international`](skills/seo-access-international/SKILL.md) | hreflang, per-locale canonicals, URL strategy and genuine localisation. Validated on the served output, because hreflang fails silently | "hreflang", "international SEO", "multilingual", "multiple countries", "wrong language version is ranking" |
+| [`seo-access-security`](skills/seo-access-security/SKILL.md) | A hacked or injected site: triage and containment first, SEO second. Explicit that a compromise is a security incident the pack does not fully own | "my site has been hacked", "malware", "spam pages I did not create", "cloaking", "hidden links", "security issue in Search Console", "negative SEO" |
 
 ## Distribution: what points at you (earned, advisory only)
 

@@ -5,7 +5,8 @@ description: >-
   (topical authority), how it's differentiated, where the gaps and competitive
   opportunities are, and a pillar/cluster content plan to get there. Use on
   "positioning", "content strategy", "topical authority", "what topics should we
-  cover", "competitive analysis", or "how do we differentiate in search". Builds the
+  cover", "competitive analysis", "competitor analysis", "who are our search
+  competitors", or "how do we differentiate in search". Builds the
   plan from the site's REAL differentiators and (when connected) live demand/
   competitor data; never invents positioning or fabricates competitive claims.
 ---

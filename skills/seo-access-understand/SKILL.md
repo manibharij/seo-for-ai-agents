@@ -5,8 +5,8 @@ description: >-
   entities on a page — articles, products, organisations, FAQs, breadcrumbs,
   local businesses, people. Use this AFTER Read passes, on any "schema", "structured
   data", "JSON-LD", "rich results", "rich snippets", "merchant listings", "product
-  variants", "shipping or return policy markup", "knowledge panel", or "Google
-  doesn't understand my page" question. Marks up only facts already present and true
+  variants", "shipping or return policy markup", "knowledge panel", "paywall markup",
+  "breadcrumbs", or "Google doesn't understand my page" question. Marks up only facts already present and true
   on the page; validates against schema.org and verifies on the rendered HTML.
 ---
 

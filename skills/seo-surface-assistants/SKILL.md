@@ -9,8 +9,8 @@ description: >-
   a SURFACE in the Visibility Model, not a layer on top of it. Use it once Access
   passes and the page can rank, on any "AI search", "AI Overviews", "AEO", "GEO",
   "get cited by
-  ChatGPT/Perplexity", "answer engine", "llms.txt", "are we in AI answers" or
-  "show up in AI answers" request.
+  ChatGPT/Perplexity", "answer engine", "llms.txt", "voice search", "are we in AI
+  answers" or "show up in AI answers" request.
 ---
 
 # AI assistants: the answer-engine surface (AEO / GEO)

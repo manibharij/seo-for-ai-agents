@@ -6,7 +6,8 @@ description: >-
   and correct canonical tags so duplicates consolidate instead of competing. Use
   this AFTER Understand passes, on any "internal linking", "site structure", "site
   architecture", "canonical", "duplicate content", "orphan pages", "anchor text",
-  or "how should I organise my pages" question. Verifies link graph and canonicals
+  "pagination", "faceted navigation", "breadcrumbs", or "how should I organise my
+  pages" question. Verifies link graph and canonicals
   on the rendered HTML.
 ---
 
