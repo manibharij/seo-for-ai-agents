@@ -25,7 +25,7 @@ Engines use the heading structure as a machine-readable table of contents.
 
 - **Exactly one `<h1>`**, describing the page's specific subject — not the site name, not a tagline. The `<h1>` and `<title>` should agree on what the page is about (they need not be identical).
 - **Logical nesting:** `<h2>` for major sections, `<h3>` for sub-points, no skipped levels. A page that jumps `<h1>` → `<h4>` because `<h4>` "looked the right size" is using headings for styling — fix the CSS, not the semantics.
-- **Descriptive, not cute:** "Pricing for small teams" beats "The fun part". For the Cite rung later, question-shaped headings ("How much does X cost?") become valuable; even here, descriptive headings help.
+- **Descriptive, not cute:** "Pricing for small teams" beats "The fun part". On assistant surfaces, question-shaped headings ("How much does X cost?") become valuable; even here, descriptive headings help.
 - Don't wrap non-heading text in heading tags for emphasis, and don't demote real headings to styled `<div>`s.
 
 ---

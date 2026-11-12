@@ -2,12 +2,19 @@
 
 Use for businesses serving a place — shops, clinics, tradespeople, restaurants, agencies with a service area. The distinctive signals are **entity consistency** (especially NAP), `LocalBusiness` schema, and location/service-area pages. Note the honest line: a lot of local visibility is **off-site and live** (Google Business Profile, map pack, reviews) — outside what a build can fix.
 
-## How each rung shifts
-- **Reach** — usually a small site; standard checks. Ensure location/service pages are crawlable and in the sitemap.
-- **Read** — genuinely useful location/service content (not the same paragraph with the town name swapped — that's doorway-page spam). Real address, hours, services, area served.
-- **Understand** — `LocalBusiness` (or a subtype: `Restaurant`, `Dentist`, etc.) with **accurate** `address`, `geo`, `telephone`, `openingHoursSpecification`, `areaServed`. Consistent `@id` for the business across pages.
-- **Connect** — clear structure for multiple locations/services; each location page linked and canonical; breadcrumbs.
-- **Cite** — local-intent answers ("plumber in <town> open on Sunday") — clear, honest answers with real hours/area; consistent entity so engines trust who and where you are.
+## How the five systems shift
+
+- **Demand** (observed). Local intent is specific and modifier-heavy ("plumber in <town> open on Sunday"). Read the real phrasing per service and per area rather than assuming one keyword per page.
+- **Identity** (built). **The heart of this profile.** Name, address and phone identical across every page and every piece of schema. `LocalBusiness` (or a subtype: `Restaurant`, `Dentist`) with **accurate** `address`, `geo`, `telephone`, `openingHoursSpecification` and `areaServed`, and a consistent `@id` for the business across pages. A service-area business uses `areaServed` honestly rather than inventing a premises.
+- **Substance** (built). Genuinely useful location and service content, not the same paragraph with the town name swapped, which is doorway-page spam. Real hours, real services, real coverage, and the local specifics only this business could write.
+- **Access** (built). Usually a small site, so the ladder is mostly routine here. One rung still matters a lot.
+  1. **Reach.** Standard checks. Ensure location and service pages are crawlable, indexable and in the sitemap.
+  2. **Read.** The textual address, opening hours and phone number present in the served HTML, not only inside a map widget or an image.
+  3. **Understand.** `LocalBusiness` markup that matches the visible page exactly, with honest hours and no invented reviews.
+  4. **Connect.** A clear structure for multiple locations and services: each location page linked from a hub, self-canonical, with breadcrumbs.
+- **Distribution** (earned, advisory). Google Business Profile, real customer reviews and local citations drive most of local performance, and all of it is earned off the site. Tell the owner exactly what to align. The agent cannot claim a profile, post as the business, or ask for a review.
+
+**On assistant surfaces.** An assistant answering "best <trade> near me" has to resolve one consistent entity with a real address and a stated area served, which is why Identity carries **eligibility** here. The map pack is a separate, live surface a build does not control, and it can only be checked point by point: a single check never represents an area. See `surfaces/` and `seo-surface-assistants`.
 
 ## Type-specific checks
 - **NAP consistency:** Name, Address, Phone identical across the whole site, the schema, and (the user should ensure) external listings. Inconsistent NAP is the classic local-SEO killer. The agent fixes on-site NAP and schema; off-site listings are the user's to align.
@@ -49,7 +56,7 @@ Ask the owner for the GBP values (or a screenshot), then check the served site a
 Every mismatch becomes a finding. Fix the site side yourself when you have write access; list the GBP side as `needs-human` with the exact value to change, since only the owner can edit the profile.
 
 ## The honest local boundary (state this clearly)
-Much of local performance lives **off the website**:
+Much of local performance is **Distribution**, which is earned rather than built, and lives **off the website**:
 - **Google Business Profile** (the map pack, hours, photos, posts) — managed in GBP, not your site.
 - **Reviews** on Google/third parties — earned, off-site; never fabricate, never mark up fake ones.
 - **Local citations/directories** — off-site consistency.
@@ -63,4 +70,4 @@ The build can get your **owned site** right (content, `LocalBusiness` schema, NA
 - Address only inside a map embed, missing from the served HTML.
 
 ## Priority tilt
-Weight **Understand** (LocalBusiness + NAP) and **Read** (genuine local content) highest; be explicit early about the GBP/reviews/geo-grid boundary so expectations are right.
+Weight **Identity** highest (NAP consistency and `LocalBusiness` markup) with **Substance** beside it (genuine local content). Be explicit early that **Distribution** here is earned off-site, so expectations about the map pack, reviews and the geo-grid are right from the start.

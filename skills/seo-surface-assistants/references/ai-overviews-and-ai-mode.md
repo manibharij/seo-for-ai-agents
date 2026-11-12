@@ -1,6 +1,6 @@
 # How AI search surfaces and cites sources
 
-Read this to understand what you're actually optimising for at the Cite rung — and why it's different from classic ranking. The short version: classic search returns a list and lets the user choose; AI search **composes an answer** and **cites a few sources** it drew from. Your goal shifts from "rank in the list" to "be one of the cited sources."
+Read this to understand what you're actually optimising for on an assistant surface, and why it differs from classic ranking. The short version: classic search returns a list and lets the user choose; AI search **composes an answer** and **cites a few sources** it drew from. Your goal shifts from "rank in the list" to "be one of the cited sources."
 
 ---
 

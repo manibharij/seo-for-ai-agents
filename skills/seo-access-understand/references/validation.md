@@ -53,7 +53,7 @@ Reject and fix on sight:
 - Prices/availability that don't match what's shown.
 - An `FAQPage` of questions invented to chase a rich result rather than genuine on-page FAQs.
 
-Fabricated structured data risks a manual action and undermines exactly the trust that the Cite rung depends on. When real data is missing, the correct output is a flagged human task, not a plausible-looking lie.
+Fabricated structured data risks a manual action and undermines exactly the trust that being named by an assistant depends on. When real data is missing, the correct output is a flagged human task, not a plausible-looking lie.
 
 ---
 

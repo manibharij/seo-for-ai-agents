@@ -74,7 +74,7 @@ Add or correct JSON-LD, marking up **only what is visibly true on the page.** Pr
 - **One source of truth.** The schema values should come from the same data that renders the visible content, so they cannot drift apart. In Next.js, render the JSON-LD from the same props/fetch the page uses (see below).
 - **Right type, minimal honesty-safe properties.** Include the properties you can fill truthfully from the page. Don't pad with guessed values.
 - **Nest entities properly.** E.g. an `Article` references its `author` (a `Person` or `Organization`) and `publisher` (an `Organization` with a `logo`); a `Product` contains an `Offer` with `price`/`priceCurrency`/`availability`.
-- **Connect entities with `@id`** where the same entity recurs (the Organization that is both publisher here and the business elsewhere), so engines resolve them as one thing. This entity consistency pays off again at the Cite rung.
+- **Connect entities with `@id`** where the same entity recurs (the Organization that is both publisher here and the business elsewhere), so engines resolve them as one thing. This entity consistency pays off again on assistant surfaces, and it is Identity work as much as Access work.
 - **For shops, keep three sources in step.** The price, availability, shipping and returns in JSON-LD must match what the page shows and what the Merchant Center feed says. Render all three from the same data, and run the parity checklist in `references/validation.md`. Google also lets shops set shipping and returns in Merchant Center or Search Console, which override markup, so check those before deciding which value is right.
 
 ### The white-hat lines you do not cross

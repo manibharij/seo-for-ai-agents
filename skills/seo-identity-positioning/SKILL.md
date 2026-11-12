@@ -42,7 +42,7 @@ Infer these before Step 1. Ask only if a wrong guess would be costly (see `seo-o
 - **Read `.seo/context.md` first.** It already holds the offer, the audience and their vocabulary, the differentiators with their proof, the topical territory and the competitors. If the file is missing, run `seo-identity-context` before going further, because positioning built on guesses about the business is worthless. If it exists, re-check the sections its Freshness line marks as volatile.
 - **What the site is about, for whom, and why it's different.** Take differentiators only from the `[established]` entries under Differentiators and Proof assets. Then ask only what remains open: a short ranked list of the questions that would change the plan, each with the default you will use if nobody answers. Do not hand the user a questionnaire, and do not invent an answer to a question you could not settle.
 - **Current topical footprint** — which topics the site actually covers and (with GSC) actually gets visibility for.
-- **Entity/brand clarity** — is the site recognisably *one* clear thing? (ties to the Cite rung's entity consistency).
+- **Entity/brand clarity** — is the site recognisably *one* clear thing? (the entity consistency assistant surfaces depend on).
 
 ## Step 2 — Map the topical landscape
 
@@ -66,7 +66,7 @@ Produce a search positioning + content strategy:
 
 ## Step 4 — Report
 
-Deliver the strategy in plain language: the positioning, the topical map, the priorities, and how it connects to the rest of the work (which pages to improve/consolidate/create, what to wire up in Connect, what to surface in Cite). State the **basis** clearly — what's backed by live data vs the user's input vs inference — and the boundary: this is a plan grounded in current signals, not a guarantee of market outcome. Hand priorities to `seo-operations-reporting` for packaging.
+Deliver the strategy in plain language: the positioning, the topical map, the priorities, and how it connects to the rest of the work (which pages to improve, consolidate or create, what to wire up at the Connect rung of Access, what to make eligible on assistant surfaces). State the **basis** clearly — what's backed by live data vs the user's input vs inference — and the boundary: this is a plan grounded in current signals, not a guarantee of market outcome. Hand priorities to `seo-operations-reporting` for packaging.
 
 Record findings with the shared schema in `seo-orchestrator/references/audit-report-and-state.md` (Specialist findings), with `skill: seo-identity-positioning` and `area` set to `positioning`, `topical-map`, `competitors` or `keywords`. Put the basis (`live data`, `context`, `inference`) in `evidence`, and use `needs-human` for any differentiator or claim the business has to confirm.
 

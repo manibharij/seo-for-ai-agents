@@ -1,16 +1,23 @@
 # Profile: documentation / knowledge base
 
-Use for developer/product docs, knowledge bases, and help centres. Docs are exceptionally strong **AEO** candidates — they're exactly what AI answer engines retrieve and cite — so Read, Connect, and Cite carry the weight. The usual technical trap is a **client-rendered docs SPA** failing Reach.
+Use for developer/product docs, knowledge bases, and help centres. Docs are the strongest asset most products have for being named by an assistant, because they are exactly what an answer engine wants to quote. So **Substance** (correctness and clarity) and **Access** carry the weight, and the usual technical trap is a **client-rendered docs SPA** failing Reach.
 
-## How each rung shifts
-- **Reach** — many docs frameworks are SPAs (or have search/versioning UIs) that can hide content from crawlers. Confirm doc content is in the served HTML. Versioned docs: ensure the canonical/current version is indexable and old versions handled deliberately.
-- **Read** — accurate, complete, well-structured content with clear headings, code blocks, and definitions. Docs live or die on clarity and correctness. Match page to the task/question the reader has.
-- **Understand** — `TechArticle`/`Article` where appropriate; `BreadcrumbList`; `FAQPage` for genuine Q&As (note: Google retired FAQ *rich results* entirely in May 2026, so for docs the value is clarity and AEO extraction, not a SERP rich result). Often lighter on schema than other types — clarity matters more.
-- **Connect** — strong information architecture: a logical tree, prev/next, "related", and a clear canonical per page. Avoid orphan pages and duplicate content across versions/locales.
-- **Cite** — the headline rung for docs. Question/task-shaped headings ("How do I authenticate?"), self-contained answers, copy-pasteable code, clear definitions, accurate `dateModified`. This is what gets quoted by ChatGPT/Claude/Perplexity and AI Overviews.
+## How the five systems shift
+
+- **Demand** (observed). Task-shaped demand: "how do I authenticate with X". It arrives as much through assistants as through search, and reading it tells you which pages are worth writing at all.
+- **Identity** (built). One consistent product and publisher entity across the docs, the marketing site and the release notes, so an engine knows whose documentation it is quoting.
+- **Substance** (built). Accurate, complete, current content with clear headings, code blocks and definitions. Match the page to the task or question the reader actually has. Docs live or die on correctness.
+- **Access** (built). The Visibility Ladder, in dependency order. This is the floor for docs, and the one most docs frameworks quietly break.
+  1. **Reach.** Many docs frameworks are SPAs, or have search and versioning UIs, that hide content from crawlers. Confirm doc content is in the served HTML. For versioned docs, ensure the current version is indexable and old versions are handled deliberately.
+  2. **Read.** Well-structured headings, code as language-tagged text rather than images, and honest `dateModified`.
+  3. **Understand.** `TechArticle`/`Article` where appropriate; `BreadcrumbList`; `FAQPage` for genuine Q&As (note: Google retired FAQ *rich results* entirely in May 2026, so for docs the value is clarity and clean extraction, not a SERP rich result). Often lighter on schema than other types, because clarity matters more.
+  4. **Connect.** Strong information architecture: a logical tree, prev/next, "related", stable heading anchors for deep linking, and a clear canonical per page. Avoid orphan pages and duplicate content across versions and locales.
+- **Distribution** (earned, advisory). Package registries, integration directories and developer communities link to docs far more than to marketing pages. Worth auditing, and still earned rather than arranged.
+
+**On assistant surfaces.** When a developer asks an assistant "how do I authenticate with X", the engine wants to quote these pages. Question and task-shaped headings ("How do I authenticate?"), self-contained answers, copy-pasteable code, clear definitions and an accurate `dateModified` are what make that possible. It buys **eligibility**, not a citation: no engine guarantees it will name the source it used. See `surfaces/` and `seo-surface-assistants`.
 
 ## Type-specific checks
-- **Search/nav SPA hiding content:** the most common docs Reach failure — verify served HTML.
+- **Search/nav SPA hiding content:** the most common docs failure at the Reach rung. Verify the served HTML.
 - **Versioning:** canonical to the current/stable version; `noindex` or canonical old versions deliberately so they don't duplicate or outrank current.
 - **Code blocks:** real text in the served HTML (not images of code); language-tagged.
 - **Anchor-linkable sections:** stable heading anchors so engines (and answers) can deep-link.
@@ -40,7 +47,7 @@ What to do with versions, whatever the generator:
 
 ## `llms.txt` for docs (optional, low certainty)
 
-`llms.txt` is a proposed plain-text index of a site's pages for language models. Google says you do not need AI text files or special markup to appear in AI Overviews or AI Mode (verified 2026-10, https://developers.google.com/search/docs/appearance/ai-features), so do not expect it to help in Google Search. The pack's Cite reference records that some AI tools and coding agents fetch it, which makes docs the most defensible place for one (see `seo-surface-assistants/references/ai-crawlers-and-llms-txt.md`). Mintlify generates `/llms.txt` and `/llms-full.txt` automatically; for other generators, community plugins exist.
+`llms.txt` is a proposed plain-text index of a site's pages for language models. Google says you do not need AI text files or special markup to appear in AI Overviews or AI Mode (verified 2026-10, https://developers.google.com/search/docs/appearance/ai-features), so do not expect it to help in Google Search. The pack's assistant-surface reference records that some AI tools and coding agents fetch it, which makes docs the most defensible place for one (see `seo-surface-assistants/references/ai-crawlers-and-llms-txt.md`). Mintlify generates `/llms.txt` and `/llms-full.txt` automatically; for other generators, community plugins exist.
 
 Treat it as optional and low certainty: it is cheap to add, Google does not need it, and its benefit elsewhere is not measured. Never let it replace the work that does matter here: content in the served HTML, a clean version strategy, and answer-shaped pages. If you add one, list only current, indexable pages, keep it generated from the same source as the sitemap so it cannot go stale, and do not put anything in it that is not on the site.
 
@@ -51,4 +58,4 @@ Treat it as optional and low certainty: it is cheap to add, Google does not need
 - Code shown as images.
 
 ## Priority tilt
-Weight **Reach** (is it even served?) then **Cite** and **Read** highest — docs are the strongest AEO asset most products have. Get them reachable, clear, and answer-shaped.
+Weight **Access** first (is it even served?), then **Substance** (correctness and clarity). Docs are the strongest asset most products have for being named by an assistant, so get them reachable, clear and answer-shaped, in that order.

@@ -12,7 +12,7 @@ Signs of strong content:
 - Specific, concrete, correct information — not generic statements that could describe any competitor.
 - Genuinely answers the questions a reader on this topic has (and the obvious follow-ups).
 - Original substance: real experience, real data, real examples — not a rehash of the top results.
-- Clear structure that makes the substance easy to extract (ties to the Cite rung).
+- Clear structure that makes the substance easy to extract, which is what assistant eligibility rests on.
 
 Signs of weak content (flag for improve/consolidate/prune):
 - Thin: a few generic sentences, padding, or filler around a thin core.

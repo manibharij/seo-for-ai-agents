@@ -34,16 +34,19 @@ It writes the baseline into the project — a real `.seo/` folder the developer 
 _Run #1 · 2026-06-03 · Next.js App Router · Profile: SaaS/marketing_
 
 ## Health scorecard
-| Rung | Status |
+| System | Status |
 |------|--------|
-| 1. Reach | ✅ Pass |
-| 2. Read | 🟡 Minor |
-| 3. Understand | 🔴 Failing — the floor |
-| 4. Connect | ✅ Pass |
-| 5. Rank | ✅ Pass |
-| + Cite (on top) | 🟡 Minor |
+| Demand (observed) | ✅ Read |
+| Identity (built) | 🟡 Minor |
+| Substance (built) | ✅ Pass |
+| Access · 1. Reach | ✅ Pass |
+| Access · 2. Read | 🟡 Minor |
+| Access · 3. Understand | 🔴 Failing, the floor |
+| Access · 4. Connect | ✅ Pass |
+| Distribution (earned) | 🟡 Advisory |
+| Operations (loop) | ✅ Running |
 
-Start here (floor): Understand — add Organization + SoftwareApplication schema.
+Start here (the floor): the Understand rung of Access. Add `Organization` and `SoftwareApplication` schema.
 
 ## Open (prioritised)
 1. [High] No structured data sitewide — effort: medium

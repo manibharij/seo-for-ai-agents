@@ -56,7 +56,7 @@ The strongest internal-linking pattern for topical authority:
 - Each **spoke** links back up to the hub and across to sibling spokes where relevant.
 - Result: a tightly interlinked cluster that tells engines "this site is an authority on this topic", with the hub as the consolidating page.
 
-Map your content to topics, identify or create the hub for each, and wire the spokes both ways. This pattern also sets up the Cite rung: clusters of well-linked, well-understood pages are easier for AI engines to navigate and attribute.
+Map your content to topics, identify or create the hub for each, and wire the spokes both ways. This pattern also pays off on assistant surfaces: clusters of well-linked, well-understood pages are easier for AI engines to navigate and attribute.
 
 ---
 

@@ -1,8 +1,8 @@
 # Ranking factors: the owned-media side
 
-Read this for the detail behind the Rank rung. Ranking is decided by a mix of factors; this file is about the ones **on your own site** that you can actually build, plus an honest map of the ones you can't. The job of this rung is to take the controllable factors as far as they go.
+Read this for the detail behind **Substance**. Ranking is the outcome the whole model produces, decided by a mix of factors; this file is about the ones **on your own site** that you can actually build, plus an honest map of the ones you can't. The job of this system is to take the controllable factors as far as they go.
 
-> The split that keeps this honest. **Owned-media (build-time, this rung):** relevance, search-intent match, content quality and depth, on-page E-E-A-T signals, topical authority within your own site. **Off-site / live (not this rung):** backlinks and brand authority (earned media), the strength of the competition, and where you *actually* rank over time (live data). Maximise the first; be honest about the second.
+> The split that keeps this honest. **Built, and in scope here:** relevance, search-intent match, content quality and depth, topical authority within your own site. Real experience, expertise and authorship belong to **Identity**, which this works alongside. **Earned or live, and not in scope here:** backlinks and brand authority (that is **Distribution**, advisory only), the strength of the competition, and where you *actually* rank over time (live data). Maximise the first; be honest about the second.
 
 ---
 

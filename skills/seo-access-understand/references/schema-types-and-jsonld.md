@@ -280,7 +280,7 @@ Use `@id` so the same real-world entity is recognised as one thing across pages 
 }
 ```
 
-Consistent `@id`s build a coherent entity graph: the publisher of the article *is* the organisation *is* the business. This is the foundation that the Connect rung (internal linking) and the Cite rung (entity consistency for AI attribution) build on. Keep names, URLs and logos identical wherever the same entity appears.
+Consistent `@id`s build a coherent entity graph: the publisher of the article *is* the organisation *is* the business. This is the foundation that the Connect rung (internal linking) and assistant surfaces (entity consistency for AI attribution) build on. Keep names, URLs and logos identical wherever the same entity appears.
 
 ---
 

@@ -11,7 +11,7 @@ A search positioning statement answers: **what is this site the go-to source for
 - Derive it from the **real content** and `.seo/context.md`. Use only the `[established]` entries under Differentiators and Proof assets; if the file is missing, run `seo-identity-context` first. Ask the user only about what is still open after that, as a short ranked list with a default for each question.
 - A useful shape: *"For [audience], [site] is the [category] that [genuine differentiator], because [real reason/proof]."*
 - If the user can't name a real differentiator, **that is the finding** — surface it ("the site currently reads as undifferentiated; here's what that costs in search and AI citation") rather than inventing a claim. Undifferentiated, me-too content is exactly what struggles to rank or be cited.
-- Positioning must show up **consistently** across the key pages and entity signals (name, schema `@id`, `sameAs`) — ties to the Cite rung. Consistency builds the entity engines trust.
+- Positioning must show up **consistently** across the key pages and entity signals (name, schema `@id`, `sameAs`), which is what makes you eligible on assistant surfaces. Consistency builds the entity engines trust.
 
 > Never manufacture a market position. Spin and invented superlatives ("the leading…", "the #1…") with nothing real behind them are both untrue and ineffective.
 

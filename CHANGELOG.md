@@ -73,8 +73,34 @@ installs.
 | `seo-automations` | `seo-operations-automation` |
 | `seo-proposal-roadmap` | `seo-operations-reporting` |
 
-`seo-orchestrator` keeps its name. Copy-paste mini filenames in `install/copy-paste/`
-are unchanged.
+`seo-orchestrator` keeps its name.
+
+Two copy-paste minis were renamed too, because their old names were the two concepts the
+model removed:
+
+| Old | New |
+|---|---|
+| `install/copy-paste/rank.md` | `install/copy-paste/quality.md` |
+| `install/copy-paste/cite.md` | `install/copy-paste/assistants.md` |
+
+Every other mini filename in `install/copy-paste/` is unchanged.
+
+### Fixed: the re-work reached the whole library, not just its headline
+
+The rename and the new `model/` landed first; the body of the library still taught the old
+shape. That is now consistent throughout.
+
+- **"The Cite rung" is gone** (35 occurrences across 26 files). An assistant is a surface,
+  so the text now says so wherever it used to imply a sixth rung.
+- **All seven site-type profiles** moved from "How each rung shifts" to "How the five
+  systems shift", with the Visibility Ladder nested inside Access and a separate note on
+  assistant surfaces. Their deep type-specific sections are unchanged.
+- **The health scorecard** in `audit-report-and-state.md` (and the lifecycle example) now
+  reports by system, with Access broken out into its four rungs, plus a line stating which
+  surfaces were checked and how strongly each can be verified.
+- `install/agents-md.md` no longer lists Rank as a fifth Access rung.
+- `USE-CASES.md`'s "weight highest" column names systems rather than rungs.
+- `examples/03-cite-answer-blocks.md` is now `examples/03-assistants-answer-blocks.md`.
 
 ## [0.2.0] - 2026-10-06
 *Current as of: 2026-10. Experimental: see [DISCLAIMER.md](DISCLAIMER.md). Volatile facts are stamped "verified 2026-10" beside their sources.*

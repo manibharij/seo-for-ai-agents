@@ -1,6 +1,6 @@
-# Rank — copy-paste mini (paste this into your AI coding agent)
+# Substance quality — copy-paste mini (paste this into your AI coding agent)
 
-*Self-contained version of the Rank rung, the top of the Visibility Ladder and the goal: make a page good enough, and trusted enough, to win. Ranking is an outcome you earn, so this rung has two halves — what you build (on-page, below) and what you earn (off-site authority, advised by the `offsite` mini). Run Reach, Read, Understand and Connect first.*
+*Self-contained version of the **Substance** system: make a page good enough, and trusted enough, to deserve to win. Ranking is the outcome the whole model produces, not a step you climb to, so this pairs with **Identity** (real experience and authorship) and **Distribution** (the authority you earn off-site, advised by the `offsite` mini). Clear the Access rungs first: nothing here pays off on a page a machine cannot reach.*
 
 > ⚠️ **Experimental, and run by an AI agent, which can make mistakes.** It works the owned-media factors that earn ranking and never fabricates trust signals. Review changes on the served output before publishing. See the repo's `DISCLAIMER.md`.
 
@@ -10,7 +10,7 @@
 
 You are making my pages good and relevant enough to **rank** (not just eligible). This is Substance work, and ranking is the outcome of the whole model rather than a rung. Run the Access rungs first. **Work out each page's target intent yourself from its content and place in the site, don't ask me to supply keywords.** Stay strictly white-hat. Work in four steps.
 
-**Modes.** Work these out from my request and the workspace, and state them in one line at the top. *Access:* without write access, give exact instructions instead of edits. *Autonomy:* ask before anything risky or irreversible; in auto-mode apply only safe, reversible fixes. *Scope:* honour any budget I give, then stop and list what remains. *Audience:* terse if I write like a developer or SEO; explain why if I don't. **Read `.seo/context.md` if it exists:** use its audience vocabulary to infer intent, its topical territory to judge standing, and its proof assets for E-E-A-T. Only facts it marks `[established]` may reach copy, schema or trust signals. Record each finding with: id, skill, area (rank), target, severity, evidence, fix, risk, status (open/fixed/regression/needs-human/wont-fix), verified (date), notes.
+**Modes.** Work these out from my request and the workspace, and state them in one line at the top. *Access:* without write access, give exact instructions instead of edits. *Autonomy:* ask before anything risky or irreversible; in auto-mode apply only safe, reversible fixes. *Scope:* honour any budget I give, then stop and list what remains. *Audience:* terse if I write like a developer or SEO; explain why if I don't. **Read `.seo/context.md` if it exists:** use its audience vocabulary to infer intent, its topical territory to judge standing, and its proof assets for E-E-A-T. Only facts it marks `[established]` may reach copy, schema or trust signals. Record each finding with: id, skill, system (substance), target, severity, evidence, fix, risk, status (open/fixed/regression/needs-human/wont-fix), verified (date), notes.
 
 ## Step 1 — Diagnose
 For each important page, on the served content:

@@ -1,13 +1,20 @@
 # Profile: e-commerce
 
-Use for sites selling products (Shopify, WooCommerce, custom). The risks concentrate in **Reach** (faceted-URL sprawl, JS-rendered prices), **Understand** (Product/Offer schema), and **Connect** (canonicals across variants). Scale is the enemy — small template issues multiply across thousands of URLs.
+Use for sites selling products (Shopify, WooCommerce, custom). The risks concentrate in **Access**: faceted-URL sprawl and JS-rendered prices at Reach, `Product`/`Offer` schema at Understand, and canonicals across variants at Connect. Scale is the enemy, because a small template issue multiplies across thousands of URLs.
 
-## How each rung shifts
-- **Reach** — two big risks: (1) **prices/stock rendered client-side** so crawlers see an empty or price-less page; (2) **faceted navigation** (filters/sort) generating near-infinite crawlable URLs that waste crawl budget and create duplicates. Ensure product content (incl. price) is in the served HTML; control facet URLs deliberately.
-- **Read** — unique product descriptions, not just manufacturer boilerplate duplicated across the web and across your own variants. Category pages need real introductory content, not just a grid.
-- **Understand:** `Product` with `Offer` (`price`, `priceCurrency`, `availability`), `brand`, and `aggregateRating`/`review` **only if real**. On pages where people can buy, add the merchant listing fields (shipping, returns, identifiers) and `ProductGroup` for variants; see `seo-access-understand/references/schema-types-and-jsonld.md`. `BreadcrumbList`. High value here.
-- **Connect** — **canonicals across variants** are critical: colour/size variants, query-param and faceted URLs must canonicalise to the right page so equity consolidates. Avoid duplicate product URLs competing.
-- **Cite** — buying-intent and comparison queries: clear specs, comparison tables, genuine reviews, and honest, direct answers to buyer questions ("Is X waterproof?") in the product copy make product content citable.
+## How the five systems shift
+
+- **Demand** (observed). Product, category and comparison demand behave differently, and seasonality moves all of it. Reading which demand is worth a page at all is what stops a shop generating thousands of URLs nobody searches for.
+- **Identity** (built). One consistent shop entity, with real delivery, returns and contact details, and reviews or ratings marked up only where genuine reviews exist on the page. Fabricated `aggregateRating` is removed and flagged, never added.
+- **Substance** (built). Unique product descriptions rather than manufacturer boilerplate duplicated across the web and across your own variants. Category pages need real introductory content and genuine buying guidance, not a bare grid.
+- **Access** (built). The Visibility Ladder, in dependency order. Diagnose top to bottom, fix bottom to top.
+  1. **Reach.** Two big risks: (1) **prices and stock rendered client-side** so crawlers see an empty or price-less page; (2) **faceted navigation** (filters and sort) generating near-infinite crawlable URLs that waste crawl budget and create duplicates. Ensure product content including price is in the served HTML; control facet URLs deliberately.
+  2. **Read.** Titles, descriptions and specifications present in the served HTML, with price and availability readable rather than painted in later by JavaScript.
+  3. **Understand.** `Product` with `Offer` (`price`, `priceCurrency`, `availability`), `brand`, and `aggregateRating`/`review` **only if real**. On pages where people can buy, add the merchant listing fields (shipping, returns, identifiers) and `ProductGroup` for variants; see `seo-access-understand/references/schema-types-and-jsonld.md`. `BreadcrumbList`. High value here.
+  4. **Connect.** **Canonicals across variants** are critical: colour and size variants, query-param and faceted URLs must canonicalise to the right page so equity consolidates. Avoid duplicate product URLs competing.
+- **Distribution** (earned, advisory). Marketplaces, shopping feeds, retailer listings and third-party reviews carry a large share of product visibility, and none of it is yours to set. Audit the gap and advise. Never buy placement.
+
+**On assistant surfaces.** Buying-intent and comparison prompts lean on clear specifications, honest comparison tables, genuine reviews and direct answers to buyer questions ("Is X waterproof?") in the product copy. That improves **eligibility** to be named, which is the only claim available. Shopping surfaces are verified separately from the web results you can see. See `surfaces/` and `seo-surface-assistants`.
 
 ## Parity: Merchant Center feed and the served page
 
@@ -48,7 +55,7 @@ Follow Google's faceted navigation guidance (https://developers.google.com/crawl
 - Bulk changes (a range withdrawn, a season rolled over) go through `seo-access-migrations` for the redirect map.
 
 ## Type-specific checks
-- **Faceted/filter URLs:** decide per facet, as above. Coordinate robots + canonical (see Connect + Reach).
+- **Faceted/filter URLs:** decide per facet, as above. Coordinate robots and canonical (the Reach and Connect rungs together).
 - **Variant duplication:** one URL per variant that matters, consolidated with canonicals as above.
 - **Pagination** on category pages: self-canonicalise; ensure products are reachable.
 - **Schema honesty:** never fabricate ratings/reviews/stock — a classic and penalised e-comm temptation. Mark up only what's real and shown.
@@ -56,13 +63,13 @@ Follow Google's faceted navigation guidance (https://developers.google.com/crawl
 - **Currency/locale:** correct `priceCurrency`; if multi-region, combine with `international.md`. Google asks for a distinct URL per currency offering.
 
 ## Common failures
-- Client-rendered prices invisible to crawlers (Reach).
+- Client-rendered prices invisible to crawlers (Access at Reach).
 - Faceted-URL explosion diluting crawl budget and creating duplicates.
 - Feed price and page price out of step after a sale ends or stock changes.
 - Variants selectable only in client state, all sharing one URL.
 - Fake `aggregateRating` to chase stars — remove and flag.
-- Boilerplate manufacturer descriptions duplicated everywhere (Read).
+- Boilerplate manufacturer descriptions duplicated everywhere (Substance).
 - Out-of-stock products silently 404ing and losing equity.
 
 ## Priority tilt
-Weight **Reach** (rendering + facets) and **Understand** (Product schema and feed parity) highest, then **Connect** (variant canonicals). On hosted carts, many fixes are theme or app settings: see `platforms/shopify.md` and `platforms/wordpress.md` (WooCommerce).
+Weight **Access** highest throughout: rendering and facets at Reach, `Product` schema and feed parity at Understand, variant canonicals at Connect. Then **Substance** (descriptions that are not boilerplate) and **Demand** (which categories deserve a page at all). On hosted carts, many fixes are theme or app settings: see `platforms/shopify.md` and `platforms/wordpress.md` (WooCommerce).

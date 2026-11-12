@@ -57,8 +57,8 @@ Repeat for each mini:
 - `seo-access-read.mdc` ← `copy-paste/read.md`
 - `seo-access-understand.mdc` ← `copy-paste/understand.md`
 - `seo-access-connect.mdc` ← `copy-paste/connect.md`
-- `seo-substance-quality.mdc` ← `copy-paste/rank.md`
-- `seo-surface-assistants.mdc` ← `copy-paste/cite.md`
+- `seo-substance-quality.mdc` ← `copy-paste/quality.md`
+- `seo-surface-assistants.mdc` ← `copy-paste/assistants.md`
 - `seo-fix.mdc` ← `copy-paste/fix.md` *(applies approved findings only)*
 - `seo-recheck.mdc` ← `copy-paste/recheck.md` *(re-tests findings, changes nothing)*
 - `seo-identity-context.mdc` ← `copy-paste/context.md`

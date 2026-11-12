@@ -60,7 +60,7 @@ Usually you arrive here from a content-audit verdict; if not, assess the page fi
 - **Buried point / weak structure** — the answer is hard to find; no clear outline.
 - **Thinness vs padding** — too little real substance, or real substance drowned in filler.
 - **Unclear writing** — long sentences, jargon, passive throat-clearing, walls of text.
-- **Weak answerability** — no self-contained answers an engine could quote (ties to Cite).
+- **Weak answerability** — no self-contained answers an engine could quote (ties to assistant eligibility).
 - **Missing genuine substance/E-E-A-T** — gaps only the user can fill (real data, real examples, real author/sources).
 
 Separate the two kinds of weakness: **editable now** (structure, clarity, intent framing, answerability from existing material) vs **needs the human** (missing real facts/sources/expertise). See `references/editing-principles.md`.

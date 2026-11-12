@@ -30,7 +30,7 @@ If I said "just do it" or you are running unattended, apply only low-risk, rever
 If there is no `.seo/state.json` and I gave no ids, stop: tell me to run the audit first ([`audit.md`](audit.md)).
 
 ## Step 1: Plan
-Read `.seo/state.json`, `.seo/log.md` and `.seo/context.md` if they exist. Only facts that `context.md` marks `[established]` may reach copy, schema or trust signals. List the findings you will apply (ref, target, fix, risk) in ladder order (Reach, Read, Understand, Connect, Rank, then Cite), regressions first, and list any you are refusing and why. If a finding's fix is unclear, or the site has changed since the audit so that it no longer applies, skip it and say so.
+Read `.seo/state.json`, `.seo/log.md` and `.seo/context.md` if they exist. Only facts that `context.md` marks `[established]` may reach copy, schema or trust signals. List the findings you will apply (ref, target, fix, risk) in dependency order, regressions first: anything blocking Access comes first, at its lowest broken rung (Reach, Read, Understand, Connect), then Identity, Substance and Distribution, which are simultaneous rather than sequential. List any you are refusing and why. If a finding's fix is unclear, or the site has changed since the audit so that it no longer applies, skip it and say so.
 
 ## Step 2: Branch
 Where git exists, start from a clean working tree on a new branch. These commands are the same in bash and PowerShell:

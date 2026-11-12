@@ -222,7 +222,7 @@ From the verified-crawler requests over a representative window:
 - **Status distribution to crawlers** — `200` vs `3xx` vs `4xx`/`5xx`; spikes of errors or redirects waste budget and signal problems.
 - **Junk magnets** — URL patterns soaking up hits: `?`-parameter and faceted URLs, session IDs, calendar/filter "infinite spaces", duplicate variants, redirect chains.
 - **Importance vs frequency mismatch** — are trivial URLs crawled more than money pages?
-- **Crawler mix over time** — classic vs AI crawlers, and which sections each favours (feeds the Cite rung's AI-crawler decisions).
+- **Crawler mix over time** — classic vs AI crawlers, and which sections each favours (feeds the AI-crawler decisions in `seo-surface-assistants`).
 
 ## 4. No logs: the Crawl Stats fallback
 

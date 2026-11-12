@@ -118,17 +118,22 @@ What a person reads. Generated/updated from `state.json`. Suggested template:
 # SEO Audit — example.com
 _Last run: 2026-06-03 · Run #4 · Stack: Next.js App Router · Profile: SaaS/marketing_
 
-## Health scorecard (the Visibility Ladder)
-| Rung | Status | Notes |
+## Health scorecard (the Visibility Model)
+| System | Status | Notes |
 |------|--------|-------|
-| 1. Reach | ✅ Pass | Content in served HTML; HTTPS; sitemap correct |
-| 2. Read | 🟡 Minor | 3 pages missing meta descriptions; LCP image unoptimised |
-| 3. Understand | 🔴 Failing | Product pages have no schema — **the floor** |
-| 4. Connect | ✅ Pass | — |
-| 5. Rank | ✅ Pass | Intent match and depth solid (owned-media half) |
-| + Cite (on top) | 🟡 Minor | Answers buried on 2 key pages |
+| Demand (observed) | ✅ Read | Search Console connected; intent map current |
+| Identity (built) | 🟡 Minor | `Organization` entity resolves; no author entities yet |
+| Substance (built) | ✅ Pass | Intent match and depth solid |
+| Access · 1. Reach | ✅ Pass | Content in served HTML; HTTPS; sitemap correct |
+| Access · 2. Read | 🟡 Minor | 3 pages missing meta descriptions; LCP image unoptimised |
+| Access · 3. Understand | 🔴 Failing | Product pages have no schema, **the floor** |
+| Access · 4. Connect | ✅ Pass | — |
+| Distribution (earned) | 🟡 Advisory | Authority gap against top 3 competitors; strategy drafted |
+| Operations (loop) | ✅ Running | Run #4; 1 regression caught and fixed |
 
-**Start here (the floor):** Understand — add honest Product/Offer schema to product pages.
+**Surfaces checked:** `google-web` (strong verification), `chatgpt` (sampled prompts, eligibility only).
+
+**Start here (the floor):** the Understand rung of Access. Add honest `Product`/`Offer` schema to product pages. Nothing above a broken rung of Access pays off until it is cleared.
 
 ## Open items (prioritised)
 1. **[High]** Product pages have no schema — `/products/*` · effort: medium

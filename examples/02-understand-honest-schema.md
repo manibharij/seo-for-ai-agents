@@ -30,7 +30,7 @@ Cross-checking against the **visible page**:
 - There are **no ratings or reviews** on a blog post — `aggregateRating` with "127 reviews" is fabricated to chase a rich result.
 - `datePublished` "2024-01-01" doesn't match the post's actual publish date.
 
-It validates. It's in the served HTML. **And it's dishonest** — a guideline violation that risks a manual penalty and undermines the exact trust the Cite rung depends on.
+It validates. It's in the served HTML. **And it's dishonest**: a guideline violation that risks a manual penalty and undermines the exact trust that being named by an assistant depends on.
 
 > The lazy version of this skill stops at "valid JSON-LD, present in HTML ✓". This pack's honesty check is what catches it.
 
@@ -59,7 +59,7 @@ The agent marks up **only what is visibly true**, removes the fabrications, and 
 - `author` **removed** — there's no real author on the page to name.
 - `aggregateRating` **removed** — there are no reviews.
 - `datePublished` corrected to the real date from the CMS.
-- `publisher` added with a consistent `@id` (sets up entity consistency for Connect and Cite).
+- `publisher` added with a consistent `@id` (sets up entity consistency for the Connect rung and for assistant surfaces).
 - Rendered from the same server-component data as the visible post, so values can't drift.
 
 ---

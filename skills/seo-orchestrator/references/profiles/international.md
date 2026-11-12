@@ -2,12 +2,19 @@
 
 Use for any site targeting multiple countries or languages. This is a **modifier you combine** with another profile (e.g. international + e-commerce). The defining concern is **hreflang** and a clean multi-locale architecture so the right version is served to the right audience without duplicate-content confusion.
 
-## How each rung shifts
-- **Reach** — each locale's content must be reachable and in the served HTML; each locale in the sitemap (or per-locale sitemaps). Avoid IP-based auto-redirects that trap crawlers in one locale — let all locales be crawlable; use hreflang to express the relationship, not forced redirects.
-- **Read** — genuinely localised content (real translation/localisation), not machine-translated boilerplate or one language with a swapped flag. Correct `<html lang>` per locale (e.g. `en-GB`, `fr-FR`).
-- **Understand** — schema consistent per locale; `inLanguage` where relevant; consistent entity `@id` for the organisation across locales.
-- **Connect** — the heart of this profile: **hreflang** annotations linking equivalent pages across locales, plus correct canonicals (each locale self-canonicalises; hreflang expresses alternates). Clear URL strategy (subdirectory `/fr/`, subdomain, or ccTLD).
-- **Cite** — answer formatting in each locale's language; entity consistency across locales so engines resolve one organisation.
+## How the five systems shift
+
+- **Demand** (observed). Demand differs per market, not merely per language. The same product can be a different query, a different intent and a different competitor set in each locale, and translating a keyword list is not reading demand.
+- **Identity** (built). One consistent organisation identity across every locale, with per-locale details (address, telephone, language) accurate for that market rather than copied from the English version.
+- **Substance** (built). Genuinely localised content (real translation and localisation), not machine-translated boilerplate or one language with a swapped flag. Each locale competes in its own market, and real localisation is what makes that credible.
+- **Access** (built). The Visibility Ladder, in dependency order. **The heart of this profile**, because locale wiring is Access work and it fails silently when it fails.
+  1. **Reach.** Each locale's content must be reachable and in the served HTML, and each locale in the sitemap (or per-locale sitemaps). Avoid IP-based auto-redirects that trap crawlers in one locale: let all locales be crawlable and use hreflang to express the relationship, not forced redirects.
+  2. **Read.** Correct `<html lang>` per locale (for example `en-GB`, `fr-FR`), localised titles and descriptions, and body copy that reads as written for that market.
+  3. **Understand.** Schema consistent per locale, `inLanguage` where relevant, and a consistent entity `@id` for the organisation across locales.
+  4. **Connect.** **hreflang** annotations linking equivalent pages across locales, plus correct canonicals (each locale self-canonicalises; hreflang expresses alternates). One clear URL strategy, applied consistently (subdirectory `/fr/`, subdomain, or ccTLD).
+- **Distribution** (earned, advisory). Authority is market-specific: the links and mentions that count in one country usually come from publications in that country. Audit and advise per market, never execute.
+
+**On assistant surfaces.** Answer formatting in each locale's language, with a consistent entity so engines resolve one organisation across markets. **Eligibility** is claimed per locale and nothing more: assistant presence can only be sampled, and sampling one market tells you nothing about another. See `surfaces/` and `seo-surface-assistants`.
 
 ## hreflang — the core mechanism
 - Each page lists `rel="alternate" hreflang="<lang>[-<REGION>]"` for **every** locale version, **including itself** (self-referential), plus `hreflang="x-default"` for the fallback.
@@ -194,4 +201,4 @@ The code check is syntax only: `en-UK` passes the pattern but is still wrong. Re
 - "Translation" that's the same language with a different flag.
 
 ## Priority tilt
-Weight **Connect** (hreflang + canonicals + URL strategy) highest, then **Read** (genuine localisation). Combine with the base profile for everything else. On an existing international site, treat hreflang clusters as **intentional** — verify before changing (see `existing-site-safety.md`).
+Weight **Access** highest (hreflang, canonicals and URL strategy at the Connect rung), then **Substance** (genuine localisation) and **Demand** (each market is its own question). Combine with the base profile for everything else. On an existing international site, treat hreflang clusters as **intentional** and verify before changing anything (see `existing-site-safety.md`).

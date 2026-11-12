@@ -58,7 +58,7 @@ If the dataset can't support distinct, useful pages, **stop and say so** — rec
 
 ### 2a. Design
 - **Template plus unique substance.** The template frames structure; each page's value comes from its own data (real local detail, real figures, real differences), not from boilerplate with a name swapped.
-- **Intent-matched layout.** Lead with the answer or data the searcher wants (Read, Cite).
+- **Intent-matched layout.** Lead with the answer or data the searcher wants. That is Substance, and it is also what makes the page quotable by an assistant.
 - **Honest schema.** The right type per page, from real values only (rung 3 rules).
 - **Linking and discovery.** Hub and category pages plus cross-links between related entities, so no page is orphaned (rung 4). A sitemap per page type.
 - **Indexation plan.** Decide which pages are indexable and which combinations are never generated as crawlable URLs (rung 1).

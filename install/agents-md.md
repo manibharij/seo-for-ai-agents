@@ -18,14 +18,24 @@ For any SEO, indexing, "not showing up", AI-search/citation, schema, internal-li
 rendering, redirect/migration, or analytics task, use the seo-for-ai-agents skill pack
 in `skills/`. Works on new or existing sites.
 
-Method: diagnose top-to-bottom, fix bottom-to-top. Four Access rungs, in order — you may not
-fix a rung until the ones below it pass:
+Method: the Visibility Model. Five systems, separated by how much control you have:
+Demand is observed, Identity/Substance/Access are built, Distribution is earned, and an
+Operations loop keeps all of it true. Rank is not one of them: it is the outcome they
+produce together.
+
+Only Access has a fixed order. It holds the Visibility Ladder, four rungs: diagnose
+top-to-bottom, fix bottom-to-top, and do not work above a rung until the ones below pass:
 1. Reach (`skills/seo-access-reach/`) — crawlable + content in the SERVED HTML + HTTPS
 2. Read (`skills/seo-access-read/`) — content + metadata + page experience (speed/mobile)
 3. Understand (`skills/seo-access-understand/`) — valid, honest schema
 4. Connect (`skills/seo-access-connect/`) — internal links + canonicals
-5. Rank (`skills/seo-substance-quality/`) — the goal: good enough, and trusted enough, to win (intent, quality, on-page E-E-A-T, topical authority; off-site authority advised via `seo-distribution-authority`)
-The assistant surface (once a page can rank): `skills/seo-surface-assistants/` — eligible to be named by AI answers. A surface, not a rung.
+The other systems are simultaneous, not sequential:
+- Substance (`skills/seo-substance-quality/`) — does the page deserve to win? (intent match, quality, depth)
+- Identity (`skills/seo-identity-context/`, `skills/seo-identity-positioning/`) — who you provably are: real experience, expertise, authorship, one resolvable entity
+- Demand (`skills/seo-demand-search-data/`) — what is actually being asked. Read it, never invent it
+- Distribution (`skills/seo-distribution-authority/`) — what points at you. Analyse and advise, never execute
+Surfaces are an axis across all five: `skills/seo-surface-assistants/` makes a page eligible
+to be named by AI answers. A surface, not a rung, and eligibility is the only claim.
 Modes: every skill runs in `audit` (default, read-only), `fix` (approved findings only) or `re-check`.
 Foundation and data: `skills/seo-identity-context/` (learn the business first), `skills/seo-demand-search-data/`
 (the user's own search data: indexing, traffic, demand, change impact).

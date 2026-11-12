@@ -1,20 +1,20 @@
-# Use cases: the ladder, tuned to your kind of site
+# Use cases: the model, tuned to your kind of site
 
 The Visibility Model is the same for every site: Demand, Identity, Substance, Access (where the Visibility Ladder lives: Reach → Read → Understand → Connect) and Distribution, kept true by Operations. **Rank** is the outcome they produce together, and an AI assistant is simply one more surface. What changes per site type is **where sites like yours actually fail** and **which checks matter most**. The pack encodes that as [site-type profiles](skills/seo-orchestrator/references/profiles/) which the orchestrator applies automatically: it infers your site type in Step 0, so you don't have to declare it.
 
 This page is the orientation layer: which profile fits, what it emphasises, which skills carry the weight, and a copy-paste prompt to start with. Depth lives in each profile file.
 
-> Profiles **combine**. An international shop → `ecommerce` + `international`. A SaaS with docs → `saas-marketing` + `documentation`. Profiles tune emphasis and add checks; they never fork the method or let you skip a rung.
+> Profiles **combine**. An international shop → `ecommerce` + `international`. A SaaS with docs → `saas-marketing` + `documentation`. Profiles tune emphasis and add checks; they never fork the method, drop a system, or let you work above a broken rung of Access.
 
 | Your site | Profile | The classic failure | Weight highest |
 |---|---|---|---|
-| SaaS / product marketing | [`saas-marketing`](skills/seo-orchestrator/references/profiles/saas-marketing.md) | Marketing site is an SPA serving crawlers an empty shell | Reach, then Read + Cite |
-| Online shop | [`ecommerce`](skills/seo-orchestrator/references/profiles/ecommerce.md) | Client-rendered prices; faceted-URL sprawl; variant duplication | Reach + Understand, then Connect |
-| Local business | [`local-business`](skills/seo-orchestrator/references/profiles/local-business.md) | Inconsistent NAP; doorway pages with the town name swapped | Understand + Read |
-| Blog / content site | [`content-blog`](skills/seo-orchestrator/references/profiles/content-blog.md) | Orphan posts, cannibalisation, thin archives | Read + Cite, then Connect |
-| Documentation / help centre | [`documentation`](skills/seo-orchestrator/references/profiles/documentation.md) | Docs SPA invisible to the AI crawlers that want it most | Reach, then Cite + Read |
-| News / publisher | [`news-publisher`](skills/seo-orchestrator/references/profiles/news-publisher.md) | Slow discovery, false timestamps, anonymous articles | Reach + Understand + Rank |
-| Multi-country / multilingual | [`international`](skills/seo-orchestrator/references/profiles/international.md) *(modifier — combine it)* | Missing/one-way hreflang; every locale canonicalising to English | Connect, then Read |
+| SaaS / product marketing | [`saas-marketing`](skills/seo-orchestrator/references/profiles/saas-marketing.md) | Marketing site is an SPA serving crawlers an empty shell | Access (rendering), then Substance + Identity |
+| Online shop | [`ecommerce`](skills/seo-orchestrator/references/profiles/ecommerce.md) | Client-rendered prices; faceted-URL sprawl; variant duplication | Access (rendering, facets, `Product` schema), then Substance |
+| Local business | [`local-business`](skills/seo-orchestrator/references/profiles/local-business.md) | Inconsistent NAP; doorway pages with the town name swapped | Identity (NAP + `LocalBusiness`), then Substance |
+| Blog / content site | [`content-blog`](skills/seo-orchestrator/references/profiles/content-blog.md) | Orphan posts, cannibalisation, thin archives | Substance + Identity, then Access (clusters) |
+| Documentation / help centre | [`documentation`](skills/seo-orchestrator/references/profiles/documentation.md) | Docs SPA invisible to the AI crawlers that want it most | Access (is it even served?), then Substance |
+| News / publisher | [`news-publisher`](skills/seo-orchestrator/references/profiles/news-publisher.md) | Slow discovery, false timestamps, anonymous articles | Access (speed) + Identity (bylines, standards) |
+| Multi-country / multilingual | [`international`](skills/seo-orchestrator/references/profiles/international.md) *(modifier, combine it)* | Missing/one-way hreflang; every locale canonicalising to English | Access (hreflang), then Substance |
 
 ## Starter prompts per site type
 

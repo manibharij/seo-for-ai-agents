@@ -1,6 +1,6 @@
 # Entity consistency and attribution (the trust layer)
 
-Read this for the trust half of the Cite rung: making an answer engine confident *who you are* and *why you can be believed*. This is where the white-hat rule is most important and most tempting to break — so it's spelled out in full. The principle: **surface every genuine trust signal; fabricate none.**
+Read this for the trust half of assistant eligibility, which is Identity work: making an answer engine confident *who you are* and *why you can be believed*. This is where the white-hat rule is most important and most tempting to break — so it's spelled out in full. The principle: **surface every genuine trust signal; fabricate none.**
 
 ---
 
