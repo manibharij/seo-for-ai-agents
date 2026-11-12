@@ -130,6 +130,40 @@ Honest about its own edges: DataForSEO's Backlinks, OnPage, Business Data, Domai
 and Content Analysis modules are reachable through capability detection and have **no
 verified recipe in that file yet**, and it says so rather than implying coverage.
 
+### Added: Ahrefs and Semrush, and a table of which tool can do which workflow
+
+[`data/ahrefs-semrush.md`](skills/seo-orchestrator/references/data/ahrefs-semrush.md),
+verified 2026-11. The most useful part is the comparison at the top, because **these tools
+are not interchangeable** and choosing by habit is how an analysis becomes impossible
+halfway through.
+
+- **Ahrefs Brand Radar** is the only multi-engine AI citation source verified in this pack:
+  `chatgpt`, `google_ai_overviews`, `google_ai_mode`, `gemini`, `perplexity`, `copilot`,
+  `claude` and `grok`. Two limits shape its use, and both are stated: the response returns
+  the cited page and a response count but **not the prompt and not the engine**, so
+  attributing by engine means one call per `data_source`; and `claude` supports custom
+  prompts only. Requests limited to your own custom prompts are free, which makes a tracked
+  prompt set the habit to build. `volume` and `mentions` are deprecated.
+- **Ahrefs cannot do the cannibalisation analysis.** `organic-keywords` returns
+  `best_position_url`, one ranking URL per keyword, so two of your own pages competing for
+  one query never appears. The file says to use DataForSEO for it or to report that it was
+  not performed, rather than approximating it by inference.
+- **Ahrefs `date_compared`** returns a period-over-period comparison in one call, which
+  feeds the progress half of the Operations loop.
+- **Semrush `domain_organic_organic`** discovers who actually competes. Wired into
+  `earning-angles.md`, because the competitors a business names in a meeting are frequently
+  not the ones holding its search demand, and a plan built against the wrong set is wasted.
+- **Semrush `backlinks_overview`**: `domains_num` is the number that matters, not `total`,
+  which is the same sitewide-footer-link trap called out for DataForSEO.
+- Practical traps recorded: Semrush uses **two different base URLs** (domain reports and
+  backlinks are not the same host), bills **per line returned** so `display_limit` is never
+  optional in practice, and returns CSV with a header row you should confirm columns
+  against. Ahrefs documents API v3 from the Lite plan while separately stating that new
+  applications require Enterprise activation, so an existing key and a new key are not the
+  same situation. Check access before designing a workflow around either.
+
+Throughout, "not verified here" is used rather than asserting a tool cannot do something.
+
 ### Added: the rest of the DataForSEO modules, as workflows 7 to 14
 
 [`data/dataforseo-modules.md`](skills/seo-orchestrator/references/data/dataforseo-modules.md),

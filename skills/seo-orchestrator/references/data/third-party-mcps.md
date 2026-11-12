@@ -24,7 +24,8 @@ Tool names differ by host and version. Match by description: a tool that "return
 - **Access:** Lite plan and above. Uses an Ahrefs key generated in the account. No extra fee, but calls consume the plan's **API units**: one call costs at least 50 units, more for complex requests, shared with Ahrefs Connect and API v3. Ahrefs describes the integration as read-only.
 - **Tool groups:** Site Explorer (overview metrics, backlinks, referring domains, anchors, organic keywords, competitors), Keywords Explorer (volume, matching terms), SERP overview, Rank Tracker, Site Audit, **Brand Radar**, Web Analytics, a Search Console group, social media, content helper, batch analysis, management, subscription info.
 - **Brand Radar** reports AI responses that mention a brand or its competitors, with **cited pages** and **cited domains**. Its `data_source` covers ChatGPT, Google AI Overviews, Google AI Mode, Gemini, Perplexity, Copilot, Claude and Grok. Requests using only the user's custom prompts are free; requests including Ahrefs' own prompt data use API units.
-- **Use it for:** backlink audits (`seo-distribution-authority`), keyword demand and competitor gaps (`seo-identity-positioning`, demand mapping in `seo-demand-search-data`), and AI visibility (which pages are cited, for which prompts, against which competitors).
+- **Use it for:** backlink audits (`seo-distribution-authority`), keyword demand and competitor gaps (`seo-identity-positioning`, demand mapping in `seo-demand-search-data`), and AI visibility (which pages are cited, against which competitors).
+- **Named workflows with endpoints and columns:** [`ahrefs-semrush.md`](ahrefs-semrush.md). Brand Radar across eight engines, period-over-period change in one call via `date_compared`, server-side striking-distance filtering, and the analysis Ahrefs **cannot** do (cannibalisation, because `organic-keywords` returns one URL per keyword).
 
 ## Semrush MCP (official)
 
@@ -32,6 +33,7 @@ Tool names differ by host and version. Match by description: a tool that "return
 - **Access:** included with plans that have API access (for SEO data: Semrush One Starter or Pro and above, SEO Classic Pro or Guru, or Business with an API units package; for traffic data: a Trends API plan). Calls consume **API units** like the standard API.
 - **Data:** all Trends API and SEO API methods, plus the read-only methods of the Projects API: keyword research, domain analytics, backlinks, position tracking, traffic trends.
 - **Use it for:** the same jobs as Ahrefs. Semrush databases are per country: always state which one.
+- **Named workflows with report types and columns:** [`ahrefs-semrush.md`](ahrefs-semrush.md). Keyword gap (`domain_domains`), the cheapest per-line keyword inventory (`domain_organic`), discovering who actually competes (`domain_organic_organic`) and the backlink profile (`backlinks_overview`). Note the two different base URLs, and that billing is per line returned, so `display_limit` is never optional in practice.
 
 ## DataForSEO MCP (official) and APIs
 

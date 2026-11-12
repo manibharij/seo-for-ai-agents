@@ -232,6 +232,12 @@ of this file apply to all of them** and are not repeated there.
 | 13 | The geo-grid, from `location_coordinate` | SERP Maps |
 | 14 | Google listing consistency without asking for a screenshot | Business Data |
 
+Ahrefs and Semrush have their own recipes in
+[`ahrefs-semrush.md`](ahrefs-semrush.md), which also carries the table of **which of the
+three tools can do which workflow**. They are not interchangeable: DataForSEO is the only
+one of the three verified here for cannibalisation, the geo-grid and render-gap detection,
+and Ahrefs is the only one verified for AI citations across more than one engine.
+
 Domain Analytics (technologies, Whois) and the task-based full-site OnPage crawl have **no
 verified recipe in either file**. They are reachable through the capability detection in
 [`live-data-integrations.md`](../live-data-integrations.md). Say that in the finding rather

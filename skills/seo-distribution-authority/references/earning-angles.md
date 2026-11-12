@@ -22,7 +22,17 @@ Before recommending any of this, answer the prior question honestly, because the
 assuming the answer.
 
 Compare your page against the pages that outrank it, on intent match and information gain
-(`seo-substance-quality/references/information-gain.md`). Then:
+(`seo-substance-quality/references/information-gain.md`).
+
+**Discover who those competitors are rather than accepting a list.** The ones a business
+names in a meeting are frequently not the ones holding its search demand, which is often
+publishers, marketplaces or comparison sites nobody thinks of as competitors at all. Where
+the environment has Semrush, `domain_organic_organic` returns them (workflow S3 in
+[`seo-orchestrator/references/data/ahrefs-semrush.md`](../../seo-orchestrator/references/data/ahrefs-semrush.md));
+otherwise read the SERP for the demand you want and write down who is actually there. A plan
+built against the wrong set is wasted however good it is.
+
+Then:
 
 - **Your pages are weaker.** Authority is not the constraint. Substance is, and a link campaign
   will not fix it. Say so, and hand it to the Content Editor.
