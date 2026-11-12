@@ -107,7 +107,10 @@ Useful categories, roughly in descending order of hit rate:
 - **Broken-link reclamation**: pages linking to something dead that your thing now replaces.
   Genuinely useful to the host, which is why it works.
 - **Unlinked mentions**: somebody already named the business without linking. The highest hit
-  rate available and frequently sitting unexamined in brand-mention data.
+  rate available and frequently sitting unexamined in brand-mention data. Where the
+  environment has DataForSEO, workflow 12 in
+  [`seo-orchestrator/references/data/dataforseo-modules.md`](../../seo-orchestrator/references/data/dataforseo-modules.md)
+  finds them by subtraction: everyone who mentions the brand, minus everyone who links to it.
 
 ---
 
@@ -142,6 +145,13 @@ The numbers: referring domains against named competitors, the relevance profile 
 just the count, and the specific pages attracting their links. All dated, all with the data
 source named, all `inferred` where they come from a third-party tool, because no backlink index
 is complete.
+
+Compare **referring root domains, never total backlinks**. One partner with a sitewide footer
+link produces thousands of backlinks from a single domain, and a comparison on the raw count
+can tell you the exact opposite of the truth. Workflow 7 in
+[`seo-orchestrator/references/data/dataforseo-modules.md`](../../seo-orchestrator/references/data/dataforseo-modules.md)
+gives the fields and the trap; workflow 8 lists the links that were lost, which is usually the
+best-value item in the plan because the relationship already existed.
 
 The sentence: **how long this takes, and that there is no shortcut that is not a risk.**
 Authority is earned over quarters by real work, and a report that implies otherwise is setting

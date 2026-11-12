@@ -43,7 +43,12 @@ How to apply it:
 
 The Google Business Profile lives off-site. The agent does not log in to it or change it; it checks the website against what the owner reports, and hands the owner a list. Google's GBP guidelines ask for the real-world business name, the real location (service-area businesses hide their address), and contact details that lead to the specific business (verified 2026-10, https://support.google.com/business/answer/3038177).
 
-Ask the owner for the GBP values (or a screenshot), then check the served site against them:
+Ask the owner for the GBP values (or a screenshot), then check the served site against them.
+Where the environment has DataForSEO, workflow 14 in
+[`../data/dataforseo-modules.md`](../data/dataforseo-modules.md) observes most of these
+fields directly (`title`, `address_info`, `phone`, `category`, the hours timetable and
+`is_claimed`), so the diff can be run without waiting for a screenshot. The listing side
+still stays `needs-human`, because only the owner can edit it.
 - [ ] **Name** on the site, in `LocalBusiness` `name`, and in GBP is the same real-world name. No keywords or town names added to the GBP name that the business does not use.
 - [ ] **Address** matches character for character in the visible footer or contact page, the schema `address`, and GBP. For a service-area business that hides its address in GBP, the site does not publish it either, unless customers visit.
 - [ ] **Phone** is the same local number in all three, in the same format in the schema (`+44 ...`).

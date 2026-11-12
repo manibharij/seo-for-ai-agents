@@ -127,7 +127,8 @@ When no tool in the environment provides a capability but the user has configure
 - [`data/crux-pagespeed.md`](data/crux-pagespeed.md): CrUX API, CrUX History API, PageSpeed Insights.
 - [`data/bing-webmaster.md`](data/bing-webmaster.md): traffic, crawl and index data, and the AI Performance report.
 - [`data/third-party-mcps.md`](data/third-party-mcps.md): Ahrefs, Semrush, DataForSEO and OpenSEO, how to connect them, and how to treat their numbers.
-- [`data/dataforseo.md`](data/dataforseo.md): named DataForSEO workflows with endpoints and filters. Cannibalisation without Search Console, confirming it by SERP flip, intent-shift detection from the SERP type mix, AI Overview references (which page was cited and which sentence was used), striking distance on a site you do not own, and page-level competitor comparison.
+- [`data/dataforseo.md`](data/dataforseo.md): named DataForSEO workflows with endpoints and filters, 1 to 6. Cannibalisation without Search Console, confirming it by SERP flip, intent-shift detection from the SERP type mix, AI Overview references (which page was cited and which sentence was used), striking distance on a site you do not own, and page-level competitor comparison.
+- [`data/dataforseo-modules.md`](data/dataforseo-modules.md): workflows 7 to 14. The authority gap quantified against named competitors, lost links, broken backlinks, render-gap detection at scale (the same URL with and without JavaScript), on-page triage on a site you cannot crawl, unlinked mentions by subtraction, the geo-grid from `location_coordinate`, and Google listing consistency.
 
 User-facing setup notes: `install/data-integrations.md`.
 

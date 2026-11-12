@@ -215,10 +215,24 @@ State these when you use it, because the numbers look authoritative:
 - **Anything about a page a crawler cannot reach.** If Access is failing, fix that first;
   this data will only describe the failure expensively.
 
-## Modules with no recipe here yet
+## The other modules
 
-DataForSEO also exposes Backlinks, OnPage, Business Data, Domain Analytics and Content
-Analysis. They are usable through the capability detection in
-[`live-data-integrations.md`](../live-data-integrations.md), and they have **no verified
-recipe in this file yet**. Treat anything you do with them as unverified against these docs,
-and say so in the finding rather than implying this file covered it.
+Backlinks, OnPage, Content Analysis and the local endpoints have their own recipes in
+[`dataforseo-modules.md`](dataforseo-modules.md), workflows 7 to 14. **The rules at the top
+of this file apply to all of them** and are not repeated there.
+
+| # | Workflow | Module |
+|---|---|---|
+| 7 | The authority gap, quantified against named competitors | Backlinks |
+| 8 | Lost links, for reclamation | Backlinks |
+| 9 | Broken backlinks, which is a redirect job rather than a campaign | Backlinks |
+| 10 | Render-gap detection at scale, by calling the same URL with and without JavaScript | OnPage |
+| 11 | On-page triage on a site you cannot crawl yourself | OnPage |
+| 12 | Unlinked mentions, found by subtracting linkers from mentioners | Content Analysis + Backlinks |
+| 13 | The geo-grid, from `location_coordinate` | SERP Maps |
+| 14 | Google listing consistency without asking for a screenshot | Business Data |
+
+Domain Analytics (technologies, Whois) and the task-based full-site OnPage crawl have **no
+verified recipe in either file**. They are reachable through the capability detection in
+[`live-data-integrations.md`](../live-data-integrations.md). Say that in the finding rather
+than implying these files covered them.

@@ -98,3 +98,4 @@ Exact checks/commands in `references/redirect-mapping.md`. **If an old URL 404s 
 ## Reference files
 - `references/redirect-mapping.md` — building and reviewing the old→new map, status-code choices, and the exact served-output verification steps.
 - `references/framework-migrations.md` — where redirects live per stack/platform (Next.js, Apache/Nginx, CDN, Shopify/WordPress) and replatforming/domain-move specifics.
+- **Externally linked 404s, after a migration:** workflow 9 in `seo-orchestrator/references/data/dataforseo-modules.md`. A backlink tool's `broken_backlinks` is the fastest way to find old URLs that other sites still link to and that no longer resolve, which is exactly what an incomplete redirect map looks like from outside. Each one is authority arriving at a dead URL, and a `301` to the genuine equivalent recovers it with no outreach. Not the homepage: Google may treat that as a soft 404.

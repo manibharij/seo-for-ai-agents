@@ -42,7 +42,13 @@ ranking factor. A single check is a single coordinate, and it does not represent
 
 - **A geo-grid**: the same query run from many coordinates across the service area,
   producing a map of positions rather than one number. This is the only honest way to
-  report local position, and it needs a tool or an API that can set location.
+  report local position, and it needs a tool or an API that can set location. Where the
+  environment has DataForSEO, workflow 13 in
+  [`data/dataforseo-modules.md`](../skills/seo-orchestrator/references/data/dataforseo-modules.md)
+  is the mechanism: the Maps endpoint takes `location_coordinate` as
+  `"latitude,longitude,zoom"`, so a lattice of points across the service area produces the
+  grid. Identify yourself by `cid` rather than by name, keep the zoom constant between runs,
+  and price it first, because it is one call per coordinate per keyword per run.
 - **Google Business Profile insights** for how people found the profile, what they did, and
   which queries surfaced it. First-party and the most reliable source here.
 - **Served HTML** for the site's half: the textual address, hours and phone present and not

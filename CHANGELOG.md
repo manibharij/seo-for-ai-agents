@@ -130,6 +130,44 @@ Honest about its own edges: DataForSEO's Backlinks, OnPage, Business Data, Domai
 and Content Analysis modules are reachable through capability detection and have **no
 verified recipe in that file yet**, and it says so rather than implying coverage.
 
+### Added: the rest of the DataForSEO modules, as workflows 7 to 14
+
+[`data/dataforseo-modules.md`](skills/seo-orchestrator/references/data/dataforseo-modules.md),
+verified 2026-11. Backlinks, OnPage, Content Analysis and the local endpoints, each as a
+named analysis rather than an endpoint list. Four of them give a mechanism to something the
+library previously only described:
+
+- **Render-gap detection at scale (10).** `on_page/instant_pages` defaults to
+  `enable_javascript: false`, so calling the same URL twice and diffing `checks` finds pages
+  whose title, `h1` or description exist only after scripts run. That is the pack's
+  number-one finding, across hundreds of URLs instead of one at a time. The finding stays
+  `inferred` and the fix is still proven with your own fetch: invariant 1 does not bend for
+  a vendor's score.
+- **The geo-grid (13).** `surfaces/google-maps.md` said there is no such thing as your
+  position "in a town", only positions at points, and that a grid is the only honest report.
+  The Maps endpoint takes `location_coordinate` as `"latitude,longitude,zoom"`, so a lattice
+  of coordinates produces one. Priced explicitly, because a 7x7 grid is 49 calls per keyword
+  per run and that surprises people.
+- **Unlinked mentions by subtraction (12).** Content Analysis gives everyone who mentions
+  the brand; Backlinks gives everyone who links. The difference is the list `earning-angles.md`
+  calls the highest hit rate available and nobody looks at.
+- **Google listing consistency (14).** `profiles/local-business.md` began "ask the owner for
+  the GBP values (or a screenshot)". `my_business_info` observes `title`, `address_info`,
+  `phone`, `category`, the hours timetable and `is_claimed` directly, so the diff runs
+  without waiting. The listing side stays `needs-human`, because only the owner can edit it.
+
+Plus the authority gap quantified against named competitors (7), lost links (8), broken
+backlinks (9, which is a redirect job rather than a campaign and belongs to
+`seo-access-migrations`), and on-page triage on a site you cannot crawl (11).
+
+One trap is called out in both the recipe and `earning-angles.md`: compare **referring root
+domains, never total backlinks**. A single partner with a sitewide footer link produces
+thousands of backlinks from one domain, and a comparison on the raw count can say the
+opposite of the truth.
+
+Still not covered, and stated as such: Domain Analytics, and the task-based full-site OnPage
+crawl.
+
 ### Added: four more site-type profiles, and depth where the model said it was missing
 
 **Four new profiles**, bringing the set to eleven. They are deliberately *modalities* rather
