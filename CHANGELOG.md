@@ -130,6 +130,31 @@ Honest about its own edges: DataForSEO's Backlinks, OnPage, Business Data, Domai
 and Content Analysis modules are reachable through capability detection and have **no
 verified recipe in that file yet**, and it says so rather than implying coverage.
 
+### Added: four skills for capabilities that had nowhere to route
+
+The previous pass added depth *inside* existing skills. This one audited the skill list
+itself, by checking whether common requests match any skill's description. Several did not,
+which meant the work was unreachable except through the orchestrator picking a site-type
+profile.
+
+Before: `"Google Business Profile"` 0 skills, `"map pack"` 0, `"product feed"` 0,
+`"multilingual"` 0, and **`"keyword research"` 0** — the single most common request in SEO
+matched nothing.
+
+| New skill | System | It exists because |
+|---|---|---|
+| `seo-demand-keyword-research` | Demand | Demand is the system the method calls the most expensive to get wrong, and it had one skill, which only reads data you already have |
+| `seo-surface-local` | Surfaces | The map pack and Google Business Profile are among the largest commercial areas of SEO, and the material was locked inside an orchestrator profile |
+| `seo-surface-shopping` | Surfaces | Feed, page and markup parity is a discipline of its own, and disapprovals are often the highest-return work on a shop |
+| `seo-access-international` | Access | hreflang fails silently, which is exactly why it needs a workflow rather than a checklist item |
+
+This also corrects a distribution the re-work left behind: Access had seven skills while
+Demand, Distribution and Surfaces had one each, which was still the old ladder's shape
+rather than the model's. Surfaces now has three and Demand two.
+
+None of them duplicates existing depth. Each points at the profile, surface profile and data
+recipes that already carry it, and owns the workflow instead.
+
 ### Added: the coverage holes a systematic audit found
 
 The library was measured against the discipline rather than assumed complete: a battery of

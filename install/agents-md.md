@@ -32,7 +32,7 @@ top-to-bottom, fix bottom-to-top, and do not work above a rung until the ones be
 The other systems are simultaneous, not sequential:
 - Substance (`skills/seo-substance-quality/`) — does the page deserve to win? (intent match, quality, depth)
 - Identity (`skills/seo-identity-context/`, `skills/seo-identity-positioning/`) — who you provably are: real experience, expertise, authorship, one resolvable entity
-- Demand (`skills/seo-demand-search-data/`) — what is actually being asked. Read it, never invent it
+- Demand (`skills/seo-demand-keyword-research/`, `skills/seo-demand-search-data/`) — what is actually being asked. Read it, never invent it
 - Distribution (`skills/seo-distribution-authority/`) — what points at you. Analyse and advise, never execute
 Surfaces are an axis across all five: `skills/seo-surface-assistants/` makes a page eligible
 to be named by AI answers. A surface, not a rung, and eligibility is the only claim.
@@ -45,7 +45,9 @@ Specialists: `skills/seo-operations-launch-qa/` (pre-launch and go-live), `skill
 `skills/seo-identity-positioning/` (topical authority/positioning), `skills/seo-operations-reporting/` (proposal/roadmap),
 `skills/seo-operations-automation/` (CI/CD regression gate + scheduled audits), `skills/seo-substance-media/` (image/video SEO),
 `skills/seo-substance-at-scale/` (white-hat pages-at-scale), `skills/seo-access-logs/` (server-log/crawl-budget, large sites),
-`skills/seo-distribution-authority/` (off-page: backlink audit + white-hat link-building strategy, advisory).
+`skills/seo-access-international/` (hreflang, locales, URL strategy), `skills/seo-distribution-authority/` (off-page: backlink audit + white-hat link-building strategy, advisory).
+Surfaces: `skills/seo-surface-assistants/` (eligible to be named by AI answers), `skills/seo-surface-local/` (map pack, Google Business Profile, NAP),
+`skills/seo-surface-shopping/` (product feeds, Merchant Center, free listings).
 Optional live-data tools (GSC/DataForSEO/Ahrefs, bring-your-own-key) enrich the audit — see `install/data-integrations.md`; never required.
 
 Start broad requests with `skills/seo-orchestrator/SKILL.md` — it runs an AUDIT LIFECYCLE:

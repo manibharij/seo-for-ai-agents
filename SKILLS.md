@@ -45,6 +45,7 @@ whatever data your environment already has: see
 
 | Skill | What it does | Reach for it when you say… |
 |---|---|---|
+| [`seo-demand-keyword-research`](skills/seo-demand-keyword-research/SKILL.md) | Finds demand you do not have yet, clusters it by intent, sizes it with sourced numbers, and says which of it is actually reachable. "No reachable demand here" is a valid answer | "keyword research", "what keywords should I target", "search volume", "what should we write about", "is there demand for this" |
 | [`seo-demand-search-data`](skills/seo-demand-search-data/SKILL.md) | Reads the search data your environment already has (Search Console, analytics, CrUX, Bing, an SEO tool) to triage indexing, protect pages that earn traffic, map demand and measure whether changes worked | "why aren't these pages indexed", "did our change work", "what's in striking distance" |
 
 ## Identity: who you provably are
@@ -83,6 +84,7 @@ Plus the Access specialists:
 | [`seo-access-performance`](skills/seo-access-performance/SKILL.md) | Core Web Vitals deep work: field data first, then lab, LCP sub-parts, INP, CLS, third-party tags | "Core Web Vitals failing", "fix our LCP", "site is slow" |
 | [`seo-access-migrations`](skills/seo-access-migrations/SKILL.md) | Preserve rankings when URLs change | "redesign", "moving domain", "404s after relaunch" |
 | [`seo-access-logs`](skills/seo-access-logs/SKILL.md) | Server-log and crawl-budget analysis on large sites: what crawlers actually fetch | "log file analysis", "crawl budget" |
+| [`seo-access-international`](skills/seo-access-international/SKILL.md) | hreflang, per-locale canonicals, URL strategy and genuine localisation. Validated on the served output, because hreflang fails silently | "hreflang", "international SEO", "multilingual", "multiple countries", "wrong language version is ranking" |
 
 ## Distribution: what points at you (earned, advisory only)
 
@@ -104,6 +106,8 @@ Plus the Access specialists:
 | Skill | What it does | Reach for it when you say… |
 |---|---|---|
 | [`seo-surface-assistants`](skills/seo-surface-assistants/SKILL.md) | Make a page *eligible* to be named by AI answer engines. Eligibility only: citation is never guaranteed | "AI Overviews", "get cited by ChatGPT", "AEO", "llms.txt" |
+| [`seo-surface-local`](skills/seo-surface-local/SKILL.md) | The map pack and the profile: NAP consistency, `LocalBusiness` markup, real location pages, and an honest line on what a build cannot change | "local SEO", "Google Business Profile", "map pack", "near me", "multiple locations", "NAP", "citations" |
+| [`seo-surface-shopping`](skills/seo-surface-shopping/SKILL.md) | Product feeds and free listings: feed, page and markup must agree, and the fix is at the data source | "Merchant Center", "product feed", "my products are disapproved", "price mismatch", "GTIN", "free listings" |
 
 Per-surface profiles, stating what weighs there and how honestly it can be verified, live
 in [`surfaces/`](surfaces/).

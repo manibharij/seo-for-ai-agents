@@ -88,6 +88,7 @@ Full narrative in **[METHOD.md](METHOD.md)**; the canonical reference is [`model
 The **[`seo-orchestrator`](skills/seo-orchestrator/SKILL.md)** is the entry point for any broad request ("audit my SEO", "why am I not showing up", "get named by ChatGPT"). It works out your stack, platform and site type, finds what is failing, dispatches in order, and runs the whole thing as a repeatable loop.
 
 **Demand** — what is actually being asked
+- **[`seo-demand-keyword-research`](skills/seo-demand-keyword-research/SKILL.md)** finds demand you do not have yet: seeds from the business rather than from a tool, clusters by intent rather than by string, sizes it with numbers that carry their source, and judges which of it is actually reachable. "There is no reachable demand here" is a valid finding, and the cheapest one to make early.
 - **[`seo-demand-search-data`](skills/seo-demand-search-data/SKILL.md)** reads the search data your environment already provides to see what Google actually concluded: indexing reasons and its chosen canonical, which pages earn traffic and must be protected, real demand and striking-distance queries, and whether a change worked. It detects capabilities, not products, and never requires data.
 
 **Identity** — who you provably are
@@ -105,6 +106,7 @@ The **[`seo-orchestrator`](skills/seo-orchestrator/SKILL.md)** is the entry poin
 - **[`seo-access-performance`](skills/seo-access-performance/SKILL.md)** Core Web Vitals deep work: field data first, then lab and the cause.
 - **[`seo-access-migrations`](skills/seo-access-migrations/SKILL.md)** preserve rankings when URLs change.
 - **[`seo-access-logs`](skills/seo-access-logs/SKILL.md)** large-site server logs and crawl budget: what crawlers actually fetch.
+- **[`seo-access-international`](skills/seo-access-international/SKILL.md)** hreflang, per-locale canonicals and URL strategy, validated on the served output because hreflang fails silently.
 
 **Distribution** — earned, advisory only
 - **[`seo-distribution-authority`](skills/seo-distribution-authority/SKILL.md)** backlink audit, toxic links and a disavow file, the competitor authority gap, and white-hat link and digital-PR strategy. It audits and advises. It never executes outreach and never buys links.
@@ -117,6 +119,8 @@ The **[`seo-orchestrator`](skills/seo-orchestrator/SKILL.md)** is the entry poin
 
 **Surfaces** — where visibility is judged
 - **[`seo-surface-assistants`](skills/seo-surface-assistants/SKILL.md)** make a page *eligible* to be named by AI answer engines, on a page whose fundamentals are already sound.
+- **[`seo-surface-local`](skills/seo-surface-local/SKILL.md)** the map pack and the profile: NAP consistency, `LocalBusiness` markup, real location pages, and an honest line on what a build cannot change.
+- **[`seo-surface-shopping`](skills/seo-surface-shopping/SKILL.md)** product feeds and free listings: the feed, the visible page and the markup must agree, and the fix belongs at the data source.
 
 Full index with trigger phrases: **[SKILLS.md](SKILLS.md)**.
 
