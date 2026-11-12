@@ -40,3 +40,14 @@ These matter for real users but are outside this pack's SEO remit — recommend 
 - Motion/animation safety, time limits, and other WCAG criteria.
 
 Surfacing these honestly ("your pages would benefit from a dedicated accessibility review — here's what I noticed") is the right move: it serves the user, and it's consistent with the pack's habit of flagging what's beyond build-time SEO rather than pretending to cover it.
+
+Two further lines that hold regardless:
+
+- **Never claim compliance.** Not WCAG conformance at any level, not legal compliance, not "accessible". The pack has not tested for it and is not qualified to certify it. Automated checking catches only a minority of real issues, so a page that passes a scan is not accessible.
+- **Escalate where it is consequential.** Public-sector sites, large organisations and regulated sectors frequently have a legal duty here. Recommending a specialist is the correct output, not a longer checklist.
+
+## Why this sits in the Read rung at all
+
+Because the failure mode is shared. The most common finding in this pack is a page whose content exists only once JavaScript has run, which is simultaneously the most common way a page becomes unusable for assistive technology and invisible to a crawler.
+
+A page built so its content, structure and meaning survive without scripts, without images loading and without visual layout is a page that works for both. That principle is worth stating to a developer once, rather than arguing about thirty individual checks.

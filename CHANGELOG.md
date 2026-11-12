@@ -130,6 +130,40 @@ Honest about its own edges: DataForSEO's Backlinks, OnPage, Business Data, Domai
 and Content Analysis modules are reachable through capability detection and have **no
 verified recipe in that file yet**, and it says so rather than implying coverage.
 
+### Added: the coverage holes a systematic audit found
+
+The library was measured against the discipline rather than assumed complete: a battery of
+SEO topics grepped across `skills/`, `model/`, `roles/`, `jobs/` and `surfaces/`, and
+anything returning zero or one file treated as a candidate gap. Four were real.
+
+- **What Google actually shows in a result**, now in
+  `seo-access-read/references/metadata-titles-descriptions.md`. The file covered how to set
+  a title; it did not cover the **eight sources Google may build a title link from**
+  (verified 2026-11), which is why rewriting a `<title>` alone often changes nothing. Also
+  the four distinct causes of impressions-without-clicks, only one of which is a title
+  problem, and the snippet controls as the owner's decision. Recorded explicitly: **Google
+  publishes no figure for how often it rewrites titles**, so the percentages in circulation
+  are third-party studies and must carry their real source.
+- **SERP features**, `seo-substance-quality/references/serp-features.md`. Google's answer to
+  "how do I mark my page as a featured snippet" is "You can't", so the file is about
+  preconditions rather than mechanisms, plus the zero-click trade stated honestly and why a
+  plan to "win N featured snippets" never belongs in a report.
+- **Core updates**, `seo-substance-quality/references/core-updates.md`. The situation where
+  the gap between honest and sellable advice is widest. Confirming it is actually an update
+  before accepting the premise (most "we were hit" is a deploy or a directive), why a manual
+  action is a different thing with a different route, that there is no recovery lever and no
+  schedule, and the five responses that make it worse.
+- **Entity establishment**, `seo-identity-context/references/entity-establishment.md`. The
+  half of Identity that is not on your site: disambiguation, corroboration across registers
+  and profiles, public knowledge bases and why editing your own entry is a conflict of
+  interest the agent will not perform, and what a knowledge panel is and is not. Highest
+  leverage for `ai-visible`, because Identity leads the weighting on assistant surfaces.
+
+Two files written during this pass were **deleted before commit** as duplicates:
+`accessibility-and-semantics.md` already covered the a11y overlap properly, and the metadata
+file already covered titles from the implementation side. The genuinely new material was
+merged into the existing files instead, which is the point of auditing before adding.
+
 ### Added: Ahrefs and Semrush, and a table of which tool can do which workflow
 
 [`data/ahrefs-semrush.md`](skills/seo-orchestrator/references/data/ahrefs-semrush.md),

@@ -116,3 +116,4 @@ Context rots. On a **progression run**, re-read `.seo/context.md` before using i
 ## Reference files
 - `references/context-sources.md` — every source worth reading, what each one is uniquely good for, the free no-key options, and the fetching etiquette and legal lines.
 - `references/context-pack-format.md` — the `.seo/context.md` format section by section, with a worked example and the provenance labelling in practice.
+- `references/entity-establishment.md` — the half of Identity that is not on your site: disambiguation, corroboration across the profiles and registers engines already trust, public knowledge bases and why editing your own entry is a conflict of interest the agent will not perform, what a knowledge panel is and is not, and a cheap five-step diagnosis. This is the highest-leverage work for the `ai-visible` job, because Identity leads the weighting on assistant surfaces.

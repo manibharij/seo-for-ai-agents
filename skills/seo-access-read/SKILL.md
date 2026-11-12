@@ -124,6 +124,6 @@ Then point up the ladder: once Read passes, the next rung is **Understand** (str
 
 ## Reference files (read when you need them)
 - `references/content-and-structure.md` — headings, semantic HTML, content substance, duplication, matching content to search intent, what "thin" means and why it matters.
-- `references/metadata-titles-descriptions.md` — title and description standards, the Next.js Metadata API patterns, alt text, Open Graph, and exact verification steps.
+- `references/metadata-titles-descriptions.md` — title and description standards, the Next.js Metadata API patterns, alt text, Open Graph, and exact verification steps. Also **the eight sources Google may build a title link from** (so fixing the `<title>` alone often changes nothing), the four distinct causes of impressions-without-clicks and which one is actually a title problem, and the snippet controls (`nosnippet`, `data-nosnippet`, `max-snippet`) as the owner's decision rather than an agent's default.
 - `references/page-experience.md` — mobile-friendliness, Core Web Vitals (LCP/INP/CLS), image/font/JS optimisation, the Next.js tools for each, and what's build-time vs live-data.
 - `references/accessibility-and-semantics.md` — the large accessibility/SEO overlap (semantic HTML, headings, alt, link text, lang) that improves both at once, and where a full a11y review goes beyond SEO.

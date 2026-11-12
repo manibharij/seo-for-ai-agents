@@ -17,6 +17,77 @@ Read this for the metadata half of Read — the signals that control how a page 
 - **Unique per page**, ~150–160 characters, an accurate and inviting summary of the page. Engines may rewrite it, but a good one is often kept.
 - Don't keyword-stuff; write it for a human deciding whether to click.
 
+## What Google actually shows, which is not always your title
+
+The part most people have wrong, and the reason rewriting a `<title>` sometimes changes
+nothing. Google states that "Google's generation of title links on the Google Search results
+page is completely automated", and that where it has detected an issue it "may try to
+generate an improved title link from anchors, on-page text, or other sources".
+
+The sources Google lists (verified 2026-11, https://developers.google.com/search/docs/appearance/title-link):
+
+1. Content in `<title>` elements
+2. The main visual title shown on the page
+3. Heading elements, such as `<h1>`
+4. Content in `og:title` meta tags
+5. Other large, prominent text, including text made prominent by styling
+6. Other text on the page
+7. Anchor text on the page, and text in links pointing to the page
+8. `WebSite` structured data
+
+**So fix the sources, not just the tag.** If Google is showing something else, the visible
+`h1`, the prominent styled text and the anchor text pointing at the page are all candidates,
+and they have to agree. A page whose `<title>` and `h1` disagree on the subject is inviting
+Google to choose between them.
+
+Google also says it **cannot manually change title links for individual sites**, and that
+updates to these sources need recrawling and reprocessing, which "may take a few days to a
+few weeks". There is nobody to appeal to and no instant fix.
+
+Google's own stated best practices, worth checking a template against: a title on every
+page; descriptive and concise, with vague titles like "Home" called out; no keyword
+stuffing or repeated phrases; no boilerplate repeated across pages; brand concisely at the
+start or end with a delimiter; make the main title the most prominent text on the page, for
+example in the first visible `h1`; same language and writing system as the page.
+
+> **What Google does not say:** it publishes **no figure** for how often it rewrites titles.
+> The percentages that circulate come from third-party studies of sampled SERPs. If a number
+> reaches a report it carries its real source and date, or it does not appear.
+
+## Impressions without clicks: four causes, one of them a title problem
+
+Before rewriting anything, work out which of these it is. Rewriting titles to fix the other
+three is the most common wasted content work in search.
+
+| What you see | Likely cause | What to do |
+|---|---|---|
+| High impressions, low CTR, position 1 to 5 | The title and description are not earning the click | This file |
+| High impressions, low CTR, position 11+ | Normal. Page two earns few clicks whatever it says | Improve position, not copy |
+| Impressions flat, clicks falling, position stable | The result page changed around you: a generated answer, more ads, a richer competitor result | `seo-substance-quality/references/content-decay.md` |
+| Impressions rising, CTR falling | Ranking for broader, less relevant queries | `seo-substance-quality/references/search-intent.md` |
+
+When it genuinely is the title: say what the page is in the searcher's words, front-load the
+distinguishing part, and **open the SERP**. If nine results say the same thing, saying it a
+tenth time earns nothing; the gap in that list is the title. Never promise what the page
+does not deliver, because a click followed by an immediate return is worse than no click.
+
+Then measure. CTR per page against its own before is one of the few genuinely attributable
+changes in this discipline, so attribute it rather than asserting an improvement.
+
+## Snippet controls are the owner's decision, not a default
+
+These change what Google may display, and an agent never sets them unasked:
+
+- **`nosnippet`** stops all snippets for the page, featured and regular.
+- **`data-nosnippet`** excludes specific marked text from both.
+- **`max-snippet`** limits length. Google says a low `max-snippet` "doesn't guarantee that
+  Google will stop showing featured snippets for your page"; for a guaranteed result it says
+  to use `nosnippet`.
+
+Where both `nosnippet` and `data-nosnippet` are present, `nosnippet` takes priority. Check
+`robots` and `X-Robots-Tag` for directives someone set years ago and nobody remembers.
+Present the trade and let the owner choose, exactly as with AI crawler access.
+
 ## `<html lang>` and other basics
 - Set `<html lang="en-GB">` (or the correct locale). It helps engines and assistive tech and is trivial to get right.
 - Ensure a single, correct `<meta charset="utf-8">` and a `<meta name="viewport">` (the latter matters for correct mobile rendering and usability — Google indexes mobile-first, so a page that renders badly on mobile is a real problem).
