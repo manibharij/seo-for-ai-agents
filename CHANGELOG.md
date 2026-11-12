@@ -33,12 +33,14 @@ your relationship to control, plus an **Operations loop**, judged across many
   `work-item`, `evidence`. `finding.verify.method` deliberately has no `source` option,
   so "verify on served output" is enforced by the schema rather than by good intentions.
 - **[`surfaces/`](surfaces/)** per-surface profiles stating what weighs there, how it is
-  verified, and what is unknowable. First profile: `chatgpt.md`.
+  verified, and what is unknowable. **All 16 surfaces in the model are now profiled**,
+  indexed in [`surfaces/README.md`](surfaces/README.md).
 - **[`roles/`](roles/)** role definitions: what a role owns, which tools it may use,
-  what it must ask before doing, its budget, and what finishing means. First role:
-  `technical-engineer.md`.
+  what it must ask before doing, its budget, and what finishing means. **Six roles**, one
+  per system plus the Account Reporter, indexed in [`roles/README.md`](roles/README.md).
 - **[`jobs/`](jobs/)** the situation a user actually arrives with, which scopes the model
-  and activates roles. First job: `rescue.md`.
+  and activates roles. **All nine jobs** in the `work-item` contract are now written,
+  indexed in [`jobs/README.md`](jobs/README.md).
 - **`scripts/check-links.py`** checks every relative link, that each skill's `name:`
   matches its directory, and that no skill is nested, because a nested skill would not
   survive the flat copy into `~/.claude/skills/`.
@@ -84,6 +86,51 @@ model removed:
 | `install/copy-paste/cite.md` | `install/copy-paste/assistants.md` |
 
 Every other mini filename in `install/copy-paste/` is unchanged.
+
+### Added: the agentic layer is filled in, not sketched
+
+The re-work created `jobs/`, `surfaces/` and `roles/` and shipped one example of each. The
+model named nine jobs, sixteen surfaces and a department of roles, so a reader arriving at
+the repo found a shape that promised far more than the contents delivered. That gap is
+closed.
+
+**Nine jobs** (`jobs/`), one per situation in the `work-item` contract's `job` enum, each
+with its leading system, its order of work, what it must never do, and what the honest
+negative answer looks like:
+
+| Job | They arrive saying | Leading system | Autonomy |
+|---|---|---|---|
+| `new-site` | "I have an idea and I am about to build it" | Demand | 4 |
+| `launch` | "We are going live this week" | Access | 3 |
+| `rescue` | "Something is wrong and I do not know why" | Operations, then Access | 2 |
+| `grow` | "It works, I want more of it" | Demand, Substance, Distribution | 2 |
+| `migrate` | "The URLs are changing" | Access | 2 |
+| `scale` | "I need a lot of pages" | Substance, as a gate | 2 |
+| `ai-visible` | "I want AI assistants to recommend me" | Identity | 2 |
+| `client-audit` | "I need to audit a site I do not control" | The constraint | 1 |
+| `maintain` | "Keep it from breaking" | Operations | 4 |
+
+Autonomy tracks what is **at risk**, not difficulty, which is why `new-site` and
+`maintain` sit highest and `migrate` and `grow` sit low.
+
+**Sixteen surface profiles** (`surfaces/`), each stating its weighting, how it can be
+verified, what is unknowable, and what may never be claimed. `google-web`, `google-maps`,
+`google-ai-mode`, `google-shopping`, `google-images`, `google-news-discover`,
+`bing-copilot`, `perplexity`, `chatgpt`, `claude`, `gemini`, `youtube`,
+`reddit-communities`, `app-store`, `marketplace`, `agent-mcp`. `model/surfaces.md` now
+links to each one.
+
+The leading system differs per surface, which is the main practical use of these files:
+Access leads on `google-web`, Identity on `chatgpt` and `google-maps`, Substance on
+`google-ai-mode` and `perplexity`, Demand on `youtube`, Distribution on
+`reddit-communities`.
+
+**Six roles** (`roles/`): `demand-analyst`, `identity-steward`, `content-editor`,
+`technical-engineer`, `distribution-strategist` and `account-reporter`. Each declares what
+it may do unsupervised, what it must ask about, and what it may never do at any rung.
+`distribution-strategist` has a deliberately empty `fenceable` list: it is the one role
+that can never act, because every mechanism for executing earned media is either against
+platform rules or deceptive.
 
 ### Fixed: the re-work reached the whole library, not just its headline
 

@@ -129,12 +129,34 @@ The pack is not only a library a human points an agent at. It is the executable 
 | Folder | What it holds |
 |---|---|
 | [`model/`](model/) | The canonical method: [systems](model/systems.md), [surfaces](model/surfaces.md), [invariants](model/invariants.md) |
-| [`jobs/`](jobs/) | The situation you actually arrive with, which scopes the model and activates roles. Nobody arrives with a rung |
-| [`roles/`](roles/) | What a role owns, which tools it may use, what it must ask before doing, its budget, and what finishing means |
-| [`surfaces/`](surfaces/) | Per-surface profiles: what weighs there, how it is verified, and what is simply unknowable |
+| [`jobs/`](jobs/) | The nine situations you actually arrive with, which scope the model and activate roles. Nobody arrives with a rung |
+| [`roles/`](roles/) | Six roles: what each owns, which tools it may use, what it must ask before doing, its budget, and what finishing means |
+| [`surfaces/`](surfaces/) | Sixteen surface profiles: what weighs there, how it is verified, and what is simply unknowable |
 | [`contracts/`](contracts/) | Machine-readable schemas for findings, context facts, work items and evidence, so results can be stored, diffed and compared rather than only read |
 
 One detail worth knowing: `finding.verify.method` in the schema has no `source` option. "Verify on served output" is enforced by the contract rather than by good intentions.
+
+### Start from the situation you are actually in
+
+Jobs are the front door. Each one says which system leads, in what order to work, and what
+the honest negative answer looks like.
+
+| You are saying | Job | Leading system |
+|---|---|---|
+| "I have an idea and I am about to build it" | [`new-site`](jobs/new-site.md) | Demand |
+| "We are going live this week" | [`launch`](jobs/launch.md) | Access |
+| "Something is wrong and I do not know why" | [`rescue`](jobs/rescue.md) | Operations, then Access |
+| "It works, and I want more of it" | [`grow`](jobs/grow.md) | Demand, Substance, Distribution |
+| "The URLs are changing" | [`migrate`](jobs/migrate.md) | Access |
+| "I need a lot of pages" | [`scale`](jobs/scale.md) | Substance, as a gate |
+| "I want AI assistants to recommend me" | [`ai-visible`](jobs/ai-visible.md) | Identity |
+| "I need to audit a site I do not control" | [`client-audit`](jobs/client-audit.md) | Whichever is the constraint |
+| "Keep it from breaking" | [`maintain`](jobs/maintain.md) | Operations |
+
+The autonomy each job defaults to tracks **what is at risk**, not how hard the work is.
+`new-site` and `maintain` are the most autonomous, because a new site has nothing to break
+and maintenance only re-runs known checks. `migrate` and `grow` are the least, because both
+can destroy something that already earns.
 
 ---
 

@@ -20,24 +20,27 @@ Every profile in `surfaces/` states four things:
 
 ## The surfaces, and how honestly each can be verified
 
+Each one has a profile in [`surfaces/`](../surfaces/), indexed in
+[`surfaces/README.md`](../surfaces/README.md).
+
 | Surface | Verification strength | Note |
 |---|---|---|
-`google-web` | Strong | Position and index coverage are observable |
-`google-maps` | Strong | Only by point: a single check cannot represent an area |
-`google-ai-mode` | Partial | Presence can be sampled, never guaranteed |
-`google-news` / Discover | Weak | Largely unobservable, highly volatile |
-`google-images` / video | Moderate | |
-`google-shopping` | Strong on feed, moderate on placement | |
-`bing` / `copilot` | Strong | |
-`chatgpt` | Weak | Sampled prompts only. No position, no guarantee |
-`claude` | Weak | Sampled prompts only |
-`gemini` | Weak | Sampled prompts only |
-`perplexity` | Moderate | Citations are visible, which makes it the honest bellwether |
-`youtube` | Strong | |
-`reddit` / communities | Moderate | |
-`app-store` | Moderate | Presence only. The deep mechanics are a separate discipline |
-`marketplace` | Moderate | |
-`agent-mcp` | Strong | Deterministic, and almost nobody is measuring it yet |
+[`google-web`](../surfaces/google-web.md) | Strong | Position and index coverage are observable |
+[`google-maps`](../surfaces/google-maps.md) | Strong | Only by point: a single check cannot represent an area |
+[`google-ai-mode`](../surfaces/google-ai-mode.md) | Partial | Presence can be sampled, never guaranteed |
+[`google-news-discover`](../surfaces/google-news-discover.md) | Weak | Largely unobservable, highly volatile |
+[`google-images`](../surfaces/google-images.md) | Moderate | Mostly an Access problem, and cheap to fix |
+[`google-shopping`](../surfaces/google-shopping.md) | Strong on feed, moderate on placement | Feed and page must agree |
+[`bing-copilot`](../surfaces/bing-copilot.md) | Strong | Copilot retrieves from the Bing index |
+[`chatgpt`](../surfaces/chatgpt.md) | Weak | Sampled prompts only. No position, no guarantee |
+[`claude`](../surfaces/claude.md) | Weak | Sampled prompts only |
+[`gemini`](../surfaces/gemini.md) | Weak | Sampled prompts only, and no first-party reporting |
+[`perplexity`](../surfaces/perplexity.md) | Moderate | Citations are visible, which makes it the honest bellwether |
+[`youtube`](../surfaces/youtube.md) | Strong | Demand leads here, not Access |
+[`reddit-communities`](../surfaces/reddit-communities.md) | Moderate | Never your page. Read it, never post to it |
+[`app-store`](../surfaces/app-store.md) | Moderate | Presence only. The deep mechanics are a separate discipline |
+[`marketplace`](../surfaces/marketplace.md) | Moderate | Your listing may outrank your own site |
+[`agent-mcp`](../surfaces/agent-mcp.md) | Strong | Deterministic, and almost nobody is measuring it yet |
 
 ## The rule that keeps this honest
 
