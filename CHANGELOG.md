@@ -87,6 +87,49 @@ model removed:
 
 Every other mini filename in `install/copy-paste/` is unchanged.
 
+### Added: four more site-type profiles, and depth where the model said it was missing
+
+**Four new profiles**, bringing the set to eleven. They are deliberately *modalities* rather
+than sector playbooks, which is why there is no `healthcare.md`: what those sectors share is
+that a wrong answer harms somebody, and that is `ymyl-regulated.md`.
+
+| Profile | For | What shifts |
+|---|---|---|
+| `marketplace-directory` | Marketplaces, job boards, property portals, directories | Access dominates: faceted sprawl and an explicit expiry policy |
+| `affiliate-comparison` | "Best X", versus pages, referral-monetised content | Identity and Substance are the constraint: who tested it, and disclosure |
+| `portfolio-personal-brand` | One person or a very small studio | Identity, after the client-rendered-portfolio rendering failure |
+| `ymyl-regulated` *(modifier)* | Health, legal, finance, safety, gambling, childcare | Identity stops being a weighting and becomes a **gate** |
+
+**Depth added where the audit of the library said the mass was in the wrong place.** The
+re-work moved the method's centre of gravity to Substance, Identity and Distribution, but
+`skills/` was still distributed the way the old ladder was, with Access holding seven skills and
+the deepest references while `seo-substance-quality` had one reference file of 54 lines.
+
+- `seo-substance-quality/references/search-intent.md` — reading intent off the SERP rather than
+  from a tool's label, the four distinct mismatch patterns and how to tell them apart (they have
+  four different fixes and get reported as one), and intent against the audience's real
+  vocabulary.
+- `seo-substance-quality/references/information-gain.md` — the test that actually decides
+  whether a page wins: does it contain anything the results above it do not? Why word count and
+  competitor keyword coverage are not that test, what genuine gain looks like, and what to do
+  when the honest answer is that none is available.
+- `seo-substance-quality/references/content-decay.md` — telling decay apart from a technical
+  cliff, an intent shift and a SERP-feature change, since all four look like "traffic is down".
+  Includes the honest-freshness rule, which refuses date-bumping at any autonomy rung.
+- `seo-distribution-authority/references/earning-angles.md` — establishing whether authority is
+  actually the constraint before recommending a campaign, what a genuinely citable asset looks
+  like (proprietary data first), and why drafting outreach "for the human to send" is not a
+  loophole in the advisory boundary.
+
+### Fixed: more stale framing, found by a broader sweep
+
+The first pass caught "the Cite rung". A wider sweep found the same problem in other phrasings:
+`seo-access-connect` still pointed "up the ladder" to Rank as a final rung with Cite above it,
+`prioritisation.md` still sorted by "ladder order" across all systems rather than by the Access
+dependency alone, `seo-substance-quality` still described itself as "the top of the ladder" and
+recorded findings as `area: rank`, and two `seo-surface-assistants` references still called the
+surface a rung. All corrected.
+
 ### Added: the agentic layer is filled in, not sketched
 
 The re-work created `jobs/`, `surfaces/` and `roles/` and shipped one example of each. The

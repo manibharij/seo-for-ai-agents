@@ -14,7 +14,11 @@ This page is the orientation layer: which profile fits, what it emphasises, whic
 | Blog / content site | [`content-blog`](skills/seo-orchestrator/references/profiles/content-blog.md) | Orphan posts, cannibalisation, thin archives | Substance + Identity, then Access (clusters) |
 | Documentation / help centre | [`documentation`](skills/seo-orchestrator/references/profiles/documentation.md) | Docs SPA invisible to the AI crawlers that want it most | Access (is it even served?), then Substance |
 | News / publisher | [`news-publisher`](skills/seo-orchestrator/references/profiles/news-publisher.md) | Slow discovery, false timestamps, anonymous articles | Access (speed) + Identity (bylines, standards) |
+| Marketplace / job board / directory | [`marketplace-directory`](skills/seo-orchestrator/references/profiles/marketplace-directory.md) | Faceted sprawl eats the crawl budget; expired listings stay indexed as current | Access (facets + expiry policy) |
+| Affiliate / comparison / "best X" | [`affiliate-comparison`](skills/seo-orchestrator/references/profiles/affiliate-comparison.md) | Anonymous roundups of products nobody tested, with undisclosed affiliate links | Identity + Substance |
+| Portfolio / freelancer / personal | [`portfolio-personal-brand`](skills/seo-orchestrator/references/profiles/portfolio-personal-brand.md) | A client-rendered portfolio serving crawlers an empty div; positioning too generic to match a query | Identity, after Access |
 | Multi-country / multilingual | [`international`](skills/seo-orchestrator/references/profiles/international.md) *(modifier, combine it)* | Missing/one-way hreflang; every locale canonicalising to English | Access (hreflang), then Substance |
+| Health / legal / finance / safety | [`ymyl-regulated`](skills/seo-orchestrator/references/profiles/ymyl-regulated.md) *(modifier, combine it)* | Anonymous or unverifiable authorship on advice that can harm someone | Identity, as a **gate** |
 
 ## Starter prompts per site type
 

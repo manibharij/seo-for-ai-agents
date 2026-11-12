@@ -1,16 +1,20 @@
 # Prioritising findings
 
-Read this to turn a pile of findings into a sensible order of work. An audit that lists twenty issues with no priority is the flat-checklist failure all over again. Two forces decide order: **the ladder's dependency rule** (hard constraint) and a **priority score** (soft ranking within what the ladder allows).
+Read this to turn a pile of findings into a sensible order of work. An audit that lists twenty issues with no priority is the flat-checklist failure all over again. Two forces decide order: **the Access dependency rule** (hard constraint) and a **priority score** (soft ranking within what that rule allows).
 
 The order serves all three modes (`operating-modes.md`). `audit` presents findings in this order, with a `ref` each, so the user can approve from the top. `fix` applies the approved ones in this order. `re-check` reports regressions first.
 
 ---
 
-## The hard constraint: ladder order wins
+## The hard constraint: Access dependency wins
 
-You may not fix a higher rung while a lower one fails for the same page. So **rung order is the outer sort**: clear the floor first. A "critical" Cite issue does not jump ahead of a failing Reach issue on the same page — an answer engine can't cite a page it can't reach. Within what the ladder permits, use the score below.
+Dependency runs one way only, and only inside Access: you may not fix a higher rung of Access while a lower one fails for the same page. So **Access rung order is the outer sort**: clear the floor first.
 
-Exception that overrides even a tidy score: **regressions** (something previously fixed that broke again, recorded as `status: regression`) go to the front of their rung. A reverted fix signals active breakage.
+A "critical" assistant-surface issue does not jump ahead of a failing Reach issue on the same page, because an answer engine cannot quote a page it cannot reach. The same holds for Substance: there is no point deepening a page that serves crawlers an empty shell.
+
+**Everything else is simultaneous, not sequential.** Demand, Identity, Substance and Distribution do not queue behind one another, so once Access is clear for a page, the score below decides the order, not a system hierarchy.
+
+Exception that overrides even a tidy score: **regressions** (something previously fixed that broke again, recorded as `status: regression`) go to the front. A reverted fix signals active breakage, and something that was working and now is not says a process allowed it.
 
 ---
 

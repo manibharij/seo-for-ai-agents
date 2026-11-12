@@ -76,4 +76,4 @@ Tell the user exactly what's missing and why it matters, and offer to surface/ma
 - **Reality check (the one that outranks the rest):** every author, credential, citation, statistic, review, and award you surfaced or marked up is **real and verifiable.** If you can't verify it, it shouldn't be there.
 - **Served HTML:** visible trust signals (bylines, bios, citations) and their schema are in the served output, not client-only.
 
-If anything was fabricated, remove it and flag the gap. A page with honest "we don't have this yet" is worth more than a page with convincing lies — to users, to search, and to the answer engines this rung targets.
+If anything was fabricated, remove it and flag the gap. A page with honest "we don't have this yet" is worth more than a page with convincing lies, to users, to search, and to the answer engines this surface covers.

@@ -101,7 +101,7 @@ Exact crawl/inspection steps and the checklist are in `references/canonicals-and
 3. **Proof** — the now-linked pages and correct canonicals in the served HTML.
 4. **What only you can decide** — information-architecture and navigation choices: "I recommend grouping these ten articles under a 'Guides' hub — shall I? It changes your menu." Plus which of any duplicate URLs is the *preferred* one.
 
-Then point up the ladder: with the site connected, the final rung is **Rank** (`seo-substance-quality`) — making the page good and relevant enough to actually rank (intent, quality, E-E-A-T, topical authority). Above the ladder, once it ranks, the optional **Cite (AEO)** layer formats it to be quoted by AI answer engines.
+Connect is the last rung of the Visibility Ladder, so with it clear, Access is clear and the work moves out of this system. Next comes **Substance** (`seo-substance-quality`): whether the page is good and relevant enough to deserve to win, which is intent match, quality and depth. Alongside it, **Identity** (`seo-identity-context`) establishes the real experience and authorship behind it, and **Distribution** (`seo-distribution-authority`) analyses the authority you can only earn. Ranking is what those produce together, not a further rung. Being quoted by an AI answer engine is a separate surface (`seo-surface-assistants`), where eligibility is the only claim.
 
 ---
 

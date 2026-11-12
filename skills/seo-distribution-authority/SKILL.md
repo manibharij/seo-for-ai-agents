@@ -80,3 +80,4 @@ Record findings with the shared schema in `seo-orchestrator/references/audit-rep
 
 ## Reference files
 - `references/backlink-audit-and-link-building.md` — reading a backlink profile (authority/relevance/anchors/toxicity), the disavow format and when (rarely) to use it, the white-hat link-building & digital-PR playbook, and the black-hat tactics this skill refuses. Also the link audit CSV, anchor-text review thresholds (judgement), the verified disavow file rules, and the outreach target list format.
+- `references/earning-angles.md` — how to establish whether authority is actually the constraint before recommending anything, the forms a genuinely citable asset takes (proprietary data first), who to approach and why they would care, what the boundary refuses at any autonomy rung including drafted outreach, and how to report the timescale honestly.
